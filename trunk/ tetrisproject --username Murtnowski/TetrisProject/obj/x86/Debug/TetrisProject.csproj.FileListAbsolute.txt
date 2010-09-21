@@ -4,3 +4,10 @@ C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\TetrisProject\TetrisPr
 C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\TetrisProject\TetrisProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.exe
 C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\TetrisProject\TetrisProject\obj\x86\Debug\TetrisProject.pdb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\bin\x86\Debug\TetrisProject.exe
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\bin\x86\Debug\TetrisProject.pdb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\obj\x86\Debug\TetrisProject.exe
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\obj\x86\Debug\TetrisProject.pdb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\ tetrisproject --username Murtnowski\TetrisProject\bin\x86\Debug\Content\Textures\Pearl.xnb

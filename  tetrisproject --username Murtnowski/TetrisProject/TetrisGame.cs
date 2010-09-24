@@ -59,7 +59,6 @@ namespace TetrisProject
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
 
             base.Initialize();
         }
@@ -99,9 +98,10 @@ namespace TetrisProject
             //world rotation
             angle1 += 1;
             angle2 += 3;
-            scale += .01f;
+            scale += .001f;
             if (scale > 10)
                 scale = 0;
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -130,6 +130,8 @@ namespace TetrisProject
             foreach (EffectPass pass in cubeEffect.CurrentTechnique.Passes)
             {
                 pass.Begin();
+                //begin rendering cube shapes
+
                 Cube cube = new Cube(new Vector3(0, 0, 0));
                 cube.RenderShape(GraphicsDevice);
                 cube.shapeTexture = Content.Load<Texture2D>("Textures\\pearl");

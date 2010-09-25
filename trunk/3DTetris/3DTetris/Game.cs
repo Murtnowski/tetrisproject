@@ -52,19 +52,19 @@ namespace Tetris3D
             switch (number)
             {
                 case 1:
-                    currentShape = new Shape(ShapeType.TRI);
+                    currentShape = new Shape(ShapeType.T);
                     break;
                 case 2:
-                    currentShape = new Shape(ShapeType.LN);
+                    currentShape = new Shape(ShapeType.I);
                     break;
                 case 3:
-                    currentShape = new Shape(ShapeType.SQR);
+                    currentShape = new Shape(ShapeType.O);
                     break;
                 case 4:
-                    currentShape = new Shape(ShapeType.LL);
+                    currentShape = new Shape(ShapeType.J);
                     break;
                 case 5:
-                    currentShape = new Shape(ShapeType.RL);
+                    currentShape = new Shape(ShapeType.L);
                     break;
                 case 6:
                     currentShape = new Shape(ShapeType.Z);

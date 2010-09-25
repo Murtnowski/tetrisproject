@@ -22,7 +22,7 @@ namespace Tetris3D
 
     enum PieceType
     {
-        TRI, SQR, LN
+        T, O, I
     }
 
     public class Game1 : Microsoft.Xna.Framework.Game

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TetrisProject")]
-[assembly: AssemblyProduct("TetrisProject")]
+[assembly: AssemblyTitle("3DTetris")]
+[assembly: AssemblyProduct("3DTetris")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft")]
 
-[assembly: AssemblyCopyright("Copyright ©  2010")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a5521206-856c-46f5-bde3-731adb5b5ffe")]
+[assembly: Guid("0a19ac4c-4cd4-4955-a7d1-b6b719edbc81")]
 
 
 // Version information for an assembly consists of the following four values:

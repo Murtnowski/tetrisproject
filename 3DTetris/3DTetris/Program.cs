@@ -1,6 +1,6 @@
 using System;
 
-namespace TetrisProject
+namespace Tetris3D
 {
     static class Program
     {
@@ -9,7 +9,7 @@ namespace TetrisProject
         /// </summary>
         static void Main(string[] args)
         {
-            using (TetrisGame game = new TetrisGame())
+            using (Game1 game = new Game1())
             {
                 game.Run();
             }

@@ -23,7 +23,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\bin\x86\Debug\Content\Textures\texture.xnb</Output>
-      <Time>2010-09-24T16:48:25.864-07:00</Time>
+      <Time>2010-09-30T18:05:28.8235025-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\Italic.spritefont</Source>
@@ -42,6 +42,15 @@
       <Options>None</Options>
       <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
       <Time>2010-09-24T16:48:25.863-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\pete_text.jpg</Source>
+      <Name>Textures\pete_text</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\bin\x86\Debug\Content\Textures\pete_text.xnb</Output>
+      <Time>2010-09-30T18:25:33.0523804-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

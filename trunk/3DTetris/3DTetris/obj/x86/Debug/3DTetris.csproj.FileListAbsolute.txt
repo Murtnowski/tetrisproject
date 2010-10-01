@@ -8,3 +8,4 @@ C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTe
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\obj\x86\Debug\3DTetris.exe
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\obj\x86\Debug\3DTetris.pdb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\3DTetris\3DTetris\bin\x86\Debug\Content\Textures\pete_text.xnb

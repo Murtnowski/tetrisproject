@@ -87,28 +87,20 @@ namespace Tetris3D
         };
 
         public static Vector2[] tx =
-        {
-            new Vector2(.5f, 0f),   // Green
-            new Vector2(1f, 0f), 
-            new Vector2(1f, .5f), 
-            new Vector2(.5f, .5f),
-            new Vector2(.5f, 0f),   // Green
-            new Vector2(1f, 0f), 
-            new Vector2(1f, .5f), 
-            new Vector2(.5f, .5f),
-            new Vector2(.5f, 0f),   // Green
-            new Vector2(1f, 0f), 
-            new Vector2(1f, .5f), 
-            new Vector2(.5f, .5f),
+        { //texture mapping
+            new Vector2(0f, 0f),   // Top left of texture
+            new Vector2(1f, 0f),   // Top right
+            new Vector2(1f, 1f),   // Bottom right 
+            new Vector2(0f, 1f),   // Bottom left
         };
 
         Vector2[] cubeTexture =
         {
             tx[0],tx[1],tx[2],tx[3],    //front
-            tx[4],tx[5],tx[6],tx[7],    //right
-            tx[8],tx[9],tx[10],tx[11],  //top
-            tx[8],tx[9],tx[10],tx[11],  //bottom
-            tx[4],tx[5],tx[6],tx[7],    //left
+            tx[0],tx[1],tx[2],tx[3],    //right
+            tx[0],tx[1],tx[2],tx[3],    //top
+            tx[0],tx[1],tx[2],tx[3],    //bottom
+            tx[0],tx[1],tx[2],tx[3],    //left
             tx[0],tx[1],tx[2],tx[3]     //back
         };
 

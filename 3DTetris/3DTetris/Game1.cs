@@ -58,7 +58,7 @@ namespace Tetris3D
             pieceCount = 0;
 
             cameraMatrix = Matrix.CreateLookAt(
-                new Vector3(15, 11, 15), new Vector3(-1, -1, -1), new Vector3(0, 1, 0));
+                new Vector3(15, 11, 30), new Vector3(-1, -1, -1), new Vector3(0, 1, 0));
 
             projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4,
                 (float)Window.ClientBounds.Width / (float)Window.ClientBounds.Height, 1.0f, 100.0f);
@@ -69,14 +69,16 @@ namespace Tetris3D
             cubeEffect.TextureEnabled = true;
             cubeEffect.EnableDefaultLighting();
 
-            for (int i = -4; i < 4; i++)
+            for (int i = -10; i < 10; i++)//create the board  Tetris board = 10x20
             {
-                for (int j = -4; j < 4; j++)
+                for (int j = -6; j <= 6; j++)
                 {
-                    Cube cube = new Cube(new Vector3(j, 0, i));
-                    cube.shapeTexture = Content.Load<Texture2D>("Textures\\texture");
+                    Cube cube = new Cube(new Vector3(j, i, 0));
+                    cube.shapeTexture = Content.Load<Texture2D>("Textures\\pete_text");
                     cubeEffect.Texture = cube.shapeTexture;
-                    foundation.Add(cube);
+                    board.Add(cube);
+                    if (i != -10) //basically skips filling the inside of the board unless it's placed at the base (
+                        j += 11;
                 }
             }
         }
@@ -127,12 +129,12 @@ namespace Tetris3D
                 angle1 += 1;
                 if (KeyP(Keys.Up) == true)
                 {
-                    MovePieces("Back");
+                    //MovePieces("Back");
                 }
 
                 if (KeyP(Keys.Down) == true)
                 {
-                    MovePieces("Forward");
+                    MovePieces("Down");
                 }
 
                 if (KeyP(Keys.Left) == true)
@@ -229,10 +231,10 @@ namespace Tetris3D
          * */
         private bool boardBenath()
         {
-            if (shapes.ElementAt(pieceCount - 1).blocks[0].shapePosition.Y - 1 == 0 ||
-            shapes.ElementAt(pieceCount - 1).blocks[1].shapePosition.Y - 1 == 0 ||
-            shapes.ElementAt(pieceCount - 1).blocks[2].shapePosition.Y - 1 == 0 ||
-            shapes.ElementAt(pieceCount - 1).blocks[3].shapePosition.Y - 1 == 0)
+            if (shapes.ElementAt(pieceCount - 1).blocks[0].shapePosition.Y - 1 == -10 ||
+            shapes.ElementAt(pieceCount - 1).blocks[1].shapePosition.Y - 1 == -10 ||
+            shapes.ElementAt(pieceCount - 1).blocks[2].shapePosition.Y - 1 == -10 ||
+            shapes.ElementAt(pieceCount - 1).blocks[3].shapePosition.Y - 1 == -10)
                 return true;
 
             return false;
@@ -281,7 +283,7 @@ namespace Tetris3D
                 {
                     pass.Begin();
 
-                    foreach (Cube block in foundation)
+                    foreach (Cube block in board)
                     {
                         block.RenderShape(GraphicsDevice);
                     }
@@ -324,7 +326,7 @@ namespace Tetris3D
 
         //Base and piecs
         private List<Vector3> positions = new List<Vector3>();
-        private List<Cube> foundation = new List<Cube>();
+        private List<Cube> board = new List<Cube>();
         private List<Shape> shapes = new List<Shape>();
         private Vector3 cube1;
         private Vector3 cube2;

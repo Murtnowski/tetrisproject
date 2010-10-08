@@ -1,0 +1,6 @@
+C:\Users\flaVius\Documents\455\XNA Code\Chapter11\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
+C:\Users\flaVius\Documents\455\XNA Code\Chapter11\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
+C:\Users\flaVius\Documents\455\XNA Code\Chapter11\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\flaVius\Documents\455\XNA Code\Chapter11\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\flaVius\Documents\455\XNA Code\Chapter11\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
+C:\Users\flaVius\Documents\455\XNA Code\Chapter11\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

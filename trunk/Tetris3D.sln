@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris3D", "Tetris3D\Tetris3D.csproj", "{D230AC03-F7E1-417D-8D50-F6FEDBAFECB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XELibrary", "XELibrary\XELibrary\XELibrary.csproj", "{D47B951C-B288-4382-8EF8-02F26B000D9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D230AC03-F7E1-417D-8D50-F6FEDBAFECB5}.Debug|x86.ActiveCfg = Debug|x86
+		{D230AC03-F7E1-417D-8D50-F6FEDBAFECB5}.Debug|x86.Build.0 = Debug|x86
+		{D230AC03-F7E1-417D-8D50-F6FEDBAFECB5}.Release|x86.ActiveCfg = Release|x86
+		{D230AC03-F7E1-417D-8D50-F6FEDBAFECB5}.Release|x86.Build.0 = Release|x86
+		{61945189-A8D7-468F-B674-7C7855AF0240}.Debug|x86.ActiveCfg = Debug|x86
+		{61945189-A8D7-468F-B674-7C7855AF0240}.Release|x86.ActiveCfg = Release|x86
+		{D47B951C-B288-4382-8EF8-02F26B000D9B}.Debug|x86.ActiveCfg = Debug|x86
+		{D47B951C-B288-4382-8EF8-02F26B000D9B}.Debug|x86.Build.0 = Debug|x86
+		{D47B951C-B288-4382-8EF8-02F26B000D9B}.Release|x86.ActiveCfg = Release|x86
+		{D47B951C-B288-4382-8EF8-02F26B000D9B}.Release|x86.Build.0 = Release|x86
+		{A26A5E40-7F2D-46B1-A406-0BEC14B9BECC}.Debug|x86.ActiveCfg = Debug|x86
+		{A26A5E40-7F2D-46B1-A406-0BEC14B9BECC}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -30,7 +30,7 @@ namespace Tetris3D
 
       public bool checkCollisionsBelow()
       {
-         if (checkShapesPosition(1) || pieceBeneath()) return true;
+         if (checkShapesPosition(-9) || pieceBeneath()) return true;
          else
             return false;
       }
@@ -89,16 +89,24 @@ namespace Tetris3D
          cube3 = shapes.ElementAt(pieceCount - 1).getBlock[2].getShapePosition;
          cube4 = shapes.ElementAt(pieceCount - 1).getBlock[3].getShapePosition;
 
-         if (direction == "Back")
-            z = -1;
-         else if (direction == "Forward")
-            z = +1;
+         //if (direction == "Back")
+         //   z = -1;
+         //else if (direction == "Forward")
+         //   z = +1;
+         if (direction == "Down")
+             y = -1;
          else if (direction == "Left")
-            x = -1;
+         {
+             if (cube1.X != -5 && cube2.X != -5 && cube3.X != -5 && cube4.X != -5) //ensures no cubes pass through the board
+                 x = -1;
+         }
          else if (direction == "Right")
-            x = +1;
+         {
+             if (cube1.X != 4 && cube2.X != 4 && cube3.X != 4 && cube4.X != 4) //ensures no cubes pass through the board
+                 x = +1;
+         }
          else
-            y = -1;
+             y = -1;
 
          shapes.ElementAt(pieceCount - 1).getBlock[0].getShapePosition = new Vector3(cube1.X + x, cube1.Y + y, cube1.Z + z);
          shapes.ElementAt(pieceCount - 1).getBlock[1].getShapePosition = new Vector3(cube2.X + x, cube2.Y + y, cube2.Z + z);
@@ -108,11 +116,14 @@ namespace Tetris3D
 
       public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
       {
-         if (WasPressed(Keys.Up))
-         { MovePieces("Back"); }
+         //if (WasPressed(Keys.Up))
+         //{ MovePieces("Back"); }
+
+         //if (WasPressed(Keys.Down))
+         //{ MovePieces("Forward"); }
 
          if (WasPressed(Keys.Down))
-         { MovePieces("Forward"); }
+          { MovePieces("Down"); }
 
          if (WasPressed(Keys.Left))
          { MovePieces("Left"); }

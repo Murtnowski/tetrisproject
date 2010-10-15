@@ -89,16 +89,18 @@ namespace Tetris3D
          cubeEffect.Parameters["World"].SetValue(camera.getRotationMatrix);
          cubeEffect.Parameters["View"].SetValue(camera.View);
          cubeEffect.Parameters["Projection"].SetValue(camera.Projection);
-
-         for (int i = -4; i < 4; i++)
+          
+         for (int j = -10; j < 10; j++)
          {
-            for (int j = -4; j < 4; j++)
-            {
-               Cube cube = new Cube(new Vector3(j, 0, i));
-               cube.getShapeTexture = Content.Load<Texture2D>("Textures\\ColorMap");
-               cubeEffect.Texture = cube.getShapeTexture;
-               foundation.Add(cube);
-            }
+                 for (int i = -6; i < 6; i++)
+                 {
+                         Cube cube = new Cube(new Vector3(i, j, 0));
+                         cube.getShapeTexture = Content.Load<Texture2D>("Textures\\ColorMap");
+                         cubeEffect.Texture = cube.getShapeTexture;
+                         board.Add(cube);
+                         if (j != -10 && i!=5) //leave a gap if it's not the base of the board
+                             i = 4; //reach the other side of the board and place 1 more
+                 }
          }
       }
 
@@ -168,7 +170,7 @@ namespace Tetris3D
             {
                pass.Begin();
 
-               foreach (Cube block in foundation)
+               foreach (Cube block in board)
                {
                   block.RenderShape(GraphicsDevice);
                }
@@ -200,7 +202,7 @@ namespace Tetris3D
 
       //Base and piecs
       private List<Vector3> positions = new List<Vector3>();
-      private List<Cube> foundation = new List<Cube>();
+      private List<Cube> board = new List<Cube>();
       Shape currentShape;
       Shape nextShape;
 

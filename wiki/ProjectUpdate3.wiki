@@ -16,8 +16,8 @@ Matt finish writing the software requirements document.  Also improve upon the r
 Matt and Damon, finish creating a development calendar with deadlines
  
 What we will have to work on soon:
+
 Creating 3D Tetris Classic
- 
 
 Comments:
 
@@ -26,6 +26,5 @@ We've been saving some uses with the SVN, some of the files aren't fully being c
 The google code page is https://code.google.com/p/tetrisproject/.
 Don't be afraid to leave notes on the wiki to each other.
 
- 
 Deadlines:
 Monday  September 29th requirement documents due (20% of grade)

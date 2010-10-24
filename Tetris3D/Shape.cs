@@ -17,8 +17,8 @@ namespace Tetris3D
 
       public ShapeType getShapeType
       {
-         get { return name; }
-         set { name = value; }
+         get { return type; }
+         set { type = value; }
       }
 
       public Cube[] getBlock
@@ -27,7 +27,18 @@ namespace Tetris3D
          set { blocks = value; }
       }
 
-      private ShapeType name;
+      public bool Rotation(Shape shape, ref Vector3 cube1, ref Vector3 cube2, ref Vector3 cube3, ref Vector3 cube4)
+       {
+           if (shape.getShapeType == ShapeType.T ) //rotating only for T right now
+               return shape.TPiece.Rotate(ref cube1, ref cube2, ref cube3, ref cube4); //I altered TPiece.cs to house the rotation information of the TPiece
+           else
+               return false; //somehow failed
+       }
+
+ 
+
+      protected ShapeType type;
+      private TPiece TPiece; //used to get to Rotate... I'm not sure if this is correct
       protected Cube[] blocks;
 
       protected Vector2[] txAqua =

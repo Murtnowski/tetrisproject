@@ -40,28 +40,28 @@ namespace Tetris3D
       {
          int number = generator.Next(7) + 1;
          Shape currentShape = new Shape();
-         switch (number)
+         switch (1)
          {
             case 1:
-               currentShape = new TriPiece(0, 10, 0);//new Shape(ShapeType.TRI);
+               currentShape = new TPiece(0, 10, 0);//new Shape(ShapeType.T);
                break;
             case 2:
-               currentShape = new LnPiece(0, 10, 0);//new Shape(ShapeType.LN);
+               currentShape = new IPiece(0, 10, 0);//new Shape(ShapeType.I);
                break;
             case 3:
-               currentShape =  new SqrPiece(0,10,0);//new Shape(ShapeType.SQR);
+               currentShape =  new OPiece(0,10,0);//new Shape(ShapeType.O);
                break;
             case 4:
-               currentShape = new LlPiece(0,10,0);//new Shape(ShapeType.LL);
+               currentShape = new JPiece(0,10,0);//new Shape(ShapeType.J);
                break;
             case 5:
-               currentShape = new RlPiece(0,10,0);//new Shape(ShapeType.RL);
+               currentShape = new LPiece(0,10,0);//new Shape(ShapeType.L);
                break;
             case 6:
                currentShape = new Zpiece(0,10,0);//new Shape(ShapeType.Z);
                break;
             case 7:
-               currentShape = new Spiece(0, 10, 0);//new Shape(ShapeType.S);
+               currentShape = new SPiece(0, 10, 0);//new Shape(ShapeType.S);
                break;
          }
          return currentShape;

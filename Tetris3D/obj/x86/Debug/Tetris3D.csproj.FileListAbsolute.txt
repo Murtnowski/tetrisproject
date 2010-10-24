@@ -1,0 +1,12 @@
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Tetris3D.exe
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Tetris3D.pdb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\XELibrary.dll
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\XELibrary.pdb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\obj\x86\Debug\Tetris3D.exe
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\obj\x86\Debug\Tetris3D.pdb

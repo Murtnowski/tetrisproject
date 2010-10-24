@@ -89,10 +89,6 @@ namespace Tetris3D
          cube3 = shapes.ElementAt(pieceCount - 1).getBlock[2].getShapePosition;
          cube4 = shapes.ElementAt(pieceCount - 1).getBlock[3].getShapePosition;
 
-         //if (direction == "Back")
-         //   z = -1;
-         //else if (direction == "Forward")
-         //   z = +1;
          if (direction == "Down")
              y = -1;
          else if (direction == "Left")
@@ -114,13 +110,35 @@ namespace Tetris3D
          shapes.ElementAt(pieceCount - 1).getBlock[3].getShapePosition = new Vector3(cube4.X + x, cube4.Y + y, cube4.Z + z);
       }
 
+      public void RotatePieces(String direction) //not working properly at the moment!  --Damon
+      { //PRESS SPACEBAR TO ROTATE
+          bool rotationSuccess = false;  //this can be used later to identify if a wall bump is needed while rotating
+
+          cube1 = shapes.ElementAt(pieceCount - 1).getBlock[0].getShapePosition;  //save Vector3 positions of each cube to be rotated
+          cube2 = shapes.ElementAt(pieceCount - 1).getBlock[1].getShapePosition;
+          cube3 = shapes.ElementAt(pieceCount - 1).getBlock[2].getShapePosition;
+          cube4 = shapes.ElementAt(pieceCount - 1).getBlock[3].getShapePosition;
+
+          Shape copy = shapes.ElementAt(pieceCount - 1); //used to pass in an instance of the shape to Rotation... not absolutely needed
+
+          if (direction == "clockwise") //room for expansion if needed to create a counterclockwise rotation
+          {
+              if (shapes.ElementAt(pieceCount - 1).Rotation(copy, ref cube1, ref cube2, ref cube3, ref cube4)) //calls shape.rotation while passing in a reference of cube1-4 (which alters cube1-4
+                  rotationSuccess = true; //the rotation was a success
+              else
+                  return; //the rotation failed (shouldn't happen, yet)
+          }
+          if (rotationSuccess) //if the rotation worked that means that cube1-4 were altered and now may change the location of the blocks
+          {
+              shapes.ElementAt(pieceCount - 1).getBlock[0].getShapePosition = new Vector3(cube1.X, cube1.Y, cube1.Z); //change the location of the blocks to match that of the new rotation 
+              shapes.ElementAt(pieceCount - 1).getBlock[1].getShapePosition = new Vector3(cube2.X, cube2.Y, cube2.Z);
+              shapes.ElementAt(pieceCount - 1).getBlock[2].getShapePosition = new Vector3(cube3.X, cube3.Y, cube3.Z);
+              shapes.ElementAt(pieceCount - 1).getBlock[3].getShapePosition = new Vector3(cube4.X, cube4.Y, cube4.Z);
+          }
+      }
+
       public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
       {
-         //if (WasPressed(Keys.Up))
-         //{ MovePieces("Back"); }
-
-         //if (WasPressed(Keys.Down))
-         //{ MovePieces("Forward"); }
 
          if (WasPressed(Keys.Down))
           { MovePieces("Down"); }
@@ -130,6 +148,9 @@ namespace Tetris3D
 
          if (WasPressed(Keys.Right))
          { MovePieces("Right"); }
+
+         if (WasPressed(Keys.Space))  
+         { RotatePieces("clockwise"); }
 
          base.Update(gameTime);
       }

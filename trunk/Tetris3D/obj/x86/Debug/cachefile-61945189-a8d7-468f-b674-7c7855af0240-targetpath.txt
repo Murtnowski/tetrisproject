@@ -1,0 +1,4 @@
+Content\Textures\Italic.xnb
+Content\Textures\Kootenay.xnb
+Content\Textures\Title.xnb
+Content\Textures\ColorMap.xnb

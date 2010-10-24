@@ -4,14 +4,14 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
-   class RlPiece : Shape
+   class LPiece : Shape
    {
-      public RlPiece(int x, int y, int z)
+      public LPiece(int x, int y, int z)
       {
          blocks[0] = new Cube(new Vector3(x, y + 2, z));
-         blocks[1] = new Cube(new Vector3(x, y + 1, z));
-         blocks[2] = new Cube(new Vector3(x, y, z));
-         blocks[3] = new Cube(new Vector3(x + 1, y, z));
+         blocks[1] = new Cube(new Vector3(x, y + 1, z));    //  0
+         blocks[2] = new Cube(new Vector3(x, y, z));        //  1
+         blocks[3] = new Cube(new Vector3(x + 1, y, z));    //  2 3
          blocks[0].getCubeTexture = txBlue;
          blocks[1].getCubeTexture = txBlue;
          blocks[2].getCubeTexture = txBlue;

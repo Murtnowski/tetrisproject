@@ -9,8 +9,8 @@ namespace Tetris3D
       public Zpiece(int x, int y, int z)
       {
          blocks[0] = new Cube(new Vector3(x, y+1, z));
-         blocks[1] = new Cube(new Vector3(x+1, y+1, z));
-         blocks[2] = new Cube(new Vector3(x+1, y, z));
+         blocks[1] = new Cube(new Vector3(x+1, y+1, z));    //  0 1
+         blocks[2] = new Cube(new Vector3(x+1, y, z));      //    2 3
          blocks[3] = new Cube(new Vector3(x+2, y, z));
          blocks[0].getCubeTexture = txRed;
          blocks[1].getCubeTexture = txRed;

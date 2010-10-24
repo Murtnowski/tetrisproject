@@ -23,7 +23,7 @@ namespace XELibrary
 
         private Vector3 cameraReference = new Vector3(0.0f, 0.0f, -1.0f);
 
-        private float cameraYaw = 0.0f;
+        private float cameraYaw = 40.0f;   //should be set to 0 once testing is done
         private float cameraPitch = 0.0f;
 
         protected Vector3 movement = Vector3.Zero;
@@ -116,7 +116,7 @@ namespace XELibrary
         public override void Update(GameTime gameTime)
         {
             float timeDelta = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            cameraYaw += .2f;
+            //cameraYaw += .2f;
 
             if (input.KeyboardState.IsKeyDown(Keys.Q) ||
                 (input.GamePads[playerIndex].ThumbSticks.Right.X < 0))

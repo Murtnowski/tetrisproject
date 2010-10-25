@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
+    //This class represents the I shape and is the color aqua
    class IPiece: Shape
    {
       public IPiece(int x, int y, int z) 

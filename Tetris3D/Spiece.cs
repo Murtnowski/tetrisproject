@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
+    //This class represents the S shape and is the color green
    class SPiece : Shape
    {
       public SPiece(int x, int y, int z)

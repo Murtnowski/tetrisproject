@@ -14,8 +14,10 @@ namespace Tetris3D
 {
    class TPiece : Shape
    {
+       //This stores the orientation of rotation
        private int rotationPosition; //position of rotation
 
+       //This class represents the T shape and is the color Pink.
       public TPiece(int x, int y, int z)
       {
          blocks[0] = new Cube(new Vector3(x, y, z));          
@@ -27,9 +29,12 @@ namespace Tetris3D
          blocks[2].getCubeTexture = txPink;
          blocks[3].getCubeTexture = txPink;
 
+          //The initial rotation
          rotationPosition = 0;
          type = ShapeType.T;
       }
+
+       //This method rotates the current tetris piece by updating its indiviual cubes
        public bool Rotate(ref Vector3 cube0, ref Vector3 cube1, ref Vector3 cube2, ref Vector3 cube3)
        { //each piece has 4 rotations it may go through
            if (rotationPosition == 0) //                                         2

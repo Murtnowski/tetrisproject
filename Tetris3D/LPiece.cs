@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
+    //This class represents the L shape and is the color blue
    class LPiece : Shape
    {
       public LPiece(int x, int y, int z)

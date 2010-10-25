@@ -60,7 +60,7 @@ namespace Tetris3D
          Shape currentShape = new Shape();
 
           //The current shape number is then sent through a switch to determine which shape was created
-         switch (1)
+         switch (number)
          {
             case 1:
                currentShape = new TPiece(0, 10, 0);//new Shape(ShapeType.T);

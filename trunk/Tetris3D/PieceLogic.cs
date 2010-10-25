@@ -87,6 +87,7 @@ namespace Tetris3D
           return gameover;
       }
 
+       //used to check the position of the shapes for collisions
       private bool checkShapesPosition(int xPosition, int yPosition, int zPosition)
       {
          bool collision = false;
@@ -99,7 +100,7 @@ namespace Tetris3D
          }
          return collision;
       }
-
+       //used to check the position of the shapes for collisions
       private bool checkShapesPosition(int yPosition)
       {
          bool collision = false;
@@ -111,7 +112,7 @@ namespace Tetris3D
          return collision;
       }
 
-
+       //used to move the pieces, logically, within the board
       public void MovePieces(String direction)
       {
          int x = 0;
@@ -188,7 +189,7 @@ namespace Tetris3D
 
          base.Update(gameTime);
       }
-
+       //determines if a key was pressed
       private bool WasPressed(Keys keys)
       {
          if (input.KeyboardState.WasKeyPressed(keys))

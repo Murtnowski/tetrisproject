@@ -18,10 +18,15 @@ namespace Tetris3D
     */
    class GameLogic
    {
-      private Random generator;
-      private int level;
-      private int score;
+       //A random generator used to create random blocks
+       private Random generator;
+      
+       //The current games level
+       private int level;
+       //The current games score
+       private int score;
 
+       //Constructs a new game logic controller on level 1
       public GameLogic()
       {
          generator = new Random();
@@ -29,6 +34,7 @@ namespace Tetris3D
          this.level = 1;
       }
 
+       //Returns the current level
       public int whichLevel
       {
          get
@@ -37,6 +43,7 @@ namespace Tetris3D
          { this.level = value; }
       }
 
+       //Returns the current score
       public int currentScore
       {
          get
@@ -45,10 +52,14 @@ namespace Tetris3D
          { this.score = value; }
       }
 
+       //The is called when a new shape needs to be created
       public Shape newShape()
       {
+          //First a random number is rolled to determine the next shape
          int number = generator.Next(7) + 1;
          Shape currentShape = new Shape();
+
+          //The current shape number is then sent through a switch to determine which shape was created
          switch (1)
          {
             case 1:

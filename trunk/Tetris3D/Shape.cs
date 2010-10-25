@@ -24,18 +24,21 @@ namespace Tetris3D
          this.blocks = new Cube[4];
       }
 
+       //Returns the current type of the shape
       public ShapeType getShapeType
       {
          get { return type; }
          set { type = value; }
       }
 
+       //Returns the current cubes in the piece
       public Cube[] getBlock
       {
          get { return blocks; }
          set { blocks = value; }
       }
 
+       //Trys to rotate the cube and returns a boolean based on weather the cube could be rotated
       public bool Rotation(Shape shape, ref Vector3 cube1, ref Vector3 cube2, ref Vector3 cube3, ref Vector3 cube4)
        {
            if (shape.getShapeType == ShapeType.T ) //rotating only for T right now
@@ -44,12 +47,11 @@ namespace Tetris3D
                return false; //somehow failed
        }
 
- 
-
       protected ShapeType type;
       private TPiece TPiece; //used to get to Rotate... I'm not sure if this is correct
       protected Cube[] blocks;
 
+       //Below are a list of arrays used to disect the ColorMaping Textures to paint the cubes
       protected Vector2[] txAqua =
         {
             new Vector2(.26f, 0f),   

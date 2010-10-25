@@ -16,6 +16,9 @@ using XELibrary;
 
 namespace Tetris3D
 {
+    /* This class represents the logic used to determine how a tetris piece behaves and interacts with other
+     * Tetris Pieces
+     */
    class PieceLogic : Microsoft.Xna.Framework.DrawableGameComponent
    {
       public PieceLogic(Game game)
@@ -30,37 +33,42 @@ namespace Tetris3D
          set { shapes = value; }
       }
 
+
       public int getPieceCount
       {
          get { return pieceCount; }
          set { pieceCount = value; }
       }
 
-      public bool checkCollisionsBelow()
-      {
-         if (checkShapesPosition(-9) || pieceBeneath()) return true;
-         else
+        //This returns weather or not a piece is below the current piece or the current piece has reached the bottom of the board.
+        public bool checkCollisionsBelow()
+        {
+        if (checkShapesPosition(-9) || pieceBeneath()) 
+            return true;
+        else
             return false;
       }
 
-      public bool pieceBeneath()
-      {
-         bool collision = false;
-         for (int z = 0; z < shapes.Count - 1; z++)
-         {
+        //This returns weather or not a peice is below the current piece
+        public bool pieceBeneath()
+        {
+            bool collision = false;
+            for (int z = 0; z < shapes.Count - 1; z++)
             {
-               for (int i = 0; i < 4; i++)
-               {
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
                   if (checkShapesPosition(((int)shapes.ElementAt(z).getBlock[i].getShapePosition.X),
                   ((int)shapes.ElementAt(z).getBlock[i].getShapePosition.Y + 1),
                   ((int)shapes.ElementAt(z).getBlock[i].getShapePosition.Z)))
                      collision = true;
-               }
+                   }
+                }
             }
-         }
-         return collision;
-      }
+            return collision;
+        }
 
+       //Determines weather a piece has exceeded the top of the permisable gamefield
       public bool isGameOver()
       {
           bool gameover = false;

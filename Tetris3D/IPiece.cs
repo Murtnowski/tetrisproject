@@ -1,7 +1,15 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Authors: Damon Chastain & Matthew Urtnowski 
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-
 
 namespace Tetris3D
 {

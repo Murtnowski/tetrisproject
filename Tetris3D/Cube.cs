@@ -55,6 +55,7 @@ namespace Tetris3D
          this.shapePosition = position;
       }
 
+       //these are the set indices used to define the triangles use to make the cube.
       private static short[] triangleIndices = 
 		{
             0,1,2,
@@ -94,7 +95,7 @@ namespace Tetris3D
             corner[7],corner[6],corner[5],corner[4]     //cube6 back
         };
 
-      private static Vector3[] lighting =
+      private static Vector3[] lighting = //made to be altered in future designs such as dark tetris
         {
                 new Vector3(0.0f, 0.0f, 1.0f),      //front
                 new Vector3(1.0f, 0.0f, 0.0f),      //right
@@ -104,7 +105,7 @@ namespace Tetris3D
                 new Vector3(0.0f, 0.0f, -1.0f)      //back
         };
 
-      private static short[] pos =
+      private static short[] pos =  //a helper array used to easily place lighting
         {
                 0,0,0,0,
                 1,1,1,1,
@@ -115,7 +116,7 @@ namespace Tetris3D
                 6,6,6,6
         };
 
-      private static Vector2[] tx =
+      private static Vector2[] tx = //a helper Vector to easily set cube textures in the next function
         {
             new Vector2(.91f, 0f),   
             new Vector2(1f, 0f), 
@@ -123,7 +124,7 @@ namespace Tetris3D
             new Vector2(.91f, 1f),
         };
 
-      private Vector2[] cubeTexture =
+      private Vector2[] cubeTexture =  //placing cube textures
         {
             tx[0],tx[1],tx[2],tx[3],    
             tx[0],tx[1],tx[2],tx[3],    

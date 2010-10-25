@@ -152,7 +152,7 @@ namespace XELibrary
         {
             //Time since last input collected
             float timeDelta = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //cameraYaw += .2f;
+            cameraYaw += .2f;
 
             //If Q or the right stick is moved right hit spin right
             if (input.KeyboardState.IsKeyDown(Keys.Q) ||

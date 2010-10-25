@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tetris3D
 {
+    //This class represents the basic shape of a Tetris Pieces.  Tetris pieces consist of 4 cubes.
    class Shape
    {
       public Shape()
@@ -38,7 +39,7 @@ namespace Tetris3D
       public bool Rotation(Shape shape, ref Vector3 cube1, ref Vector3 cube2, ref Vector3 cube3, ref Vector3 cube4)
        {
            if (shape.getShapeType == ShapeType.T ) //rotating only for T right now
-               return shape.TPiece.Rotate(ref cube1, ref cube2, ref cube3, ref cube4); //I altered TPiece.cs to house the rotation information of the TPiece
+               return ((TPiece)shape).Rotate(ref cube1, ref cube2, ref cube3, ref cube4); //I altered TPiece.cs to house the rotation information of the TPiece
            else
                return false; //somehow failed
        }

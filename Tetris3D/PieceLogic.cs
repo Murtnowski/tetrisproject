@@ -61,6 +61,24 @@ namespace Tetris3D
          return collision;
       }
 
+      public bool isGameOver()
+      {
+          bool gameover = false;
+          for (int z = 0; z < shapes.Count - 1; z++)
+          {
+              {
+                  for (int i = 0; i < 4; i++)
+                  {
+                      if (shapes.ElementAt(z).getBlock[i].getShapePosition.Y > 10)
+                      {
+                          return true;
+                      }
+                  }
+              }
+          }
+          return gameover;
+      }
+
       private bool checkShapesPosition(int xPosition, int yPosition, int zPosition)
       {
          bool collision = false;

@@ -139,6 +139,10 @@ namespace Tetris3D
 
             if (logic.checkCollisionsBelow() == true)
             {
+                if (logic.isGameOver())
+                {
+                    this.Exit();
+                }
                currentShape = nextShape;
                nextShape = game.newShape();
                logic.getShapes.Add(nextShape);

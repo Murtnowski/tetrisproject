@@ -15,31 +15,41 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tetris3D
 {
+    //This class represents a three dimensional cube
    class Cube
    {
-      private Vector3 shapePosition;
-      private VertexPositionNormalTexture[] shapeVertices;
-      private VertexBuffer vertexBuffer;
-      private Texture2D shapeTexture;
+        //The current position of the cube
+        private Vector3 shapePosition;
+       
+        //The current vertices used to apply textures to the face of a cube
+        private VertexPositionNormalTexture[] shapeVertices;
 
-      public Vector3 getShapePosition
-      {
-         get { return shapePosition; }
-         set { shapePosition = value; }
-      }
+        private VertexBuffer vertexBuffer;
+        //Texture of the cube
+        private Texture2D shapeTexture;
 
+        //Returns the current position of the cube
+        public Vector3 getShapePosition
+        {
+            get { return shapePosition; }
+            set { shapePosition = value; }
+        }
+
+       //Returns the current texture of the shape
       public Texture2D getShapeTexture
       {
          get { return shapeTexture; }
          set { shapeTexture = value; }
       }
 
+       //Returns the cube vectors to apply the texture
       public Vector2[] getCubeTexture
       {
          get { return cubeTexture; }
          set { cubeTexture = value; }
       }
 
+       //Creates a new cube at a position
       public Cube(Vector3 position)
       {
          this.shapePosition = position;
@@ -61,6 +71,7 @@ namespace Tetris3D
             20,22,23,
 		};
 
+       //The offset corners of the cube
       private static Vector3[] corner =
         {
                 new Vector3(-0.5f, 0.5f, 0.0f),      //front TL
@@ -123,7 +134,7 @@ namespace Tetris3D
         };
 
 
-
+       //Builds the vertices around the shape postion
       private void BuildShape()
       {
          shapeVertices = new VertexPositionNormalTexture[24];
@@ -135,6 +146,7 @@ namespace Tetris3D
          }
       }
 
+       //Draws the cube onto the graphics device
       public void RenderShape(GraphicsDevice device)
       {
          BuildShape();

@@ -10,6 +10,7 @@ using System;
 
 namespace Tetris3D
 {
+    //An enumeration of the current types of shapes
    public enum ShapeType
    {
       NONE, J, L, O, I, T, S, Z

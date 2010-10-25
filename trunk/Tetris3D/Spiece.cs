@@ -15,6 +15,7 @@ namespace Tetris3D
     //This class represents the S shape and is the color green
    class SPiece : Shape
    {
+       //This class represents the S shape and is the color Green.
       public SPiece(int x, int y, int z)
       {
          blocks[0] = new Cube(new Vector3(x, y, z));

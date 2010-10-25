@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
+    //This class represents the O shape and is the color yellow
    class OPiece : Shape
    {
       public OPiece(int x, int y, int z)

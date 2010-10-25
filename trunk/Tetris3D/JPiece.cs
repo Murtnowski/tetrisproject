@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
+    //This class represents the J shape and is the color orange
    class JPiece : Shape
    {
       public JPiece(int x, int y, int z)

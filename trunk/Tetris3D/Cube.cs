@@ -28,6 +28,8 @@ namespace Tetris3D
         //Texture of the cube
         private Texture2D shapeTexture;
 
+        private static int numberOfVerticies = 24;
+
         //Returns the current position of the cube
         public Vector3 getShapePosition
         {
@@ -73,7 +75,7 @@ namespace Tetris3D
 		};
 
        //The offset corners of the cube
-      private static Vector3[] corner =
+      private static Vector3[] cornerPoints = 
         {
                 new Vector3(-0.5f, 0.5f, 0.0f),      //front TL
                 new Vector3(0.5f, 0.5f, 0.0f),       //front TR
@@ -85,14 +87,14 @@ namespace Tetris3D
                 new Vector3(-0.5f, -0.5f, -1.0f)     //back BL
         };
 
-      private static Vector3[] cubeCorner =
+      private static Vector3[] cubeCorners =
         {
-            corner[0],corner[1],corner[2],corner[3],    //cube1 front
-            corner[1],corner[5],corner[6],corner[2],    //cube2 right
-            corner[1],corner[5],corner[4],corner[0],    //cube3 top
-            corner[7],corner[3],corner[2],corner[6],    //cube4 bottom
-            corner[0],corner[4],corner[7],corner[3],    //cube5 left
-            corner[7],corner[6],corner[5],corner[4]     //cube6 back
+            cornerPoints[0],cornerPoints[1],cornerPoints[2],cornerPoints[3],    //cube1 front
+            cornerPoints[1],cornerPoints[5],cornerPoints[6],cornerPoints[2],    //cube2 right
+            cornerPoints[1],cornerPoints[5],cornerPoints[4],cornerPoints[0],    //cube3 top
+            cornerPoints[7],cornerPoints[3],cornerPoints[2],cornerPoints[6],    //cube4 bottom
+            cornerPoints[0],cornerPoints[4],cornerPoints[7],cornerPoints[3],    //cube5 left
+            cornerPoints[7],cornerPoints[6],cornerPoints[5],cornerPoints[4]     //cube6 back
         };
 
       private static Vector3[] lighting = //made to be altered in future designs such as dark tetris
@@ -116,7 +118,7 @@ namespace Tetris3D
                 6,6,6,6
         };
 
-      private static Vector2[] tx = //a helper Vector to easily set cube textures in the next function
+      private static Vector2[] textureCoordinates = //a helper Vector to easily set cube textures in the next function
         {
             new Vector2(.91f, 0f),   
             new Vector2(1f, 0f), 
@@ -126,30 +128,30 @@ namespace Tetris3D
 
       private Vector2[] cubeTexture =  //placing cube textures
         {
-            tx[0],tx[1],tx[2],tx[3],    
-            tx[0],tx[1],tx[2],tx[3],    
-            tx[0],tx[1],tx[2],tx[3],    
-            tx[0],tx[1],tx[2],tx[3],    
-            tx[0],tx[1],tx[2],tx[3],    
-            tx[0],tx[1],tx[2],tx[3]    
+            textureCoordinates[0],textureCoordinates[1],textureCoordinates[2],textureCoordinates[3],    
+            textureCoordinates[0],textureCoordinates[1],textureCoordinates[2],textureCoordinates[3],    
+            textureCoordinates[0],textureCoordinates[1],textureCoordinates[2],textureCoordinates[3],    
+            textureCoordinates[0],textureCoordinates[1],textureCoordinates[2],textureCoordinates[3],    
+            textureCoordinates[0],textureCoordinates[1],textureCoordinates[2],textureCoordinates[3],    
+            textureCoordinates[0],textureCoordinates[1],textureCoordinates[2],textureCoordinates[3]    
         };
 
 
        //Builds the vertices around the shape postion
       private void BuildShape()
-      {
-         shapeVertices = new VertexPositionNormalTexture[24];
+      { 
+          shapeVertices = new VertexPositionNormalTexture[numberOfVerticies];
 
-         for (int i = 0; i < 24; i++)
+         for (int i = 0; i < numberOfVerticies; i++)
          {
             shapeVertices[i] = new VertexPositionNormalTexture(shapePosition +
-                cubeCorner[i], lighting[pos[i]], cubeTexture[i]);
+                cubeCorners[i], lighting[pos[i]], cubeTexture[i]);
          }
       }
 
        //Draws the cube onto the graphics device
       public void RenderShape(GraphicsDevice device)
-      {
+      {//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  convention adoption 
          BuildShape();
 
          vertexBuffer = new VertexBuffer(device,
@@ -164,7 +166,7 @@ namespace Tetris3D
          device.Vertices[0].SetSource(vertexBuffer, 0,
              VertexPositionNormalTexture.SizeInBytes);
 
-         device.DrawUserIndexedPrimitives(PrimitiveType.TriangleList, shapeVertices, 0, 24, triangleIndices, 0, 12);
+         device.DrawUserIndexedPrimitives(PrimitiveType.TriangleList, shapeVertices, 0, numberOfVerticies, triangleIndices, 0, 12);
       }
    }
 }

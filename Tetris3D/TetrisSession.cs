@@ -27,6 +27,7 @@ namespace Tetris3D
         public const int NumberOfSupportedTetrisPieces = 7;
 
         //GameOverRange is the number of rows from the top of the board that if a piece ends up in the game is over.
+        // TODO: The value 4 needs to be verified, likely incorrect.s
         public const int GameOverRange = 4;
 
         //A referance point that new piece the player controls is built around when a new piece is needed at the top of the board
@@ -157,6 +158,8 @@ namespace Tetris3D
                     case TetrisPieces.SquareBlock: this.generateNewSquareBlock(); break;
                 }
 
+                // TODO: call addBlocksToGameBoard(shapeVector, this.currentTetrisPiece, color);
+
                 this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(NumberOfSupportedTetrisPieces);
 
                 //A new piece was successfully generated, so return true
@@ -168,7 +171,9 @@ namespace Tetris3D
             }
         }
 
-        // Generate a new T block around the newCurrentPieceGenerationPoint
+        /// <summary>
+        /// Generate a new T block around the newCurrentPieceGenerationPoint
+        /// </summary>
         private void generateNewTBlock()
         {
             //Set the locations of the current block then add them to the gameboard
@@ -268,6 +273,8 @@ namespace Tetris3D
         //Returns true if the part of the current piece occupies a point on the game board
         public bool isCurrentPieceAtLocation(Point point)
         {
+            // TODO: One point of return from a method.
+
             //Foreach of the currentPieces point locations compare it to the specified point
             foreach (Point currentPoint in this.currentPiecePointLocations)
             {
@@ -309,7 +316,9 @@ namespace Tetris3D
                 * return false since the space is not clear.  Do not fail the check if the space the block is part of
                 * the current piece
                 */
-                if ((point.X - 1) < 0 || (!this.isCurrentPieceAtLocation(new Point(point.X - 1, point.Y)) && this.GameBoard[(point.X - 1), point.Y] != null))
+                //TODO: Overload this to throw in an X and a Y instead of creating a new point
+                if ((point.X - 1) < 0 || (!this.isCurrentPieceAtLocation(new Point(point.X - 1, point.Y)) && 
+                    this.GameBoard[(point.X - 1), point.Y] != null))
                 {
                     return false;
                 }
@@ -338,14 +347,14 @@ namespace Tetris3D
         }
 
         //Checks to see if the piece can rotate clockwise
-        //NOT YET IMPLEMENTED
+        //TODO: NOT YET IMPLEMENTED
         public bool isCurrentPieceAbleToRotateClockwise()
         {
             return false;
         }
 
         //Checks to see if the piece can rotate counterclockwise.
-        //NOT YET IMPLEMENTED
+        //TODO: NOT YET IMPLEMENTED
         public bool isCurrentPieceAbleToRotateCounterClockwise()
         {
             return false;

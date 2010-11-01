@@ -41,8 +41,7 @@ namespace Tetris3D
             input = new InputHandler(this);
             Components.Add(input);
 
-            logic = new PieceLogic(this);
-            Components.Add(logic);
+            //logic = new PieceLogic(this);
         }
 
         #region load
@@ -64,9 +63,9 @@ namespace Tetris3D
 
         private void initializeWorld()
         {
-            game = new GameLogic();
+            //game = new GameLogic();
 
-            logic.getPieceCount = 0;
+            //logic.getPieceCount = 0;
         }
 
         #endregion
@@ -81,9 +80,9 @@ namespace Tetris3D
                     if (input.KeyboardState.WasKeyPressed(Keys.Enter))
                     {
                         this.gameState = GameState.Playing;
-                        currentShape = game.newShape();
-                        logic.getShapes.Add(currentShape);
-                        logic.getPieceCount += 1;
+                        //currentShape = game.newShape();
+                        //logic.getShapes.Add(currentShape);
+                        //logic.getPieceCount += 1;
                     }
                     break;
                 case GameState.Playing:
@@ -96,15 +95,16 @@ namespace Tetris3D
                 totalTime += gameTime.ElapsedGameTime.Milliseconds;
                 ElapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
 
-                if (this.input.KeyboardState.IsKeyDown(Keys.Left))
+                if (this.input.KeyboardState.WasKeyPressed(Keys.Left))
                 {
                     this.tetrisSession.moveCurrentPieceLeft();
                 }
-                if (this.input.KeyboardState.IsKeyDown(Keys.Right))
+
+                if (this.input.KeyboardState.WasKeyPressed(Keys.Right))
                 {
                     this.tetrisSession.moveCurrentPieceRight();
                 }
-                if (this.input.KeyboardState.IsKeyDown(Keys.Down))
+                if (this.input.KeyboardState.WasKeyPressed(Keys.Down))
                 {
                     this.tetrisSession.moveCurrentPieceDown();
                 }
@@ -192,8 +192,8 @@ namespace Tetris3D
         private List<Vector3> positions = new List<Vector3>();
 
         private TetrisSession tetrisSession = new TetrisSession(new Vector2(10, 24));
-        Shape currentShape;
-        Shape nextShape;
+        //Shape currentShape;
+        //Shape nextShape;
 
         //Screens
         internal const int SCREEN_WIDTH = 1200;
@@ -209,8 +209,8 @@ namespace Tetris3D
         double ElapsedRealTime = 0;
 
         //Game & Logic
-        GameLogic game;
-        PieceLogic logic;
+        //GameLogic game;
+        //PieceLogic logic;
 
         //Components
         private InputHandler input;

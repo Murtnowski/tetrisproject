@@ -57,18 +57,19 @@ namespace Tetris3D
             Vector3 leftNormal = new Vector3(-0.5f, 0.0f, 0.0f) * shapeSize;
             Vector3 rightNormal = new Vector3(0.5f, 0.0f, 0.0f) * shapeSize;
 
-            /*
+            
             Vector2 textureTopLeft = new Vector2(0.125f * (float)this.tetrisColor, 0.0f);
             Vector2 textureTopRight = new Vector2(0.125f * ((float)this.tetrisColor + 1.0f), 0.0f);
             Vector2 textureBottomLeft = new Vector2(0.125f * (float)this.tetrisColor, 1.0f);
             Vector2 textureBottomRight = new Vector2(0.125f * ((float)this.tetrisColor + 1.0f), 1.0f);
-            */
+            
 
-
+            /*
             Vector2 textureTopLeft = new Vector2(0.0f, 0.0f);
             Vector2 textureTopRight = new Vector2(1.0f, 0.0f);
             Vector2 textureBottomLeft = new Vector2(0.0f, 1.0f);
             Vector2 textureBottomRight = new Vector2(1.0f, 1.0f);
+            */
 
             // Front face.
             shapeVertices[0] = new VertexPositionNormalTexture(

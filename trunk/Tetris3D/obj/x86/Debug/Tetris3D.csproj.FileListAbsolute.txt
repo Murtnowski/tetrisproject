@@ -22,3 +22,15 @@ C:\Tetris\Tetris3D\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Tetris\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Tetris\Tetris3D\obj\x86\Debug\Tetris3D.exe
 C:\Tetris\Tetris3D\obj\x86\Debug\Tetris3D.pdb
+C:\TetrisProject\Tetris3D\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\TetrisProject\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\TetrisProject\Tetris3D\obj\x86\Debug\Tetris3D.exe
+C:\TetrisProject\Tetris3D\obj\x86\Debug\Tetris3D.pdb
+C:\TetrisProject\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb
+C:\TetrisProject\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb
+C:\TetrisProject\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb
+C:\TetrisProject\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb
+C:\TetrisProject\Tetris3D\bin\x86\Debug\Tetris3D.exe
+C:\TetrisProject\Tetris3D\bin\x86\Debug\Tetris3D.pdb
+C:\TetrisProject\Tetris3D\bin\x86\Debug\XELibrary.dll
+C:\TetrisProject\Tetris3D\bin\x86\Debug\XELibrary.pdb

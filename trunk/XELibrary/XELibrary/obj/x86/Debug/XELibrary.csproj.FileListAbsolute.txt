@@ -16,3 +16,9 @@ C:\Tetris\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Tetris\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Tetris\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
 C:\Tetris\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb
+C:\TetrisProject\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
+C:\TetrisProject\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
+C:\TetrisProject\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\TetrisProject\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\TetrisProject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
+C:\TetrisProject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

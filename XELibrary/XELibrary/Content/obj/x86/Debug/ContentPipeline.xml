@@ -6,15 +6,15 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\TetrisProject\XELibrary\XELibrary\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\TetrisProject\XELibrary\XELibrary\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\TetrisProject\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\TetrisProject\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Tetris\XELibrary\XELibrary\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Tetris\XELibrary\XELibrary\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Tetris\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2010-10-24T08:51:40.065-07:00</Value>
+        <Value>2010-10-18T11:40:38.999367-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

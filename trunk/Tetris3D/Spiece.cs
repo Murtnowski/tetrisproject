@@ -24,13 +24,21 @@ namespace Tetris3D
             }
         }
 
+        public override TetrisPieces Type
+        {
+            get
+            {
+                return TetrisPieces.IBlock;
+            }
+        }
+
         public SPiece(Point referanceLocation)
-            : base(TetrisPieces.SBlock, referanceLocation)
+            : base(referanceLocation)
         {
         }
 
         public SPiece(Point referanceLocation, Orentations orentation)
-            : base(TetrisPieces.SBlock, referanceLocation, orentation)
+            : base(referanceLocation, orentation)
         {
         }
 

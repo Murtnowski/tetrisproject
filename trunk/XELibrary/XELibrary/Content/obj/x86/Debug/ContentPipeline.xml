@@ -6,15 +6,15 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2010-10-24T08:51:40.065-07:00</Value>
+        <Value>2010-10-18T11:40:38.999367-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

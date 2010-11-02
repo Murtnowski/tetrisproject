@@ -46,3 +46,15 @@ C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\obj\x86\Debug\ResolveAssemblyRe
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\obj\x86\Debug\Tetris3D.exe
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\obj\x86\Debug\Tetris3D.pdb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\Tetris3D.exe
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\Tetris3D.pdb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\XELibrary.dll
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\bin\x86\Debug\XELibrary.pdb
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\obj\x86\Debug\Tetris3D.exe
+C:\Users\murtnowski\Desktop\scp08648\Tetris3D\obj\x86\Debug\Tetris3D.pdb

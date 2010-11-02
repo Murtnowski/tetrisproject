@@ -9,6 +9,8 @@ using XELibrary;
 
 namespace Tetris3D
 {
+    public enum TetrisColors { Red, Magenta, Yellow, Cyan, Green, Blue, Orange, Black };
+
     public class TetrisGamefieldRenderer
     {
         private IInputHandler input;
@@ -179,7 +181,7 @@ namespace Tetris3D
                     {
                         if (gamefield[x, y] != null)
                         {
-                            BasicShape cube = new BasicShape(Vector3.One, new Vector3(x, y, 0), gamefield[x, y].TetrisColor);
+                            BasicShape cube = new BasicShape(Vector3.One, new Vector3(x, y, 0), TetrisBlock.getColorOfTetrisPiece(gamefield[x, y].TetrisPiece));
 
                             cube.RenderShape(this.game.GraphicsDevice);
                         }

@@ -53,5 +53,20 @@ namespace Tetris3D
 
             this.pieceLocations = newPieceLocations;
         }
+
+        protected override void orentateEast()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void orentateSouth()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void orentateWest()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

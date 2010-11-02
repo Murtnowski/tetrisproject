@@ -42,7 +42,7 @@ namespace Tetris3D
         {
         }
 
-        protected override void orentateNorth()
+        public override Point[] pointsForNorthOrentation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
@@ -50,22 +50,40 @@ namespace Tetris3D
             newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
             newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
 
-            this.pieceLocations = newLocation;
+            return newLocation;
         }
 
-        protected override void orentateEast()
+        public override Point[] pointsForEastOrentation()
         {
-            throw new NotImplementedException();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);
+
+            return newLocation;
         }
 
-        protected override void orentateSouth()
+        public override Point[] pointsForSouthOrentation()
         {
-            throw new NotImplementedException();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
+
+            return newLocation;
         }
 
-        protected override void orentateWest()
+        public override Point[] pointsForWestOrentation()
         {
-            throw new NotImplementedException();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
+            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);
+
+            return newLocation;
         }
     }
 }

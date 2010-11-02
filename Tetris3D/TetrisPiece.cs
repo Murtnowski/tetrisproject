@@ -141,9 +141,26 @@ namespace Tetris3D
             }
         }
 
-        protected abstract void orentateNorth();
-        protected abstract void orentateEast();
-        protected abstract void orentateSouth();
-        protected abstract void orentateWest();
+        private void orentateNorth()
+        {
+            this.pieceLocations = this.pointsForNorthOrentation();
+        }
+        private void orentateEast()
+        {
+            this.pieceLocations = this.pointsForEastOrentation();
+        }
+        private void orentateSouth()
+        {
+            this.pieceLocations = this.pointsForSouthOrentation();
+        }
+        private void orentateWest()
+        {
+            this.pieceLocations = this.pointsForWestOrentation();
+        }
+
+        public abstract Point[] pointsForNorthOrentation();
+        public abstract Point[] pointsForEastOrentation();
+        public abstract Point[] pointsForSouthOrentation();
+        public abstract Point[] pointsForWestOrentation();
     }
 }

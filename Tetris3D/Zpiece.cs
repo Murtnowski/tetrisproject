@@ -6,26 +6,44 @@
  * Instructor: Alvaro Monge
  * School: California State University Long Beach - Computer Science
  */
+
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
-    //This class represents the Z shape and is the color red.
-    class Zpiece : Shape
+    //This class represents the I shape and is the color aqua
+    class ZPiece : TetrisPiece
     {
-        //The blocks are orientated and colored red
-        public Zpiece(int x, int y, int z)
+        public override TetrisColors Color
         {
-            blocks[0] = new Cube(new Vector3(x, y+1, z));
-            blocks[1] = new Cube(new Vector3(x+1, y+1, z));    //  0 1
-            blocks[2] = new Cube(new Vector3(x+1, y, z));      //    2 3
-            blocks[3] = new Cube(new Vector3(x+2, y, z));
-            blocks[0].getCubeTexture = txRed;
-            blocks[1].getCubeTexture = txRed;
-            blocks[2].getCubeTexture = txRed;
-            blocks[3].getCubeTexture = txRed;
-      }
-   }
+            get
+            {
+                return TetrisColors.Red;
+            }
+        }
+
+        public ZPiece(Point referanceLocation)
+            : base(TetrisPieces.ZBlock, referanceLocation)
+        {
+        }
+
+        public ZPiece(Point referanceLocation, Orentations orentation)
+            : base(TetrisPieces.ZBlock, referanceLocation, orentation)
+        {
+        }
+
+        protected override void updatePieceLocations()
+        {
+            List<Point> newPieceLocations = new List<Point>();
+
+            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y));
+            newPieceLocations.Add(new Point(this.referanceLocation.X + 1, this.referanceLocation.Y));
+            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 1));
+            newPieceLocations.Add(new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1));
+
+            this.pieceLocations = newPieceLocations;
+        }
+    }
 }

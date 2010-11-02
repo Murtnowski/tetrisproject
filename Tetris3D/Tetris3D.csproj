@@ -73,6 +73,8 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -88,20 +90,18 @@
   <ItemGroup>
     <Compile Include="BasicShape.cs" />
     <Compile Include="Cube.cs" />
-    <Compile Include="GameLogic.cs" />
     <Compile Include="IPiece.cs" />
     <Compile Include="JPiece.cs" />
     <Compile Include="LPiece.cs" />
     <Compile Include="OPiece.cs" />
-    <Compile Include="PieceLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Shape.cs" />
     <Compile Include="ShapeType.cs" />
     <Compile Include="SPiece.cs" />
     <Compile Include="TetrisBlock.cs" />
     <Compile Include="TetrisGamefieldRenderer.cs" />
+    <Compile Include="TetrisPiece.cs" />
     <Compile Include="TetrisSession.cs" />
     <Compile Include="TPiece.cs" />
     <Compile Include="Zpiece.cs" />

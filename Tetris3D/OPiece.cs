@@ -11,22 +11,39 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-
 namespace Tetris3D
 {
-    //This class represents the O shape and is the color yellow
-   class OPiece : Shape
-   {
-      public OPiece(int x, int y, int z)
-      {
-         blocks[0] = new Cube(new Vector3(x, y + 1, z));
-         blocks[1] = new Cube(new Vector3(x, y, z));            // 0 2
-         blocks[2] = new Cube(new Vector3(x + 1, y + 1, z));    // 1 3
-         blocks[3] = new Cube(new Vector3(x + 1, y, z));
-         blocks[0].getCubeTexture = txYellow;
-         blocks[1].getCubeTexture = txYellow;
-         blocks[2].getCubeTexture = txYellow;
-         blocks[3].getCubeTexture = txYellow;
-      }
-   }
+    //This class represents the I shape and is the color aqua
+    class OPiece : TetrisPiece
+    {
+        public override TetrisColors Color
+        {
+            get
+            {
+                return TetrisColors.Yellow;
+            }
+        }
+
+        public OPiece(Point referanceLocation)
+            : base(TetrisPieces.SquareBlock, referanceLocation)
+        {
+        }
+
+        public OPiece(Point referanceLocation, Orentations orentation)
+            : base(TetrisPieces.SquareBlock, referanceLocation, orentation)
+        {
+        }
+
+        protected override void updatePieceLocations()
+        {
+            List<Point> newPieceLocations = new List<Point>();
+
+            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y));
+            newPieceLocations.Add(new Point(this.referanceLocation.X + 1, this.referanceLocation.Y));
+            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 1));
+            newPieceLocations.Add(new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1));
+
+            this.pieceLocations = newPieceLocations;
+        }
+    }
 }

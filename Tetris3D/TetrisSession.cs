@@ -15,17 +15,11 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
-    //This is an enumeration of the currently supported tetris blocks.  If you change it be sure to update NumberOfSupportedTetrisPieces
-    public enum TetrisPieces { TBlock = 0, SBlock, ZBlock, IBlock, JBlock, LBlock, SquareBlock };
-
     /* This class represents a single Tetris session.  A session is when a player plays
      * a single Tetris round from start until Game Over
      */
     public class TetrisSession
     {
-        //NumberOfSupportedTetrisPieces needs to be equal to the number of entries in the TetrisPieces enumeration
-        public const int NumberOfSupportedTetrisPieces = 7;
-
         //GameOverRange is the number of rows from the top of the board that if a piece ends up in the game is over.
         // TODO: The value 4 needs to be verified, likely incorrect.s
         public const int GameOverRange = 4;
@@ -117,7 +111,7 @@ namespace Tetris3D
             this.newCurrentPieceGenerationPoint = new Point(this.gameBoard.GetLength(0) / 2, this.gameBoard.GetLength(1) - GameOverRange);
 
             //Initialize the pieces the users controls
-            this.nextTetrisPiece =(TetrisPieces)this.randomGenerator.Next(NumberOfSupportedTetrisPieces);
+            this.nextTetrisPiece =(TetrisPieces)this.randomGenerator.Next(TetrisBlock.NUMBEROFSUPPORTEDTETRISPIECES);
 
             this.GenerateNewCurrentTetrisPiece();
         }
@@ -131,7 +125,7 @@ namespace Tetris3D
             this.newCurrentPieceGenerationPoint = new Point(this.gameBoard.GetLength(0) / 2, this.gameBoard.GetLength(1) - GameOverRange);
 
             //Initialize the pieces the users controls
-            this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(NumberOfSupportedTetrisPieces);
+            this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(TetrisBlock.NUMBEROFSUPPORTEDTETRISPIECES);
 
             this.GenerateNewCurrentTetrisPiece();
         }
@@ -160,7 +154,7 @@ namespace Tetris3D
 
                 // TODO: call addBlocksToGameBoard(shapeVector, this.currentTetrisPiece, color);
 
-                this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(NumberOfSupportedTetrisPieces);
+                this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(TetrisBlock.NUMBEROFSUPPORTEDTETRISPIECES);
 
                 //A new piece was successfully generated, so return true
                 return true;
@@ -466,16 +460,7 @@ namespace Tetris3D
         {
             foreach (Point p in pointsToBeAdded)
             {
-                switch (tetrisPiece)
-                {
-                    case TetrisPieces.TBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Magenta); break;
-                    case TetrisPieces.SBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Red); break;
-                    case TetrisPieces.ZBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Orange); break;
-                    case TetrisPieces.IBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Cyan); break;
-                    case TetrisPieces.JBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Green); break;
-                    case TetrisPieces.LBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Yellow); break;
-                    case TetrisPieces.SquareBlock: this.gameBoard[p.X, p.Y] = new TetrisBlock(TetrisColors.Blue); break;
-                }
+                this.gameBoard[p.X, p.Y] = new TetrisBlock(tetrisPiece);
             }
         }
 
@@ -511,7 +496,7 @@ namespace Tetris3D
                 {
                     if (this.gameBoard[x, y] != null && !this.isCurrentPieceAtLocation(new Point(x, y)))
                     {
-                        this.gameBoard[x, y - 1] = new TetrisBlock(this.gameBoard[x, y].TetrisColor);
+                        this.gameBoard[x, y - 1] = new TetrisBlock(this.gameBoard[x, y].TetrisPiece);
                         this.gameBoard[x, y] = null;
                     }
                 }

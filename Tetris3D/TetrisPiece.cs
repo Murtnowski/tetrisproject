@@ -18,13 +18,9 @@ namespace Tetris3D
 
         private Orentations orentation = Orentations.North;
 
-        private TetrisPieces type;
-
-        protected TetrisColors color;
-
         protected Point referanceLocation;
 
-        protected List<Point> pieceLocations;
+        protected Point[] pieceLocations;
 
         public Orentations Orentation
         {

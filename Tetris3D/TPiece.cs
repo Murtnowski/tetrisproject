@@ -44,14 +44,13 @@ namespace Tetris3D
 
         protected override void orentateNorth()
         {
-            List<Point> newPieceLocations = new List<Point>();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
 
-            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y));
-            newPieceLocations.Add(new Point(this.referanceLocation.X - 1, this.referanceLocation.Y));
-            newPieceLocations.Add(new Point(this.referanceLocation.X + 1, this.referanceLocation.Y));
-            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 1));
-
-            this.pieceLocations = newPieceLocations;
+            this.pieceLocations = newLocation;
         }
 
         protected override void orentateEast()

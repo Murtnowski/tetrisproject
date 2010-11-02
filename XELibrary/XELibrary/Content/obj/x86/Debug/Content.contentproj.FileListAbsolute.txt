@@ -6,3 +6,4 @@ C:\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cac
 C:\TetrisProject\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache

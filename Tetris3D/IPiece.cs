@@ -44,29 +44,44 @@ namespace Tetris3D
 
        protected override void orentateNorth()
        {
-           List<Point> newPieceLocations = new List<Point>();
-
-           newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y));
-           newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 1));
-           newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 2));
-           newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 3));
-
-           this.pieceLocations = newPieceLocations;
+           this.pieceLocations =  this.verticalOrentation();
        }
 
        protected override void orentateEast()
        {
-           throw new NotImplementedException();
+           this.pieceLocations = this.horizontalOrentation();
        }
 
        protected override void orentateSouth()
        {
-           throw new NotImplementedException();
+           this.pieceLocations = this.verticalOrentation();
        }
 
        protected override void orentateWest()
        {
-           throw new NotImplementedException();
+           this.pieceLocations = this.horizontalOrentation();
+       }
+
+       private Point[] verticalOrentation()
+       {
+           Point[] pieceVerticalLocation = new Point[4];
+           pieceVerticalLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+           pieceVerticalLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
+           pieceVerticalLocation[2] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);
+           pieceVerticalLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 3);
+
+           return pieceVerticalLocation;
+       }
+
+       private Point[] horizontalOrentation()
+       {
+           Point[] pieceVerticalLocation = new Point[4];
+           pieceVerticalLocation[0] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
+           pieceVerticalLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+           pieceVerticalLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+           pieceVerticalLocation[3] = new Point(this.referanceLocation.X + 2, this.referanceLocation.Y);
+
+           return pieceVerticalLocation;
        }
    }
 }

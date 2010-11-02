@@ -133,6 +133,21 @@ namespace Tetris3D
             this.updatePieceLocations();
         }
 
-        protected abstract void updatePieceLocations();
+        private void updatePieceLocations()
+        {
+            switch (this.orentation)
+            {
+                case Orentations.North: this.orentateNorth();
+                case Orentations.East: this.orentateEast();
+                case Orentations.South: this.orentateSouth();
+                case Orentations.West: this.orentateWest();
+                default: throw new NotImplementedException();
+            }
+        }
+
+        protected abstract void orentateNorth();
+        protected abstract void orentateEast();
+        protected abstract void orentateSouth();
+        protected abstract void orentateWest();
     }
 }

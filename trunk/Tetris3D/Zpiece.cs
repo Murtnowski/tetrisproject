@@ -42,7 +42,7 @@ namespace Tetris3D
         {
         }
 
-        protected override void updatePieceLocations()
+        protected override void orentateNorth()
         {
             List<Point> newPieceLocations = new List<Point>();
 

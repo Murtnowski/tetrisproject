@@ -137,10 +137,10 @@ namespace Tetris3D
         {
             switch (this.orentation)
             {
-                case Orentations.North: this.orentateNorth();
-                case Orentations.East: this.orentateEast();
-                case Orentations.South: this.orentateSouth();
-                case Orentations.West: this.orentateWest();
+                case Orentations.North: this.orentateNorth(); break;
+                case Orentations.East: this.orentateEast(); break;
+                case Orentations.South: this.orentateSouth(); break;
+                case Orentations.West: this.orentateWest(); break;
                 default: throw new NotImplementedException();
             }
         }

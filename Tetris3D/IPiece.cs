@@ -42,7 +42,7 @@ namespace Tetris3D
        {
        }
 
-       protected override void updatePieceLocations()
+       protected override void orentateNorth()
        {
            List<Point> newPieceLocations = new List<Point>();
 
@@ -52,6 +52,21 @@ namespace Tetris3D
            newPieceLocations.Add(new Point(this.referanceLocation.X, this.referanceLocation.Y + 3));
 
            this.pieceLocations = newPieceLocations;
+       }
+
+       protected override void orentateEast()
+       {
+           throw new NotImplementedException();
+       }
+
+       protected override void orentateSouth()
+       {
+           throw new NotImplementedException();
+       }
+
+       protected override void orentateWest()
+       {
+           throw new NotImplementedException();
        }
    }
 }

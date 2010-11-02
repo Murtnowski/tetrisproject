@@ -42,7 +42,27 @@ namespace Tetris3D
         {
         }
 
-        protected override void orentateNorth()
+        public override Point[] pointsForNorthOrentation()
+        {
+            return this.singularOrentation();
+        }
+
+        public override Point[] pointsForEastOrentation()
+        {
+            return this.singularOrentation(); ;
+        }
+
+        public override Point[] pointsForSouthOrentation()
+        {
+            return this.singularOrentation();
+        }
+
+        public override Point[] pointsForWestOrentation()
+        {
+            return this.singularOrentation();
+        }
+
+        private Point[] singularOrentation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
@@ -50,22 +70,7 @@ namespace Tetris3D
             newLocation[2] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
             newLocation[3] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
 
-            this.pieceLocations = newLocation;
-        }
-
-        protected override void orentateEast()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void orentateSouth()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void orentateWest()
-        {
-            throw new NotImplementedException();
+            return newLocation;
         }
     }
 }

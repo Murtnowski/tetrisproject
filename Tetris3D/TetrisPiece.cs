@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 namespace Tetris3D
 {
     //This is an enumeration of the currently supported tetris blocks.  If you change it be sure to update NumberOfSupportedTetrisPieces
-    public enum TetrisPieces { TBlock = 0, SBlock, ZBlock, IBlock, JBlock, LBlock, SquareBlock };
+    public enum TetrisPieces { TBlock = 0, SBlock, ZBlock, IBlock, JBlock, LBlock, OBlock };
 
     public enum Orentations { North, West, South, East };
 
@@ -34,12 +34,9 @@ namespace Tetris3D
             }
         }
 
-        public TetrisPieces Type
+        public abstract TetrisPieces Type
         {
-            get
-            {
-                return this.type;
-            }
+            get;
         }
 
         public abstract TetrisColors Color
@@ -55,17 +52,15 @@ namespace Tetris3D
             }
         }
 
-        public TetrisPiece(TetrisPieces type, Point referanceLocation)
+        protected TetrisPiece(Point referanceLocation)
         {
-            this.type = type;
             this.referanceLocation = referanceLocation;
 
             this.updatePieceLocations();
         }
 
-        public TetrisPiece(TetrisPieces type, Point referanceLocation, Orentations orentation)
+        protected TetrisPiece(Point referanceLocation, Orentations orentation)
         {
-            this.type = type;
             this.referanceLocation = referanceLocation;
             this.orentation = orentation;
 

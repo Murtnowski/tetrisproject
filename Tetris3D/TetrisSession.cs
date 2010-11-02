@@ -135,10 +135,10 @@ namespace Tetris3D
                 case (int)TetrisPieces.JBlock: return new JPiece(this.newCurrentPieceGenerationPoint);
                 case (int)TetrisPieces.LBlock: return new LPiece(this.newCurrentPieceGenerationPoint);
                 case (int)TetrisPieces.SBlock: return new SPiece(this.newCurrentPieceGenerationPoint);
-                case (int)TetrisPieces.SquareBlock: return new OPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.OBlock: return new OPiece(this.newCurrentPieceGenerationPoint);
                 case (int)TetrisPieces.TBlock: return new TPiece(this.newCurrentPieceGenerationPoint);
                 case (int)TetrisPieces.ZBlock: return new ZPiece(this.newCurrentPieceGenerationPoint);
-                default: throw new Exception();
+                default: throw new NotImplementedException();
             }
         }
 

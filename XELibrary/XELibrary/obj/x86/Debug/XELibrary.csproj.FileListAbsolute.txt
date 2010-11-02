@@ -28,3 +28,9 @@ C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\Resolv
 C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
 C:\Users\JGesner\Desktop\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb
+C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
+C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
+C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
+C:\Users\murtnowski\Desktop\scp08648\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

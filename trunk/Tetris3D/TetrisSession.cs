@@ -32,14 +32,11 @@ namespace Tetris3D
          */
         private TetrisBlock[,] gameBoard;
 
-        //A collection of points that is used to keep track of the current space the piece the player controls is occuping
-        private Point[] currentPiecePointLocations;
-
         //The current Tetris peice the player controls
-        private TetrisPieces currentTetrisPiece;
+        private TetrisPiece currentTetrisPiece;
 
         //The next piece the player will control
-        private TetrisPieces nextTetrisPiece;
+        private TetrisPiece nextTetrisPiece;
 
         //The current level
         private int currentLevel;
@@ -60,13 +57,13 @@ namespace Tetris3D
         }
 
         //Accessor for the current Tetris piece the player controls
-        public TetrisPieces CurrentTetrisPiece()
+        public TetrisPiece CurrentTetrisPiece()
         {
             return this.currentTetrisPiece;
         }
 
         //Accessor for the next Tetris piece the player controls
-        public TetrisPieces NextTetrisPiece()
+        public TetrisPiece NextTetrisPiece()
         {
             return this.nextTetrisPiece;
         }
@@ -76,7 +73,7 @@ namespace Tetris3D
         {
             get
             {
-                return this.currentPiecePointLocations;
+                return this.currentTetrisPiece.PieceLocations;
             }
         }
 
@@ -111,7 +108,7 @@ namespace Tetris3D
             this.newCurrentPieceGenerationPoint = new Point(this.gameBoard.GetLength(0) / 2, this.gameBoard.GetLength(1) - GameOverRange);
 
             //Initialize the pieces the users controls
-            this.nextTetrisPiece =(TetrisPieces)this.randomGenerator.Next(TetrisBlock.NUMBEROFSUPPORTEDTETRISPIECES);
+            this.nextTetrisPiece = this.getRandomTetrisPiece();
 
             this.GenerateNewCurrentTetrisPiece();
         }
@@ -125,9 +122,24 @@ namespace Tetris3D
             this.newCurrentPieceGenerationPoint = new Point(this.gameBoard.GetLength(0) / 2, this.gameBoard.GetLength(1) - GameOverRange);
 
             //Initialize the pieces the users controls
-            this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(TetrisBlock.NUMBEROFSUPPORTEDTETRISPIECES);
+            this.nextTetrisPiece = this.getRandomTetrisPiece();
 
             this.GenerateNewCurrentTetrisPiece();
+        }
+        
+        private TetrisPiece getRandomTetrisPiece()
+        {
+            switch (this.randomGenerator.Next(TetrisPiece.NUMBEROFSUPPORTEDTETRISPIECES))
+            {
+                case (int)TetrisPieces.IBlock: return new IPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.JBlock: return new JPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.LBlock: return new LPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.SBlock: return new SPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.SquareBlock: return new OPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.TBlock: return new TPiece(this.newCurrentPieceGenerationPoint);
+                case (int)TetrisPieces.ZBlock: return new ZPiece(this.newCurrentPieceGenerationPoint);
+                default: throw new Exception();
+            }
         }
 
         /* Generate a new Tetris piece the user will control.  If a new piece is generated true is returned.
@@ -141,20 +153,9 @@ namespace Tetris3D
             {
                 this.currentTetrisPiece = this.nextTetrisPiece;
 
-                switch (this.currentTetrisPiece)
-                {
-                    case TetrisPieces.TBlock: this.generateNewTBlock(); break;
-                    case TetrisPieces.SBlock: this.generateNewSBlock(); break;
-                    case TetrisPieces.ZBlock: this.generateNewZBlock(); break;
-                    case TetrisPieces.IBlock: this.generateNewIBlock(); break;
-                    case TetrisPieces.JBlock: this.generateNewJBlock(); break;
-                    case TetrisPieces.LBlock: this.generateNewLBlock(); break;
-                    case TetrisPieces.SquareBlock: this.generateNewSquareBlock(); break;
-                }
+                this.addBlocksToGameBoard(this.currentTetrisPiece.PieceLocations, this.currentTetrisPiece.Color);
 
-                // TODO: call addBlocksToGameBoard(shapeVector, this.currentTetrisPiece, color);
-
-                this.nextTetrisPiece = (TetrisPieces)this.randomGenerator.Next(TetrisBlock.NUMBEROFSUPPORTEDTETRISPIECES);
+                this.nextTetrisPiece = this.getRandomTetrisPiece();
 
                 //A new piece was successfully generated, so return true
                 return true;
@@ -165,112 +166,13 @@ namespace Tetris3D
             }
         }
 
-        /// <summary>
-        /// Generate a new T block around the newCurrentPieceGenerationPoint
-        /// </summary>
-        private void generateNewTBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X + 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X - 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.TBlock);
-        }
-
-        // Generate a new S block around the newCurrentPieceGenerationPoint
-        private void generateNewSBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X - 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X + 1, this.newCurrentPieceGenerationPoint.Y + 1);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.SBlock);
-        }
-
-        // Generate a new Z block around the newCurrentPieceGenerationPoint
-        private void generateNewZBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X + 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X - 1, this.newCurrentPieceGenerationPoint.Y + 1);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.ZBlock);
-        }
-
-        // Generate a new I block around the newCurrentPieceGenerationPoint
-        private void generateNewIBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 2);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 3);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.IBlock);
-        }
-
-        // Generate a new J block around the newCurrentPieceGenerationPoint
-        private void generateNewJBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X - 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 2);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.JBlock);
-        }
-
-        // Generate a new L block around the newCurrentPieceGenerationPoint
-        private void generateNewLBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X + 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 2);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.LBlock);
-        }
-
-        // Generate a new L block around the newCurrentPieceGenerationPoint
-        private void generateNewSquareBlock()
-        {
-            //Set the locations of the current block then add them to the gameboard
-
-            this.currentPiecePointLocations = new Point[4];
-            this.currentPiecePointLocations[0] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[1] = new Point(this.newCurrentPieceGenerationPoint.X + 1, this.newCurrentPieceGenerationPoint.Y);
-            this.currentPiecePointLocations[2] = new Point(this.newCurrentPieceGenerationPoint.X, this.newCurrentPieceGenerationPoint.Y + 1);
-            this.currentPiecePointLocations[3] = new Point(this.newCurrentPieceGenerationPoint.X + 1, this.newCurrentPieceGenerationPoint.Y + 1);
-
-            this.addBlocksToGameBoard(this.currentPiecePointLocations, TetrisPieces.SquareBlock);
-        }
-
         //Returns true if the part of the current piece occupies a point on the game board
         public bool isCurrentPieceAtLocation(Point point)
         {
             // TODO: One point of return from a method.
 
             //Foreach of the currentPieces point locations compare it to the specified point
-            foreach (Point currentPoint in this.currentPiecePointLocations)
+            foreach (Point currentPoint in this.currentTetrisPiece.PieceLocations)
             {
                 if (point == currentPoint)
                 {
@@ -285,7 +187,7 @@ namespace Tetris3D
         public bool isBlocksBelowCurrentPieceClear()
         {
             //Check each of the points of the current piece
-            foreach (Point point in this.currentPiecePointLocations)
+            foreach (Point point in this.currentTetrisPiece.PieceLocations)
             {
                 /* if the block has reach the bottom of the board or the space below the block has another block then
                  * return false since the space is not clear.  Do not fail the check if the space the block is part of
@@ -354,23 +256,26 @@ namespace Tetris3D
             return false;
         }
 
+        private void removeBlocksFromGameboard(Point[] pointsToBeRemove)
+        {
+            foreach (Point p in pointsToBeRemove)
+            {
+                this.gameBoard[p.X, p.Y] = null;
+            }
+        }
+
         //Move the current piece down.  If succesful return true, otherwise return false
         public bool moveCurrentPieceDown()
         {
             //If the space below the current piece is clear then move down
             if (this.isBlocksBelowCurrentPieceClear())
             {
-                //A temporary list to store the new current piece locations that are offset one downwards
-                List<Point> newCurrentPieceLocations = new List<Point>();
 
-                foreach (Point p in this.currentPiecePointLocations)
-                {
-                    newCurrentPieceLocations.Add(new Point(p.X, p.Y - 1));
-                }
+                this.removeBlocksFromGameboard(this.currentTetrisPiece.PieceLocations);
 
-                this.replaceCurrentPiece(newCurrentPieceLocations.ToArray(), this.currentTetrisPiece);
+                this.currentTetrisPiece.moveDown();
 
-                this.currentPiecePointLocations = newCurrentPieceLocations.ToArray();
+                this.addBlocksToGameBoard(this.currentTetrisPiece.PieceLocations, this.currentTetrisPiece.Color);
 
                 return true;
             }
@@ -385,17 +290,11 @@ namespace Tetris3D
         {
             if (this.isBlocksLeftOfCurrentPieceClear())
             {
-                //A temporary list to store the new current piece locations that are offset one left
-                List<Point> newCurrentPieceLocations = new List<Point>();
+                this.removeBlocksFromGameboard(this.currentTetrisPiece.PieceLocations);
 
-                foreach (Point p in this.currentPiecePointLocations)
-                {
-                    newCurrentPieceLocations.Add(new Point(p.X - 1, p.Y));
-                }
+                this.currentTetrisPiece.moveLeft();
 
-                this.replaceCurrentPiece(newCurrentPieceLocations.ToArray(), this.currentTetrisPiece);
-
-                this.currentPiecePointLocations = newCurrentPieceLocations.ToArray();
+                this.addBlocksToGameBoard(this.currentTetrisPiece.PieceLocations, this.currentTetrisPiece.Color);
 
                 return true;
             }
@@ -410,17 +309,11 @@ namespace Tetris3D
         {
             if (this.isBlocksRightOfCurrentPieceClear())
             {
-                //A temporary list to store the new current piece locations that are offset one right
-                List<Point> newCurrentPieceLocations = new List<Point>();
+                this.removeBlocksFromGameboard(this.currentTetrisPiece.PieceLocations);
 
-                foreach (Point p in this.currentPiecePointLocations)
-                {
-                    newCurrentPieceLocations.Add(new Point(p.X + 1, p.Y));
-                }
+                this.currentTetrisPiece.moveRight();
 
-                this.replaceCurrentPiece(newCurrentPieceLocations.ToArray(), this.currentTetrisPiece);
-
-                this.currentPiecePointLocations = newCurrentPieceLocations.ToArray();
+                this.addBlocksToGameBoard(this.currentTetrisPiece.PieceLocations, this.currentTetrisPiece.Color);
 
                 return true;
             }
@@ -443,7 +336,8 @@ namespace Tetris3D
         {
             return false;
         }
-
+        
+        /*
         //Replaces the current Tetris piece with a new piece at a new location
         private void replaceCurrentPiece(Point[] newCurrentPieceLocations, TetrisPieces tetrisPiece)
         {
@@ -454,13 +348,14 @@ namespace Tetris3D
 
             this.addBlocksToGameBoard(newCurrentPieceLocations, tetrisPiece);
         }
+        */
 
         //Adds a tetris piece at specific points on the gameboard
-        private void addBlocksToGameBoard(Point[] pointsToBeAdded, TetrisPieces tetrisPiece)
+        private void addBlocksToGameBoard(Point[] pointsToBeAdded, TetrisColors tetrisColor)
         {
             foreach (Point p in pointsToBeAdded)
             {
-                this.gameBoard[p.X, p.Y] = new TetrisBlock(tetrisPiece);
+                this.gameBoard[p.X, p.Y] = new TetrisBlock(tetrisColor);
             }
         }
 
@@ -496,7 +391,7 @@ namespace Tetris3D
                 {
                     if (this.gameBoard[x, y] != null && !this.isCurrentPieceAtLocation(new Point(x, y)))
                     {
-                        this.gameBoard[x, y - 1] = new TetrisBlock(this.gameBoard[x, y].TetrisPiece);
+                        this.gameBoard[x, y - 1] = new TetrisBlock(this.gameBoard[x, y].TetrisColor);
                         this.gameBoard[x, y] = null;
                     }
                 }

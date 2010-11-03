@@ -6,10 +6,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿//FOO
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
@@ -30,7 +32,6 @@ namespace Tetris3D
         private void BuildShape()
         {
             shapeTriangles = 12;
-
             shapeVertices = new VertexPositionNormalTexture[36];
 
             Vector3 topLeftFront = shapePosition +
@@ -57,18 +58,10 @@ namespace Tetris3D
             Vector3 leftNormal = new Vector3(-0.5f, 0.0f, 0.0f) * shapeSize;
             Vector3 rightNormal = new Vector3(0.5f, 0.0f, 0.0f) * shapeSize;
 
-
             Vector2 textureTopLeft = new Vector2(0.125f * (float)this.tetrisColor, 0.0f);
             Vector2 textureTopRight = new Vector2(0.125f * ((float)this.tetrisColor + 1.0f), 0.0f);
             Vector2 textureBottomLeft = new Vector2(0.125f * (float)this.tetrisColor, 1.0f);
             Vector2 textureBottomRight = new Vector2(0.125f * ((float)this.tetrisColor + 1.0f), 1.0f);
-            
-            /*
-            Vector2 textureTopLeft = new Vector2(0.0f, 0.0f);
-            Vector2 textureTopRight = new Vector2(1.0f, 0.0f);
-            Vector2 textureBottomLeft = new Vector2(0.0f, 1.0f);
-            Vector2 textureBottomRight = new Vector2(1.0f, 1.0f);
-            */
 
             // Front face.
             shapeVertices[0] = new VertexPositionNormalTexture(

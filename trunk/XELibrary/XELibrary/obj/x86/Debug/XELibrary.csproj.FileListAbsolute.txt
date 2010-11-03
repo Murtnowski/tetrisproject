@@ -40,3 +40,9 @@ C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELib
 C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
 C:\Users\Murtnowski\Documents\Visual Studio 2008\Projects\Tetris\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

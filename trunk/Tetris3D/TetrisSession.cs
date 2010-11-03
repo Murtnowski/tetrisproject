@@ -126,7 +126,7 @@ namespace Tetris3D
 
             this.GenerateNewCurrentTetrisPiece();
         }
-        
+
         private TetrisPiece getRandomTetrisPiece()
         {
             switch (this.randomGenerator.Next(TetrisPiece.NUMBEROFSUPPORTEDTETRISPIECES))
@@ -213,7 +213,7 @@ namespace Tetris3D
                 * the current piece
                 */
                 //TODO: Overload this to throw in an X and a Y instead of creating a new point
-                if ((point.X - 1) < 0 || (!this.isCurrentPieceAtLocation(new Point(point.X - 1, point.Y)) && 
+                if ((point.X - 1) < 0 || (!this.isCurrentPieceAtLocation(new Point(point.X - 1, point.Y)) &&
                     this.GameBoard[(point.X - 1), point.Y] != null))
                 {
                     return false;
@@ -366,7 +366,7 @@ namespace Tetris3D
         {
             throw new NotImplementedException();
         }
-        
+
         /*
         //Replaces the current Tetris piece with a new piece at a new location
         private void replaceCurrentPiece(Point[] newCurrentPieceLocations, TetrisPieces tetrisPiece)

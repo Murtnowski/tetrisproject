@@ -259,10 +259,19 @@ namespace Tetris3D
         }
 
         //Checks to see if the piece can rotate counterclockwise.
-        //TODO: NOT YET IMPLEMENTED
         public bool isCurrentPieceAbleToRotateCounterClockwise()
         {
-            throw new NotImplementedException();
+            Point[] points = this.currentTetrisPiece.pointsForCounterClockwiseRotation();
+
+            foreach (Point point in points)
+            {
+                if ((point.X < 0 || point.X >= this.gameBoard.GetLength(0) || point.Y < 0 || point.Y >= this.gameBoard.GetLength(1)) || (this.gameBoard[point.X, point.Y] != null && !this.isCurrentPieceAtLocation(point)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void removeBlocksFromGameboard(Point[] pointsToBeRemove)

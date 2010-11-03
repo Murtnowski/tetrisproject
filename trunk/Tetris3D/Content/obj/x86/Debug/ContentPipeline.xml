@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
-      <Time>2010-11-02T19:58:02.35-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
+      <Time>2010-11-02T20:05:23.531-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\Kootenay.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
-      <Time>2010-11-02T19:58:02.352-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
+      <Time>2010-11-02T20:05:23.534-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\Title.jpg</Source>
@@ -28,8 +28,8 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
-      <Time>2010-11-02T19:58:02.348-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
+      <Time>2010-11-02T20:05:23.527-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\ColorMap.jpg</Source>
@@ -40,18 +40,18 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
-      <Time>2010-11-02T19:58:02.357-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
+      <Time>2010-11-02T20:05:23.541-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

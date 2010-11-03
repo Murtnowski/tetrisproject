@@ -82,3 +82,15 @@ C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\obj\x86\De
 C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\obj\x86\Debug\Tetris3D.exe
 C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\New Folder (2)\Tetris3D\obj\x86\Debug\Tetris3D.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\obj\x86\Debug\Tetris3D.exe
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\obj\x86\Debug\Tetris3D.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Tetris3D.exe
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\Tetris3D.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\XELibrary.dll
+C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\Tetris3D\bin\x86\Debug\XELibrary.pdb

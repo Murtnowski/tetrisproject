@@ -42,7 +42,7 @@ namespace Tetris3D
         {
         }
 
-        public override Point[] pointsForNorthOrentation()
+        protected override Point[] pointsForNorthOrentation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
@@ -53,7 +53,7 @@ namespace Tetris3D
             return newLocation;
         }
 
-        public override Point[] pointsForEastOrentation()
+        protected override Point[] pointsForEastOrentation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
@@ -64,7 +64,7 @@ namespace Tetris3D
             return newLocation;
         }
 
-        public override Point[] pointsForSouthOrentation()
+        protected override Point[] pointsForSouthOrentation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
@@ -75,7 +75,7 @@ namespace Tetris3D
             return newLocation;
         }
 
-        public override Point[] pointsForWestOrentation()
+        protected override Point[] pointsForWestOrentation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);

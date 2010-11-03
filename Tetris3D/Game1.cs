@@ -108,6 +108,10 @@ namespace Tetris3D
                 {
                     this.tetrisSession.moveCurrentPieceDown();
                 }
+                if (this.input.KeyboardState.WasKeyPressed(Keys.Space))
+                {
+                    this.tetrisSession.rotateCurrentPieceClockwise();
+                }
 
                 if (totalTime > (1000 - (this.tetrisSession.CurrentLevel + 1) * 100))
                 {

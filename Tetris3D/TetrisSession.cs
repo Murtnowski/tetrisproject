@@ -243,17 +243,26 @@ namespace Tetris3D
         }
 
         //Checks to see if the piece can rotate clockwise
-        //TODO: NOT YET IMPLEMENTED
         public bool isCurrentPieceAbleToRotateClockwise()
         {
-            return false;
+            Point[] points = this.currentTetrisPiece.pointsForClockwiseRotation();
+
+            foreach (Point point in points)
+            {
+                if ((point.X < 0 || point.X >= this.gameBoard.GetLength(0) || point.Y < 0 || point.Y >= this.gameBoard.GetLength(1)) || (this.gameBoard[point.X, point.Y] != null && !this.isCurrentPieceAtLocation(point)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         //Checks to see if the piece can rotate counterclockwise.
         //TODO: NOT YET IMPLEMENTED
         public bool isCurrentPieceAbleToRotateCounterClockwise()
         {
-            return false;
+            throw new NotImplementedException();
         }
 
         private void removeBlocksFromGameboard(Point[] pointsToBeRemove)
@@ -327,6 +336,18 @@ namespace Tetris3D
         //NOT YET IMPLEMENTED
         public bool rotateCurrentPieceClockwise()
         {
+            if (this.isCurrentPieceAbleToRotateClockwise())
+            {
+                this.removeBlocksFromGameboard(this.currentTetrisPiece.PieceLocations);
+
+                this.currentTetrisPiece.rotateClockwise();
+
+                this.addBlocksToGameBoard(this.currentTetrisPiece.PieceLocations, this.currentTetrisPiece.Color);
+            }
+            else
+            {
+                return false;
+            }
             return false;
         }
 
@@ -334,7 +355,7 @@ namespace Tetris3D
         //NOT YET IMPLEMENTED
         public bool rotateCurrentPieceCounterclockwise()
         {
-            return false;
+            throw new NotImplementedException();
         }
         
         /*

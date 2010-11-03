@@ -93,40 +93,65 @@ namespace Tetris3D
             return this.orentation;
         }
 
-        public void moveRight()
+        public Point[] pointsForClockwiseRotation()
+        {
+            switch (this.orentation)
+            {
+                case Orentations.North: return this.pointsForEastOrentation();
+                case Orentations.West: return this.pointsForNorthOrentation();
+                case Orentations.South: return this.pointsForWestOrentation();
+                case Orentations.East: return this.pointsForSouthOrentation();
+                default: throw new NotImplementedException();
+            }
+        }
+
+        public Point[] pointsForCounterClockwiseRotation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Point moveRight()
         {
             List<Point> newPieceLocations = new List<Point>();
 
             this.referanceLocation = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
 
             this.updatePieceLocations();
+
+            return this.referanceLocation;
         }
 
-        public void moveLeft()
+        public Point moveLeft()
         {
             List<Point> newPieceLocations = new List<Point>();
 
             this.referanceLocation = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
 
             this.updatePieceLocations();
+
+            return this.referanceLocation;
         }
 
-        public void moveDown()
+        public Point moveDown()
         {
             List<Point> newPieceLocations = new List<Point>();
 
             this.referanceLocation = new Point(this.referanceLocation.X, this.referanceLocation.Y - 1);
 
             this.updatePieceLocations();
+
+            return this.referanceLocation;
         }
 
-        public void moveUp()
+        public Point moveUp()
         {
             List<Point> newPieceLocations = new List<Point>();
 
             this.referanceLocation = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
 
             this.updatePieceLocations();
+
+            return this.referanceLocation;
         }
 
         private void updatePieceLocations()
@@ -158,9 +183,9 @@ namespace Tetris3D
             this.pieceLocations = this.pointsForWestOrentation();
         }
 
-        public abstract Point[] pointsForNorthOrentation();
-        public abstract Point[] pointsForEastOrentation();
-        public abstract Point[] pointsForSouthOrentation();
-        public abstract Point[] pointsForWestOrentation();
+        protected abstract Point[] pointsForNorthOrentation();
+        protected abstract Point[] pointsForEastOrentation();
+        protected abstract Point[] pointsForSouthOrentation();
+        protected abstract Point[] pointsForWestOrentation();
     }
 }

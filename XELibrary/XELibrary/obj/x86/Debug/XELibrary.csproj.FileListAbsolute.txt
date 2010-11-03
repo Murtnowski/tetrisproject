@@ -52,3 +52,9 @@ C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\XELibrary\XELibrary\obj\x86\Debug\
 C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
 C:\Users\Murtnowski\Desktop\Tetris_rar\Tetris\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
+C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
+C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
+C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

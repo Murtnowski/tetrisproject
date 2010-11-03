@@ -55,17 +55,35 @@ namespace Tetris3D
 
         protected override Point[] pointsForEastOrentation()
         {
-            throw new NotImplementedException();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
+            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+
+            return newLocation;
         }
 
         protected override Point[] pointsForSouthOrentation()
         {
-            throw new NotImplementedException();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
+            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 2);
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);
+
+            return newLocation;
         }
 
         protected override Point[] pointsForWestOrentation()
         {
-            throw new NotImplementedException();
+            Point[] newLocation = new Point[4];
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
+            newLocation[1] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
+            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+
+            return newLocation;
         }
     }
 }

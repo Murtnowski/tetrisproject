@@ -107,7 +107,14 @@ namespace Tetris3D
 
         public Point[] pointsForCounterClockwiseRotation()
         {
-            throw new NotImplementedException();
+            switch (this.orentation)
+            {
+                case Orentations.North: return this.pointsForWestOrentation();
+                case Orentations.West: return this.pointsForSouthOrentation();
+                case Orentations.South: return this.pointsForEastOrentation();
+                case Orentations.East: return this.pointsForNorthOrentation();
+                default: throw new NotImplementedException();
+            }
         }
 
         public Point moveRight()

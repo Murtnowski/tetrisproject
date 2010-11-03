@@ -42,22 +42,22 @@ namespace Tetris3D
        {
        }
 
-       public override Point[] pointsForNorthOrentation()
+       protected override Point[] pointsForNorthOrentation()
        {
            return this.verticalOrentation();
        }
 
-       public override Point[] pointsForEastOrentation()
+       protected override Point[] pointsForEastOrentation()
        {
            return this.horizontalOrentation();
        }
 
-       public override Point[] pointsForSouthOrentation()
+       protected override Point[] pointsForSouthOrentation()
        {
            return this.verticalOrentation();
        }
 
-       public override Point[] pointsForWestOrentation()
+       protected override Point[] pointsForWestOrentation()
        {
            return this.horizontalOrentation();
        }

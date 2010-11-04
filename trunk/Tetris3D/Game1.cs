@@ -31,6 +31,38 @@ namespace Tetris3D
 
    public class Game1 : Microsoft.Xna.Framework.Game
    {
+
+       #region fields
+       private GraphicsDeviceManager graphics;
+       private BasicEffect cubeEffect;
+
+       //Base and piecs
+       private List<BasicShape> foundation = new List<BasicShape>();
+       private TetrisSession tetrisSession;
+
+       //Screens
+       internal const int SCREEN_WIDTH = 1200;
+       internal const int SCREEN_HEIGHT = 900;
+       private SpriteBatch spriteBatch;
+       private GameState gameState;
+       private SpriteFont mainFont;
+       private SpriteFont italicFont;
+       private Texture2D titleTexture;
+
+       //Movement
+       double totalTime = 0;
+       double ElapsedRealTime = 0;
+
+       //Components
+       private InputHandler input;
+       private TetrisGameState gamefield;
+       private Camera camera;
+       #endregion
+
+       //Audio
+       public AudioBank audio;
+       Song backgroundMusic;
+
       public Game1()
       {
          graphics = new GraphicsDeviceManager(this);
@@ -61,9 +93,16 @@ namespace Tetris3D
       protected override void LoadContent()
       {
          initializeWorld();
+          //load fonts
          titleTexture = Content.Load<Texture2D>(@"Textures\Title");
          mainFont = Content.Load<SpriteFont>(@"Textures\Kootenay");
          italicFont = Content.Load<SpriteFont>(@"Textures\Italic");
+          //load sound effects
+         audio = new AudioBank();
+         audio.LoadContent(Content);
+         Services.AddService(typeof(AudioBank), audio);
+          //load music
+         backgroundMusic = Content.Load<Song>(@"Audio\bigButtz");
       }
 
       private void initializeWorld()
@@ -123,6 +162,7 @@ namespace Tetris3D
             case GameState.Title:
                if (input.KeyboardState.WasKeyPressed(Keys.Enter))
                {
+                  MediaPlayer.Play(backgroundMusic);
                   this.gameState = GameState.Playing;
                }
                break;
@@ -150,6 +190,7 @@ namespace Tetris3D
             }
             if (this.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
+                audio.PlayRotateSound();
                 this.tetrisSession.rotateCurrentPieceClockwise();
             }
 
@@ -163,6 +204,7 @@ namespace Tetris3D
                   {
                      this.Exit();
                   }
+                  audio.PlayClearLineSound();
                   this.tetrisSession.clearCompletedLines();
                }
                else
@@ -253,31 +295,6 @@ namespace Tetris3D
          spriteBatch.DrawString(italicFont, "Press Enter", new Vector2(75f, 200f), Color.Red);
       }
 
-      #region fields
-      private GraphicsDeviceManager graphics;
-      private BasicEffect cubeEffect;
 
-      //Base and piecs
-      private List<BasicShape> foundation = new List<BasicShape>();
-      private TetrisSession tetrisSession;
-
-      //Screens
-      internal const int SCREEN_WIDTH = 1200;
-      internal const int SCREEN_HEIGHT = 900;
-      private SpriteBatch spriteBatch;
-      private GameState gameState;
-      private SpriteFont mainFont;
-      private SpriteFont italicFont;
-      private Texture2D titleTexture;
-
-      //Movement
-      double totalTime = 0;
-      double ElapsedRealTime = 0;
-
-      //Components
-      private InputHandler input;
-      private TetrisGameState gamefield;
-      private Camera camera;
-      #endregion
    }
 }

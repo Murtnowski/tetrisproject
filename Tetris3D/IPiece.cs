@@ -37,32 +37,32 @@ namespace Tetris3D
       {
       }
 
-       public IPiece(Point referanceLocation, Orentations orentation)
-           : base(referanceLocation, orentation)
+       public IPiece(Point referanceLocation, Orientations orientation)
+           : base(referanceLocation, orientation)
        {
        }
 
-       protected override Point[] pointsForNorthOrentation()
+       protected override Point[] pointsForNorthOrientation()
        {
-           return this.verticalOrentation();
+           return this.verticalOrientation();
        }
 
-       protected override Point[] pointsForEastOrentation()
+       protected override Point[] pointsForEastOrientation()
        {
-           return this.horizontalOrentation();
+           return this.horizontalOrientation();
        }
 
-       protected override Point[] pointsForSouthOrentation()
+       protected override Point[] pointsForSouthOrientation()
        {
-           return this.verticalOrentation();
+           return this.verticalOrientation();
        }
 
-       protected override Point[] pointsForWestOrentation()
+       protected override Point[] pointsForWestOrientation()
        {
-           return this.horizontalOrentation();
+           return this.horizontalOrientation();
        }
 
-       private Point[] verticalOrentation()
+       private Point[] verticalOrientation()
        {
            Point[] pieceVerticalLocation = new Point[4];
            pieceVerticalLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
@@ -73,7 +73,7 @@ namespace Tetris3D
            return pieceVerticalLocation;
        }
 
-       private Point[] horizontalOrentation()
+       private Point[] horizontalOrientation()
        {
            Point[] pieceVerticalLocation = new Point[4];
            pieceVerticalLocation[0] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);

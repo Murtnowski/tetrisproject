@@ -37,51 +37,51 @@ namespace Tetris3D
         {
         }
 
-        public TPiece(Point referanceLocation, Orentations orentation)
-            : base(referanceLocation, orentation)
+        public TPiece(Point referanceLocation, Orientations orientation)
+            : base(referanceLocation, orientation)
         {
         }
 
-        protected override Point[] pointsForNorthOrentation()
+        protected override Point[] pointsForNorthOrientation()
         {
             Point[] newLocation = new Point[4];
-            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
-            newLocation[1] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
-            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);           //   3
+            newLocation[1] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);       // 1 0 2
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);       //
             newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
 
             return newLocation;
         }
 
-        protected override Point[] pointsForEastOrentation()
+        protected override Point[] pointsForEastOrientation()
         {
             Point[] newLocation = new Point[4];
-            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
-            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
-            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
-            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);           //  3
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);       //  1 2
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);   //  0 
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);       //  
 
             return newLocation;
         }
 
-        protected override Point[] pointsForSouthOrentation()
+        protected override Point[] pointsForSouthOrientation()
         {
             Point[] newLocation = new Point[4];
-            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
-            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
-            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);          // 3  1  2
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);      //    0
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);  
             newLocation[3] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
 
             return newLocation;
         }
 
-        protected override Point[] pointsForWestOrentation()
+        protected override Point[] pointsForWestOrientation()
         {
             Point[] newLocation = new Point[4];
-            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
-            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
-            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
-            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);
+            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);          //    3
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);      //  2 1
+            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);  //    0
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);      
 
             return newLocation;
         }

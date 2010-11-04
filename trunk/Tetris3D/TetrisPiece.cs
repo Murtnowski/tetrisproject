@@ -7,26 +7,26 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
-    //This is an enumeration of the currently supported tetris blocks.  If you change it be sure to update NumberOfSupportedTetrisPieces
+    //This is an enumeration of the currently supported tetris blocks.  If you change it be sure to update NUMBER_OF_SUPPORTED_TETRIS_PIECES
     public enum TetrisPieces { TBlock = 0, SBlock, ZBlock, IBlock, JBlock, LBlock, OBlock };
 
-    public enum Orentations { North, West, South, East };
+    public enum Orientations { North, West, South, East };
 
     public abstract class TetrisPiece
     {
-        public const int NUMBEROFSUPPORTEDTETRISPIECES = 7;
+        public const int NUMBER_OF_SUPPORTED_TETRIS_PIECES = 7;
 
-        private Orentations orentation = Orentations.North;
+        private Orientations orientation = Orientations.North;
 
         protected Point referanceLocation;
 
         protected Point[] pieceLocations;
 
-        public Orentations Orentation
+        public Orientations Orientation
         {
             get
             {
-                return this.orentation;
+                return this.orientation;
             }
         }
 
@@ -55,64 +55,64 @@ namespace Tetris3D
             this.updatePieceLocations();
         }
 
-        protected TetrisPiece(Point referanceLocation, Orentations orentation)
+        protected TetrisPiece(Point referanceLocation, Orientations orientation)
         {
             this.referanceLocation = referanceLocation;
-            this.orentation = orentation;
+            this.orientation = orientation;
 
             this.updatePieceLocations();
         }
 
-        public Orentations rotateClockwise()
+        public Orientations rotateClockwise()
         {
-            switch (this.orentation)
+            switch (this.orientation)
             {
-                case Orentations.North: this.orentation = Orentations.East; break;
-                case Orentations.West: this.orentation = Orentations.North; break;
-                case Orentations.South: this.orentation = Orentations.West; break;
-                case Orentations.East: this.orentation = Orentations.South; break;
+                case Orientations.North: this.orientation = Orientations.East; break;
+                case Orientations.West: this.orientation = Orientations.North; break;
+                case Orientations.South: this.orientation = Orientations.West; break;
+                case Orientations.East: this.orientation = Orientations.South; break;
             }
 
             this.updatePieceLocations();
 
-            return this.orentation;
+            return this.orientation;
         }
 
-        public Orentations rotateCounterClockwise()
+        public Orientations rotateCounterClockwise()
         {
-            switch (this.orentation)
+            switch (this.orientation)
             {
-                case Orentations.North: this.orentation = Orentations.West; break;
-                case Orentations.West: this.orentation = Orentations.South; break;
-                case Orentations.South: this.orentation = Orentations.East; break;
-                case Orentations.East: this.orentation = Orentations.North; break;
+                case Orientations.North: this.orientation = Orientations.West; break;
+                case Orientations.West: this.orientation = Orientations.South; break;
+                case Orientations.South: this.orientation = Orientations.East; break;
+                case Orientations.East: this.orientation = Orientations.North; break;
             }
 
             this.updatePieceLocations();
 
-            return this.orentation;
+            return this.orientation;
         }
 
         public Point[] pointsForClockwiseRotation()
         {
-            switch (this.orentation)
+            switch (this.orientation)
             {
-                case Orentations.North: return this.pointsForEastOrentation();
-                case Orentations.West: return this.pointsForNorthOrentation();
-                case Orentations.South: return this.pointsForWestOrentation();
-                case Orentations.East: return this.pointsForSouthOrentation();
+                case Orientations.North: return this.pointsForEastOrientation();
+                case Orientations.West: return this.pointsForNorthOrientation();
+                case Orientations.South: return this.pointsForWestOrientation();
+                case Orientations.East: return this.pointsForSouthOrientation();
                 default: throw new NotImplementedException();
             }
         }
 
         public Point[] pointsForCounterClockwiseRotation()
         {
-            switch (this.orentation)
+            switch (this.orientation)
             {
-                case Orentations.North: return this.pointsForWestOrentation();
-                case Orentations.West: return this.pointsForSouthOrentation();
-                case Orentations.South: return this.pointsForEastOrentation();
-                case Orentations.East: return this.pointsForNorthOrentation();
+                case Orientations.North: return this.pointsForWestOrientation();
+                case Orientations.West: return this.pointsForSouthOrientation();
+                case Orientations.South: return this.pointsForEastOrientation();
+                case Orientations.East: return this.pointsForNorthOrientation();
                 default: throw new NotImplementedException();
             }
         }
@@ -163,36 +163,36 @@ namespace Tetris3D
 
         private void updatePieceLocations()
         {
-            switch (this.orentation)
+            switch (this.orientation)
             {
-                case Orentations.North: this.orentateNorth(); break;
-                case Orentations.East: this.orentateEast(); break;
-                case Orentations.South: this.orentateSouth(); break;
-                case Orentations.West: this.orentateWest(); break;
+                case Orientations.North: this.orientateNorth(); break;
+                case Orientations.East: this.orientateEast(); break;
+                case Orientations.South: this.orientateSouth(); break;
+                case Orientations.West: this.orientateWest(); break;
                 default: throw new NotImplementedException();
             }
         }
 
-        private void orentateNorth()
+        private void orientateNorth()
         {
-            this.pieceLocations = this.pointsForNorthOrentation();
+            this.pieceLocations = this.pointsForNorthOrientation();
         }
-        private void orentateEast()
+        private void orientateEast()
         {
-            this.pieceLocations = this.pointsForEastOrentation();
+            this.pieceLocations = this.pointsForEastOrientation();
         }
-        private void orentateSouth()
+        private void orientateSouth()
         {
-            this.pieceLocations = this.pointsForSouthOrentation();
+            this.pieceLocations = this.pointsForSouthOrientation();
         }
-        private void orentateWest()
+        private void orientateWest()
         {
-            this.pieceLocations = this.pointsForWestOrentation();
+            this.pieceLocations = this.pointsForWestOrientation();
         }
 
-        protected abstract Point[] pointsForNorthOrentation();
-        protected abstract Point[] pointsForEastOrentation();
-        protected abstract Point[] pointsForSouthOrentation();
-        protected abstract Point[] pointsForWestOrentation();
+        protected abstract Point[] pointsForNorthOrientation();
+        protected abstract Point[] pointsForEastOrientation();
+        protected abstract Point[] pointsForSouthOrientation();
+        protected abstract Point[] pointsForWestOrientation();
     }
 }

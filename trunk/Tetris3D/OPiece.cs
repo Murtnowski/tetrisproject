@@ -37,32 +37,32 @@ namespace Tetris3D
         {
         }
 
-        public OPiece(Point referanceLocation, Orentations orentation)
-            : base(referanceLocation, orentation)
+        public OPiece(Point referanceLocation, Orientations orientation)
+            : base(referanceLocation, orientation)
         {
         }
 
-        protected override Point[] pointsForNorthOrentation()
+        protected override Point[] pointsForNorthOrientation()
         {
-            return this.singularOrentation();
+            return this.singularOrientation();
         }
 
-        protected override Point[] pointsForEastOrentation()
+        protected override Point[] pointsForEastOrientation()
         {
-            return this.singularOrentation(); ;
+            return this.singularOrientation(); ;
         }
 
-        protected override Point[] pointsForSouthOrentation()
+        protected override Point[] pointsForSouthOrientation()
         {
-            return this.singularOrentation();
+            return this.singularOrientation();
         }
 
-        protected override Point[] pointsForWestOrentation()
+        protected override Point[] pointsForWestOrientation()
         {
-            return this.singularOrentation();
+            return this.singularOrientation();
         }
 
-        private Point[] singularOrentation()
+        private Point[] singularOrientation()
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);

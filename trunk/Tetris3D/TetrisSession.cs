@@ -129,7 +129,7 @@ namespace Tetris3D
 
         private TetrisPiece getRandomTetrisPiece()
         {
-            switch (this.randomGenerator.Next(TetrisPiece.NUMBEROFSUPPORTEDTETRISPIECES))
+            switch (this.randomGenerator.Next(TetrisPiece.NUMBER_OF_SUPPORTED_TETRIS_PIECES))
             {
                 case (int)TetrisPieces.IBlock: return new IPiece(this.newCurrentPieceGenerationPoint);
                 case (int)TetrisPieces.JBlock: return new JPiece(this.newCurrentPieceGenerationPoint);

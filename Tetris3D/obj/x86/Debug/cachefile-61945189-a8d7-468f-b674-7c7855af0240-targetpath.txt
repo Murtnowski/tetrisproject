@@ -3,9 +3,9 @@ Content\Textures\Kootenay.xnb
 Content\Textures\ColorMap.xnb
 Content\Textures\stars.xnb
 Content\Textures\leather.xnb
+Content\Textures\Title.xnb
 Content\Audio\scratchloud.xnb
 Content\Audio\hit.xnb
 Content\Audio\slam.xnb
 Content\Audio\bigButtz.xnb
 Content\Audio\bigButtz.wma
-Content\Textures\Title.xnb

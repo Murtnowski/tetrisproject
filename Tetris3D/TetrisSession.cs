@@ -494,9 +494,10 @@ namespace Tetris3D
 
         public bool slamCurrentPiece()
         {
-            do
+            if (this.moveCurrentPieceDown())
             {
-            } while (this.moveCurrentPieceDown());
+                this.slamCurrentPiece();
+            }
 
             return false;
         }

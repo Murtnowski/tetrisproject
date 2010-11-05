@@ -50,14 +50,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\Title.jpg">
-      <Name>Title</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <ProcessorParameters_TextureFormat>DxtCompressed</ProcessorParameters_TextureFormat>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Textures\ColorMap.jpg">
       <Name>ColorMap</Name>
       <Importer>TextureImporter</Importer>
@@ -103,6 +95,13 @@
   <ItemGroup>
     <Compile Include="Textures\leather.jpg">
       <Name>leather</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\Title.jpg">
+      <Name>Title</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

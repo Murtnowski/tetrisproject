@@ -1,11 +1,3 @@
-/*
- * Project: Tetris Project
- * Authors: Damon Chastain & Matthew Urtnowski 
- * Date: Fall 2010
- * Class: CECS 491
- * Instructor: Alvaro Monge
- * School: California State University Long Beach - Computer Science
- */
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +23,6 @@ namespace Tetris3D
 
    public class Game1 : Microsoft.Xna.Framework.Game
    {
-
        #region fields
        private GraphicsDeviceManager graphics;
        private BasicEffect cubeEffect;
@@ -123,40 +114,37 @@ namespace Tetris3D
          cubeEffect.Parameters["View"].SetValue(camera.View);
          cubeEffect.Parameters["Projection"].SetValue(camera.Projection);
 
-         cubeEffect.DiffuseColor = new Vector3(5.0f, 3.0f, 4.0f);
-         cubeEffect.SpecularColor = new Vector3(.35f, 0.35f, 0.35f);
-         cubeEffect.SpecularPower = 10.0f;
+         cubeEffect.LightingEnabled = true;
+         cubeEffect.AmbientLightColor = new Vector3(0.1f, 0.1f, 0.1f);
+         cubeEffect.PreferPerPixelLighting = true;
 
+         cubeEffect.DirectionalLight0.Direction = new Vector3(1, -1, 0);
+         cubeEffect.DirectionalLight0.DiffuseColor = Color.White.ToVector3();
          cubeEffect.DirectionalLight0.Enabled = true;
-         cubeEffect.DirectionalLight0.DiffuseColor = Vector3.One;
-         cubeEffect.DirectionalLight0.Direction = Vector3.Normalize(new Vector3(1.0f, -1.0f, -1.0f));
-         cubeEffect.DirectionalLight0.SpecularColor = Vector3.One;
 
          cubeEffect.DirectionalLight1.Enabled = true;
-         cubeEffect.DirectionalLight1.DiffuseColor = new Vector3(0.5f, 0.5f, 0.5f);
-         cubeEffect.DirectionalLight1.Direction = Vector3.Normalize(new Vector3(-1.0f, -1.0f, 1.0f));
-         cubeEffect.DirectionalLight1.SpecularColor = new Vector3(0.5f, 0.5f, 0.5f);
+         cubeEffect.DirectionalLight1.DiffuseColor = Color.White.ToVector3();
+         cubeEffect.DirectionalLight1.Direction = new Vector3(0, 1, 1);
 
          cubeEffect.DirectionalLight2.Enabled = true;
-         cubeEffect.DirectionalLight2.DiffuseColor = new Vector3(0.5f, 0.5f, 0.5f);
-         cubeEffect.DirectionalLight2.Direction = Vector3.Normalize(new Vector3(-1.0f, 1.0f, -1.0f));
-         cubeEffect.DirectionalLight2.SpecularColor = new Vector3(0.5f, 0.5f, 0.5f);
+         cubeEffect.DirectionalLight2.DiffuseColor = Color.White.ToVector3();
+         cubeEffect.DirectionalLight2.Direction = new Vector3(1, 0, -1);
 
-         cubeEffect.LightingEnabled = true;
-
+         cubeEffect.SpecularPower = 32;
+    
          //Draw Border
          for (int i = -1; i <= gamefield.getGameField.GetLength(0); i++) //Bottom Row
          {
-            BasicShape cube = new BasicShape(Vector3.One, new Vector3(i, -1, 0), TetrisColors.Gray);
+            BasicShape cube = new BasicShape(Vector3.One, new Vector3(i-4, -1, 0), TetrisColors.Gray);
             foundation.Add(cube);
          }
 
          for (int i = 0; i < gamefield.getGameField.GetLength(1); i++) //Containment Box 
          {
-            BasicShape cubeLeft = new BasicShape(Vector3.One, new Vector3(-1, i, 0), TetrisColors.Gray);
+            BasicShape cubeLeft = new BasicShape(Vector3.One, new Vector3(-1-4, i, 0), TetrisColors.Gray);
             foundation.Add(cubeLeft);
 
-            BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(gamefield.getGameField.GetLength(0), i, 0), TetrisColors.Gray);
+            BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(gamefield.getGameField.GetLength(0)-4, i, 0), TetrisColors.Gray);
             foundation.Add(cubeRight);
          }
       }
@@ -171,7 +159,7 @@ namespace Tetris3D
             case GameState.Title:
                if (input.KeyboardState.WasKeyPressed(Keys.Enter))
                {
-                  //MediaPlayer.Play(backgroundMusic);  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COMMENT THIS OUT TO MAKE IT LOAD FASTER!!!!!!!!!!!!!!!
+                  //MediaPlayer.Play(backgroundMusic);  //!!!!!!!!!!!!!!! COMMENT THIS OUT TO MAKE IT LOAD FASTER!!!!!!!!!!!!!!!
                   this.gameState = GameState.Playing;
                }
                break;
@@ -280,7 +268,7 @@ namespace Tetris3D
                   {
                      if (tetrisSession.GameBoard.GetValue(x, y) != null)
                      {
-                        BasicShape cube = new BasicShape(Vector3.One, new Vector3(x, y, 0), tetrisSession.GameBoard[x,y].TetrisColor);
+                        BasicShape cube = new BasicShape(Vector3.One, new Vector3(x-4, y, 0), tetrisSession.GameBoard[x,y].TetrisColor);
                         cube.RenderShape(this.GraphicsDevice);
                      }
 
@@ -292,12 +280,9 @@ namespace Tetris3D
                   cube.RenderShape(GraphicsDevice);
                }
                pass.End();
-
             }
 
             cubeEffect.End();
-
-
          }
          base.Draw(gameTime);
       }
@@ -307,7 +292,5 @@ namespace Tetris3D
          spriteBatch.Draw(titleTexture, new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), Color.White);
          spriteBatch.DrawString(italicFont, "Press Enter", new Vector2(75f, 200f), Color.Red);
       }
-
-
    }
 }

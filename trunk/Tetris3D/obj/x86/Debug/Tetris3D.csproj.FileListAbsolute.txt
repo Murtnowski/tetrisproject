@@ -130,7 +130,6 @@ C:\Users\Damon\Desktop\tetrisproject\Tetris3D\obj\x86\Debug\ResolveAssemblyRefer
 C:\Users\Damon\Desktop\tetrisproject\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Damon\Desktop\tetrisproject\Tetris3D\obj\x86\Debug\Tetris3D.exe
 C:\Users\Damon\Desktop\tetrisproject\Tetris3D\obj\x86\Debug\Tetris3D.pdb
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap2.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb

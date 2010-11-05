@@ -117,7 +117,7 @@ namespace Tetris3D
       {
          cubeEffect = new BasicEffect(GraphicsDevice, null);
          cubeEffect.TextureEnabled = true;
-         cubeEffect.Texture = this.Content.Load<Texture2D>("Textures\\ColorMap");
+         cubeEffect.Texture = this.Content.Load<Texture2D>("Textures\\leather");
 
          cubeEffect.Parameters["World"].SetValue(camera.getRotationMatrix);
          cubeEffect.Parameters["View"].SetValue(camera.View);
@@ -147,16 +147,16 @@ namespace Tetris3D
          //Draw Border
          for (int i = -1; i <= gamefield.getGameField.GetLength(0); i++) //Bottom Row
          {
-            BasicShape cube = new BasicShape(Vector3.One, new Vector3(i, -1, 0), TetrisColors.Black);
+            BasicShape cube = new BasicShape(Vector3.One, new Vector3(i, -1, 0), TetrisColors.Gray);
             foundation.Add(cube);
          }
 
          for (int i = 0; i < gamefield.getGameField.GetLength(1); i++) //Containment Box 
          {
-            BasicShape cubeLeft = new BasicShape(Vector3.One, new Vector3(-1, i, 0), TetrisColors.Black);
+            BasicShape cubeLeft = new BasicShape(Vector3.One, new Vector3(-1, i, 0), TetrisColors.Gray);
             foundation.Add(cubeLeft);
 
-            BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(gamefield.getGameField.GetLength(0), i, 0), TetrisColors.Black);
+            BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(gamefield.getGameField.GetLength(0), i, 0), TetrisColors.Gray);
             foundation.Add(cubeRight);
          }
       }
@@ -171,7 +171,7 @@ namespace Tetris3D
             case GameState.Title:
                if (input.KeyboardState.WasKeyPressed(Keys.Enter))
                {
-                  MediaPlayer.Play(backgroundMusic);  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COMMENT THIS OUT TO MAKE IT LOAD FASTER!!!!!!!!!!!!!!!
+                  //MediaPlayer.Play(backgroundMusic);  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COMMENT THIS OUT TO MAKE IT LOAD FASTER!!!!!!!!!!!!!!!
                   this.gameState = GameState.Playing;
                }
                break;

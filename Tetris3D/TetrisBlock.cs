@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tetris3D
 {
-    public enum TetrisColors { Red, Magenta, Yellow, Cyan, Green, Blue, Orange, Black };
+    public enum TetrisColors { Red, Magenta, Yellow, Cyan, Green, Blue, Orange, Gray};
 
     public class TetrisBlock
     {

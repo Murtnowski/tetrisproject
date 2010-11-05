@@ -111,3 +111,4 @@ C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb

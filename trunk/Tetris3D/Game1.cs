@@ -195,7 +195,27 @@ namespace Tetris3D
             }
             if (this.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-               this.tetrisSession.moveCurrentPieceDown();
+                if (!this.tetrisSession.moveCurrentPieceDown())
+                {
+                    if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
+                    {
+                        this.Exit();
+                    }
+                    audio.PlayClearLineSound();
+                    this.tetrisSession.clearCompletedLines();
+                }
+            }
+            if (this.input.KeyboardState.WasKeyPressed(Keys.Up))
+            {
+                if (!this.tetrisSession.slamCurrentPiece())
+                {
+                    if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
+                    {
+                        this.Exit();
+                    }
+                    audio.PlayClearLineSound();
+                    this.tetrisSession.clearCompletedLines();
+                }
             }
             if (this.input.KeyboardState.WasKeyPressed(Keys.Space))
             {

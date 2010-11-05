@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
-      <Time>2010-11-02T20:12:26.05-07:00</Time>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
+      <Time>2010-11-04T20:44:35.3913677-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\Kootenay.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
-      <Time>2010-11-02T20:12:26.053-07:00</Time>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
+      <Time>2010-11-04T20:44:35.3943679-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\Title.jpg</Source>
@@ -28,8 +28,8 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
-      <Time>2010-11-02T20:12:26.046-07:00</Time>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
+      <Time>2010-11-04T20:44:35.3883675-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\ColorMap.jpg</Source>
@@ -40,47 +40,111 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
-      <Time>2010-11-02T20:12:26.058-07:00</Time>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
+      <Time>2010-11-04T20:58:51.4363307-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\stars.jpg</Source>
+      <Name>Textures\stars</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
+      <Time>2010-11-04T20:44:35.4503711-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\scratchloud.wav</Source>
+      <Name>Audio\scratchloud</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
+      <Time>2010-11-04T20:44:19.713471-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\hit.wav</Source>
+      <Name>Audio\hit</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
+      <Time>2010-11-04T20:44:19.7084707-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\slam.wav</Source>
+      <Name>Audio\slam</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
+      <Time>2010-11-04T20:44:19.7614737-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\bigButtz.mp3</Source>
+      <Name>Audio\bigButtz</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb</Output>
+      <Extra>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma</Extra>
+      <Time>2010-11-04T20:44:19.7194713-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\ColorMap2.jpg</Source>
+      <Name>Textures\ColorMap2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap2.xnb</Output>
+      <Time>2010-11-04T21:02:09.5546624-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\leather.jpg</Source>
+      <Name>Textures\leather</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
+      <Time>2010-11-05T10:51:13.8212239-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Murtnowski\Desktop\Tetris_rar\tetrisproject\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2009-05-28T00:16:14-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-28T01:16:14-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2009-05-28T00:16:06-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2009-05-28T01:16:06-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2009-05-28T00:16:16-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-28T01:16:16-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2009-05-28T00:16:26-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-28T01:16:26-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2009-05-28T00:16:12-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-28T01:16:12-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2009-05-28T00:16:06-07:00</Value>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-28T01:16:06-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-07-14T15:20:15.188-07:00</Value>
+        <Value>2010-02-04T15:09:03.2483949-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

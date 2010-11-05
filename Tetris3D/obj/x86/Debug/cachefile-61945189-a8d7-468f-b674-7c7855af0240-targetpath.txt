@@ -7,3 +7,4 @@ Content\Audio\bigButtz.xnb
 Content\Audio\bigButtz.wma
 Content\Audio\hit.xnb
 Content\Audio\slam.xnb
+Content\Textures\stars.xnb

@@ -151,6 +151,7 @@ namespace Tetris3D
         public void RenderShape(GraphicsDevice device)
         {
             BuildShape();
+
             shapeBuffer = new VertexBuffer(device,
                 VertexPositionNormalTexture.SizeInBytes * shapeVertices.Length,
                 BufferUsage.WriteOnly);

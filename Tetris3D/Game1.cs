@@ -36,7 +36,7 @@ namespace Tetris3D
        private GraphicsDeviceManager graphics;
        private BasicEffect cubeEffect;
 
-       //Base and piecs
+       //Base and pieces
        private List<BasicShape> foundation = new List<BasicShape>();
        private TetrisSession tetrisSession;
 
@@ -48,6 +48,9 @@ namespace Tetris3D
        private SpriteFont mainFont;
        private SpriteFont italicFont;
        private Texture2D titleTexture;
+
+       //Background
+       private ScrollingBackground scrollingBackground;
 
        //Movement
        double totalTime = 0;
@@ -103,6 +106,11 @@ namespace Tetris3D
          Services.AddService(typeof(AudioBank), audio);
           //load music
          backgroundMusic = Content.Load<Song>(@"Audio\bigButtz");
+          //load background
+         spriteBatch = new SpriteBatch(GraphicsDevice);
+         scrollingBackground = new ScrollingBackground();
+         Texture2D backgroundTexture = Content.Load<Texture2D>(@"Textures\stars");
+         scrollingBackground.Load(GraphicsDevice, backgroundTexture);
       }
 
       private void initializeWorld()
@@ -157,12 +165,13 @@ namespace Tetris3D
 
       protected override void Update(GameTime gameTime)
       {
+         float elapsedBackground = (float)gameTime.ElapsedGameTime.TotalSeconds;
          switch (this.gameState)
          {
             case GameState.Title:
                if (input.KeyboardState.WasKeyPressed(Keys.Enter))
                {
-                  MediaPlayer.Play(backgroundMusic);
+                  MediaPlayer.Play(backgroundMusic);  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! COMMENT THIS OUT TO MAKE IT LOAD FASTER!!!!!!!!!!!!!!!
                   this.gameState = GameState.Playing;
                }
                break;
@@ -213,6 +222,7 @@ namespace Tetris3D
                }
             }
          }
+         scrollingBackground.Update(elapsedBackground * 100);
          base.Update(gameTime);
       }
 
@@ -231,30 +241,18 @@ namespace Tetris3D
 
          if (gameState == GameState.Playing)
          {
-            graphics.GraphicsDevice.Clear(Color.Gray);
+             graphics.GraphicsDevice.Clear(Color.Gray);
+             // TODO : Make it so you draw background.. then pieces.. then HUD without them conflicting graphically
+             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
+             scrollingBackground.Draw(spriteBatch);
+             spriteBatch.End();
 
-            cubeEffect.World = camera.getRotationMatrix;
-
-            cubeEffect.Begin();
+             cubeEffect.World = camera.getRotationMatrix;
+             cubeEffect.Begin();
 
             foreach (EffectPass pass in cubeEffect.CurrentTechnique.Passes)
             {
                pass.Begin();
-
-               //This will no render because it needs to be passed in from the current tetrisSession
-
-               ////Draw Tetris Pieces
-               //for (int x = 0; x < gamefield.getGameField.GetLength(0); x++)
-               //{
-               //   for (int y = 0; y < gamefield.getGameField.GetLength(1); y++)
-               //   {
-               //      if (gamefield.getGameField[x, y] != null)
-               //      {
-               //         BasicShape cube = new BasicShape(Vector3.One, new Vector3(x, y, 0), TetrisBlock.getColorOfTetrisPiece(gamefield.getGameField[x, y].TetrisPiece));
-               //         cube.RenderShape(this.GraphicsDevice); 
-               //      }
-               //   }
-               //}
 
                for (int x = 0; x < gamefield.getGameField.GetLength(0); x++)//This block draws all the pieces on the gameboard, will not draw pieces until they enter its range
                {                                                            //Use code block below to see them before they enter the gamefield range
@@ -269,14 +267,6 @@ namespace Tetris3D
                   }
                }
 
-               //This block draws the individual pieces
-
-               //foreach (Point points in tetrisSession.CurrentPiecePointLocations
-               //{
-               //   BasicShape cube = new BasicShape(Vector3.One, new Vector3(points.X, points.Y, 0), TetrisBlock.getColorOfTetrisPiece(tetrisSession.GameBoard[x,y].getPiece));
-               //   cube.RenderShape(this.GraphicsDevice);
-               //}
-
                foreach (BasicShape cube in foundation)//Draw containment cubes
                {
                   cube.RenderShape(GraphicsDevice);
@@ -284,7 +274,10 @@ namespace Tetris3D
                pass.End();
 
             }
+
             cubeEffect.End();
+
+
          }
          base.Draw(gameTime);
       }

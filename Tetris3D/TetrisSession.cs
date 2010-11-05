@@ -491,5 +491,14 @@ namespace Tetris3D
 
             return false;
         }
+
+        public bool slamCurrentPiece()
+        {
+            do
+            {
+            } while (this.moveCurrentPieceDown());
+
+            return false;
+        }
     }
 }

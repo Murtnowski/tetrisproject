@@ -138,3 +138,10 @@ C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma

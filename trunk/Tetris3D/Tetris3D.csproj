@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="AudioBank.cs" />
     <Compile Include="BasicShape.cs" />
+    <Compile Include="GameComponent1.cs" />
     <Compile Include="IPiece.cs" />
     <Compile Include="JPiece.cs" />
     <Compile Include="LPiece.cs" />
@@ -100,7 +101,6 @@
     <Compile Include="ScrollingBackground.cs" />
     <Compile Include="Spiece.cs" />
     <Compile Include="TetrisBlock.cs" />
-    <Compile Include="TetrisGameState.cs" />
     <Compile Include="TetrisPiece.cs" />
     <Compile Include="TetrisSession.cs" />
     <Compile Include="TPiece.cs" />

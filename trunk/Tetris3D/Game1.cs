@@ -49,7 +49,6 @@ namespace Tetris3D
 
        //Components
        private InputHandler input;
-       private TetrisGameState gamefield;
        private Camera camera;
        #endregion
 
@@ -69,9 +68,6 @@ namespace Tetris3D
 
          camera = new Camera(this);
          Components.Add(camera);
-
-         gamefield = new TetrisGameState(this);
-         Components.Add(gamefield);
 
          tetrisSession = new TetrisSession(new Vector2(10, 24)); 
       }
@@ -133,18 +129,18 @@ namespace Tetris3D
          cubeEffect.SpecularPower = 32;
     
          //Draw Border
-         for (int i = -1; i <= gamefield.getGameField.GetLength(0); i++) //Bottom Row
+         for (int i = -1; i <= this.tetrisSession.GameBoard.GetLength(0); i++) //Bottom Row
          {
             BasicShape cube = new BasicShape(Vector3.One, new Vector3(i-4, -1, 0), TetrisColors.Gray);
             foundation.Add(cube);
          }
 
-         for (int i = 0; i < gamefield.getGameField.GetLength(1); i++) //Containment Box 
+         for (int i = 0; i < this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange; i++) //Containment Box 
          {
             BasicShape cubeLeft = new BasicShape(Vector3.One, new Vector3(-1-4, i, 0), TetrisColors.Gray);
             foundation.Add(cubeLeft);
 
-            BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(gamefield.getGameField.GetLength(0)-4, i, 0), TetrisColors.Gray);
+            BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(this.tetrisSession.GameBoard.GetLength(0)-4, i, 0), TetrisColors.Gray);
             foundation.Add(cubeRight);
          }
       }
@@ -195,15 +191,13 @@ namespace Tetris3D
             }
             if (this.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                if (!this.tetrisSession.slamCurrentPiece())
+                this.tetrisSession.slamCurrentPiece();
+                if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                 {
-                    if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
-                    {
-                        this.Exit();
-                    }
-                    audio.PlayClearLineSound();
-                    this.tetrisSession.clearCompletedLines();
+                    this.Exit();
                 }
+                audio.PlayClearLineSound();
+                this.tetrisSession.clearCompletedLines();
             }
             if (this.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
@@ -211,9 +205,9 @@ namespace Tetris3D
                 this.tetrisSession.rotateCurrentPieceClockwise();
             }
 
-            if (totalTime > (1000 - (this.tetrisSession.CurrentLevel + 1) * 100))
+            if (totalTime > (1000 - (this.tetrisSession.CurrentLevel * 100)))
             {
-               totalTime = 0;
+               this.totalTime = 0;
 
                if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                {
@@ -249,6 +243,8 @@ namespace Tetris3D
 
          if (gameState == GameState.Playing)
          {
+             //this.tetrisSession.Draw(gameTime, this.spriteBatch, this.GraphicsDevice);
+
              graphics.GraphicsDevice.Clear(Color.Gray);
              // TODO : Make it so you draw background.. then pieces.. then HUD without them conflicting graphically
              spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
@@ -262,9 +258,9 @@ namespace Tetris3D
             {
                pass.Begin();
 
-               for (int x = 0; x < gamefield.getGameField.GetLength(0); x++)//This block draws all the pieces on the gameboard, will not draw pieces until they enter its range
+               for (int x = 0; x < this.tetrisSession.GameBoard.GetLength(0); x++)//This block draws all the pieces on the gameboard, will not draw pieces until they enter its range
                {                                                            //Use code block below to see them before they enter the gamefield range
-                  for (int y = 0; y < gamefield.getGameField.GetLength(1); y++)
+                  for (int y = 0; y < this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange; y++)
                   {
                      if (tetrisSession.GameBoard.GetValue(x, y) != null)
                      {
@@ -283,6 +279,14 @@ namespace Tetris3D
             }
 
             cubeEffect.End();
+
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
+            spriteBatch.DrawString(italicFont, "Level: " + this.tetrisSession.CurrentLevel, new Vector2(75f, 200f), Color.Red);
+            spriteBatch.DrawString(italicFont, "Lines: " + this.tetrisSession.CurrentNumberOfClearedLines, new Vector2(75f, 230f), Color.Red);
+            spriteBatch.DrawString(italicFont, "Score: " + this.tetrisSession.CurrentScore, new Vector2(75f, 260f), Color.Red);
+            spriteBatch.End();
+
+
          }
          base.Draw(gameTime);
       }

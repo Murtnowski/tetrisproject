@@ -15,39 +15,72 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
-    /* This class represents a single Tetris session.  A session is when a player plays
-     * a single Tetris round from start until Game Over
-     */
+    /// <summary>
+    /// This class represents a single Tetris session.  A session is when a player plays a single Tetris round from start till game over
+    /// </summary>
     public class TetrisSession
     {
-        //GameOverRange is the number of rows from the top of the board that if a piece ends up in the game is over.
-        // TODO: The value 4 needs to be verified, likely incorrect.s
+        // TODO: The value 4 needs to be verified, likely incorrect.
+        /// <summary>
+        /// The number of rows from the top of the board that if a piece ends up in the game is over
+        /// </summary>
         public const int GameOverRange = 4;
 
-        //A referance point that new piece the player controls is built around when a new piece is needed at the top of the board
+        /// <summary>
+        /// A referance point that a piece the player controls is built around when a new piece is needed at the top of the board
+        /// </summary>
         private Point newCurrentPieceGenerationPoint;
 
-        /* A two dimension array that represents the gameboard.  The game board is arranged into collection of points in a 
-         * multidimensional array
-         */
+        /// <summary>
+        /// A two dimension array that represents the gameboard.
+        /// </summary>
+        /// The game board is arranged into collection of points in a multidimensional array
         private TetrisBlock[,] gameBoard;
 
-        //The current Tetris peice the player controls
+        /// <summary>
+        /// The current Tetris peice the player controls
+        /// </summary>
         private TetrisPiece currentTetrisPiece;
 
-        //The next piece the player will control
+        /// <summary>
+        /// The next piece the player will control
+        /// </summary>
         private TetrisPiece nextTetrisPiece;
 
-        //The current level
+        /// <summary>
+        /// The current level
+        /// </summary>
         private int currentLevel;
 
-        //The current score
+
+        /// <summary>
+        /// The current score
+        /// </summary>
         private int currentScore;
 
-        //A random number generator used to generate the next Tetris piece
+        /// <summary>
+        /// The number of lines that has been cleared in this session
+        /// </summary>
+        private int currentNumberOfClearedLines;
+
+        /// <summary>
+        /// A random number generator used to generate the next Tetris piece
+        /// </summary>
         private Random randomGenerator = new Random();
 
-        //Accessor for the Gameboard
+        /// <summary>
+        /// The points earned when a line is cleared
+        /// </summary>
+        private int lineScore = 100;
+
+        /// <summary>
+        /// The bounus points earned when the player completes a Tetris
+        /// </summary>
+        private int tetrisBonus = 700;
+
+        /// <summary>
+        /// A two dimension array that represents the gameboard.
+        /// </summary>
         public TetrisBlock[,] GameBoard
         {
             get
@@ -56,19 +89,27 @@ namespace Tetris3D
             }
         }
 
-        //Accessor for the current Tetris piece the player controls
+        /// <summary>
+        /// The current Tetris piece the player controls
+        /// </summary>
+        /// <returns>Returns the tetris piece the player controls</returns>
         public TetrisPiece CurrentTetrisPiece()
         {
             return this.currentTetrisPiece;
         }
 
-        //Accessor for the next Tetris piece the player controls
+        /// <summary>
+        /// The next Tetris piece the player will control
+        /// </summary>
+        /// <returns>Returns the tetris piece the player controls</returns>
         public TetrisPiece NextTetrisPiece()
         {
             return this.nextTetrisPiece;
         }
 
-        //Accessor for the collection of points the player's piece occupies on the game board
+        /// <summary>
+        /// An array of points the player's piece occupies on the game board
+        /// </summary>
         public Point[] CurrentPiecePointLocations
         {
             get
@@ -77,7 +118,9 @@ namespace Tetris3D
             }
         }
 
-        //Accessor for the current level
+        /// <summary>
+        /// The current level
+        /// </summary>
         public int CurrentLevel
         {
             get
@@ -90,7 +133,9 @@ namespace Tetris3D
             }
         }
 
-        //Accessor for the current score
+        /// <summary>
+        /// The current score
+        /// </summary>
         public int CurrentScore
         {
             get
@@ -99,7 +144,21 @@ namespace Tetris3D
             }
         }
 
-        // Constructs a Tetris Session with a new board of the size defined by gameBoardSize
+        /// <summary>
+        /// The current number of lines that has been cleared in this Tetris session
+        /// </summary>
+        public int CurrentNumberOfClearedLines
+        {
+            get
+            {
+                return this.currentNumberOfClearedLines;
+            }
+        }
+
+        /// <summary>
+        /// Constructs a new Tetris Session
+        /// </summary>
+        /// <param name="gameBoardSize">Defines the size of the gameboard the tetris session uses</param>
         public TetrisSession(Vector2 gameBoardSize)
         {
             this.gameBoard = new TetrisBlock[(int)gameBoardSize.X, (int)gameBoardSize.Y];
@@ -114,6 +173,10 @@ namespace Tetris3D
         }
 
         // Constructs a Tetris Session with a board intialized by the parameter gameBoard
+        /// <summary>
+        /// Constructs a new Tetris Session
+        /// </summary>
+        /// <param name="gameBoard">Initialize the gameboard</param>
         public TetrisSession(TetrisBlock[,] gameBoard)
         {
             this.gameBoard = gameBoard;
@@ -127,6 +190,10 @@ namespace Tetris3D
             this.GenerateNewCurrentTetrisPiece();
         }
 
+        /// <summary>
+        /// Gets a new Tetris piece at random
+        /// </summary>
+        /// <returns>A new tetris piece</returns>
         private TetrisPiece getRandomTetrisPiece()
         {
             switch (this.randomGenerator.Next(TetrisPiece.NUMBER_OF_SUPPORTED_TETRIS_PIECES))
@@ -142,10 +209,10 @@ namespace Tetris3D
             }
         }
 
-        /* Generate a new Tetris piece the user will control.  If a new piece is generated true is returned.
-         * If tetris blocks are exist with the Game Over area at the top of the board, a new piece will not be 
-         * generated and false will be returned
-         */
+        /// <summary>
+        /// Generate a new Tetris piece the user will control.
+        /// </summary>
+        /// <returns>Returns true if a new Tetris piece is constructed, if the last Tetris piece resulted in a game over then a new Tetris piece is not constructed and false is returned</returns>
         public bool GenerateNewCurrentTetrisPiece()
         {
             //If the game is not over generate a new piece
@@ -166,7 +233,11 @@ namespace Tetris3D
             }
         }
 
-        //Returns true if the part of the current piece occupies a point on the game board
+        /// <summary>
+        /// Checks to see if the current Tetris piece occupies a particular point
+        /// </summary>
+        /// <param name="point">The point compared against the Tetris piece</param>
+        /// <returns>A bool conresponding to wether or not part of the Tetris piece occupies a particular point</returns>
         public bool isCurrentPieceAtLocation(Point point)
         {
             // TODO: One point of return from a method.
@@ -183,7 +254,10 @@ namespace Tetris3D
             return false;
         }
 
-        //Returns true if the space below the current piece is clear.  Another way of thinking about it can the current piece move down
+        /// <summary>
+        /// Check to see if the current Tetris piece can move down
+        /// </summary>
+        /// <returns>If the space below the current tetris piece is clear return true</returns>
         public bool isBlocksBelowCurrentPieceClear()
         {
             //Check each of the points of the current piece
@@ -202,7 +276,10 @@ namespace Tetris3D
             return true;
         }
 
-        //Returns true if the space to the left of the current piece is clear.  Another way of thinking about it can the current piece move right
+        /// <summary>
+        /// Check to see if the current Tetris piece can move left
+        /// </summary>
+        /// <returns>If the space left of the current tetris piece is clear return true</returns>
         public bool isBlocksLeftOfCurrentPieceClear()
         {
             //Check each of the points of the current piece
@@ -223,7 +300,10 @@ namespace Tetris3D
             return true;
         }
 
-        //Returns true if the space to the right of the current piece is clear.  Another way of thinking about it can the current piece move right
+        /// <summary>
+        /// Check to see if the current Tetris piece can move right
+        /// </summary>
+        /// <returns>If the space right of the current tetris piece is clear return true</returns>
         public bool isBlocksRightOfCurrentPieceClear()
         {
             //Check each of the points of the current piece
@@ -242,7 +322,10 @@ namespace Tetris3D
             return true;
         }
 
-        //Checks to see if the piece can rotate clockwise
+        /// <summary>
+        /// Check to see if the current Tetris piece can rotate clockwise
+        /// </summary>
+        /// <returns>If the Tetris piece can rotate clockwise return true</returns>
         public bool isCurrentPieceAbleToRotateClockwise()
         {
             Point[] points = this.currentTetrisPiece.pointsForClockwiseRotation();
@@ -258,7 +341,10 @@ namespace Tetris3D
             return true;
         }
 
-        //Checks to see if the piece can rotate counterclockwise.
+        /// <summary>
+        /// Check to see if the current Tetris piece can rotate counterclockwise
+        /// </summary>
+        /// <returns>If the Tetris piece can rotate counterclockwise return true</returns>
         public bool isCurrentPieceAbleToRotateCounterClockwise()
         {
             Point[] points = this.currentTetrisPiece.pointsForCounterClockwiseRotation();
@@ -274,6 +360,10 @@ namespace Tetris3D
             return true;
         }
 
+        /// <summary>
+        /// Removes a set of blocks from the gameboard
+        /// </summary>
+        /// <param name="pointsToBeRemove">The position of the blocks to be removed</param>
         private void removeBlocksFromGameboard(Point[] pointsToBeRemove)
         {
             foreach (Point p in pointsToBeRemove)
@@ -282,7 +372,10 @@ namespace Tetris3D
             }
         }
 
-        //Move the current piece down.  If succesful return true, otherwise return false
+        /// <summary>
+        /// Move the current Tetris piece down
+        /// </summary>
+        /// <returns>If the Tetris piece was successfully moved down return true</returns>
         public bool moveCurrentPieceDown()
         {
             //If the space below the current piece is clear then move down
@@ -303,7 +396,10 @@ namespace Tetris3D
             }
         }
 
-        //Move the current piece left.  If succesful return true, otherwise return false;
+        /// <summary>
+        /// Move the current Tetris piece left
+        /// </summary>
+        /// <returns>If the Tetris piece was successfully moved left return true</returns>
         public bool moveCurrentPieceLeft()
         {
             if (this.isBlocksLeftOfCurrentPieceClear())
@@ -322,7 +418,10 @@ namespace Tetris3D
             }
         }
 
-        //Move the current piece right.  If succesful return true, otherwise return false;
+        /// <summary>
+        /// Move the current Tetris piece right
+        /// </summary>
+        /// <returns>If the Tetris piece was successfully moved right return true</returns>
         public bool moveCurrentPieceRight()
         {
             if (this.isBlocksRightOfCurrentPieceClear())
@@ -341,8 +440,10 @@ namespace Tetris3D
             }
         }
 
-        //Rotate the current piece clockwise.  If succesful return true, otherwise return false
-        //NOT YET IMPLEMENTED
+        /// <summary>
+        /// Rotate the current tetris piece clockwise
+        /// </summary>
+        /// <returns>If the Tetris piece was successfully rotated return true</returns>
         public bool rotateCurrentPieceClockwise()
         {
             if (this.isCurrentPieceAbleToRotateClockwise())
@@ -360,27 +461,21 @@ namespace Tetris3D
             return false;
         }
 
-        //Move the current piece counterclockwise.  If succesful return true, otherwise return false;
-        //NOT YET IMPLEMENTED
+        /// <summary>
+        /// Rotate the current tetris piece counterclockwise
+        /// </summary>
+        /// <returns>If the Tetris piece was successfully rotated return true</returns>
         public bool rotateCurrentPieceCounterclockwise()
         {
+            //TODO: Implement 
             throw new NotImplementedException();
         }
 
-        /*
-        //Replaces the current Tetris piece with a new piece at a new location
-        private void replaceCurrentPiece(Point[] newCurrentPieceLocations, TetrisPieces tetrisPiece)
-        {
-            foreach (Point p in this.currentPiecePointLocations)
-            {
-                this.gameBoard[p.X, p.Y] = null;
-            }
-
-            this.addBlocksToGameBoard(newCurrentPieceLocations, tetrisPiece);
-        }
-        */
-
-        //Adds a tetris piece at specific points on the gameboard
+        /// <summary>
+        /// Adds a tetris block at specific points on the gameboard
+        /// </summary>
+        /// <param name="pointsToBeAdded">Location of the block to be added</param>
+        /// <param name="tetrisColor">The color of the tetris blcok to be added</param>
         private void addBlocksToGameBoard(Point[] pointsToBeAdded, TetrisColors tetrisColor)
         {
             foreach (Point p in pointsToBeAdded)
@@ -389,29 +484,48 @@ namespace Tetris3D
             }
         }
 
-        //Clears all of the currently completed lines
         //The current algorithm is very inefficent
-        public void clearCompletedLines()
+        /// <summary>
+        /// Clears all of the currently completed lines
+        /// </summary>
+        /// <returns>Returns the number of lines that were cleared</returns>
+        public int clearCompletedLines()
         {
             /* For each row see if the line is completed.  If it is then clear the line restructure the board then start
              * looking from the beginning for cleared lines.
              */
-            for (int lineIndex = 0; lineIndex < this.GameBoard.GetLength(1); lineIndex++)
+            int linesCleared = 0;
+            for (int lineIndex = this.gameBoard.GetLength(1) - 1; lineIndex >= 0; lineIndex--)
             {
-                if (this.isLineCompleted(lineIndex))
+                if(this.isLineCompleted(lineIndex))
                 {
                     this.clearLine(lineIndex);
 
                     this.restructureGameboard(lineIndex);
 
-                    this.clearCompletedLines();
-
-                    return;
+                    linesCleared++;
                 }
             }
+
+            if (linesCleared == 4)
+            {
+                this.currentScore += ((linesCleared * this.lineScore) + this.tetrisBonus);
+            }
+            else
+            {
+                this.currentScore += (linesCleared * this.lineScore);
+            }
+
+            this.currentNumberOfClearedLines += linesCleared;
+            this.currentLevel = this.currentNumberOfClearedLines / 10;
+
+            return linesCleared;
         }
 
-        //Lowers all blocks above a lineIndex by one
+        /// <summary>
+        /// Lowers all blocks above a lineIndex by one
+        /// </summary>
+        /// <param name="lineIndex">The base line all other lines above will be lowered</param>
         private void restructureGameboard(int lineIndex)
         {
             //For all of the rows above the lineIndex move each of the occupied blocks down
@@ -428,7 +542,10 @@ namespace Tetris3D
             }
         }
 
-        //Clears a line at a particular line index
+        /// <summary>
+        /// Clears a line at a particular line index
+        /// </summary>
+        /// <param name="lineIndex">The index of the line to be removed</param>
         private void clearLine(int lineIndex)
         {
             for (int x = 0; x < this.gameBoard.GetLength(0); x++)
@@ -438,6 +555,10 @@ namespace Tetris3D
         }
 
         //Returns the current number of completed lines
+        /// <summary>
+        /// The current number of lines that are complete
+        /// </summary>
+        /// <returns>An integer count of the number of completed lines</returns>
         public int currentNumerOfCompletedLines()
         {
             int currentNumberOfCompletedLines = 0;
@@ -453,7 +574,11 @@ namespace Tetris3D
             return currentNumberOfCompletedLines;
         }
 
-        //Returns true if the line is completed at a particular line index
+        /// <summary>
+        /// Checks to see if a line at an index in clear
+        /// </summary>
+        /// <param name="lineIndex">The line to be checked</param>
+        /// <returns>If all the blocks at a line index are occupied return true</returns>
         public bool isLineCompleted(int lineIndex)
         {
             for (int x = 0; x < this.GameBoard.GetLength(0); x++)
@@ -474,7 +599,10 @@ namespace Tetris3D
             return true;
         }
 
-        //Return true if a tetris block occupies the game over area at the top of the board;
+        /// <summary>
+        /// Checks to see if the current game is over
+        /// </summary>
+        /// <returns>If any line is the board is fully occupied return true</returns>
         public bool isGameOver()
         {
             //For all of the rows in the Game Over range check to see if they have any blocks in them
@@ -492,14 +620,15 @@ namespace Tetris3D
             return false;
         }
 
-        public bool slamCurrentPiece()
+        /// <summary>
+        /// Instantly moves the piece to the bottom of the game board
+        /// </summary>
+        public void slamCurrentPiece()
         {
             if (this.moveCurrentPieceDown())
             {
                 this.slamCurrentPiece();
             }
-
-            return false;
         }
     }
 }

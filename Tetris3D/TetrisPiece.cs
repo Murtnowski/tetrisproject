@@ -8,21 +8,46 @@ using Microsoft.Xna.Framework;
 
 namespace Tetris3D
 {
-    //This is an enumeration of the currently supported tetris blocks.  If you change it be sure to update NUMBER_OF_SUPPORTED_TETRIS_PIECES
+    /// <summary>
+    /// An enumeration of the type a Tetris piece may be
+    /// </summary>
+    /// If you change it be sure to update NUMBER_OF_SUPPORTED_TETRIS_PIECES
     public enum TetrisPieces { TBlock = 0, SBlock, ZBlock, IBlock, JBlock, LBlock, OBlock };
 
+    /// <summary>
+    /// An enumeration of the orientations a Tetris piece may face
+    /// </summary>
     public enum Orientations { North, West, South, East };
 
+    /// <summary>
+    /// The base class of a Tetris piece
+    /// </summary>
     public abstract class TetrisPiece
     {
+        /// <summary>
+        /// The number of Tetris piece types
+        /// </summary>
+        /// The number needs to be equal to the number of entires in TetrisPiece.TetrisPieces
         public const int NUMBER_OF_SUPPORTED_TETRIS_PIECES = 7;
 
+        /// <summary>
+        /// The orientation of the Tetris piece
+        /// </summary>
         private Orientations orientation = Orientations.North;
 
+        /// <summary>
+        /// The point used as a referance location to define which points the Tetris piece occupies
+        /// </summary>
         protected Point referanceLocation;
 
+        /// <summary>
+        /// An array of points the Tetris piece occupies
+        /// </summary>
         protected Point[] pieceLocations;
 
+        /// <summary>
+        /// The orientation of the Tetris piece
+        /// </summary>
         public Orientations Orientation
         {
             get
@@ -31,16 +56,25 @@ namespace Tetris3D
             }
         }
 
+        /// <summary>
+        /// The type of the Tetris piece
+        /// </summary>
         public abstract TetrisPieces Type
         {
             get;
         }
 
+        /// <summary>
+        /// The color of the Tetris piece
+        /// </summary>
         public abstract TetrisColors Color
         {
             get;
         }
 
+        /// <summary>
+        /// An array of points the Tetris piece occupies
+        /// </summary>
         public Point[] PieceLocations
         {
             get
@@ -49,6 +83,10 @@ namespace Tetris3D
             }
         }
 
+        /// <summary>
+        /// Constructs a new Tetris piece
+        /// </summary>
+        /// <param name="referanceLocation">A referance point location used to define which points the Tetris piece occupies</param>
         protected TetrisPiece(Point referanceLocation)
         {
             this.referanceLocation = referanceLocation;
@@ -56,6 +94,11 @@ namespace Tetris3D
             this.updatePieceLocations();
         }
 
+        /// <summary>
+        /// Constructs a new Tetris piece
+        /// </summary>
+        /// <param name="referanceLocation">A referance point location used to define which points the Tetris piece occupies</param>
+        /// <param name="orientation">The orientation of the Tetris piece</param>
         protected TetrisPiece(Point referanceLocation, Orientations orientation)
         {
             this.referanceLocation = referanceLocation;
@@ -64,6 +107,10 @@ namespace Tetris3D
             this.updatePieceLocations();
         }
 
+        /// <summary>
+        /// Rotates the Tetris piece clockwise
+        /// </summary>
+        /// <returns>Returns the new orientation</returns>
         public Orientations rotateClockwise()
         {
             switch (this.orientation)
@@ -79,6 +126,10 @@ namespace Tetris3D
             return this.orientation;
         }
 
+        /// <summary>
+        /// Rotates the Tetris piece counterclockwise
+        /// </summary>
+        /// <returns>Returns the new orientation</returns>
         public Orientations rotateCounterClockwise()
         {
             switch (this.orientation)
@@ -94,6 +145,10 @@ namespace Tetris3D
             return this.orientation;
         }
 
+        /// <summary>
+        /// The points the Tetris piece would occupy if rotated clockwise
+        /// </summary>
+        /// <returns>An array of points defining where the Tetris piece would be located</returns>
         public Point[] pointsForClockwiseRotation()
         {
             switch (this.orientation)
@@ -106,6 +161,10 @@ namespace Tetris3D
             }
         }
 
+        /// <summary>
+        /// The points the Tetris piece would occupy if rotated counterwise
+        /// </summary>
+        /// <returns>An array of points defining where the Tetris piece would be located</returns>
         public Point[] pointsForCounterClockwiseRotation()
         {
             switch (this.orientation)
@@ -118,6 +177,10 @@ namespace Tetris3D
             }
         }
 
+        /// <summary>
+        /// Move the Tetris piece right
+        /// </summary>
+        /// <returns>Returns the new referance point</returns>
         public Point moveRight()
         {
             List<Point> newPieceLocations = new List<Point>();
@@ -129,6 +192,10 @@ namespace Tetris3D
             return this.referanceLocation;
         }
 
+        /// <summary>
+        /// Move the Tetris piece left
+        /// </summary>
+        /// <returns>Returns the new referance point</returns>
         public Point moveLeft()
         {
             List<Point> newPieceLocations = new List<Point>();
@@ -140,6 +207,10 @@ namespace Tetris3D
             return this.referanceLocation;
         }
 
+        /// <summary>
+        /// Move the Tetris piece down
+        /// </summary>
+        /// <returns>Returns the new referance point</returns>
         public Point moveDown()
         {
             List<Point> newPieceLocations = new List<Point>();
@@ -150,7 +221,10 @@ namespace Tetris3D
 
             return this.referanceLocation;
         }
-
+        /// <summary>
+        /// Move the Tetris piece up
+        /// </summary>
+        /// <returns>Returns the new referance point</returns>
         public Point moveUp()
         {
             List<Point> newPieceLocations = new List<Point>();
@@ -162,6 +236,9 @@ namespace Tetris3D
             return this.referanceLocation;
         }
 
+        /// <summary>
+        /// Updates the Tetris pieceLocations to reflect the orientation and referance point
+        /// </summary>
         private void updatePieceLocations()
         {
             switch (this.orientation)
@@ -174,26 +251,60 @@ namespace Tetris3D
             }
         }
 
+        /// <summary>
+        /// Orientates the Tetris piece north
+        /// </summary>
         private void orientateNorth()
         {
             this.pieceLocations = this.pointsForNorthOrientation();
         }
+
+        /// <summary>
+        /// Orientates the Tetris piece east
+        /// </summary>
         private void orientateEast()
         {
             this.pieceLocations = this.pointsForEastOrientation();
         }
+
+        /// <summary>
+        /// Orientates the Tetris piece south
+        /// </summary>
         private void orientateSouth()
         {
             this.pieceLocations = this.pointsForSouthOrientation();
         }
+
+        /// <summary>
+        /// Orientates the Tetris piece west
+        /// </summary>
         private void orientateWest()
         {
             this.pieceLocations = this.pointsForWestOrientation();
         }
 
+        /// <summary>
+        /// The points the Tetris piece would occupy if orientated north
+        /// </summary>
+        /// <returns>An array of points defining the Tetris piece's location when orientated north</returns>
         protected abstract Point[] pointsForNorthOrientation();
+
+        /// <summary>
+        /// The points the Tetris piece would occupy if orientated east
+        /// </summary>
+        /// <returns>An array of points defining the Tetris piece's location when orientated east</returns>
         protected abstract Point[] pointsForEastOrientation();
+
+        /// <summary>
+        /// The points the Tetris piece would occupy if orientated south
+        /// </summary>
+        /// <returns>An array of points defining the Tetris piece's location when orientated south</returns>
         protected abstract Point[] pointsForSouthOrientation();
+
+        /// <summary>
+        /// The points the Tetris piece would occupy if orientated west
+        /// </summary>
+        /// <returns>An array of points defining the Tetris piece's location when orientated west</returns>
         protected abstract Point[] pointsForWestOrientation();
     }
 }

@@ -1,5 +1,11 @@
-﻿//FOO
-
+﻿/*
+ * Project: Tetris Project
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
@@ -13,15 +19,45 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace Tetris3D
 {
+    /// <summary>
+    /// This class represents a 3 dimensional cube
+    /// </summary>
+    /// A 3D shape is composed of a collection of triangles
     class BasicShape
     {
-        public Vector3 shapeSize;
-        public Vector3 shapePosition;
-        private VertexPositionNormalTexture[] shapeVertices;
-        private int shapeTriangles;
+        /// <summary>
+        /// The relative size of the shape
+        /// </summary>
+        private Vector3 shapeSize;
+
+        /// <summary>
+        /// The relative position of the shape
+        /// </summary>
+        private Vector3 shapePosition;
+
+        /// <summary>
+        /// An array of shape vertices used to map textures to the block
+        /// </summary>
+        private VertexPositionNormalTexture[] shapeVertices = new VertexPositionNormalTexture[36];
+
+        /// <summary>
+        /// The number of triangles used to construct the cube
+        /// </summary>
+        private const int shapeTriangles = 12;
+
         private VertexBuffer shapeBuffer;
+
+        /// <summary>
+        /// The color of the cube
+        /// </summary>
         private TetrisColors tetrisColor;
 
+        /// <summary>
+        /// Construcs a new cube shape
+        /// </summary>
+        /// <param name="size">The relative size of the cube</param>
+        /// <param name="position">The relative position of the cube</param>
+        /// <param name="tetrisColor">The color of the cube</param>
         public BasicShape(Vector3 size, Vector3 position, TetrisColors tetrisColor)
         {
             this.shapeSize = size;
@@ -29,10 +65,12 @@ namespace Tetris3D
             this.tetrisColor = tetrisColor;
         }
 
+        /// <summary>
+        /// Updates shapeVertices with with vertice positions based on position and size
+        /// </summary>
         private void BuildShape()
         {
-            shapeTriangles = 12;
-            shapeVertices = new VertexPositionNormalTexture[36];
+            shapeVertices = new VertexPositionNormalTexture[this.shapeVertices.Length];
 
             Vector3 topLeftFront = shapePosition +
                 new Vector3(-0.5f, 0.5f, -0.5f) * shapeSize;
@@ -148,6 +186,10 @@ namespace Tetris3D
                 bottomRightBack, rightNormal, textureBottomRight);
         }
 
+        /// <summary>
+        /// Draws the shape onto a graphics device
+        /// </summary>
+        /// <param name="device">The graphics device to draw the shape onto</param>
         public void RenderShape(GraphicsDevice device)
         {
             BuildShape();

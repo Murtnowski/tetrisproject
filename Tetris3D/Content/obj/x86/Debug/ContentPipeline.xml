@@ -59,6 +59,15 @@
       <Time>2010-11-05T22:07:51.789-07:00</Time>
     </Item>
     <Item>
+      <Source>Textures\cursor.png</Source>
+      <Name>Textures\cursor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
+      <Time>2010-11-07T16:02:35.088-08:00</Time>
+    </Item>
+    <Item>
       <Source>Audio\scratchloud.wav</Source>
       <Name>Audio\scratchloud</Name>
       <Importer>WavImporter</Importer>

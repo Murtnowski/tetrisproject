@@ -467,7 +467,7 @@ namespace Tetris3D
         /// <returns>If the Tetris piece was successfully rotated return true</returns>
         public bool rotateCurrentPieceCounterclockwise()
         {
-            //TODO: Implement 
+            //TODO: Implement bool rotateCurrentPieceCounterclockwise()
             throw new NotImplementedException();
         }
 

@@ -145,3 +145,4 @@ C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\hit
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma
+C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb

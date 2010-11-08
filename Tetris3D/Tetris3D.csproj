@@ -16,6 +16,8 @@
     </ApplicationIcon>
     <Thumbnail>
     </Thumbnail>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>Tetris3D.Program</StartupObject>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,7 +30,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -90,21 +91,21 @@
   <ItemGroup>
     <Compile Include="AudioBank.cs" />
     <Compile Include="BasicShape.cs" />
-    <Compile Include="GameComponent1.cs" />
-    <Compile Include="IPiece.cs" />
-    <Compile Include="JPiece.cs" />
-    <Compile Include="LPiece.cs" />
-    <Compile Include="OPiece.cs" />
+    <Compile Include="Menus\TetrisMainMenu.cs" />
+    <Compile Include="TetrisPieces\IPiece.cs" />
+    <Compile Include="TetrisPieces\JPiece.cs" />
+    <Compile Include="TetrisPieces\LPiece.cs" />
+    <Compile Include="TetrisPieces\OPiece.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="ScrollingBackground.cs" />
     <Compile Include="Spiece.cs" />
     <Compile Include="TetrisBlock.cs" />
-    <Compile Include="TetrisPiece.cs" />
+    <Compile Include="TetrisPieces\TetrisPiece.cs" />
     <Compile Include="TetrisSession.cs" />
-    <Compile Include="TPiece.cs" />
-    <Compile Include="Zpiece.cs" />
+    <Compile Include="TetrisPieces\TPiece.cs" />
+    <Compile Include="TetrisPieces\Zpiece.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">

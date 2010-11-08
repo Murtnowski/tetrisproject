@@ -17,12 +17,32 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Tetris3D
 {
+    /// <summary>
+    /// This represents a scroll 2D background
+    /// </summary>
     public class ScrollingBackground
     {
-        // class ScrollingBackground
         private Vector2 screenPosition, origin, textureSize;
+
+        /// <summary>
+        /// The 2D Texture to draw
+        /// </summary>
         private Texture2D myTexture;
+
         private int screenHeight;
+
+        /// <summary>
+        /// Constructs a new scrolling background
+        /// </summary>
+        public ScrollingBackground()
+        {
+        }
+
+        /// <summary>
+        /// Loads a new 2D Texture onto the scrolling background
+        /// </summary>
+        /// <param name="device">The graphics device the 2D texture will scroll on</param>
+        /// <param name="backgroundTexture">The 2D texture to scroll</param>
         public void Load( GraphicsDevice device, Texture2D backgroundTexture )
         {
             myTexture = backgroundTexture;
@@ -36,13 +56,20 @@ namespace Tetris3D
             // Offset to draw the second texture, when necessary.
             textureSize = new Vector2( 0, myTexture.Height );
         }
-        // ScrollingBackground.Update
+
+        /// <summary>
+        /// Used to update the scrolling textures position based on time
+        /// </summary>
+        /// <param name="deltaY">The time offset for moving the 2D texture</param>
         public void Update( float deltaY )
         {
             screenPosition.Y += deltaY;
             screenPosition.Y = screenPosition.Y % myTexture.Height;
         }
-        // ScrollingBackground.Draw
+        /// <summary>
+        /// Draws the scrolling background
+        /// </summary>
+        /// <param name="batch">The spritebatch used to draw the 2D Textures</param>
         public void Draw( SpriteBatch batch )
         {
             // Draw the texture, if it is still onscreen.

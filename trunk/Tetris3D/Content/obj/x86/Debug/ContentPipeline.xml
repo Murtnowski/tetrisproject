@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
       <Time>2010-11-05T22:07:51.794-07:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
       <Time>2010-11-05T22:07:51.807-07:00</Time>
     </Item>
     <Item>
@@ -28,7 +28,7 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
       <Time>2010-11-05T22:07:51.813-07:00</Time>
     </Item>
     <Item>
@@ -37,7 +37,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
       <Time>2010-11-05T22:07:51.832-07:00</Time>
     </Item>
     <Item>
@@ -46,7 +46,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
       <Time>2010-11-05T22:07:51.801-07:00</Time>
     </Item>
     <Item>
@@ -55,7 +55,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
       <Time>2010-11-05T22:07:51.789-07:00</Time>
     </Item>
     <Item>
@@ -64,7 +64,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
       <Time>2010-11-07T16:02:35.088-08:00</Time>
     </Item>
     <Item>
@@ -73,7 +73,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
       <Time>2010-11-05T22:07:38.529-07:00</Time>
     </Item>
     <Item>
@@ -82,7 +82,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
       <Time>2010-11-05T22:07:38.521-07:00</Time>
     </Item>
     <Item>
@@ -91,7 +91,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
       <Time>2010-11-05T22:07:38.548-07:00</Time>
     </Item>
     <Item>
@@ -100,8 +100,8 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb</Output>
-      <Extra>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma</Extra>
+      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb</Output>
+      <Extra>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma</Extra>
       <Time>2010-11-05T22:07:38.539-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -109,10 +109,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

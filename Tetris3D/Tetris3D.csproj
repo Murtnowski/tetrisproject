@@ -100,7 +100,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="ScrollingBackground.cs" />
-    <Compile Include="Spiece.cs" />
+    <Compile Include="TetrisPieces\Spiece.cs" />
     <Compile Include="TetrisBlock.cs" />
     <Compile Include="TetrisPieces\TetrisPiece.cs" />
     <Compile Include="TetrisSession.cs" />

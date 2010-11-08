@@ -64,3 +64,9 @@ C:\Users\Damon\Desktop\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\ResolveAs
 C:\Users\Damon\Desktop\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Damon\Desktop\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
 C:\Users\Damon\Desktop\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb
+C:\Users\JGesner\Desktop\Grid with sprites\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
+C:\Users\JGesner\Desktop\Grid with sprites\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
+C:\Users\JGesner\Desktop\Grid with sprites\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\JGesner\Desktop\Grid with sprites\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\JGesner\Desktop\Grid with sprites\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
+C:\Users\JGesner\Desktop\Grid with sprites\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

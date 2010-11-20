@@ -13,6 +13,8 @@ namespace Tetris3D
 {
     public class ClassicTetrisScreen : GameScreen
     {
+        private String GameType = "Classic";
+  
         private BasicEffect cubeEffect;
         private Camera camera;
 
@@ -21,13 +23,15 @@ namespace Tetris3D
 
         private ScrollingBackground scrollingBackground;
 
-        private SpriteFont italicFont;
+        private SpriteFont UIFont;
 
         public AudioBank audio;
         Song backgroundMusic;
 
         double totalTime = 0;
         double ElapsedRealTime = 0;
+
+        private Texture2D TetrisUI;
 
         public ClassicTetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
@@ -43,11 +47,13 @@ namespace Tetris3D
 
             this.initializeWorld();
 
-            italicFont = this.content.Load<SpriteFont>(@"Textures\Italic");
+            UIFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
             backgroundMusic = this.content.Load<Song>(@"Audio\bigButtz");
+
+            this.TetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
@@ -219,9 +225,12 @@ namespace Tetris3D
             cubeEffect.End();
             
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
-            this.screenManager.batch.DrawString(italicFont, "Level: " + this.tetrisSession.CurrentLevel, new Vector2(75f, 200f), Color.Red);
-            this.screenManager.batch.DrawString(italicFont, "Lines: " + this.tetrisSession.CurrentNumberOfClearedLines, new Vector2(75f, 230f), Color.Red);
-            this.screenManager.batch.DrawString(italicFont, "Score: " + this.tetrisSession.CurrentScore, new Vector2(75f, 260f), Color.Red);
+            this.screenManager.batch.Draw(this.TetrisUI, new Vector2(850, 200), Color.White);
+            this.screenManager.batch.DrawString(UIFont, this.GameType, new Vector2(895, 238f), Color.Yellow);
+            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentScore, new Vector2(922f, 528f), Color.Yellow);
+            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentLevel, new Vector2(942f, 608f), Color.Yellow);
+            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentNumberOfClearedLines, new Vector2(942f, 688f), Color.Yellow);
+
             this.screenManager.batch.End();
         }
     }

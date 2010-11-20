@@ -166,3 +166,23 @@ C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\obj\x86\Debug\ResolveAssembl
 C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\obj\x86\Debug\Tetris3D.exe
 C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\obj\x86\Debug\Tetris3D.pdb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Tetris3D.exe
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Tetris3D.pdb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\XELibrary.dll
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\XELibrary.pdb
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\obj\x86\Debug\Tetris3D.exe
+C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\obj\x86\Debug\Tetris3D.pdb

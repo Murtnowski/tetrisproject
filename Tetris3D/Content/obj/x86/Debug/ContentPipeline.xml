@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
-      <Time>2010-11-05T22:07:51.794-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
+      <Time>2010-11-20T02:20:50.6712436-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Kootenay.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
-      <Time>2010-11-05T22:07:51.807-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
+      <Time>2010-11-20T02:20:50.7522436-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\ColorMap.jpg</Source>
@@ -28,8 +28,8 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
-      <Time>2010-11-05T22:07:51.813-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
+      <Time>2010-11-20T02:20:50.7542436-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\stars.jpg</Source>
@@ -37,8 +37,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
-      <Time>2010-11-05T22:07:51.832-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
+      <Time>2010-11-20T02:20:50.7632436-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\leather.jpg</Source>
@@ -46,8 +46,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
-      <Time>2010-11-05T22:07:51.801-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
+      <Time>2010-11-20T02:20:50.7502436-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Title.jpg</Source>
@@ -55,8 +55,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
-      <Time>2010-11-05T22:07:51.789-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
+      <Time>2010-11-20T02:20:50.6672436-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\cursor.png</Source>
@@ -64,8 +64,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
-      <Time>2010-11-07T16:02:35.088-08:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
+      <Time>2010-11-20T02:20:50.6702436-08:00</Time>
     </Item>
     <Item>
       <Source>Audio\scratchloud.wav</Source>
@@ -73,8 +73,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
-      <Time>2010-11-05T22:07:38.529-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
+      <Time>2010-11-20T02:20:47.5562436-08:00</Time>
     </Item>
     <Item>
       <Source>Audio\hit.wav</Source>
@@ -82,8 +82,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
-      <Time>2010-11-05T22:07:38.521-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
+      <Time>2010-11-20T02:20:47.5512436-08:00</Time>
     </Item>
     <Item>
       <Source>Audio\slam.wav</Source>
@@ -91,8 +91,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
-      <Time>2010-11-05T22:07:38.548-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
+      <Time>2010-11-20T02:20:47.9402436-08:00</Time>
     </Item>
     <Item>
       <Source>Audio\bigButtz.mp3</Source>
@@ -100,19 +100,19 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb</Output>
-      <Extra>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma</Extra>
-      <Time>2010-11-05T22:07:38.539-07:00</Time>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb</Output>
+      <Extra>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma</Extra>
+      <Time>2010-11-20T02:20:47.5612436-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\JGesner\Desktop\Grid with sprites\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Murtnowski\Desktop\New Folder\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -141,7 +141,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2010-10-24T08:51:40.065-07:00</Value>
+        <Value>2009-07-14T15:20:15.188-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

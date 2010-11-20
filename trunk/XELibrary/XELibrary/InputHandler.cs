@@ -52,12 +52,6 @@ namespace XELibrary
 
             gamePadHandler.Update();
 
-            if (keyboard.IsKeyDown(Keys.Escape))
-                Game.Exit();
-
-            if (gamePadHandler.WasButtonPressed(0, ButtonType.Back))
-                Game.Exit();
-
             prevMouseState = mouseState;
             mouseState = Mouse.GetState();
 

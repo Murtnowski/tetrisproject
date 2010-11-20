@@ -11,7 +11,7 @@ namespace XELibrary
     public partial class Camera : Microsoft.Xna.Framework.GameComponent
     {
         protected IInputHandler input;
-        private GraphicsDeviceManager graphics;
+        private GraphicsDevice graphics;
 
         private Matrix projection;
         private Matrix view;
@@ -34,10 +34,11 @@ namespace XELibrary
         private int playerIndex = 0;
         private Viewport? viewport;
 
-        public Camera(Game game)
+        public Camera(Game game, GraphicsDevice graphicsDevice)
             : base(game)
         {
-            graphics = (GraphicsDeviceManager)Game.Services.GetService(typeof(IGraphicsDeviceManager));
+            //graphics = (GraphicsDeviceManager)Game.Services.GetService(typeof(IGraphicsDeviceManager));
+            this.graphics = graphicsDevice;
             input = (IInputHandler)game.Services.GetService(typeof(IInputHandler));
         }
 
@@ -49,8 +50,8 @@ namespace XELibrary
 
         private void InitializeCamera()
         {
-            float aspectRatio = (float)graphics.GraphicsDevice.Viewport.Width /
-                (float)graphics.GraphicsDevice.Viewport.Height;
+            float aspectRatio = (float)this.graphics.Viewport.Width /
+                (float)this.graphics.Viewport.Height;
             Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, aspectRatio,
                 1.0f, 10000.0f, out projection);
 
@@ -102,7 +103,7 @@ namespace XELibrary
             get
             {
                 if (viewport == null)
-                    viewport = graphics.GraphicsDevice.Viewport;
+                    viewport = this.graphics.Viewport;
 
                 return ((Viewport)viewport);
             }

@@ -95,16 +95,6 @@
       <Time>2010-11-20T13:42:06.158-08:00</Time>
     </Item>
     <Item>
-      <Source>Audio\bigButtz.mp3</Source>
-      <Name>Audio\bigButtz</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb</Output>
-      <Extra>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma</Extra>
-      <Time>2010-11-20T13:42:06.045-08:00</Time>
-    </Item>
-    <Item>
       <Source>Textures\TetrisUI.png</Source>
       <Name>Textures\TetrisUI</Name>
       <Importer>TextureImporter</Importer>
@@ -121,6 +111,16 @@
       <Options>None</Options>
       <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\UIFont.xnb</Output>
       <Time>2010-11-20T14:31:50.694-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\STG-MajorTom.mp3</Source>
+      <Name>Audio\STG-MajorTom</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb</Output>
+      <Extra>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma</Extra>
+      <Time>2010-11-20T18:35:43.117-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -51,13 +51,19 @@ namespace Tetris3D
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
-            backgroundMusic = this.content.Load<Song>(@"Audio\bigButtz");
+            backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
             this.TetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
+        }
+
+        public override void UnloadContent()
+        {
+            MediaPlayer.Stop();
+            base.UnloadContent();
         }
 
         /// <summary>
@@ -110,6 +116,10 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
+            if (MediaPlayer.State != MediaState.Playing)
+            {
+                MediaPlayer.Play(this.backgroundMusic);
+            }
             this.camera.Update(gameTime);
             float elapsedBackground = (float)gameTime.ElapsedGameTime.TotalSeconds;
 

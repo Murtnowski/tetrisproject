@@ -38,17 +38,10 @@ namespace Tetris3D
         internal const int SCREEN_HEIGHT = 900;
         private SpriteBatch spriteBatch;
 
-        private SpriteFont mainFont;
-        private SpriteFont italicFont;
-
         //Components
         private InputHandler input;
 
         #endregion
-
-        //Audio
-        public AudioBank audio;
-        Song backgroundMusic;
 
         private ScreenManager screenManager;
         
@@ -66,14 +59,6 @@ namespace Tetris3D
 
             this.input = new InputHandler(this);
             this.Components.Add(input);
-
-            /*
-
-            this.camera = new Camera(this);
-            this.Components.Add(camera);
-
-            this.tetrisSession = new TetrisSession(new Vector2(10, 24)); 
-             * */
         }
 
         #region load
@@ -97,17 +82,6 @@ namespace Tetris3D
         /// </summary>
         protected override void LoadContent()
         {
-            //load fonts
-            mainFont = Content.Load<SpriteFont>(@"Textures\Kootenay");
-            italicFont = Content.Load<SpriteFont>(@"Textures\Italic");
-            //load sound effects
-            audio = new AudioBank();
-            audio.LoadContent(Content);
-            Services.AddService(typeof(AudioBank), audio);
-            //load music
-            backgroundMusic = Content.Load<Song>(@"Audio\bigButtz");
-            //load background
-            spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         #endregion
@@ -119,8 +93,7 @@ namespace Tetris3D
         /// <param name="gameTime">The time since last update</param>
         protected override void Update(GameTime gameTime)
         {
-
-         base.Update(gameTime);
+            base.Update(gameTime);
         }
 
         /// <summary>
@@ -129,9 +102,7 @@ namespace Tetris3D
         /// <param name="gameTime">The time since last drawtime</param>
         protected override void Draw(GameTime gameTime)
         {
-
-
-         base.Draw(gameTime);
-      }
+            base.Draw(gameTime);
+        }
     }
 }

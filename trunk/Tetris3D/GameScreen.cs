@@ -21,7 +21,7 @@ namespace Tetris3D
             this.content = new ContentManager(game.Services, "Content");
         }
 
-        public void UnloadContent()
+        public virtual void UnloadContent()
         {
             content.Unload();
         }

@@ -8,7 +8,7 @@ Content\Textures\cursor.xnb
 Content\Audio\scratchloud.xnb
 Content\Audio\hit.xnb
 Content\Audio\slam.xnb
-Content\Audio\bigButtz.xnb
-Content\Audio\bigButtz.wma
 Content\Textures\TetrisUI.xnb
 Content\Textures\UIFont.xnb
+Content\Audio\STG-MajorTom.xnb
+Content\Audio\STG-MajorTom.wma

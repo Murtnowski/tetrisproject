@@ -126,6 +126,11 @@ namespace Tetris3D
             totalTime += gameTime.ElapsedGameTime.Milliseconds;
             ElapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
 
+            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
+            {
+                this.screenManager.addScreen(new TetrisPauseScreen(this.screenManager.Game, this));
+            }
+
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Left))
             {
                 this.tetrisSession.moveCurrentPieceLeft();

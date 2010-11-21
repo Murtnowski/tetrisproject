@@ -8,7 +8,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Tetris3D
 {
-    public enum TetrisMainMenuOptions { NewGame, Options, Quit };
+    public enum MainMenuOptions { NewGame, Options, Quit };
+
     public class MainMenuScreen : GameScreen
     {
         private String NewGameText = "New Game";
@@ -20,7 +21,7 @@ namespace Tetris3D
 
         private SpriteFont menuFont;
 
-        private TetrisMainMenuOptions HighlightedOption = TetrisMainMenuOptions.NewGame;
+        private MainMenuOptions HighlightedOption = MainMenuOptions.NewGame;
 
         private int numberOfTetrisMainMenuOptions = 3;
 
@@ -41,20 +42,20 @@ namespace Tetris3D
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 this.HighlightedOption--;
-                this.HighlightedOption = (TetrisMainMenuOptions)Math.Max((int)this.HighlightedOption, 0);
+                this.HighlightedOption = (MainMenuOptions)Math.Max((int)this.HighlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 this.HighlightedOption++;
-                this.HighlightedOption = (TetrisMainMenuOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
+                this.HighlightedOption = (MainMenuOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
                 switch (this.HighlightedOption)
                 {
-                    case TetrisMainMenuOptions.NewGame: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); break;
-                    case TetrisMainMenuOptions.Options: break;
-                    case TetrisMainMenuOptions.Quit: this.screenManager.Game.Exit(); break;
+                    case MainMenuOptions.NewGame: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); break;
+                    case MainMenuOptions.Options: break;
+                    case MainMenuOptions.Quit: this.screenManager.Game.Exit(); break;
                     default: throw new NotImplementedException();
                 }
             }
@@ -69,9 +70,9 @@ namespace Tetris3D
             this.screenManager.batch.DrawString(this.menuFont, this.ExitText, new Vector2(575, 450), Color.White);
             switch (this.HighlightedOption)
             {
-                case TetrisMainMenuOptions.NewGame: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 405), Color.White); break;
-                case TetrisMainMenuOptions.Options: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 430), Color.White); break;
-                case TetrisMainMenuOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 455), Color.White); break;
+                case MainMenuOptions.NewGame: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 405), Color.White); break;
+                case MainMenuOptions.Options: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 430), Color.White); break;
+                case MainMenuOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 455), Color.White); break;
                 default: throw new NotImplementedException();
             }
             this.screenManager.batch.End();

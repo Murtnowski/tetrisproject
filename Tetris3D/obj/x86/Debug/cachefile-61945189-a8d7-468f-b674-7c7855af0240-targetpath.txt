@@ -12,3 +12,4 @@ Content\Textures\TetrisUI.xnb
 Content\Textures\UIFont.xnb
 Content\Audio\STG-MajorTom.xnb
 Content\Audio\STG-MajorTom.wma
+Content\Textures\blank.xnb

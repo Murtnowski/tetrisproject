@@ -27,7 +27,7 @@ namespace Tetris3D
         {
             foreach (GameScreen gameScreen in this.gameScreens)
             {
-                if (!gameScreen.isHidden)
+                if (!gameScreen.isDiabled)
                 {
                     gameScreen.Update(gameTime);
                 }
@@ -57,7 +57,7 @@ namespace Tetris3D
         {
             foreach (GameScreen gameScreen in this.gameScreens)
             {
-                if (!gameScreen.isDiabled)
+                if (!gameScreen.isHidden)
                 {
                     gameScreen.Draw(gameTime);
                 }

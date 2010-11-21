@@ -122,6 +122,15 @@
       <Extra>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma</Extra>
       <Time>2010-11-20T18:35:43.117-08:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\blank.png</Source>
+      <Name>Textures\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\blank.xnb</Output>
+      <Time>2010-11-20T19:31:59.383-08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

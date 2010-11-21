@@ -102,6 +102,7 @@ namespace Tetris3D
         /// <param name="gameTime">The time since last drawtime</param>
         protected override void Draw(GameTime gameTime)
         {
+            this.graphics.GraphicsDevice.Clear(Color.Pink);
             base.Draw(gameTime);
         }
     }

@@ -208,3 +208,4 @@ C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textur
 C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\UIFont.xnb
 C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb
 C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma
+C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\blank.xnb

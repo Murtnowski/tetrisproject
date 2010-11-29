@@ -135,11 +135,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\Pieces\I.png">
-      <Name>I</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Textures\Pieces\J.png">
       <Name>J</Name>
       <Importer>TextureImporter</Importer>
@@ -167,6 +162,13 @@
     </Compile>
     <Compile Include="Textures\Pieces\Z.png">
       <Name>Z</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\Pieces\I.PNG">
+      <Name>I</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

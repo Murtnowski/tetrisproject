@@ -8,7 +8,6 @@ Content\Textures\Title.xnb
 Content\Textures\cursor.xnb
 Content\Textures\TetrisUI.xnb
 Content\Textures\blank.xnb
-Content\Textures\Pieces\I.xnb
 Content\Textures\Pieces\J.xnb
 Content\Textures\Pieces\L.xnb
 Content\Textures\Pieces\O.xnb
@@ -19,4 +18,5 @@ Content\Audio\scratchloud.xnb
 Content\Audio\hit.xnb
 Content\Audio\slam.xnb
 Content\Audio\STG-MajorTom.xnb
+Content\Textures\Pieces\I.xnb
 Content\Audio\STG-MajorTom.wma

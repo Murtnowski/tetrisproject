@@ -136,8 +136,6 @@ C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb
 C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb
-C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.xnb
-C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\bigButtz.wma
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb
 C:\Users\JGesner\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb
@@ -209,3 +207,16 @@ C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textur
 C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb
 C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma
 C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\blank.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\UIFont.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\TetrisUI.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\blank.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\I.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\J.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\L.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\O.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\S.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\T.xnb
+C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\Z.xnb

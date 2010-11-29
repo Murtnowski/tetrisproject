@@ -11,9 +11,9 @@ using XELibrary;
 
 namespace Tetris3D
 {
-    public class ClassicTetrisScreen : GameScreen
+    public class Challenge2TetrisScreen : GameScreen
     {
-        private String GameType = "Classic";
+        private String GameType = "Challenge 2";
   
         private BasicEffect cubeEffect;
         private Camera camera;
@@ -41,14 +41,32 @@ namespace Tetris3D
 
         private Texture2D TetrisUI;
 
-        public ClassicTetrisScreen(Microsoft.Xna.Framework.Game game)
+        public Challenge2TetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
         {
         }
 
         public override void LoadContent()
         {
-            this.tetrisSession = new TetrisSession(new Vector2(10, 24)); 
+            TetrisBlock[,] board = new TetrisBlock[10, 24];
+            board[0, 0] = new TetrisBlock(TetrisColors.Red);
+            board[1, 1] = new TetrisBlock(TetrisColors.Red);
+            board[2, 2] = new TetrisBlock(TetrisColors.Red);
+            board[3, 3] = new TetrisBlock(TetrisColors.Red);
+            board[4, 4] = new TetrisBlock(TetrisColors.Red);
+            board[5, 5] = new TetrisBlock(TetrisColors.Green);
+            board[6, 6] = new TetrisBlock(TetrisColors.Green);
+            board[7, 7] = new TetrisBlock(TetrisColors.Green);
+            board[8, 8] = new TetrisBlock(TetrisColors.Green);
+            board[9, 9] = new TetrisBlock(TetrisColors.Green);
+            board[8, 10] = new TetrisBlock(TetrisColors.Yellow);
+            board[7, 11] = new TetrisBlock(TetrisColors.Yellow);
+            board[6, 12] = new TetrisBlock(TetrisColors.Yellow);
+            board[5, 13] = new TetrisBlock(TetrisColors.Yellow);
+            board[4, 14] = new TetrisBlock(TetrisColors.Yellow);
+
+
+            this.tetrisSession = new TetrisSession(board);
 
             this.camera = new Camera(this.screenManager.Game, this.screenManager.GraphicsDevice);
             this.camera.Initialize();

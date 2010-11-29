@@ -11,9 +11,9 @@ using XELibrary;
 
 namespace Tetris3D
 {
-    public class ClassicTetrisScreen : GameScreen
+    public class Challenge1TetrisScreen : GameScreen
     {
-        private String GameType = "Classic";
+        private String GameType = "Challenge 1";
   
         private BasicEffect cubeEffect;
         private Camera camera;
@@ -41,14 +41,36 @@ namespace Tetris3D
 
         private Texture2D TetrisUI;
 
-        public ClassicTetrisScreen(Microsoft.Xna.Framework.Game game)
+        public Challenge1TetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
         {
         }
 
         public override void LoadContent()
         {
-            this.tetrisSession = new TetrisSession(new Vector2(10, 24)); 
+            TetrisBlock[,] board = new TetrisBlock[10, 24];
+            board[0, 0] = new TetrisBlock(TetrisColors.Red);
+            board[2, 0] = new TetrisBlock(TetrisColors.Red);
+            board[4, 0] = new TetrisBlock(TetrisColors.Red);
+            board[6, 0] = new TetrisBlock(TetrisColors.Red);
+            board[8, 0] = new TetrisBlock(TetrisColors.Red);
+            board[1, 1] = new TetrisBlock(TetrisColors.Green);
+            board[3, 1] = new TetrisBlock(TetrisColors.Green);
+            board[5, 1] = new TetrisBlock(TetrisColors.Green);
+            board[7, 1] = new TetrisBlock(TetrisColors.Green);
+            board[9, 1] = new TetrisBlock(TetrisColors.Green);
+            board[1, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[3, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[5, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[7, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[9, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[1, 3] = new TetrisBlock(TetrisColors.Blue);
+            board[3, 3] = new TetrisBlock(TetrisColors.Blue);
+            board[5, 3] = new TetrisBlock(TetrisColors.Blue);
+            board[7, 3] = new TetrisBlock(TetrisColors.Blue);
+            board[9, 3] = new TetrisBlock(TetrisColors.Blue);
+
+            this.tetrisSession = new TetrisSession(board);
 
             this.camera = new Camera(this.screenManager.Game, this.screenManager.GraphicsDevice);
             this.camera.Initialize();

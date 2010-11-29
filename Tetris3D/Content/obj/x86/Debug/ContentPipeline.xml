@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
-      <Time>2010-11-20T13:42:10.971-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Italic.xnb</Output>
+      <Time>2010-11-29T07:30:18.8985623-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Kootenay.spritefont</Source>
@@ -16,8 +16,17 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
-      <Time>2010-11-20T13:42:11.333-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Kootenay.xnb</Output>
+      <Time>2010-11-29T07:30:18.9055364-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\UIFont.spritefont</Source>
+      <Name>Textures\UIFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\UIFont.xnb</Output>
+      <Time>2010-11-29T07:30:18.8636918-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\ColorMap.jpg</Source>
@@ -28,8 +37,8 @@
         <Data Key="TextureFormat">DxtCompressed</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
-      <Time>2010-11-20T13:42:11.335-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\ColorMap.xnb</Output>
+      <Time>2010-11-29T07:30:19.0450184-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\stars.jpg</Source>
@@ -37,8 +46,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
-      <Time>2010-11-20T13:42:11.343-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\stars.xnb</Output>
+      <Time>2010-11-29T07:30:19.0519925-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\leather.jpg</Source>
@@ -46,8 +55,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
-      <Time>2010-11-20T13:42:11.331-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\leather.xnb</Output>
+      <Time>2010-11-29T07:30:18.9025475-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\Title.jpg</Source>
@@ -55,8 +64,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
-      <Time>2010-11-20T13:42:10.967-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Title.xnb</Output>
+      <Time>2010-11-29T07:30:18.8188583-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\cursor.png</Source>
@@ -64,35 +73,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
-      <Time>2010-11-20T13:42:10.97-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\scratchloud.wav</Source>
-      <Name>Audio\scratchloud</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
-      <Time>2010-11-20T13:42:05.523-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\hit.wav</Source>
-      <Name>Audio\hit</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
-      <Time>2010-11-20T13:42:05.519-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\slam.wav</Source>
-      <Name>Audio\slam</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
-      <Time>2010-11-20T13:42:06.158-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
+      <Time>2010-11-29T07:30:18.8607029-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\TetrisUI.png</Source>
@@ -100,27 +82,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\TetrisUI.xnb</Output>
-      <Time>2010-11-20T14:26:45.082-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\UIFont.spritefont</Source>
-      <Name>Textures\UIFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\UIFont.xnb</Output>
-      <Time>2010-11-20T14:31:50.694-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\STG-MajorTom.mp3</Source>
-      <Name>Audio\STG-MajorTom</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb</Output>
-      <Extra>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma</Extra>
-      <Time>2010-11-20T18:35:43.117-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\TetrisUI.xnb</Output>
+      <Time>2010-11-29T07:30:18.9523625-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\blank.png</Source>
@@ -128,47 +91,147 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\Textures\blank.xnb</Output>
-      <Time>2010-11-20T19:31:59.383-08:00</Time>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\blank.xnb</Output>
+      <Time>2010-11-29T07:30:18.9085253-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\I.png</Source>
+      <Name>Textures\Pieces\I</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\I.xnb</Output>
+      <Time>2010-11-29T07:51:48.2703215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\J.png</Source>
+      <Name>Textures\Pieces\J</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\J.xnb</Output>
+      <Time>2010-11-29T07:51:48.2723215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\L.png</Source>
+      <Name>Textures\Pieces\L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\L.xnb</Output>
+      <Time>2010-11-29T07:51:48.2733215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\O.png</Source>
+      <Name>Textures\Pieces\O</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\O.xnb</Output>
+      <Time>2010-11-29T07:51:48.2743215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\S.png</Source>
+      <Name>Textures\Pieces\S</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\S.xnb</Output>
+      <Time>2010-11-29T07:51:48.2753215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\T.png</Source>
+      <Name>Textures\Pieces\T</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\T.xnb</Output>
+      <Time>2010-11-29T07:51:48.2913215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Pieces\Z.png</Source>
+      <Name>Textures\Pieces\Z</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\Z.xnb</Output>
+      <Time>2010-11-29T07:51:48.2923215-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\scratchloud.wav</Source>
+      <Name>Audio\scratchloud</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\scratchloud.xnb</Output>
+      <Time>2010-11-29T07:30:17.4937793-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\hit.wav</Source>
+      <Name>Audio\hit</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\hit.xnb</Output>
+      <Time>2010-11-29T07:30:17.2108301-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\slam.wav</Source>
+      <Name>Audio\slam</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\slam.xnb</Output>
+      <Time>2010-11-29T07:30:17.6133353-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\STG-MajorTom.mp3</Source>
+      <Name>Audio\STG-MajorTom</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb</Output>
+      <Extra>C:\Tetris\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma</Extra>
+      <Time>2010-11-29T07:30:17.3762159-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Murtnowski\Desktop\New Folder (2)\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Tetris\Tetris3D\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Tetris\Tetris3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Tetris\Tetris3D\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Tetris\Tetris3D\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2009-05-28T00:16:14-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
         <Value>2009-05-28T00:16:06-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2009-05-28T00:16:16-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2009-05-28T00:16:26-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2009-05-28T00:16:12-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2009-05-28T00:16:06-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-07-14T15:20:15.188-07:00</Value>
+        <Value>2010-10-18T11:40:38.999367-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

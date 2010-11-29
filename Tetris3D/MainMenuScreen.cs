@@ -53,7 +53,7 @@ namespace Tetris3D
             {
                 switch (this.HighlightedOption)
                 {
-                    case MainMenuOptions.NewGame: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge3TetrisScreen(this.screenManager.Game)); break;
+                    case MainMenuOptions.NewGame: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ModeMenuScreen(this.screenManager.Game)); break;
                     case MainMenuOptions.Options: break;
                     case MainMenuOptions.Quit: this.screenManager.Game.Exit(); break;
                     default: throw new NotImplementedException();

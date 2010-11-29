@@ -13,7 +13,7 @@ namespace Tetris3D
 {
     public class MarathonTetrisScreen : GameScreen
     {
-        private String GameType = "Classic";
+        private String GameType = "Marathon";
   
         private BasicEffect cubeEffect;
         private Camera camera;

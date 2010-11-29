@@ -11,7 +11,7 @@ using XELibrary;
 
 namespace Tetris3D
 {
-    public class ClassicTetrisScreen : GameScreen
+    public class MarathonTetrisScreen : GameScreen
     {
         private String GameType = "Classic";
   
@@ -41,7 +41,7 @@ namespace Tetris3D
 
         private Texture2D TetrisUI;
 
-        public ClassicTetrisScreen(Microsoft.Xna.Framework.Game game)
+        public MarathonTetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
         {
         }
@@ -55,6 +55,8 @@ namespace Tetris3D
 
             this.initializeWorld();
 
+            UIFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
+
             this.IPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\I");
             this.JPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\J");
             this.LPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\L");
@@ -62,8 +64,6 @@ namespace Tetris3D
             this.SPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\S");
             this.TPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\T");
             this.ZPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\Z");
-
-            UIFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
@@ -144,7 +144,8 @@ namespace Tetris3D
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
             {
-                this.screenManager.addScreen(new TetrisPauseScreen(this.screenManager.Game, this));
+                //Pause disabled for marathon mode
+                //this.screenManager.addScreen(new TetrisPauseScreen(this.screenManager.Game, this));
             }
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Left))
@@ -274,7 +275,6 @@ namespace Tetris3D
                 case TetrisPieces.ZBlock: this.screenManager.batch.Draw(this.ZPieceTexture, new Vector2(870, 350), Color.White); break;
                 default: throw new NotImplementedException();
             }
-
 
             this.screenManager.batch.End();
         }

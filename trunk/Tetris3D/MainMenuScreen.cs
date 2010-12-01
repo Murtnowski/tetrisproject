@@ -12,14 +12,11 @@ namespace Tetris3D
 
     public class MainMenuScreen : GameScreen
     {
-        private String NewGameText = "New Game";
-        private String OptionText = "Options";
-        private String ExitText = "Exit";
-
         private Texture2D backGround;
         private Texture2D cursor;
-
-        private SpriteFont menuFont;
+        private Texture2D menuOptionNewGame;
+        private Texture2D menuOptionOptions;
+        private Texture2D menuOptionExit;
 
         private MainMenuOptions HighlightedOption = MainMenuOptions.NewGame;
 
@@ -33,12 +30,13 @@ namespace Tetris3D
         {
             this.backGround = this.content.Load<Texture2D>(@"Textures\Title");
             this.cursor = this.content.Load<Texture2D>(@"Textures\Cursor");
-            this.menuFont = this.content.Load<SpriteFont>(@"Textures\Kootenay");
+            this.menuOptionNewGame = this.content.Load<Texture2D>(@"Textures\Menus\NewGame");
+            this.menuOptionOptions = this.content.Load<Texture2D>(@"Textures\Menus\Options");
+            this.menuOptionExit = this.content.Load<Texture2D>(@"Textures\Menus\Exit");
         }
 
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 this.HighlightedOption--;
@@ -65,14 +63,14 @@ namespace Tetris3D
         {
             this.screenManager.batch.Begin();
             this.screenManager.batch.Draw(this.backGround, new Rectangle(0, 0, 1200, 900), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.NewGameText, new Vector2(575, 400), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.OptionText, new Vector2(575, 425), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.ExitText, new Vector2(575, 450), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionNewGame, new Vector2(550, 415), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionOptions, new Vector2(550, 470), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionExit, new Vector2(550, 530), Color.White); 
             switch (this.HighlightedOption)
             {
-                case MainMenuOptions.NewGame: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 405), Color.White); break;
-                case MainMenuOptions.Options: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 430), Color.White); break;
-                case MainMenuOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 455), Color.White); break;
+                case MainMenuOptions.NewGame: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
+                case MainMenuOptions.Options: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;
+                case MainMenuOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 532), Color.White); break;
                 default: throw new NotImplementedException();
             }
             this.screenManager.batch.End();

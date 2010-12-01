@@ -74,7 +74,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\cursor.xnb</Output>
-      <Time>2010-11-29T12:56:34.068453-08:00</Time>
+      <Time>2010-11-30T16:55:37.4740563-08:00</Time>
     </Item>
     <Item>
       <Source>Textures\TetrisUI.png</Source>
@@ -193,6 +193,123 @@
       <Options>None</Options>
       <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Pieces\I.xnb</Output>
       <Time>2010-11-29T12:49:08.9909961-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\TimeTrial.png</Source>
+      <Name>Textures\Menus\TimeTrial</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\TimeTrial.xnb</Output>
+      <Time>2010-11-30T17:07:33.6410187-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Back.png</Source>
+      <Name>Textures\Menus\Back</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Back.xnb</Output>
+      <Time>2010-11-30T17:09:33.8338934-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Challenges.png</Source>
+      <Name>Textures\Menus\Challenges</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Challenges.xnb</Output>
+      <Time>2010-11-30T17:12:22.4465375-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Classic.png</Source>
+      <Name>Textures\Menus\Classic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Classic.xnb</Output>
+      <Time>2010-11-30T17:05:58.7075888-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Exit.png</Source>
+      <Name>Textures\Menus\Exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Exit.xnb</Output>
+      <Time>2010-11-30T16:39:59.8664282-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Marathon.png</Source>
+      <Name>Textures\Menus\Marathon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Marathon.xnb</Output>
+      <Time>2010-11-30T17:10:34.2603496-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\NewGame.png</Source>
+      <Name>Textures\Menus\NewGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\NewGame.xnb</Output>
+      <Time>2010-11-30T16:35:03.7194896-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Options.png</Source>
+      <Name>Textures\Menus\Options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Options.xnb</Output>
+      <Time>2010-11-30T16:38:10.5751771-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Challenge1.png</Source>
+      <Name>Textures\Menus\Challenge1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Challenge1.xnb</Output>
+      <Time>2010-11-30T17:36:46.38527-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Challenge2.png</Source>
+      <Name>Textures\Menus\Challenge2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Challenge2.xnb</Output>
+      <Time>2010-11-30T17:36:46.4752751-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Challenge3.png</Source>
+      <Name>Textures\Menus\Challenge3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Challenge3.xnb</Output>
+      <Time>2010-11-30T17:36:46.5032767-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\Challenge4.png</Source>
+      <Name>Textures\Menus\Challenge4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\Challenge4.xnb</Output>
+      <Time>2010-11-30T17:36:46.5292782-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menus\PauseMenu.png</Source>
+      <Name>Textures\Menus\PauseMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\PauseMenu.xnb</Output>
+      <Time>2010-11-30T18:06:59.2759614-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

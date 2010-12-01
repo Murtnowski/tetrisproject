@@ -12,16 +12,13 @@ namespace Tetris3D
 
     public class ModeMenuScreen : GameScreen
     {
-        private String ClassicText = "Classic Tetris";
-        private String MarathonText = "Marathon Tetris";
-        private String TimeText = "Time Trial Tetris";
-        private String ChallengesText = "Challenges Tetris";
-        private String BackText = "Back";
-
         private Texture2D backGround;
         private Texture2D cursor;
-
-        private SpriteFont menuFont;
+        private Texture2D menuOptionClassic;
+        private Texture2D menuOptionChallenges;
+        private Texture2D menuOptionTimeTrial;
+        private Texture2D menuOptionMarathon;
+        private Texture2D menuOptionBack;
 
         private ModeMenuOptions HighlightedOption = ModeMenuOptions.Classic;
 
@@ -36,7 +33,11 @@ namespace Tetris3D
         {
             this.backGround = this.content.Load<Texture2D>(@"Textures\Title");
             this.cursor = this.content.Load<Texture2D>(@"Textures\Cursor");
-            this.menuFont = this.content.Load<SpriteFont>(@"Textures\Kootenay");
+            this.menuOptionClassic = this.content.Load<Texture2D>(@"Textures\Menus\Classic");
+            this.menuOptionTimeTrial = this.content.Load<Texture2D>(@"Textures\Menus\TimeTrial");
+            this.menuOptionMarathon = this.content.Load<Texture2D>(@"Textures\Menus\Marathon");
+            this.menuOptionChallenges = this.content.Load<Texture2D>(@"Textures\Menus\Challenges");
+            this.menuOptionBack = this.content.Load<Texture2D>(@"Textures\Menus\Back");
         }
 
         public override void Update(GameTime gameTime)
@@ -70,19 +71,19 @@ namespace Tetris3D
         {
             this.screenManager.batch.Begin();
             this.screenManager.batch.Draw(this.backGround, new Rectangle(0, 0, 1200, 900), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.ClassicText, new Vector2(575, 400), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.MarathonText, new Vector2(575, 425), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.TimeText, new Vector2(575, 450), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.ChallengesText, new Vector2(575, 475), Color.White);
-            this.screenManager.batch.DrawString(this.menuFont, this.BackText, new Vector2(575, 500), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionClassic, new Vector2(550, 415), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionMarathon, new Vector2(550, 470), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionTimeTrial, new Vector2(550, 525), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionChallenges, new Vector2(550, 580), Color.White);
+            this.screenManager.batch.Draw(this.menuOptionBack, new Vector2(550, 635), Color.White);
 
             switch (this.HighlightedOption)
             {
-                case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 405), Color.White); break;
-                case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 430), Color.White); break;
-                case ModeMenuOptions.TimeTrial: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 455), Color.White); break;
-                case ModeMenuOptions.Challenges: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 470), Color.White); break;
-                case ModeMenuOptions.Back: this.screenManager.batch.Draw(this.cursor, new Vector2(540, 485), Color.White); break;
+                case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
+                case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;
+                case ModeMenuOptions.TimeTrial: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 527), Color.White); break;
+                case ModeMenuOptions.Challenges: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 582), Color.White); break;
+                case ModeMenuOptions.Back: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 637), Color.White); break;
                 default: throw new NotImplementedException();
             }
             this.screenManager.batch.End();

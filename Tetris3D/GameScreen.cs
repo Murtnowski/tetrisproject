@@ -10,7 +10,7 @@ namespace Tetris3D
 {
     public abstract class GameScreen
     {
-        protected ContentManager content;
+        public ContentManager content;
 
         public ScreenManager screenManager;
         public bool isHidden;

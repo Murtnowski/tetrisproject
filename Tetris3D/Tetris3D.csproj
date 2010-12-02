@@ -101,6 +101,7 @@
     <Compile Include="GameScreen.cs" />
     <Compile Include="MainMenuScreen.cs" />
     <Compile Include="ScreenManager.cs" />
+    <Compile Include="StringUtilities.cs" />
     <Compile Include="TetrisPauseScreen.cs" />
     <Compile Include="TetrisPieces\IPiece.cs" />
     <Compile Include="TetrisPieces\JPiece.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="TetrisSession.cs" />
     <Compile Include="TetrisPieces\TPiece.cs" />
     <Compile Include="TetrisPieces\Zpiece.cs" />
+    <Compile Include="TextBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">

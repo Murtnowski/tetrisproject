@@ -12,6 +12,9 @@ namespace Tetris3D
 
     public class MainMenuScreen : GameScreen
     {
+        //TODO: REMOVE THIS EXAMPLE OF TEXTBOX
+        private TextBox TestTextBox;
+
         private Texture2D backGround;
         private Texture2D cursor;
         private Texture2D menuOptionNewGame;
@@ -33,6 +36,13 @@ namespace Tetris3D
             this.menuOptionNewGame = this.content.Load<Texture2D>(@"Textures\Menus\NewGame");
             this.menuOptionOptions = this.content.Load<Texture2D>(@"Textures\Menus\Options");
             this.menuOptionExit = this.content.Load<Texture2D>(@"Textures\Menus\Exit");
+
+            //TODO:REMOVE THIS TESTTEXTBOX
+            this.TestTextBox = new TextBox(this, new Vector2(150, 400), new Vector2(300, 300), @"Textures\UIFont", "Test");
+            this.TestTextBox.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.TestTextBox.Wrap = true;  //If your text exceeds the width of the box, this bool will automatically kick it down to the next line.  Try changing the text to check it out.
+            this.TestTextBox.ForeColor = Color.Aqua;
+            this.TestTextBox.BackColor = new Color(Color.Red, 140);
         }
 
         public override void Update(GameTime gameTime)
@@ -73,6 +83,8 @@ namespace Tetris3D
                 case MainMenuOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 532), Color.White); break;
                 default: throw new NotImplementedException();
             }
+
+            this.TestTextBox.Draw(this.screenManager.batch);
             this.screenManager.batch.End();
         }
     }

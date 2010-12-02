@@ -14,12 +14,7 @@ Content\Textures\Pieces\O.xnb
 Content\Textures\Pieces\S.xnb
 Content\Textures\Pieces\T.xnb
 Content\Textures\Pieces\Z.xnb
-Content\Audio\scratchloud.xnb
-Content\Audio\hit.xnb
-Content\Audio\slam.xnb
-Content\Audio\STG-MajorTom.xnb
 Content\Textures\Pieces\I.xnb
-Content\Textures\Menus\TimeTrial.xnb
 Content\Textures\Menus\Back.xnb
 Content\Textures\Menus\Challenges.xnb
 Content\Textures\Menus\Classic.xnb
@@ -27,9 +22,14 @@ Content\Textures\Menus\Exit.xnb
 Content\Textures\Menus\Marathon.xnb
 Content\Textures\Menus\NewGame.xnb
 Content\Textures\Menus\Options.xnb
+Content\Textures\Menus\TimeTrial.xnb
 Content\Textures\Menus\Challenge1.xnb
 Content\Textures\Menus\Challenge2.xnb
 Content\Textures\Menus\Challenge3.xnb
 Content\Textures\Menus\Challenge4.xnb
 Content\Textures\Menus\PauseMenu.xnb
+Content\Audio\scratchloud.xnb
+Content\Audio\hit.xnb
+Content\Audio\slam.xnb
+Content\Audio\STG-MajorTom.xnb
 Content\Audio\STG-MajorTom.wma

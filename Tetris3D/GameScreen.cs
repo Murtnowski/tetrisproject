@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace Tetris3D
 {
@@ -15,6 +17,9 @@ namespace Tetris3D
         public ScreenManager screenManager;
         public bool isHidden;
         public bool isDiabled;
+        public AudioBank audio;
+        public Song backgroundMusic;
+        
 
         public GameScreen(Microsoft.Xna.Framework.Game game)
         {

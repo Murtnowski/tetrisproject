@@ -14,7 +14,12 @@ namespace Tetris3D
     public class ClassicTetrisScreen : GameScreen
     {
         private String GameType = "Classic";
-  
+        private String gameTimerString = "";
+        private String gameMinutesString = "";
+        private String gameSecondsString = "";
+        private int gameTimerElapsedTime;
+        private int gameTimerTotalTime;
+
         private BasicEffect cubeEffect;
         private Camera camera;
 
@@ -22,6 +27,12 @@ namespace Tetris3D
         private TetrisSession tetrisSession;
 
         private ScrollingBackground scrollingBackground;
+
+        private TextBox gameTypeText;
+        private TextBox gameTimeText;
+        private TextBox gameScoreText;
+        private TextBox gameLevelText;
+        private TextBox gameLinesText;
 
         private SpriteFont UIFont;
 
@@ -32,9 +43,6 @@ namespace Tetris3D
         private Texture2D SPieceTexture;
         private Texture2D TPieceTexture;
         private Texture2D ZPieceTexture;
-
-        public AudioBank audio;
-        Song backgroundMusic;
 
         double totalTime = 0;
         double ElapsedRealTime = 0;
@@ -74,6 +82,8 @@ namespace Tetris3D
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
+
+            audio.PlayBeginSound();
         }
 
         public override void UnloadContent()
@@ -87,6 +97,12 @@ namespace Tetris3D
         /// </summary>
         private void initializeWorld()
         {
+            gameMinutesString = "0";
+            gameSecondsString = "00";
+            gameTimerElapsedTime = 0;
+            gameTimerTotalTime = 0;
+            gameTimerString = "0" + ":" + "00";
+
             cubeEffect = new BasicEffect(this.screenManager.GraphicsDevice, null);
             cubeEffect.TextureEnabled = true;
             cubeEffect.Texture = this.content.Load<Texture2D>("Textures\\leather");
@@ -128,13 +144,40 @@ namespace Tetris3D
                 BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(this.tetrisSession.GameBoard.GetLength(0) - 4, i, 0), TetrisColors.Gray);
                 foundation.Add(cubeRight);
             }
+
+            //Set UI text
+            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", GameType);
+            this.gameTypeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameTypeText.ForeColor = Color.Yellow;
+
+            this.gameTimeText = new TextBox(this, new Vector2(873, 278f), new Vector2(147, 25), @"Textures\UIFont", gameTimerString);
+            this.gameTimeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameTimeText.ForeColor = Color.Yellow;
+
+            this.gameScoreText = new TextBox(this, new Vector2(891, 533f), new Vector2(115, 25), @"Textures\UIFont", this.tetrisSession.CurrentScore.ToString());
+            this.gameScoreText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameScoreText.ForeColor = Color.Yellow;
+
+            this.gameLevelText = new TextBox(this, new Vector2(891, 613f), new Vector2(115, 25), @"Textures\UIFont", this.tetrisSession.CurrentLevel.ToString());
+            this.gameLevelText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameLevelText.ForeColor = Color.Yellow;
+
+            this.gameLinesText = new TextBox(this, new Vector2(891, 693f), new Vector2(115, 25), @"Textures\UIFont", this.tetrisSession.CurrentNumberOfClearedLines.ToString());
+            this.gameLinesText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameLinesText.ForeColor = Color.Yellow;
         }
 
         public override void Update(GameTime gameTime)
         {
             if (MediaPlayer.State != MediaState.Playing)
             {
-                MediaPlayer.Play(this.backgroundMusic);
+                if (MediaPlayer.State == MediaState.Paused)
+                {
+                    audio.PlayResumedSound();
+                    MediaPlayer.Resume();
+                }
+                else
+                    MediaPlayer.Play(this.backgroundMusic);
             }
             this.camera.Update(gameTime);
             float elapsedBackground = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -142,8 +185,18 @@ namespace Tetris3D
             totalTime += gameTime.ElapsedGameTime.Milliseconds;
             ElapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
 
+            gameTimerTotalTime += gameTime.TotalRealTime.Seconds;
+            gameTimerElapsedTime = (gameTimerTotalTime - gameTimerElapsedTime) + gameTimerElapsedTime;
+
+            gameMinutesString = (gameTimerElapsedTime/60).ToString();
+            gameSecondsString = (gameTimerElapsedTime).ToString();
+            if (gameSecondsString.Length < 2)
+                gameSecondsString = "0" + gameSecondsString;
+            gameTimerString = gameMinutesString + ":" + gameSecondsString;
+
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
             {
+                MediaPlayer.Pause();
                 this.screenManager.addScreen(new TetrisPauseScreen(this.screenManager.Game, this));
             }
 
@@ -166,11 +219,11 @@ namespace Tetris3D
                         this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
                         //TODO: GAMEOVER LOGIC
                     }
-                    audio.PlayClearLineSound();
+                    audio.PlaySlamSound();
                     this.tetrisSession.clearCompletedLines();
                 }
             }
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
+            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
                 this.tetrisSession.slamCurrentPiece();
                 if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
@@ -179,10 +232,10 @@ namespace Tetris3D
                     this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
                     //TODO: GAME OVER LOGIC
                 }
-                audio.PlayClearLineSound();
+                audio.PlaySlamSound();
                 this.tetrisSession.clearCompletedLines();
             }
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
+            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 audio.PlayRotateSound();
                 this.tetrisSession.rotateCurrentPieceClockwise();
@@ -200,7 +253,6 @@ namespace Tetris3D
                         this.screenManager.removeScreen(this);
                         this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
                     }
-                    audio.PlayClearLineSound();
                     this.tetrisSession.clearCompletedLines();
                 }
                 else
@@ -210,6 +262,12 @@ namespace Tetris3D
             }
 
             scrollingBackground.Update(elapsedBackground * 100);
+
+            //update UI text
+            gameTimeText.Text = this.gameTimerString;
+            gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+            gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
+            gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
         }
 
         public override void Draw(GameTime gameTime)
@@ -257,10 +315,11 @@ namespace Tetris3D
             
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
             this.screenManager.batch.Draw(this.TetrisUI, new Vector2(850, 200), Color.White);
-            this.screenManager.batch.DrawString(UIFont, this.GameType, new Vector2(895, 238f), Color.Yellow);
-            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentScore, new Vector2(922f, 528f), Color.Yellow);
-            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentLevel, new Vector2(942f, 608f), Color.Yellow);
-            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentNumberOfClearedLines, new Vector2(942f, 688f), Color.Yellow);
+            this.gameTypeText.Draw(this.screenManager.batch);
+            this.gameTimeText.Draw(this.screenManager.batch);
+            this.gameScoreText.Draw(this.screenManager.batch);
+            this.gameLevelText.Draw(this.screenManager.batch);
+            this.gameLinesText.Draw(this.screenManager.batch);
 
             //Draw Next Piece
             switch (this.tetrisSession.NextTetrisPiece().Type)
@@ -274,7 +333,6 @@ namespace Tetris3D
                 case TetrisPieces.ZBlock: this.screenManager.batch.Draw(this.ZPieceTexture, new Vector2(870, 350), Color.White); break;
                 default: throw new NotImplementedException();
             }
-
 
             this.screenManager.batch.End();
         }

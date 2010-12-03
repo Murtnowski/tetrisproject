@@ -8,8 +8,8 @@ namespace Tetris3D
     public class TextBox
     {
         public GraphicsDevice graphicsDevice;
-        public Texture2D BackTexture;
-        public SpriteFont SpriteFont;
+        public Texture2D backTexture;
+        public SpriteFont spriteFont;
         public Color ForeColor = Color.Black;
         public TextAlignOption TextAlign = TextAlignOption.TopLeft;
         public String Text = "";
@@ -36,9 +36,9 @@ namespace Tetris3D
             {
                 this.backColor = value;
 
-                this.BackTexture = new Texture2D(this.graphicsDevice, 1, 1);
+                this.backTexture = new Texture2D(this.graphicsDevice, 1, 1);
                 Color[] color = { this.backColor };
-                this.BackTexture.SetData<Color>(color);
+                this.backTexture.SetData<Color>(color);
             }
         }
 
@@ -47,7 +47,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = owner.content.Load<SpriteFont>(fontLocation);
+            this.spriteFont = owner.content.Load<SpriteFont>(fontLocation);
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -58,7 +58,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = owner.content.Load<SpriteFont>(fontLocation);
+            this.spriteFont = owner.content.Load<SpriteFont>(fontLocation);
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -70,7 +70,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = owner.content.Load<SpriteFont>(fontLocation);
+            this.spriteFont = owner.content.Load<SpriteFont>(fontLocation);
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -81,7 +81,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = owner.content.Load<SpriteFont>(fontLocation);
+            this.spriteFont = owner.content.Load<SpriteFont>(fontLocation);
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -91,7 +91,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = font;
+            this.spriteFont = font;
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -102,7 +102,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = font;
+            this.spriteFont = font;
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -114,7 +114,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = font;
+            this.spriteFont = font;
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -125,7 +125,7 @@ namespace Tetris3D
             this.Location = location;
             this.Size = size;
             this.graphicsDevice = owner.screenManager.GraphicsDevice;
-            this.SpriteFont = font;
+            this.spriteFont = font;
             this.Text = text;
             this.BackColor = this.backColor;
         }
@@ -152,20 +152,20 @@ namespace Tetris3D
             // TODO: Add your drawing code here
 
 
-            spriteBatch.Draw(this.BackTexture, new Rectangle((int)this.Location.X, (int)this.Location.Y, (int)(this.Size.X + this.Margins.W + this.Margins.X), (int)(this.Size.Y + this.Margins.Z + this.Margins.Y)), null, Color.White, this.Rotation, Vector2.Zero, this.SpriteEffect, this.LayerDepth);
+            spriteBatch.Draw(this.backTexture, new Rectangle((int)this.Location.X, (int)this.Location.Y, (int)(this.Size.X + this.Margins.W + this.Margins.X), (int)(this.Size.Y + this.Margins.Z + this.Margins.Y)), null, Color.White, this.Rotation, Vector2.Zero, this.SpriteEffect, this.LayerDepth);
             if (this.Wrap)
             {
                 switch (this.TextAlign)
                 {
-                    case TextAlignOption.TopLeft: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, -this.Margins.Z), this.Scale, SpriteEffects.None, this.LayerDepth); break;
-                    case TextAlignOption.TopCenter: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).X - this.Size.X) / 2) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.TopRight: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).X - this.Size.X) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.MiddleLeft: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).Y - this.Size.Y) / 2 - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.MiddleCenter: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).X - this.Size.X) / 2) - this.Margins.W, (int)((this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.MiddleRight: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).X - this.Size.X) - this.Margins.W, (int)((this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.BottomLeft: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.BottomCenter: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).X - this.Size.X) / 2) - this.Margins.W, (int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.BottomRight: spriteBatch.DrawString(this.SpriteFont, StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).X - this.Size.X) - this.Margins.W, (int)(this.SpriteFont.MeasureString(StringUtilities.getWrapText(this.SpriteFont, this.Text, this.Size.X)).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.TopLeft: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, -this.Margins.Z), this.Scale, SpriteEffects.None, this.LayerDepth); break;
+                    case TextAlignOption.TopCenter: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).X - this.Size.X) / 2) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.TopRight: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).X - this.Size.X) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.MiddleLeft: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).Y - this.Size.Y) / 2 - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.MiddleCenter: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).X - this.Size.X) / 2) - this.Margins.W, (int)((this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.MiddleRight: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).X - this.Size.X) - this.Margins.W, (int)((this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.BottomLeft: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.BottomCenter: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).X - this.Size.X) / 2) - this.Margins.W, (int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.BottomRight: spriteBatch.DrawString(this.spriteFont, StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X), this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).X - this.Size.X) - this.Margins.W, (int)(this.spriteFont.MeasureString(StringUtilities.getWrapText(this.spriteFont, this.Text, this.Size.X)).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
                     default: break;
                 }
             }
@@ -173,15 +173,15 @@ namespace Tetris3D
             {
                 switch (this.TextAlign)
                 {
-                    case TextAlignOption.TopLeft: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.TopCenter: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.SpriteFont.MeasureString(this.Text).X - this.Size.X) / 2) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.TopRight: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.SpriteFont.MeasureString(this.Text).X - this.Size.X) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.MiddleLeft: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)((this.SpriteFont.MeasureString(this.Text).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.MiddleCenter: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.SpriteFont.MeasureString(this.Text).X - this.Size.X) / 2) - this.Margins.W, (int)((this.SpriteFont.MeasureString(this.Text).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.MiddleRight: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.SpriteFont.MeasureString(this.Text).X - this.Size.X) - this.Margins.W, (int)((this.SpriteFont.MeasureString(this.Text).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.BottomLeft: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)(this.SpriteFont.MeasureString(this.Text).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.BottomCenter: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.SpriteFont.MeasureString(this.Text).X - this.Size.X) / 2) - this.Margins.W, (this.SpriteFont.MeasureString(this.Text).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
-                    case TextAlignOption.BottomRight: spriteBatch.DrawString(this.SpriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.SpriteFont.MeasureString(this.Text).X - this.Size.X) - this.Margins.W, (this.SpriteFont.MeasureString(this.Text).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.TopLeft: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.TopCenter: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.spriteFont.MeasureString(this.Text).X - this.Size.X) / 2) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.TopRight: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.spriteFont.MeasureString(this.Text).X - this.Size.X) - this.Margins.W, -this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.MiddleLeft: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)((this.spriteFont.MeasureString(this.Text).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.MiddleCenter: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.spriteFont.MeasureString(this.Text).X - this.Size.X) / 2) - this.Margins.W, (int)((this.spriteFont.MeasureString(this.Text).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.MiddleRight: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.spriteFont.MeasureString(this.Text).X - this.Size.X) - this.Margins.W, (int)((this.spriteFont.MeasureString(this.Text).Y - this.Size.Y) / 2) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.BottomLeft: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2(-this.Margins.W, (int)(this.spriteFont.MeasureString(this.Text).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.BottomCenter: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)((this.spriteFont.MeasureString(this.Text).X - this.Size.X) / 2) - this.Margins.W, (this.spriteFont.MeasureString(this.Text).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
+                    case TextAlignOption.BottomRight: spriteBatch.DrawString(this.spriteFont, this.Text, this.Location, this.ForeColor, this.Rotation, new Vector2((int)(this.spriteFont.MeasureString(this.Text).X - this.Size.X) - this.Margins.W, (this.spriteFont.MeasureString(this.Text).Y - this.Size.Y) - this.Margins.Z), this.Scale, this.SpriteEffect, this.LayerDepth); break;
                     default: break;
                 }
             }

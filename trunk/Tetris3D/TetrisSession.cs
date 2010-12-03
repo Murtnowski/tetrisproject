@@ -12,6 +12,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+using XELibrary;
 
 namespace Tetris3D
 {
@@ -20,7 +25,6 @@ namespace Tetris3D
     /// </summary>
     public class TetrisSession
     {
-        // TODO: The value 4 needs to be verified, likely incorrect.
         /// <summary>
         /// The number of rows from the top of the board that if a piece ends up in the game is over
         /// </summary>

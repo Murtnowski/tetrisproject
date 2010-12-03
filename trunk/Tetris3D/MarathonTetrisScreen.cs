@@ -33,9 +33,6 @@ namespace Tetris3D
         private Texture2D TPieceTexture;
         private Texture2D ZPieceTexture;
 
-        public AudioBank audio;
-        Song backgroundMusic;
-
         double totalTime = 0;
         double ElapsedRealTime = 0;
 

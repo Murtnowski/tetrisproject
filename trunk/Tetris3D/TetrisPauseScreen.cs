@@ -11,7 +11,7 @@ namespace Tetris3D
     public enum TetrisPauseOptions { Resume, Quit };
 
     public class TetrisPauseScreen : GameScreen
-    {
+    {        
         private GameScreen screenToPause;
 
         private Texture2D Background;
@@ -33,17 +33,23 @@ namespace Tetris3D
             this.Background = this.content.Load<Texture2D>(@"Textures\blank");
             this.Cursor = this.content.Load<Texture2D>(@"Textures\cursor");
             this.PauseMenu = this.content.Load<Texture2D>(@"Textures\Menus\PauseMenu");
+            audio = new AudioBank();
+            audio.LoadContent(this.content);
+
+            audio.PlayPauseSound();
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
+                audio.PlayMenuScrollSound();
                 this.HighlightedOption--;
                 this.HighlightedOption = (TetrisPauseOptions)Math.Max((int)this.HighlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
+                audio.PlayMenuScrollSound();
                 this.HighlightedOption++;
                 this.HighlightedOption = (TetrisPauseOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
@@ -62,11 +68,11 @@ namespace Tetris3D
         {
             this.screenManager.batch.Begin();
             this.screenManager.batch.Draw(this.Background, new Rectangle(0, 0, 1200, 900), new Color(Color.White, 100));
-            this.screenManager.batch.Draw(this.PauseMenu, new Vector2(575, 375), Color.White);
+            this.screenManager.batch.Draw(this.PauseMenu, new Vector2(555, 375), Color.White);
             switch (this.HighlightedOption)
             {
-                case TetrisPauseOptions.Resume: this.screenManager.batch.Draw(this.Cursor, new Vector2(540, 385), Color.White); break;
-                case TetrisPauseOptions.Quit: this.screenManager.batch.Draw(this.Cursor, new Vector2(540, 455), Color.White); break;
+                case TetrisPauseOptions.Resume: this.screenManager.batch.Draw(this.Cursor, new Vector2(520, 385), Color.White); break;
+                case TetrisPauseOptions.Quit: this.screenManager.batch.Draw(this.Cursor, new Vector2(520, 455), Color.White); break;
                 default: throw new NotImplementedException();
             }
             this.screenManager.batch.End();

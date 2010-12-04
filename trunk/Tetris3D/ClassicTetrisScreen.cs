@@ -24,11 +24,7 @@ namespace Tetris3D
     public class ClassicTetrisScreen : GameScreen
     {
         private String gameType = "Classic";
-        private String gameTimerString = "";
-        private String gameMinutesString = "";
-        private String gameSecondsString = "";
-        private int gameTimerElapsedTime;
-        private int gameTimerTotalTime;
+
 
         private BasicEffect cubeEffect;
         private Camera camera;
@@ -54,8 +50,8 @@ namespace Tetris3D
         private Texture2D TPieceTexture;
         private Texture2D ZPieceTexture;
 
-        double totalTime = 0;
-        double elapsedRealTime = 0;
+        TimeSpan elapsedTime = new TimeSpan();
+        double timeSinceLastTick = 0;
 
         private Texture2D tetrisUI;
 
@@ -107,12 +103,6 @@ namespace Tetris3D
         /// </summary>
         private void initializeWorld()
         {
-            gameMinutesString = "0";
-            gameSecondsString = "00";
-            gameTimerElapsedTime = 0;
-            gameTimerTotalTime = 0;
-            gameTimerString = "0" + ":" + "00";
-
             cubeEffect = new BasicEffect(this.screenManager.GraphicsDevice, null);
             cubeEffect.TextureEnabled = true;
             cubeEffect.Texture = this.content.Load<Texture2D>("Textures\\leather");
@@ -160,7 +150,7 @@ namespace Tetris3D
             this.gameTypeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
             this.gameTypeText.ForeColor = Color.Yellow;
 
-            this.gameTimeText = new TextBox(this, new Vector2(873, 278f), new Vector2(147, 25), @"Textures\UIFont", gameTimerString);
+            this.gameTimeText = new TextBox(this, new Vector2(873, 278f), new Vector2(147, 25), @"Textures\UIFont", "");
             this.gameTimeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
             this.gameTimeText.ForeColor = Color.Yellow;
 
@@ -179,6 +169,14 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
+            if (gameTime.IsRunningSlowly)
+            {
+                int i = 0;
+            }
+
+            this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
+            this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
+
             if (MediaPlayer.State != MediaState.Playing)
             {
                 if (MediaPlayer.State == MediaState.Paused)
@@ -189,20 +187,10 @@ namespace Tetris3D
                 else
                     MediaPlayer.Play(this.backgroundMusic);
             }
+
             this.camera.Update(gameTime);
-            float elapsedBackground = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            totalTime += gameTime.ElapsedGameTime.Milliseconds;
-            elapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
 
-            gameTimerTotalTime += gameTime.TotalRealTime.Seconds;
-            gameTimerElapsedTime = (gameTimerTotalTime - gameTimerElapsedTime) + gameTimerElapsedTime;
-
-            gameMinutesString = (gameTimerElapsedTime/60).ToString();
-            gameSecondsString = (gameTimerElapsedTime).ToString();
-            if (gameSecondsString.Length < 2)
-                gameSecondsString = "0" + gameSecondsString;
-            gameTimerString = gameMinutesString + ":" + gameSecondsString;
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
             {
@@ -219,31 +207,33 @@ namespace Tetris3D
             {
                 this.tetrisSession.moveCurrentPieceRight();
             }
+
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 if (!this.tetrisSession.moveCurrentPieceDown())
                 {
+                    audio.PlaySlamSound();
+                    this.tetrisSession.clearCompletedLines();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
                         this.screenManager.removeScreen(this);
                         this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
                         //TODO: GAMEOVER LOGIC
                     }
-                    audio.PlaySlamSound();
-                    this.tetrisSession.clearCompletedLines();
                 }
             }
+
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
+                audio.PlaySlamSound();
                 this.tetrisSession.slamCurrentPiece();
+                this.tetrisSession.clearCompletedLines();
                 if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                 {
                     this.screenManager.removeScreen(this);
                     this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
                     //TODO: GAME OVER LOGIC
                 }
-                audio.PlaySlamSound();
-                this.tetrisSession.clearCompletedLines();
             }
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
@@ -251,9 +241,9 @@ namespace Tetris3D
                 this.tetrisSession.rotateCurrentPieceClockwise();
             }
 
-            if (totalTime > (1000 - (this.tetrisSession.CurrentLevel * 100)))
+            if (this.timeSinceLastTick > (1000 - (this.tetrisSession.CurrentLevel * 100)))
             {
-                this.totalTime = 0;
+                this.timeSinceLastTick = 0;
 
                 if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                 {
@@ -271,10 +261,17 @@ namespace Tetris3D
                 }
             }
 
-            scrollingBackground.Update(elapsedBackground * 100);
+            scrollingBackground.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 100);
 
             //update UI text
-            gameTimeText.Text = this.gameTimerString;
+            if (this.elapsedTime.Seconds >= 10)
+            {
+                gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds;
+            }
+            else
+            {
+                gameTimeText.Text = this.elapsedTime.Minutes + ":" + "0" + this.elapsedTime.Seconds;
+            }
             gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
             gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
             gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();

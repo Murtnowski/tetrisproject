@@ -29,7 +29,7 @@ namespace Tetris3D
         public Vector2 Scale = Vector2.One;
         public SpriteEffects SpriteEffect = SpriteEffects.None;
         public float LayerDepth = 0.0f;
-        public bool Wrap;
+        public bool Wrap = false;
 
         protected Color backColor = Color.TransparentWhite;
 

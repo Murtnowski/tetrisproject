@@ -171,17 +171,10 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
-            if (gameTime.IsRunningSlowly)
-            {
-                int i = 0;
-            }
-
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
             this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
 
             this.camera.Update(gameTime);
-
-
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
             {
@@ -264,14 +257,7 @@ namespace Tetris3D
             scrollingBackground.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 100);
 
             //update UI text
-            if (this.elapsedTime.Seconds >= 10)
-            {
-                gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds;
-            }
-            else
-            {
-                gameTimeText.Text = this.elapsedTime.Minutes + ":" + "0" + this.elapsedTime.Seconds;
-            }
+            gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
         }
 
         public override void Draw(GameTime gameTime)

@@ -1,6 +1,0 @@
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\bin\x86\Debug\XELibrary.dll
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\bin\x86\Debug\XELibrary.pdb
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.dll
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\obj\x86\Debug\XELibrary.pdb

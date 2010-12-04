@@ -89,7 +89,9 @@ namespace Tetris3D
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
-            audio.PlayBeginSound();
+            MediaPlayer.IsRepeating = true;
+            this.audio.PlayBeginSound();
+            MediaPlayer.Play(this.backgroundMusic);
         }
 
         public override void UnloadContent()
@@ -177,24 +179,12 @@ namespace Tetris3D
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
             this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
 
-            if (MediaPlayer.State != MediaState.Playing)
-            {
-                if (MediaPlayer.State == MediaState.Paused)
-                {
-                    audio.PlayResumedSound();
-                    MediaPlayer.Resume();
-                }
-                else
-                    MediaPlayer.Play(this.backgroundMusic);
-            }
-
             this.camera.Update(gameTime);
 
 
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
             {
-                MediaPlayer.Pause();
                 this.screenManager.addScreen(new TetrisPauseScreen(this.screenManager.Game, this));
             }
 
@@ -253,6 +243,7 @@ namespace Tetris3D
 
                 if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                 {
+                    audio.PlaySlamSound();
                     this.tetrisSession.clearCompletedLines();
                     gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                     gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
@@ -285,13 +276,9 @@ namespace Tetris3D
 
         public override void Draw(GameTime gameTime)
         {
-
             this.screenManager.GraphicsDevice.RenderState.DepthBufferEnable = true;
             this.screenManager.GraphicsDevice.RenderState.AlphaBlendEnable = false;
             this.screenManager.GraphicsDevice.RenderState.AlphaTestEnable = false;
-
-            //this.tetrisSession.Draw(gameTime, this.spriteBatch, this.GraphicsDevice);
-            this.screenManager.GraphicsDevice.Clear(Color.Pink);
 
             // TODO : Make it so you draw background.. then pieces.. then HUD without them conflicting graphically
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);

@@ -46,5 +46,16 @@ namespace Tetris3D
         public abstract void Draw(GameTime gameTime);
 
         public abstract void Update(GameTime gameTime);
+
+        public virtual void resumeAudio()
+        {
+            this.audio.PlayResumedSound();
+            MediaPlayer.Resume();
+        }
+
+        public virtual void pauseAudio()
+        {
+            MediaPlayer.Pause();
+        }
     }
 }

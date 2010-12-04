@@ -214,6 +214,9 @@ namespace Tetris3D
                 {
                     audio.PlaySlamSound();
                     this.tetrisSession.clearCompletedLines();
+                    gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+                    gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                    gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
                         this.screenManager.removeScreen(this);
@@ -228,6 +231,9 @@ namespace Tetris3D
                 audio.PlaySlamSound();
                 this.tetrisSession.slamCurrentPiece();
                 this.tetrisSession.clearCompletedLines();
+                gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
+                gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                 if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                 {
                     this.screenManager.removeScreen(this);
@@ -247,13 +253,16 @@ namespace Tetris3D
 
                 if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                 {
+                    this.tetrisSession.clearCompletedLines();
+                    gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+                    gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                    gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
                         //TODO: GAMEOVER LOGIC
                         this.screenManager.removeScreen(this);
                         this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
                     }
-                    this.tetrisSession.clearCompletedLines();
                 }
                 else
                 {
@@ -272,16 +281,11 @@ namespace Tetris3D
             {
                 gameTimeText.Text = this.elapsedTime.Minutes + ":" + "0" + this.elapsedTime.Seconds;
             }
-            gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
-            gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
-            gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
         }
 
         public override void Draw(GameTime gameTime)
         {
-            this.screenManager.GraphicsDevice.RenderState.DepthBufferEnable = true;
-            this.screenManager.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-            this.screenManager.GraphicsDevice.RenderState.AlphaTestEnable = false;
+
 
             //this.tetrisSession.Draw(gameTime, this.spriteBatch, this.GraphicsDevice);
             this.screenManager.GraphicsDevice.Clear(Color.Pink);

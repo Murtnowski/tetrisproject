@@ -33,6 +33,15 @@ namespace Tetris3D
             this.batch = spriteBatch;
         }
 
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            this.GraphicsDevice.RenderState.DepthBufferEnable = true;
+            this.GraphicsDevice.RenderState.AlphaBlendEnable = false;
+            this.GraphicsDevice.RenderState.AlphaTestEnable = false;
+        }
+
         public override void Update(GameTime gameTime)
         {
             foreach (GameScreen gameScreen in this.gameScreens)

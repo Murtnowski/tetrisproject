@@ -41,6 +41,17 @@ namespace Tetris3D
         }
 
         /// <summary>
+        /// Returns the vertical height of the Tetris piece as it is orientated
+        /// </summary>
+        public override int VerticalHeight
+        {
+            get
+            {
+                return 2;
+            }
+        }
+
+        /// <summary>
         /// Constructs a new O Tetris piece
         /// </summary>
         /// <param name="referanceLocation">The referance point used to position the Tetris piece</param>

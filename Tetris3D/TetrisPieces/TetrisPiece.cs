@@ -57,6 +57,14 @@ namespace Tetris3D
         }
 
         /// <summary>
+        /// Returns the vertical height of the piece as it is orientated
+        /// </summary>
+        public abstract int VerticalHeight
+        {
+            get;
+        }
+
+        /// <summary>
         /// The type of the Tetris piece
         /// </summary>
         public abstract TetrisPieces Type
@@ -80,6 +88,17 @@ namespace Tetris3D
             get
             {
                 return this.pieceLocations.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Returns the current referance location of the Tetris piece
+        /// </summary>
+        public Point ReferanceLocation
+        {
+            get
+            {
+                return this.referanceLocation;
             }
         }
 

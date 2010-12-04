@@ -499,7 +499,7 @@ namespace Tetris3D
              * looking from the beginning for cleared lines.
              */
             int linesCleared = 0;
-            for (int lineIndex = this.gameBoard.GetLength(1) - 1; lineIndex >= 0; lineIndex--)
+            for (int lineIndex = this.currentTetrisPiece.ReferanceLocation.Y + this.currentTetrisPiece.VerticalHeight - 1; lineIndex >= 0; lineIndex--)
             {
                 if(this.isLineCompleted(lineIndex))
                 {
@@ -537,7 +537,7 @@ namespace Tetris3D
             {
                 for (int x = 0; x < this.gameBoard.GetLength(0); x++)
                 {
-                    if (this.gameBoard[x, y] != null && !this.isCurrentPieceAtLocation(new Point(x, y)))
+                    if (this.gameBoard[x, y] != null)
                     {
                         this.gameBoard[x, y - 1] = new TetrisBlock(this.gameBoard[x, y].TetrisColor);
                         this.gameBoard[x, y] = null;
@@ -589,7 +589,7 @@ namespace Tetris3D
             {
                 try
                 {
-                    if (this.GameBoard[x, lineIndex] == null || this.isCurrentPieceAtLocation(new Point(x, lineIndex)))
+                    if (this.GameBoard[x, lineIndex] == null)
                     {
                         return false;
                     }

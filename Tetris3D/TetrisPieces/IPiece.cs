@@ -41,6 +41,24 @@ namespace Tetris3D
         }
 
         /// <summary>
+        /// Returns the vertical height of the Tetris piece as it is orientated
+        /// </summary>
+        public override int VerticalHeight
+        {
+            get
+            {
+                switch (this.Orientation)
+                {
+                    case Orientations.East: return 1;
+                    case Orientations.North: return 4;
+                    case Orientations.South: return 4;
+                    case Orientations.West: return 1;
+                    default: throw new NotImplementedException();
+                }
+            }
+        }
+
+        /// <summary>
         /// Constructs a new J Tetris piece
         /// </summary>
         /// <param name="referanceLocation">The referance point used to position the Tetris piece</param>

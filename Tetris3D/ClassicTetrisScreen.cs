@@ -172,6 +172,9 @@ namespace Tetris3D
         public override void Update(GameTime gameTime)
         {
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
+            //update UI text
+            gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
+
             this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
 
             this.camera.Update(gameTime);
@@ -256,8 +259,7 @@ namespace Tetris3D
 
             scrollingBackground.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 100);
 
-            //update UI text
-            gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
+
         }
 
         public override void Draw(GameTime gameTime)

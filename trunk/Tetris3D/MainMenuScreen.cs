@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +27,7 @@ namespace Tetris3D
         private Texture2D menuOptionOptions;
         private Texture2D menuOptionExit;
 
-        private MainMenuOptions HighlightedOption = MainMenuOptions.NewGame;
+        private MainMenuOptions highlightedOption = MainMenuOptions.NewGame;
 
         private int numberOfTetrisMainMenuOptions = 3;
 
@@ -45,18 +54,18 @@ namespace Tetris3D
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption--;
-                this.HighlightedOption = (MainMenuOptions)Math.Max((int)this.HighlightedOption, 0);
+                this.highlightedOption--;
+                this.highlightedOption = (MainMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption++;
-                this.HighlightedOption = (MainMenuOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
+                this.highlightedOption++;
+                this.highlightedOption = (MainMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
-                switch (this.HighlightedOption)
+                switch (this.highlightedOption)
                 {
                     case MainMenuOptions.NewGame: 
                         this.screenManager.removeScreen(this); 
@@ -76,7 +85,7 @@ namespace Tetris3D
             this.screenManager.batch.Draw(this.menuOptionNewGame, new Vector2(550, 415), Color.White);
             this.screenManager.batch.Draw(this.menuOptionOptions, new Vector2(550, 470), Color.White);
             this.screenManager.batch.Draw(this.menuOptionExit, new Vector2(550, 530), Color.White); 
-            switch (this.HighlightedOption)
+            switch (this.highlightedOption)
             {
                 case MainMenuOptions.NewGame: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
                 case MainMenuOptions.Options: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;

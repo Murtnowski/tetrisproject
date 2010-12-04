@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Primary Author: Damon Chastain
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +19,13 @@ namespace Tetris3D
 {
     public class AudioBank
     {
+        //declare names for various sound effects
         private SoundEffect rotatePieceSound, slamPieceSound, pauseScreenSound, pauseScreenVocalSound, menuClickSound,
             gameIntroSound, forwardMenuSound, backMenuSound, pauseToResumeSound, playBeginSound, playTetrisSound;
+        //create a sound instance which plays the various sounds with alterations, if needed
         private SoundEffectInstance soundInstance;
 
+        //load each effect from Audio\SFX
         public void LoadContent(ContentManager Content)
         {
             rotatePieceSound = Content.Load<SoundEffect>(@"Audio\SFX\scratchloud");
@@ -31,11 +43,10 @@ namespace Tetris3D
             // All music must be in loop
             MediaPlayer.IsRepeating = true;
         }
+        //sound of player getting a Tetris
         public void PlayTetrisSound()
         {
-            soundInstance = playTetrisSound.CreateInstance();
-            soundInstance.Pitch = .1f;
-            soundInstance.Play();
+            playTetrisSound.Play();
         }
         public void PlayBeginSound()
         {

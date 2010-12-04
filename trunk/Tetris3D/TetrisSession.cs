@@ -1,6 +1,6 @@
 ﻿/*
  * Project: Tetris Project
- * Authors: Matthew Urtnowski 
+ * Authors: Matthew Urtnowski & Damon Chastain
  * Date: Fall 2010
  * Class: CECS 491
  * Instructor: Alvaro Monge

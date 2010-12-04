@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Author: Matthew Urtnowski
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

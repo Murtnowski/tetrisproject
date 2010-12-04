@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,14 +27,14 @@ namespace Tetris3D
         private Texture2D Cursor;
         private Texture2D PauseMenu;
 
-        private TetrisPauseOptions HighlightedOption = TetrisPauseOptions.Resume;
+        private TetrisPauseOptions highlightedOption = TetrisPauseOptions.Resume;
 
         private int numberOfTetrisMainMenuOptions = 2;
 
         public TetrisPauseScreen(Microsoft.Xna.Framework.Game game, GameScreen screenToPause) : base(game)
         {
             this.screenToPause = screenToPause;
-            this.screenToPause.isDiabled = true;
+            this.screenToPause.isDisabled = true;
         }
 
         public override void LoadContent()
@@ -44,20 +53,20 @@ namespace Tetris3D
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption--;
-                this.HighlightedOption = (TetrisPauseOptions)Math.Max((int)this.HighlightedOption, 0);
+                this.highlightedOption--;
+                this.highlightedOption = (TetrisPauseOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption++;
-                this.HighlightedOption = (TetrisPauseOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
+                this.highlightedOption++;
+                this.highlightedOption = (TetrisPauseOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
-                switch (this.HighlightedOption)
+                switch (this.highlightedOption)
                 {
-                    case TetrisPauseOptions.Resume: this.screenManager.removeScreen(this); this.screenToPause.isDiabled = false; break;
+                    case TetrisPauseOptions.Resume: this.screenManager.removeScreen(this); this.screenToPause.isDisabled = false; break;
                     case TetrisPauseOptions.Quit: this.screenManager.removeScreen(this); this.screenManager.removeScreen(this.screenToPause); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }
@@ -69,7 +78,7 @@ namespace Tetris3D
             this.screenManager.batch.Begin();
             this.screenManager.batch.Draw(this.Background, new Rectangle(0, 0, 1200, 900), new Color(Color.White, 100));
             this.screenManager.batch.Draw(this.PauseMenu, new Vector2(555, 375), Color.White);
-            switch (this.HighlightedOption)
+            switch (this.highlightedOption)
             {
                 case TetrisPauseOptions.Resume: this.screenManager.batch.Draw(this.Cursor, new Vector2(520, 385), Color.White); break;
                 case TetrisPauseOptions.Quit: this.screenManager.batch.Draw(this.Cursor, new Vector2(520, 455), Color.White); break;

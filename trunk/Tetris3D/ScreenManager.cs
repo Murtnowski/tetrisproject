@@ -36,10 +36,6 @@ namespace Tetris3D
         public override void Initialize()
         {
             base.Initialize();
-
-            this.GraphicsDevice.RenderState.DepthBufferEnable = true;
-            this.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-            this.GraphicsDevice.RenderState.AlphaTestEnable = false;
         }
 
         public override void Update(GameTime gameTime)

@@ -286,6 +286,9 @@ namespace Tetris3D
         public override void Draw(GameTime gameTime)
         {
 
+            this.screenManager.GraphicsDevice.RenderState.DepthBufferEnable = true;
+            this.screenManager.GraphicsDevice.RenderState.AlphaBlendEnable = false;
+            this.screenManager.GraphicsDevice.RenderState.AlphaTestEnable = false;
 
             //this.tetrisSession.Draw(gameTime, this.spriteBatch, this.GraphicsDevice);
             this.screenManager.GraphicsDevice.Clear(Color.Pink);

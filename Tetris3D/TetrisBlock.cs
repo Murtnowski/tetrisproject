@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Primary Author: Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

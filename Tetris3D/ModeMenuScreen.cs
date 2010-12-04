@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +29,7 @@ namespace Tetris3D
         private Texture2D menuOptionMarathon;
         private Texture2D menuOptionBack;
 
-        private ModeMenuOptions HighlightedOption = ModeMenuOptions.Classic;
+        private ModeMenuOptions highlightedOption = ModeMenuOptions.Classic;
 
         private int numberOfTetrisMainMenuOptions = 5;
 
@@ -51,18 +60,18 @@ namespace Tetris3D
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption--;
-                this.HighlightedOption = (ModeMenuOptions)Math.Max((int)this.HighlightedOption, 0);
+                this.highlightedOption--;
+                this.highlightedOption = (ModeMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption++;
-                this.HighlightedOption = (ModeMenuOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
+                this.highlightedOption++;
+                this.highlightedOption = (ModeMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
-                switch (this.HighlightedOption)
+                switch (this.highlightedOption)
                 {
                     case ModeMenuOptions.Classic: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); break;
                     case ModeMenuOptions.Marathon: this.screenManager.removeScreen(this); this.screenManager.addScreen(new MarathonTetrisScreen(this.screenManager.Game)); break;
@@ -84,7 +93,7 @@ namespace Tetris3D
             this.screenManager.batch.Draw(this.menuOptionChallenges, new Vector2(550, 580), Color.White);
             this.screenManager.batch.Draw(this.menuOptionBack, new Vector2(550, 635), Color.White);
 
-            switch (this.HighlightedOption)
+            switch (this.highlightedOption)
             {
                 case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
                 case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;

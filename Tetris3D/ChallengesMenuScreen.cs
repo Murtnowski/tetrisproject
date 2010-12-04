@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Primary Author: Matthew Urtnowski
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +30,7 @@ namespace Tetris3D
         private Texture2D menuOption4;
         private Texture2D menuOptionBack;
 
-        private ChallengesMenuOptions HighlightedOption = ChallengesMenuOptions.Challenge1;
+        private ChallengesMenuOptions highlightedOption = ChallengesMenuOptions.Challenge1;
 
         private int numberOfTetrisMainMenuOptions = 5;
 
@@ -51,18 +61,18 @@ namespace Tetris3D
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption--;
-                this.HighlightedOption = (ChallengesMenuOptions)Math.Max((int)this.HighlightedOption, 0);
+                this.highlightedOption--;
+                this.highlightedOption = (ChallengesMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 audio.PlayMenuScrollSound();
-                this.HighlightedOption++;
-                this.HighlightedOption = (ChallengesMenuOptions)Math.Min((int)this.HighlightedOption, this.numberOfTetrisMainMenuOptions - 1);
+                this.highlightedOption++;
+                this.highlightedOption = (ChallengesMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
-                switch (this.HighlightedOption)
+                switch (this.highlightedOption)
                 {
                     case ChallengesMenuOptions.Challenge1: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge1TetrisScreen(this.screenManager.Game)); break;
                     case ChallengesMenuOptions.Challenge2: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge2TetrisScreen(this.screenManager.Game)); break;
@@ -85,7 +95,7 @@ namespace Tetris3D
             this.screenManager.batch.Draw(this.menuOptionBack, new Vector2(550, 635), Color.White);
 
 
-            switch (this.HighlightedOption)
+            switch (this.highlightedOption)
             {
                 case ChallengesMenuOptions.Challenge1: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
                 case ChallengesMenuOptions.Challenge2: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;

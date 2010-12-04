@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Primary Author: Matthew Urtnowski
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +23,7 @@ namespace Tetris3D
 {
     public class ClassicTetrisScreen : GameScreen
     {
-        private String GameType = "Classic";
+        private String gameType = "Classic";
         private String gameTimerString = "";
         private String gameMinutesString = "";
         private String gameSecondsString = "";
@@ -34,7 +44,7 @@ namespace Tetris3D
         private TextBox gameLevelText;
         private TextBox gameLinesText;
 
-        private SpriteFont UIFont;
+        private SpriteFont uiFont;
 
         private Texture2D IPieceTexture;
         private Texture2D JPieceTexture;
@@ -45,9 +55,9 @@ namespace Tetris3D
         private Texture2D ZPieceTexture;
 
         double totalTime = 0;
-        double ElapsedRealTime = 0;
+        double elapsedRealTime = 0;
 
-        private Texture2D TetrisUI;
+        private Texture2D tetrisUI;
 
         public ClassicTetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
@@ -71,13 +81,13 @@ namespace Tetris3D
             this.TPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\T");
             this.ZPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\Z");
 
-            UIFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
+            uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
             backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
-            this.TetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
+            this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
@@ -146,7 +156,7 @@ namespace Tetris3D
             }
 
             //Set UI text
-            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", GameType);
+            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", gameType);
             this.gameTypeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
             this.gameTypeText.ForeColor = Color.Yellow;
 
@@ -183,7 +193,7 @@ namespace Tetris3D
             float elapsedBackground = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             totalTime += gameTime.ElapsedGameTime.Milliseconds;
-            ElapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
+            elapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
 
             gameTimerTotalTime += gameTime.TotalRealTime.Seconds;
             gameTimerElapsedTime = (gameTimerTotalTime - gameTimerElapsedTime) + gameTimerElapsedTime;
@@ -314,7 +324,7 @@ namespace Tetris3D
             cubeEffect.End();
             
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
-            this.screenManager.batch.Draw(this.TetrisUI, new Vector2(850, 200), Color.White);
+            this.screenManager.batch.Draw(this.tetrisUI, new Vector2(850, 200), Color.White);
             this.gameTypeText.Draw(this.screenManager.batch);
             this.gameTimeText.Draw(this.screenManager.batch);
             this.gameScoreText.Draw(this.screenManager.batch);

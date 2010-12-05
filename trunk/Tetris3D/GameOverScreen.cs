@@ -50,17 +50,22 @@ namespace Tetris3D
             audio = new AudioBank();
             audio.LoadContent(this.content);
 
-            audio.PlayGameOverSound();
+            audio.PlayGameOverSound(0f);
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             if (fadeInBackground <= 1.50f) //background fades in first
-                fadeInBackground = 0.002f + fadeInBackground;
+                fadeInBackground += 0.003f;
             if (fadeInBackground >= 1.00f && fadeInOptions == 0f) // only plays once as the options are appearing
                 audio.PlaySecondGameOverSound();
             if (fadeInOptions <= 1.50f && fadeInBackground >= 1.00f) //options fade in next. must happen after fadeInBackground
                 fadeInOptions += 0.004f;
+            if (fadeInOptions >= 0.5f && fadeInBackground <= 2.0f)
+            {
+                audio.PlayGameOverSound(-1f);
+                fadeInBackground = 2.1f; //ensures this sound wont happen again
+            }
 
             //controls locked until options are visible
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up) && fadeInOptions >= .35f)
@@ -93,7 +98,6 @@ namespace Tetris3D
         public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
             this.screenManager.batch.Begin();
-
             this.screenManager.batch.Draw(this.background, new Rectangle(0, 0, 1200, 900), new Color(Color.MistyRose, fadeInBackground));
             this.screenManager.batch.Draw(this.gameOverMenu, new Vector2(855, 375), new Color(Color.White, fadeInOptions));
             switch (this.highlightedOption)

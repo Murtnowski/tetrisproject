@@ -38,7 +38,6 @@ C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\Backward.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\Forward.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalResumed.xnb
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalOhYeah.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\Begin.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\STG-MajorTom.wma
@@ -54,3 +53,6 @@ C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\GameOverMenu.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalSystemOverload.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalGameOver.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\Explosion.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalOhYeah.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalBegin.xnb

@@ -365,15 +365,6 @@
       <Time>2010-12-04T00:54:11.7255748-08:00</Time>
     </Item>
     <Item>
-      <Source>Audio\SFX\VocalOhYeah.wav</Source>
-      <Name>Audio\SFX\VocalOhYeah</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalOhYeah.xnb</Output>
-      <Time>2010-12-04T00:54:11.7411748-08:00</Time>
-    </Item>
-    <Item>
       <Source>Audio\SFX\Begin.wav</Source>
       <Name>Audio\SFX\Begin</Name>
       <Importer>WavImporter</Importer>
@@ -427,6 +418,33 @@
       <Options>None</Options>
       <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalGameOver.xnb</Output>
       <Time>2010-12-05T02:51:03.0517825-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\SFX\Explosion.wav</Source>
+      <Name>Audio\SFX\Explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\Explosion.xnb</Output>
+      <Time>2010-12-05T12:05:19.8571756-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\SFX\VocalOhYeah.wav</Source>
+      <Name>Audio\SFX\VocalOhYeah</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalOhYeah.xnb</Output>
+      <Time>2010-12-05T12:08:43.1151742-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\SFX\VocalBegin.wav</Source>
+      <Name>Audio\SFX\VocalBegin</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Audio\SFX\VocalBegin.xnb</Output>
+      <Time>2010-12-05T12:14:03.1590451-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -50,6 +50,8 @@ namespace Tetris3D
         private Texture2D TPieceTexture;
         private Texture2D ZPieceTexture;
 
+        private int numberOfLinesCleared;
+
         TimeSpan elapsedTime = new TimeSpan();
         double timeSinceLastTick = 0;
 
@@ -91,7 +93,7 @@ namespace Tetris3D
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
             MediaPlayer.IsRepeating = true;
-            this.audio.PlayBeginSound();
+            this.audio.PlayBeginSound(true);
             MediaPlayer.Play(backgroundMusic);
         }
 
@@ -202,13 +204,23 @@ namespace Tetris3D
                 if (!this.tetrisSession.moveCurrentPieceDown())
                 {
                     audio.PlaySlamSound();
-                    this.tetrisSession.clearCompletedLines();
+                    numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                     gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                     gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
                     gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
                         this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
+                    }
+                    if (numberOfLinesCleared == 4)
+                    {
+                        audio.PlayTetrisSound();
+                        numberOfLinesCleared = 0;
+                    }
+                    else if (numberOfLinesCleared >= 1)
+                    {
+                        audio.PlayClearLineSound();
+                        numberOfLinesCleared = 0;
                     }
                 }
             }
@@ -217,13 +229,23 @@ namespace Tetris3D
             {
                 audio.PlaySlamSound();
                 this.tetrisSession.slamCurrentPiece();
-                this.tetrisSession.clearCompletedLines();
+                numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                 gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
                 gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                 gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                 if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                 {
                     this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
+                }
+                if (numberOfLinesCleared == 4)
+                {
+                    audio.PlayTetrisSound();
+                    numberOfLinesCleared = 0;
+                }
+                else if (numberOfLinesCleared >= 1)
+                {
+                    audio.PlayClearLineSound();
+                    numberOfLinesCleared = 0;
                 }
             }
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
@@ -239,13 +261,23 @@ namespace Tetris3D
                 if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                 {
                     audio.PlaySlamSound();
-                    this.tetrisSession.clearCompletedLines();
+                    numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                     gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                     gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
                     gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
                         this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
+                    }
+                    if (numberOfLinesCleared == 4)
+                    {
+                        audio.PlayTetrisSound();
+                        numberOfLinesCleared = 0;
+                    }
+                    else if (numberOfLinesCleared >= 1)
+                    {
+                        audio.PlayClearLineSound();
+                        numberOfLinesCleared = 0;
                     }
                 }
                 else

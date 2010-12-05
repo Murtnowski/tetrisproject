@@ -21,7 +21,8 @@ namespace Tetris3D
     {
         //declare names for various sound effects
         private SoundEffect rotatePieceSound, slamPieceSound, pauseScreenSound, pauseScreenVocalSound, menuClickSound,
-            gameIntroSound, forwardMenuSound, backMenuSound, pauseToResumeSound, playBeginSound, playTetrisSound;
+            gameIntroSound, forwardMenuSound, backMenuSound, pauseToResumeSound, playBeginSound, playTetrisSound,
+            gameOverSound, secondGameOverSound;
         //create a sound instance which plays the various sounds with alterations, if needed
         private SoundEffectInstance soundInstance;
 
@@ -39,11 +40,23 @@ namespace Tetris3D
             pauseToResumeSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalResumed");
             playTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
             playBeginSound = Content.Load<SoundEffect>(@"Audio\SFX\Begin");
-
+            gameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalSystemOverload");
+            secondGameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalGameOver");
             // All music must be in loop
             MediaPlayer.IsRepeating = true;
         }
         //sound of player getting a Tetris
+        public void PlaySecondGameOverSound()
+        {
+            secondGameOverSound.Play();
+        }
+        public void PlayGameOverSound()
+        {
+            soundInstance = gameIntroSound.CreateInstance();
+            soundInstance.Volume = 1f;
+            soundInstance.Play();
+            gameOverSound.Play();
+        }
         public void PlayTetrisSound()
         {
             playTetrisSound.Play();

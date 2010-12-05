@@ -41,4 +41,8 @@ Content\Audio\SFX\VocalResumed.xnb
 Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\Begin.xnb
 Content\Audio\STG-MajorTom.xnb
+Content\Textures\Menus\GameOverScreen.xnb
+Content\Textures\Menus\GameOverMenu.xnb
+Content\Audio\SFX\VocalSystemOverload.xnb
+Content\Audio\SFX\VocalGameOver.xnb
 Content\Audio\STG-MajorTom.wma

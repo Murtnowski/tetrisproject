@@ -61,6 +61,7 @@ namespace Tetris3D
         }
 
         public override void LoadContent()
+
         {
             this.tetrisSession = new TetrisSession(new Vector2(10, 24)); 
 
@@ -91,7 +92,7 @@ namespace Tetris3D
 
             MediaPlayer.IsRepeating = true;
             this.audio.PlayBeginSound();
-            MediaPlayer.Play(this.backgroundMusic);
+            MediaPlayer.Play(backgroundMusic);
         }
 
         public override void UnloadContent()
@@ -171,6 +172,8 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
+
+
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
             //update UI text
             gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
@@ -205,9 +208,7 @@ namespace Tetris3D
                     gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
-                        this.screenManager.removeScreen(this);
-                        this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
-                        //TODO: GAMEOVER LOGIC
+                        this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                     }
                 }
             }
@@ -222,9 +223,7 @@ namespace Tetris3D
                 gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                 if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                 {
-                    this.screenManager.removeScreen(this);
-                    this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
-                    //TODO: GAME OVER LOGIC
+                    this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                 }
             }
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
@@ -246,9 +245,7 @@ namespace Tetris3D
                     gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
-                        //TODO: GAMEOVER LOGIC
-                        this.screenManager.removeScreen(this);
-                        this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
+                        this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                     }
                 }
                 else
@@ -259,7 +256,6 @@ namespace Tetris3D
 
             scrollingBackground.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 100);
 
-
         }
 
         public override void Draw(GameTime gameTime)
@@ -268,7 +264,6 @@ namespace Tetris3D
             this.screenManager.GraphicsDevice.RenderState.AlphaBlendEnable = false;
             this.screenManager.GraphicsDevice.RenderState.AlphaTestEnable = false;
 
-            // TODO : Make it so you draw background.. then pieces.. then HUD without them conflicting graphically
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
             scrollingBackground.Draw(this.screenManager.batch);
             this.screenManager.batch.End();

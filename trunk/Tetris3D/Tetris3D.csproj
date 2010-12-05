@@ -96,6 +96,7 @@
     <Compile Include="Challenge3TetrisScreen.cs" />
     <Compile Include="ChallengesMenuScreen.cs" />
     <Compile Include="ClassicTetrisScreen.cs" />
+    <Compile Include="GameOverScreen.cs" />
     <Compile Include="ModeMenuScreen.cs" />
     <Compile Include="MarathonTetrisScreen.cs" />
     <Compile Include="GameScreen.cs" />

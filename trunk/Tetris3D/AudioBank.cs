@@ -21,8 +21,8 @@ namespace Tetris3D
     {
         //declare names for various sound effects
         private SoundEffect rotatePieceSound, slamPieceSound, pauseScreenSound, pauseScreenVocalSound, menuClickSound,
-            gameIntroSound, forwardMenuSound, backMenuSound, pauseToResumeSound, playBeginSound, playTetrisSound,
-            gameOverSound, secondGameOverSound;
+            gameIntroSound, forwardMenuSound, backMenuSound, pauseToResumeSound, playBeginSound, playTetrisSound, playVocalBegin,
+            gameOverSound, secondGameOverSound, secondTetrisSound;
         //create a sound instance which plays the various sounds with alterations, if needed
         private SoundEffectInstance soundInstance;
 
@@ -38,10 +38,12 @@ namespace Tetris3D
             forwardMenuSound = Content.Load<SoundEffect>(@"Audio\SFX\Forward");
             backMenuSound = Content.Load<SoundEffect>(@"Audio\SFX\Backward");
             pauseToResumeSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalResumed");
-            playTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
+            playTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\Explosion");
             playBeginSound = Content.Load<SoundEffect>(@"Audio\SFX\Begin");
             gameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalSystemOverload");
             secondGameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalGameOver");
+            secondTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
+            playVocalBegin = Content.Load<SoundEffect>(@"Audio\SFX\VocalBegin");
             // All music must be in loop
             MediaPlayer.IsRepeating = true;
         }
@@ -62,10 +64,19 @@ namespace Tetris3D
         }
         public void PlayTetrisSound()
         {
-            playTetrisSound.Play();
+            soundInstance = playTetrisSound.CreateInstance();
+            soundInstance.Volume = .6f;
+            soundInstance.Play();
+            secondTetrisSound.Play();
         }
-        public void PlayBeginSound()
+        public void PlayBeginSound(bool sayBegin)
         {
+            if (sayBegin == true)
+            {
+                soundInstance = playVocalBegin.CreateInstance();
+                soundInstance.Volume = .5f;
+                soundInstance.Play();
+            }
             playBeginSound.Play();
         }
 

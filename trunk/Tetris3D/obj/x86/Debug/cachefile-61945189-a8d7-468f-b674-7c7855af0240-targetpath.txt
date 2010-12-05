@@ -38,7 +38,6 @@ Content\Audio\SFX\ShipEngine.xnb
 Content\Audio\SFX\Backward.xnb
 Content\Audio\SFX\Forward.xnb
 Content\Audio\SFX\VocalResumed.xnb
-Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\Begin.xnb
 Content\Audio\STG-MajorTom.xnb
 Content\Audio\STG-MajorTom.wma
@@ -46,3 +45,6 @@ Content\Textures\Menus\GameOverScreen.xnb
 Content\Textures\Menus\GameOverMenu.xnb
 Content\Audio\SFX\VocalSystemOverload.xnb
 Content\Audio\SFX\VocalGameOver.xnb
+Content\Audio\SFX\Explosion.xnb
+Content\Audio\SFX\VocalOhYeah.xnb
+Content\Audio\SFX\VocalBegin.xnb

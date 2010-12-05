@@ -46,7 +46,7 @@ namespace Tetris3D
             audio = new AudioBank();
             audio.LoadContent(this.content);
 
-            audio.PlayIntroSound();
+            audio.PlayBeginSound(false);
         }
 
         public override void Update(GameTime gameTime)

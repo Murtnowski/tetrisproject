@@ -50,12 +50,15 @@ namespace Tetris3D
         {
             secondGameOverSound.Play();
         }
-        public void PlayGameOverSound()
+        public void PlayGameOverSound(float pitch)
         {
-            soundInstance = gameIntroSound.CreateInstance();
+            soundInstance = gameOverSound.CreateInstance();
+            soundInstance.Pitch = pitch;
             soundInstance.Volume = 1f;
             soundInstance.Play();
-            gameOverSound.Play();
+            if (pitch == 0f)
+                gameIntroSound.Play();
+
         }
         public void PlayTetrisSound()
         {

@@ -87,8 +87,8 @@ namespace Tetris3D
                 this.screenManager.removeScreen(this.finishedGameplayScreen);
                 this.screenManager.removeScreen(this); 
                 switch (this.highlightedOption)
-                {
-                    case GameOverOptions.PlayAgain: this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); break;
+                { //TODO: Have the next line accommidate the CURRENT game that was lost.  ex:Play again plays TIME TRIAL again if TIME TRIAL was playing)
+                    case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getLastGameType()); break;
                     case GameOverOptions.Quit: this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }
@@ -109,6 +109,15 @@ namespace Tetris3D
                 default: throw new NotImplementedException();
             }
             this.screenManager.batch.End();
+        }
+        private GameScreen getLastGameType()
+        {
+            if (this.finishedGameplayScreen is ClassicTetrisScreen) 
+                return new ClassicTetrisScreen(this.screenManager.Game);
+     //       else if (this.finishedGameplayScreen is 
+            else
+                throw new NotImplementedException();
+
         }
     }
 }

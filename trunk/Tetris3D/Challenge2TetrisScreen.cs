@@ -11,10 +11,10 @@ using XELibrary;
 
 namespace Tetris3D
 {
-    public class Challenge2TetrisScreen : GameScreen
+    class Challenge2TetrisScreen : GameScreen
     {
-        private String GameType = "Challenge 2";
-  
+        private String gameType = "Stairway";
+
         private BasicEffect cubeEffect;
         private Camera camera;
 
@@ -23,7 +23,13 @@ namespace Tetris3D
 
         private ScrollingBackground scrollingBackground;
 
-        private SpriteFont UIFont;
+        private TextBox gameTypeText;
+        private TextBox gameTimeText;
+        private TextBox gameScoreText;
+        private TextBox gameLevelText;
+        private TextBox gameLinesText;
+
+        private SpriteFont uiFont;
 
         private Texture2D IPieceTexture;
         private Texture2D JPieceTexture;
@@ -33,10 +39,12 @@ namespace Tetris3D
         private Texture2D TPieceTexture;
         private Texture2D ZPieceTexture;
 
-        double totalTime = 0;
-        double ElapsedRealTime = 0;
+        private int numberOfLinesCleared;
 
-        private Texture2D TetrisUI;
+        TimeSpan elapsedTime = new TimeSpan();
+        double timeSinceLastTick = 0;
+
+        private Texture2D tetrisUI;
 
         public Challenge2TetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
@@ -46,22 +54,22 @@ namespace Tetris3D
         public override void LoadContent()
         {
             TetrisBlock[,] board = new TetrisBlock[10, 24];
-            board[0, 0] = new TetrisBlock(TetrisColors.Red);
-            board[1, 1] = new TetrisBlock(TetrisColors.Red);
-            board[2, 2] = new TetrisBlock(TetrisColors.Red);
-            board[3, 3] = new TetrisBlock(TetrisColors.Red);
-            board[4, 4] = new TetrisBlock(TetrisColors.Red);
-            board[5, 5] = new TetrisBlock(TetrisColors.Green);
-            board[6, 6] = new TetrisBlock(TetrisColors.Green);
-            board[7, 7] = new TetrisBlock(TetrisColors.Green);
-            board[8, 8] = new TetrisBlock(TetrisColors.Green);
-            board[9, 9] = new TetrisBlock(TetrisColors.Green);
-            board[8, 10] = new TetrisBlock(TetrisColors.Yellow);
-            board[7, 11] = new TetrisBlock(TetrisColors.Yellow);
-            board[6, 12] = new TetrisBlock(TetrisColors.Yellow);
-            board[5, 13] = new TetrisBlock(TetrisColors.Yellow);
-            board[4, 14] = new TetrisBlock(TetrisColors.Yellow);
 
+            board[0, 0] = new TetrisBlock(TetrisColors.Red);
+            board[1, 1] = new TetrisBlock(TetrisColors.Orange);
+            board[2, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[3, 3] = new TetrisBlock(TetrisColors.Green);
+            board[4, 4] = new TetrisBlock(TetrisColors.Blue);
+            board[5, 5] = new TetrisBlock(TetrisColors.Magenta);
+            board[6, 6] = new TetrisBlock(TetrisColors.Red);
+            board[7, 7] = new TetrisBlock(TetrisColors.Orange);
+            board[8, 8] = new TetrisBlock(TetrisColors.Yellow);
+            board[9, 9] = new TetrisBlock(TetrisColors.Green);
+            board[8, 10] = new TetrisBlock(TetrisColors.Blue);
+            board[7, 11] = new TetrisBlock(TetrisColors.Magenta);
+            board[6, 12] = new TetrisBlock(TetrisColors.Red);
+            board[5, 13] = new TetrisBlock(TetrisColors.Orange);
+            board[4, 14] = new TetrisBlock(TetrisColors.Yellow);
 
             this.tetrisSession = new TetrisSession(board);
 
@@ -78,17 +86,21 @@ namespace Tetris3D
             this.TPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\T");
             this.ZPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\Z");
 
-            UIFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
+            uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
             backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
-            this.TetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
+            this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
+
+            MediaPlayer.IsRepeating = true;
+            this.audio.PlayBeginSound(true);
+            MediaPlayer.Play(backgroundMusic);
         }
 
         public override void UnloadContent()
@@ -143,19 +155,39 @@ namespace Tetris3D
                 BasicShape cubeRight = new BasicShape(Vector3.One, new Vector3(this.tetrisSession.GameBoard.GetLength(0) - 4, i, 0), TetrisColors.Gray);
                 foundation.Add(cubeRight);
             }
+
+            //Set UI text
+            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", gameType);
+            this.gameTypeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameTypeText.ForeColor = Color.Yellow;
+
+            this.gameTimeText = new TextBox(this, new Vector2(873, 278f), new Vector2(147, 25), @"Textures\UIFont", "");
+            this.gameTimeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameTimeText.ForeColor = Color.Yellow;
+
+            this.gameScoreText = new TextBox(this, new Vector2(891, 533f), new Vector2(115, 25), @"Textures\UIFont", this.tetrisSession.CurrentScore.ToString());
+            this.gameScoreText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameScoreText.ForeColor = Color.Yellow;
+
+            this.gameLevelText = new TextBox(this, new Vector2(891, 613f), new Vector2(115, 25), @"Textures\UIFont", this.tetrisSession.CurrentLevel.ToString());
+            this.gameLevelText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameLevelText.ForeColor = Color.Yellow;
+
+            this.gameLinesText = new TextBox(this, new Vector2(891, 693f), new Vector2(115, 25), @"Textures\UIFont", this.tetrisSession.CurrentNumberOfClearedLines.ToString());
+            this.gameLinesText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
+            this.gameLinesText.ForeColor = Color.Yellow;
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (MediaPlayer.State != MediaState.Playing)
-            {
-                MediaPlayer.Play(this.backgroundMusic);
-            }
-            this.camera.Update(gameTime);
-            float elapsedBackground = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //TODO: After PLAY AGAIN from GameOverScreen has been called, music should continue but doesn't
+            this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
+            //update UI text
+            gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
 
-            totalTime += gameTime.ElapsedGameTime.Milliseconds;
-            ElapsedRealTime += gameTime.ElapsedRealTime.Milliseconds;
+            this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
+
+            this.camera.Update(gameTime);
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Escape))
             {
@@ -171,52 +203,87 @@ namespace Tetris3D
             {
                 this.tetrisSession.moveCurrentPieceRight();
             }
+
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 if (!this.tetrisSession.moveCurrentPieceDown())
                 {
+                    audio.PlaySlamSound();
+                    numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
+                    gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+                    gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                    gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
-                        this.screenManager.removeScreen(this);
-                        this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
-                        //TODO: GAMEOVER LOGIC
+                        this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                     }
+                    if (numberOfLinesCleared == 4)
+                    {
+                        audio.PlayTetrisSound();
+                        numberOfLinesCleared = 0;
+                    }
+                    else if (numberOfLinesCleared >= 1)
+                    {
+                        audio.PlayClearLineSound();
+                        numberOfLinesCleared = 0;
+                    }
+                }
+            }
+
+            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
+            {
+                audio.PlaySlamSound();
+                this.tetrisSession.slamCurrentPiece();
+                numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
+                gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
+                gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+                if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
+                {
+                    this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
+                }
+                if (numberOfLinesCleared == 4)
+                {
+                    audio.PlayTetrisSound();
+                    numberOfLinesCleared = 0;
+                }
+                else if (numberOfLinesCleared >= 1)
+                {
                     audio.PlayClearLineSound();
-                    this.tetrisSession.clearCompletedLines();
+                    numberOfLinesCleared = 0;
                 }
             }
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
-            {
-                this.tetrisSession.slamCurrentPiece();
-                if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
-                {
-                    this.screenManager.removeScreen(this);
-                    this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
-                    //TODO: GAME OVER LOGIC
-                }
-                audio.PlayClearLineSound();
-                this.tetrisSession.clearCompletedLines();
-            }
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
                 audio.PlayRotateSound();
                 this.tetrisSession.rotateCurrentPieceClockwise();
             }
 
-            if (totalTime > (1000 - (this.tetrisSession.CurrentLevel * 100)))
+            if (this.timeSinceLastTick > (1000 - (this.tetrisSession.CurrentLevel * 100)))
             {
-                this.totalTime = 0;
+                this.timeSinceLastTick = 0;
 
                 if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                 {
+                    audio.PlaySlamSound();
+                    numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
+                    gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+                    gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                    gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
-                        //TODO: GAMEOVER LOGIC
-                        this.screenManager.removeScreen(this);
-                        this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));
+                        this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                     }
-                    audio.PlayClearLineSound();
-                    this.tetrisSession.clearCompletedLines();
+                    if (numberOfLinesCleared == 4)
+                    {
+                        audio.PlayTetrisSound();
+                        numberOfLinesCleared = 0;
+                    }
+                    else if (numberOfLinesCleared >= 1)
+                    {
+                        audio.PlayClearLineSound();
+                        numberOfLinesCleared = 0;
+                    }
                 }
                 else
                 {
@@ -224,7 +291,8 @@ namespace Tetris3D
                 }
             }
 
-            scrollingBackground.Update(elapsedBackground * 100);
+            scrollingBackground.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 100);
+
         }
 
         public override void Draw(GameTime gameTime)
@@ -233,10 +301,6 @@ namespace Tetris3D
             this.screenManager.GraphicsDevice.RenderState.AlphaBlendEnable = false;
             this.screenManager.GraphicsDevice.RenderState.AlphaTestEnable = false;
 
-            //this.tetrisSession.Draw(gameTime, this.spriteBatch, this.GraphicsDevice);
-            this.screenManager.GraphicsDevice.Clear(Color.Pink);
-
-            // TODO : Make it so you draw background.. then pieces.. then HUD without them conflicting graphically
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
             scrollingBackground.Draw(this.screenManager.batch);
             this.screenManager.batch.End();
@@ -269,13 +333,14 @@ namespace Tetris3D
             }
 
             cubeEffect.End();
-            
+
             this.screenManager.batch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.BackToFront, SaveStateMode.SaveState);
-            this.screenManager.batch.Draw(this.TetrisUI, new Vector2(850, 200), Color.White);
-            this.screenManager.batch.DrawString(UIFont, this.GameType, new Vector2(895, 238f), Color.Yellow);
-            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentScore, new Vector2(922f, 528f), Color.Yellow);
-            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentLevel, new Vector2(942f, 608f), Color.Yellow);
-            this.screenManager.batch.DrawString(UIFont, "" + this.tetrisSession.CurrentNumberOfClearedLines, new Vector2(942f, 688f), Color.Yellow);
+            this.screenManager.batch.Draw(this.tetrisUI, new Vector2(850, 200), Color.White);
+            this.gameTypeText.Draw(this.screenManager.batch);
+            this.gameTimeText.Draw(this.screenManager.batch);
+            this.gameScoreText.Draw(this.screenManager.batch);
+            this.gameLevelText.Draw(this.screenManager.batch);
+            this.gameLinesText.Draw(this.screenManager.batch);
 
             //Draw Next Piece
             switch (this.tetrisSession.NextTetrisPiece().Type)
@@ -289,7 +354,6 @@ namespace Tetris3D
                 case TetrisPieces.ZBlock: this.screenManager.batch.Draw(this.ZPieceTexture, new Vector2(870, 350), Color.White); break;
                 default: throw new NotImplementedException();
             }
-
 
             this.screenManager.batch.End();
         }

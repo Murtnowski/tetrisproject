@@ -56,7 +56,6 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
                 audio.PlayMenuScrollSound();
@@ -75,7 +74,7 @@ namespace Tetris3D
                 {
                     case ModeMenuOptions.Classic: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); break;
                     case ModeMenuOptions.Marathon: this.screenManager.removeScreen(this); this.screenManager.addScreen(new MarathonTetrisScreen(this.screenManager.Game)); break;
-                    case ModeMenuOptions.TimeTrial: break;
+                    case ModeMenuOptions.TimeTrial: this.screenManager.removeScreen(this); this.screenManager.addScreen(new TimeTrialScreen(this.screenManager.Game));  break;
                     case ModeMenuOptions.Challenges: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ChallengesMenuScreen(this.screenManager.Game)); break;
                     case ModeMenuOptions.Back: this.screenManager.removeScreen(this); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();

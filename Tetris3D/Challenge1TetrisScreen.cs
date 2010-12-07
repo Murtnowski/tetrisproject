@@ -13,7 +13,7 @@ namespace Tetris3D
 {
     public class Challenge1TetrisScreen : GameScreen
     {
-        private String GameType = "Challenge 1";
+        private String GameType = "Smile";
   
         private BasicEffect cubeEffect;
         private Camera camera;
@@ -46,26 +46,36 @@ namespace Tetris3D
         public override void LoadContent()
         {
             TetrisBlock[,] board = new TetrisBlock[10, 24];
-            board[0, 0] = new TetrisBlock(TetrisColors.Red);
-            board[2, 0] = new TetrisBlock(TetrisColors.Red);
-            board[4, 0] = new TetrisBlock(TetrisColors.Red);
-            board[6, 0] = new TetrisBlock(TetrisColors.Red);
-            board[8, 0] = new TetrisBlock(TetrisColors.Red);
-            board[1, 1] = new TetrisBlock(TetrisColors.Green);
-            board[3, 1] = new TetrisBlock(TetrisColors.Green);
-            board[5, 1] = new TetrisBlock(TetrisColors.Green);
-            board[7, 1] = new TetrisBlock(TetrisColors.Green);
-            board[9, 1] = new TetrisBlock(TetrisColors.Green);
-            board[1, 2] = new TetrisBlock(TetrisColors.Yellow);
-            board[3, 2] = new TetrisBlock(TetrisColors.Yellow);
-            board[5, 2] = new TetrisBlock(TetrisColors.Yellow);
-            board[7, 2] = new TetrisBlock(TetrisColors.Yellow);
-            board[9, 2] = new TetrisBlock(TetrisColors.Yellow);
-            board[1, 3] = new TetrisBlock(TetrisColors.Blue);
-            board[3, 3] = new TetrisBlock(TetrisColors.Blue);
-            board[5, 3] = new TetrisBlock(TetrisColors.Blue);
-            board[7, 3] = new TetrisBlock(TetrisColors.Blue);
-            board[9, 3] = new TetrisBlock(TetrisColors.Blue);
+
+            board[2, 1] = new TetrisBlock(TetrisColors.Cyan);
+            board[1, 2] = new TetrisBlock(TetrisColors.Cyan);  //red->blue
+            board[0, 3] = new TetrisBlock(TetrisColors.Cyan); //orange->magenta
+            board[0, 4] = new TetrisBlock(TetrisColors.Cyan); //yellow -> cyan
+            board[0, 5] = new TetrisBlock(TetrisColors.Cyan);//green->green
+            board[0, 6] = new TetrisBlock(TetrisColors.Cyan);//blue->red
+            board[0, 7] = new TetrisBlock(TetrisColors.Cyan);  //cyan->yello
+            board[0, 8] = new TetrisBlock(TetrisColors.Cyan);
+            board[1, 9] = new TetrisBlock(TetrisColors.Cyan);
+            board[2, 10] = new TetrisBlock(TetrisColors.Cyan);
+            board[3, 11] = new TetrisBlock(TetrisColors.Cyan); //face outline
+            board[4, 11] = new TetrisBlock(TetrisColors.Cyan);
+            board[5, 11] = new TetrisBlock(TetrisColors.Cyan);
+            board[6, 11] = new TetrisBlock(TetrisColors.Cyan);
+            board[7, 10] = new TetrisBlock(TetrisColors.Cyan);
+            board[8, 9] = new TetrisBlock(TetrisColors.Cyan);
+            board[9, 4] = new TetrisBlock(TetrisColors.Cyan);
+            board[9, 5] = new TetrisBlock(TetrisColors.Cyan);
+            board[9, 6] = new TetrisBlock(TetrisColors.Cyan);
+            board[9, 7] = new TetrisBlock(TetrisColors.Cyan);
+            board[9, 8] = new TetrisBlock(TetrisColors.Cyan);
+            board[9, 3] = new TetrisBlock(TetrisColors.Cyan);
+            board[8, 2] = new TetrisBlock(TetrisColors.Cyan);
+            board[7, 1] = new TetrisBlock(TetrisColors.Cyan);
+            board[3, 0] = new TetrisBlock(TetrisColors.Cyan);
+            board[4, 0] = new TetrisBlock(TetrisColors.Cyan);
+            board[5, 0] = new TetrisBlock(TetrisColors.Cyan);
+            board[6, 0] = new TetrisBlock(TetrisColors.Cyan);
+
 
             this.tetrisSession = new TetrisSession(board);
 

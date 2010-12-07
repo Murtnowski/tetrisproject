@@ -1,6 +1,5 @@
 ﻿/*
  * Project: Tetris Project
- * Primary Author: Matthew Urtnowski
  * Authors: Matthew Urtnowski & Damon Chastain
  * Date: Fall 2010
  * Class: CECS 491
@@ -23,7 +22,7 @@ namespace Tetris3D
 {
     public class ClassicTetrisScreen : GameScreen
     {
-        private String gameType = "Classic";
+        protected String gameType = "Classic";
 
 
         private BasicEffect cubeEffect;
@@ -31,6 +30,8 @@ namespace Tetris3D
 
         private List<BasicShape> foundation = new List<BasicShape>();
         private TetrisSession tetrisSession;
+
+        
 
         private ScrollingBackground scrollingBackground;
 
@@ -95,6 +96,7 @@ namespace Tetris3D
             MediaPlayer.IsRepeating = true;
             this.audio.PlayBeginSound(true);
             MediaPlayer.Play(backgroundMusic);
+
         }
 
         public override void UnloadContent()
@@ -174,8 +176,7 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
-
-
+            //TODO: After PLAY AGAIN from GameOverScreen has been called, music should continue but doesn't
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
             //update UI text
             gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");

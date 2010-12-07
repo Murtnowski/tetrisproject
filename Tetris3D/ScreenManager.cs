@@ -47,6 +47,13 @@ namespace Tetris3D
                     gameScreen.Update(gameTime);
                 }
             }
+            foreach (GameScreen gameScreen in this.screensToBeRemoved)
+            {
+                gameScreen.UnloadContent();
+                this.gameScreens.Remove(gameScreen);
+            }
+
+            this.screensToBeRemoved.Clear();
 
             foreach (GameScreen gameScreen in this.screensToBeAdded)
             {
@@ -56,14 +63,6 @@ namespace Tetris3D
             }
 
             this.screensToBeAdded.Clear();
-
-            foreach (GameScreen gameScreen in this.screensToBeRemoved)
-            {
-                gameScreen.UnloadContent();
-                this.gameScreens.Remove(gameScreen);
-            }
-
-            this.screensToBeRemoved.Clear();
 
             base.Update(gameTime);
         }

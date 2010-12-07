@@ -28,6 +28,8 @@ Content\Textures\Menus\Challenge2.xnb
 Content\Textures\Menus\Challenge3.xnb
 Content\Textures\Menus\Challenge4.xnb
 Content\Textures\Menus\PauseMenu.xnb
+Content\Textures\Menus\GameOverScreen.xnb
+Content\Textures\Menus\GameOverMenu.xnb
 Content\Audio\SFX\scratchloud.xnb
 Content\Audio\SFX\hit.xnb
 Content\Audio\SFX\slam.xnb
@@ -39,12 +41,10 @@ Content\Audio\SFX\Backward.xnb
 Content\Audio\SFX\Forward.xnb
 Content\Audio\SFX\VocalResumed.xnb
 Content\Audio\SFX\Begin.xnb
-Content\Audio\STG-MajorTom.xnb
-Content\Audio\STG-MajorTom.wma
-Content\Textures\Menus\GameOverScreen.xnb
-Content\Textures\Menus\GameOverMenu.xnb
 Content\Audio\SFX\VocalSystemOverload.xnb
 Content\Audio\SFX\VocalGameOver.xnb
 Content\Audio\SFX\Explosion.xnb
 Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\VocalBegin.xnb
+Content\Audio\STG-MajorTom.xnb
+Content\Audio\STG-MajorTom.wma

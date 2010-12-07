@@ -15,3 +15,4 @@ C:\Users\Murtnowski\Desktop\New Folder\XELibrary\XELibrary\Content\obj\x86\Debug
 C:\Users\Murtnowski\Desktop\New Folder (2)\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Murtnowski\Desktop\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Projects\tetrisproject\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache

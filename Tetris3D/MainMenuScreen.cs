@@ -43,8 +43,8 @@ namespace Tetris3D
             this.menuOptionOptions = this.content.Load<Texture2D>(@"Textures\Menus\Options");
             this.menuOptionExit = this.content.Load<Texture2D>(@"Textures\Menus\Exit");
 
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
+            //audio = new AudioBank();
+            //audio.LoadContent(this.content);
 
             audio.PlayBeginSound(false);
         }

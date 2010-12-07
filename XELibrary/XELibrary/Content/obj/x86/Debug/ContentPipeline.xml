@@ -6,15 +6,15 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\Projects\tetrisproject\XELibrary\XELibrary\Content\</RootDirectory>
-      <LoggerRootDirectory>E:\Projects\tetrisproject\XELibrary\XELibrary\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\Projects\tetrisproject\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\Projects\tetrisproject\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\XELibrary\XELibrary\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-12-14T12:13:44.34337-08:00</Value>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2010-11-27T23:44:41.8204413-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

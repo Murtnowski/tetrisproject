@@ -47,6 +47,10 @@ namespace Tetris3D
         internal const int SCREEN_HEIGHT = 900;
         private SpriteBatch spriteBatch;
 
+        //audio
+        public AudioBank audio;
+        public Song backgroundMusic;
+
         //Components
         private InputHandler input;
 
@@ -91,6 +95,9 @@ namespace Tetris3D
         /// </summary>
         protected override void LoadContent()
         {
+            audio = new AudioBank();
+            audio.LoadContent(this.Content);
+            backgroundMusic = this.Content.Load<Song>(@"Audio\STG-MajorTom");
         }
 
         #endregion

@@ -47,8 +47,8 @@ namespace Tetris3D
             this.background = this.content.Load<Texture2D>(@"Textures\Menus\GameOverScreen");
             this.cursor = this.content.Load<Texture2D>(@"Textures\cursor");
             this.gameOverMenu = this.content.Load<Texture2D>(@"Textures\Menus\GameOverMenu");
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
+            //audio = new AudioBank();
+            //audio.LoadContent(this.content);
 
             audio.PlayGameOverSound(0f);
         }

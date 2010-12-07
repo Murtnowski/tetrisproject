@@ -55,21 +55,21 @@ namespace Tetris3D
         {
             TetrisBlock[,] board = new TetrisBlock[10, 24];
 
-            board[0, 0] = new TetrisBlock(TetrisColors.Red);
-            board[1, 1] = new TetrisBlock(TetrisColors.Orange);
-            board[2, 2] = new TetrisBlock(TetrisColors.Yellow);
+            board[0, 0] = new TetrisBlock(TetrisColors.Blue);
+            board[1, 1] = new TetrisBlock(TetrisColors.Magenta);
+            board[2, 2] = new TetrisBlock(TetrisColors.Cyan);
             board[3, 3] = new TetrisBlock(TetrisColors.Green);
-            board[4, 4] = new TetrisBlock(TetrisColors.Blue);
-            board[5, 5] = new TetrisBlock(TetrisColors.Magenta);
-            board[6, 6] = new TetrisBlock(TetrisColors.Red);
-            board[7, 7] = new TetrisBlock(TetrisColors.Orange);
-            board[8, 8] = new TetrisBlock(TetrisColors.Yellow);
+            board[4, 4] = new TetrisBlock(TetrisColors.Red);
+            board[5, 5] = new TetrisBlock(TetrisColors.Orange);
+            board[6, 6] = new TetrisBlock(TetrisColors.Blue);
+            board[7, 7] = new TetrisBlock(TetrisColors.Magenta);
+            board[8, 8] = new TetrisBlock(TetrisColors.Cyan);
             board[9, 9] = new TetrisBlock(TetrisColors.Green);
-            board[8, 10] = new TetrisBlock(TetrisColors.Blue);
-            board[7, 11] = new TetrisBlock(TetrisColors.Magenta);
-            board[6, 12] = new TetrisBlock(TetrisColors.Red);
-            board[5, 13] = new TetrisBlock(TetrisColors.Orange);
-            board[4, 14] = new TetrisBlock(TetrisColors.Yellow);
+            board[8, 10] = new TetrisBlock(TetrisColors.Red);
+            board[7, 11] = new TetrisBlock(TetrisColors.Orange);
+            board[6, 12] = new TetrisBlock(TetrisColors.Blue);
+            board[5, 13] = new TetrisBlock(TetrisColors.Magenta);
+            board[4, 14] = new TetrisBlock(TetrisColors.Cyan);
 
             this.tetrisSession = new TetrisSession(board);
 
@@ -88,9 +88,9 @@ namespace Tetris3D
 
             uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
-            //audio = new AudioBank();
-            //audio.LoadContent(this.content);
-            //backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
+            audio = new AudioBank();
+            audio.LoadContent(this.content);
+            backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 

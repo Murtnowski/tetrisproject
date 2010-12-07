@@ -71,9 +71,9 @@ namespace Tetris3D
             this.TPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\T");
             this.ZPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\Z");
 
-            //audio = new AudioBank();
-            //audio.LoadContent(this.content);
-            //backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
+            audio = new AudioBank();
+            audio.LoadContent(this.content);
+            backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
             this.TetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 

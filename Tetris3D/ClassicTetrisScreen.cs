@@ -55,6 +55,8 @@ namespace Tetris3D
 
         TimeSpan elapsedTime = new TimeSpan();
         double timeSinceLastTick = 0;
+        double timeSinceLastYMovement = 0;
+        double timeSinceLastXMovement = 0;
 
         private Texture2D tetrisUI;
 
@@ -83,9 +85,9 @@ namespace Tetris3D
 
             uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
-            //audio = new AudioBank();
-            //audio.LoadContent(this.LoadContent());
-            //backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
+            audio = new AudioBank();
+            audio.LoadContent(this.content);
+            backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
@@ -176,12 +178,13 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
-            //TODO: After PLAY AGAIN from GameOverScreen has been called, music should continue but doesn't
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
             //update UI text
             gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
 
             this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
+            this.timeSinceLastYMovement += gameTime.ElapsedGameTime.Milliseconds;
+            this.timeSinceLastXMovement += gameTime.ElapsedGameTime.Milliseconds;
 
             this.camera.Update(gameTime);
 
@@ -190,17 +193,49 @@ namespace Tetris3D
                 this.screenManager.addScreen(new TetrisPauseScreen(this.screenManager.Game, this));
             }
 
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Left))
+            if (this.screenManager.input.KeyboardState.IsHoldingKey(Keys.Left))
+            {
+                if (timeSinceLastXMovement > 73)
+                {
+                    this.tetrisSession.moveCurrentPieceLeft();
+                    timeSinceLastXMovement = 0;
+                }
+            }
+            else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Left))
             {
                 this.tetrisSession.moveCurrentPieceLeft();
+                timeSinceLastXMovement = 0;
             }
-
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Right))
+            
+            if (this.screenManager.input.KeyboardState.IsHoldingKey(Keys.Right))
             {
-                this.tetrisSession.moveCurrentPieceRight();
+                if (timeSinceLastXMovement > 73)
+                {
+                    this.tetrisSession.moveCurrentPieceRight();
+                    timeSinceLastXMovement = 0;
+                }
+            }
+            else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Right))
+            {
+                    this.tetrisSession.moveCurrentPieceRight();
+                    timeSinceLastXMovement = 0;
             }
 
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
+            if (this.screenManager.input.KeyboardState.IsHoldingKey(Keys.Down))
+            {
+                if (timeSinceLastYMovement > 50)
+                {
+                    if (this.tetrisSession.moveCurrentPieceDown())
+                    {
+                        timeSinceLastYMovement = 0;
+                        this.timeSinceLastTick = 0; //do not increment ticks while holding piece down
+                    }
+                    else
+                        this.timeSinceLastTick = 1001;
+                }
+            }
+
+            else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
                 if (!this.tetrisSession.moveCurrentPieceDown())
                 {
@@ -224,8 +259,12 @@ namespace Tetris3D
                         numberOfLinesCleared = 0;
                     }
                 }
+                else
+                    timeSinceLastYMovement = 0;
             }
 
+
+                
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
                 audio.PlaySlamSound();

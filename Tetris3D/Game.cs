@@ -48,8 +48,8 @@ namespace Tetris3D
         private SpriteBatch spriteBatch;
 
         //audio
-        public AudioBank audio;
-        public Song backgroundMusic;
+      //  public AudioBank audio;
+     //   public Song backgroundMusic;
 
         //Components
         private InputHandler input;
@@ -95,9 +95,9 @@ namespace Tetris3D
         /// </summary>
         protected override void LoadContent()
         {
-            audio = new AudioBank();
-            audio.LoadContent(this.Content);
-            backgroundMusic = this.Content.Load<Song>(@"Audio\STG-MajorTom");
+            //audio = new AudioBank();
+            //audio.LoadContent(this.Content);
+            //backgroundMusic = this.Content.Load<Song>(@"Audio\STG-MajorTom");
         }
 
         #endregion

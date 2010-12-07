@@ -49,8 +49,8 @@ namespace Tetris3D
             this.menuOption4 = this.content.Load<Texture2D>(@"Textures\Menus\Challenge4");
             this.menuOptionBack = this.content.Load<Texture2D>(@"Textures\Menus\Back");
 
-            //audio = new AudioBank();
-            //audio.LoadContent(this.content);
+            audio = new AudioBank();
+            audio.LoadContent(this.content);
 
             audio.PlayMenuForwardSound();
         }

@@ -107,9 +107,9 @@ namespace Tetris3D
 
             uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
-            //audio = new AudioBank();
-            //audio.LoadContent(this.content);
-            //backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
+            audio = new AudioBank();
+            audio.LoadContent(this.content);
+            backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 

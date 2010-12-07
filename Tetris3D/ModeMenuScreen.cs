@@ -29,6 +29,8 @@ namespace Tetris3D
         private Texture2D menuOptionMarathon;
         private Texture2D menuOptionBack;
 
+        private TextBox classicDescriptionText;
+
         private ModeMenuOptions highlightedOption = ModeMenuOptions.Classic;
 
         private int numberOfTetrisMainMenuOptions = 5;
@@ -47,6 +49,11 @@ namespace Tetris3D
             this.menuOptionMarathon = this.content.Load<Texture2D>(@"Textures\Menus\Marathon");
             this.menuOptionChallenges = this.content.Load<Texture2D>(@"Textures\Menus\Challenges");
             this.menuOptionBack = this.content.Load<Texture2D>(@"Textures\Menus\Back");
+
+
+            this.classicDescriptionText = new TextBox(this, new Vector2(635, 417f), new Vector2(147, 25), @"Textures\UIFont", "Classic tetris is amazing", true);
+            this.classicDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
+            this.classicDescriptionText.ForeColor = Color.Yellow;
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
@@ -95,6 +102,8 @@ namespace Tetris3D
             switch (this.highlightedOption)
             {
                 case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
+                    //TODO: Draw text boxes by each game mode to give a short description
+                   // this.screenManager.Draw(this.screenManager.batch); 
                 case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;
                 case ModeMenuOptions.TimeTrial: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 527), Color.White); break;
                 case ModeMenuOptions.Challenges: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 582), Color.White); break;

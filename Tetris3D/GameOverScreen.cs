@@ -112,9 +112,20 @@ namespace Tetris3D
         }
         private GameScreen getLastGameType()
         {
-            if (this.finishedGameplayScreen is ClassicTetrisScreen) 
+            if (this.finishedGameplayScreen is ClassicTetrisScreen)
                 return new ClassicTetrisScreen(this.screenManager.Game);
-     //       else if (this.finishedGameplayScreen is 
+            else if (this.finishedGameplayScreen is Challenge1TetrisScreen)
+                return new Challenge1TetrisScreen(this.screenManager.Game);
+            else if (this.finishedGameplayScreen is Challenge2TetrisScreen)
+                return new Challenge2TetrisScreen(this.screenManager.Game);
+            else if (this.finishedGameplayScreen is Challenge3TetrisScreen)
+                return new Challenge3TetrisScreen(this.screenManager.Game);
+            else if (this.finishedGameplayScreen is Challenge4TetrisScreen)
+                return new Challenge4TetrisScreen(this.screenManager.Game);
+            else if (this.finishedGameplayScreen is MarathonTetrisScreen)
+                return new MarathonTetrisScreen(this.screenManager.Game);
+            else if (this.finishedGameplayScreen is TimeTrialScreen)
+                return new TimeTrialScreen(this.screenManager.Game);
             else
                 throw new NotImplementedException();
 

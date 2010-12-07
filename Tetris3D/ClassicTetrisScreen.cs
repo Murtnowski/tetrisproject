@@ -31,8 +31,6 @@ namespace Tetris3D
         private List<BasicShape> foundation = new List<BasicShape>();
         private TetrisSession tetrisSession;
 
-        
-
         private ScrollingBackground scrollingBackground;
 
         private TextBox gameTypeText;

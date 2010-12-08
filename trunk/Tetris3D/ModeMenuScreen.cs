@@ -30,6 +30,9 @@ namespace Tetris3D
         private Texture2D menuOptionBack;
 
         private TextBox classicDescriptionText;
+        private TextBox marathonDescriptionText;
+        private TextBox timeTrialDescriptionText;
+        private TextBox challengesDescriptionText;
 
         private ModeMenuOptions highlightedOption = ModeMenuOptions.Classic;
 
@@ -50,10 +53,22 @@ namespace Tetris3D
             this.menuOptionChallenges = this.content.Load<Texture2D>(@"Textures\Menus\Challenges");
             this.menuOptionBack = this.content.Load<Texture2D>(@"Textures\Menus\Back");
 
-
-            this.classicDescriptionText = new TextBox(this, new Vector2(635, 417f), new Vector2(147, 25), @"Textures\UIFont", "Classic tetris is amazing", true);
+            this.classicDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay", 
+                "Objective: Get the highest score possible without stacking over the top of the playing field", true);
             this.classicDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
-            this.classicDescriptionText.ForeColor = Color.Yellow;
+            this.classicDescriptionText.ForeColor = Color.Turquoise;
+            this.marathonDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay",
+                "Objective: Keep getting score until you can't play any longer.  Pause and level cap are disabled.  Get comfortable because you may be here for a while", true);
+            this.marathonDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
+            this.marathonDescriptionText.ForeColor = Color.Thistle;
+            this.timeTrialDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay",
+                "Objective: Get the highest score possible with the 3 minutes provided", true);
+            this.timeTrialDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
+            this.timeTrialDescriptionText.ForeColor = Color.Turquoise;
+            this.challengesDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay",
+                "Objective: Clear all of the pre-placed blocks on the board to achieve victory", true);
+            this.challengesDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
+            this.challengesDescriptionText.ForeColor = Color.Thistle;
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
@@ -101,12 +116,15 @@ namespace Tetris3D
 
             switch (this.highlightedOption)
             {
-                case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
+                case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White);
                     //TODO: Draw text boxes by each game mode to give a short description
-                   // this.screenManager.Draw(this.screenManager.batch); 
-                case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;
-                case ModeMenuOptions.TimeTrial: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 527), Color.White); break;
-                case ModeMenuOptions.Challenges: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 582), Color.White); break;
+                    this.classicDescriptionText.Draw(this.screenManager.batch); break;
+                case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White);
+                    this.marathonDescriptionText.Draw(this.screenManager.batch); break;
+                case ModeMenuOptions.TimeTrial: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 527), Color.White);
+                    this.timeTrialDescriptionText.Draw(this.screenManager.batch); break;
+                case ModeMenuOptions.Challenges: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 582), Color.White);
+                    this.challengesDescriptionText.Draw(this.screenManager.batch); break;
                 case ModeMenuOptions.Back: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 637), Color.White); break;
                 default: throw new NotImplementedException();
             }

@@ -48,3 +48,7 @@ Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\VocalBegin.xnb
 Content\Audio\STG-MajorTom.xnb
 Content\Audio\STG-MajorTom.wma
+Content\Textures\Menus\smile.xnb
+Content\Textures\Menus\stairway.xnb
+Content\Textures\Menus\toolbox.xnb
+Content\Textures\Menus\tsunami.xnb

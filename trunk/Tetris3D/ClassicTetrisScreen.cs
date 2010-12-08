@@ -193,7 +193,7 @@ namespace Tetris3D
 
             if (this.screenManager.input.KeyboardState.IsHoldingKey(Keys.Left))
             {
-                if (timeSinceLastXMovement > 73)
+                if (timeSinceLastXMovement > 100)
                 {
                     this.tetrisSession.moveCurrentPieceLeft();
                     timeSinceLastXMovement = 0;
@@ -207,7 +207,7 @@ namespace Tetris3D
             
             if (this.screenManager.input.KeyboardState.IsHoldingKey(Keys.Right))
             {
-                if (timeSinceLastXMovement > 73)
+                if (timeSinceLastXMovement > 100)
                 {
                     this.tetrisSession.moveCurrentPieceRight();
                     timeSinceLastXMovement = 0;

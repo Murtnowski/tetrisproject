@@ -336,7 +336,9 @@ namespace Tetris3D
 
             foreach (Point point in points)
             {
-                if ((point.X < 0 || point.X >= this.gameBoard.GetLength(0) || point.Y < 0 || point.Y >= this.gameBoard.GetLength(1)) || (this.gameBoard[point.X, point.Y] != null && !this.isCurrentPieceAtLocation(point)))
+                if ((point.X < 0 || point.X >= this.gameBoard.GetLength(0) || point.Y < 0 
+                    || point.Y >= this.gameBoard.GetLength(1)) || (this.gameBoard[point.X, point.Y] != null 
+                    && !this.isCurrentPieceAtLocation(point)))
                 {
                     return false;
                 }

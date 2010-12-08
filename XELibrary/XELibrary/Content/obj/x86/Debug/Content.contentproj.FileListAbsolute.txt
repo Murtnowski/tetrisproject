@@ -16,3 +16,4 @@ C:\Users\Murtnowski\Desktop\New Folder (2)\XELibrary\XELibrary\Content\obj\x86\D
 C:\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Murtnowski\Desktop\Tetris\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 E:\Projects\tetrisproject\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\dchastai\Desktop\tetrisproject\XELibrary\XELibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache

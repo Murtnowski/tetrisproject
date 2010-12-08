@@ -55,6 +55,11 @@ namespace Tetris3D
             TimeSpan countdown = new TimeSpan();
             double timeSinceLastTick = 0;
 
+            private TextBox bonusSecondsDisplay;
+            private String bonusSecondsAmount = "";
+            double isBonusSecondsDisplayVisible = 0;
+            float bonusSecondsDisplayRotation = 0;
+
             private Texture2D tetrisUI;
 
             public TimeTrialScreen(Microsoft.Xna.Framework.Game game)
@@ -170,18 +175,23 @@ namespace Tetris3D
                 this.gameLinesText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
                 this.gameLinesText.ForeColor = Color.Yellow;
 
-                this.countdown = TimeSpan.FromMinutes(3.02); //3.02 because it takes about 2 seconds to load
+                this.bonusSecondsDisplay = new TextBox(this, new Vector2(1035, 270f), new Vector2(100, 100), @"Textures\Kootenay", "+"+bonusSecondsAmount);
+                this.bonusSecondsDisplay.TextAlign = TextBox.TextAlignOption.TopLeft;
+                this.bonusSecondsDisplay.ForeColor = Color.Yellow;
+
+                this.countdown = TimeSpan.FromMinutes(3); //puts 3 minutes on the clock
             }
 
             public override void Update(GameTime gameTime)
             {
-
+                
                 this.countdown = this.countdown.Subtract(gameTime.ElapsedGameTime);
                 //update UI text
                 gameTimeText.Text = this.countdown.Minutes + ":" + this.countdown.Seconds.ToString("00");
 
                 this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
-
+                if (isBonusSecondsDisplayVisible > 0)
+                    isBonusSecondsDisplayVisible -= gameTime.ElapsedGameTime.Milliseconds;
                 this.camera.Update(gameTime);
 
                 if (countdown <= TimeSpan.Zero) //if time has run out, game over
@@ -210,9 +220,6 @@ namespace Tetris3D
                     {
                         audio.PlaySlamSound();
                         numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
-                        gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
-                        gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
-                        gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                         if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                         {
                             this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
@@ -220,11 +227,17 @@ namespace Tetris3D
                         if (numberOfLinesCleared == 4)
                         {
                             audio.PlayTetrisSound();
+                            this.countdown += TimeSpan.FromSeconds(5 * numberOfLinesCleared);
+                            bonusSecondsAmount = (5 * numberOfLinesCleared).ToString();
+                            isBonusSecondsDisplayVisible = 3000;
                             numberOfLinesCleared = 0;
                         }
                         else if (numberOfLinesCleared >= 1)
                         {
                             audio.PlayClearLineSound();
+                            this.countdown += TimeSpan.FromSeconds(3 * numberOfLinesCleared);
+                            bonusSecondsAmount = (3 * numberOfLinesCleared).ToString();
+                            isBonusSecondsDisplayVisible = 3000;
                             numberOfLinesCleared = 0;
                         }
                     }
@@ -235,9 +248,7 @@ namespace Tetris3D
                     audio.PlaySlamSound();
                     this.tetrisSession.slamCurrentPiece();
                     numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
-                    gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
-                    gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
-                    gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
                         this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
@@ -245,11 +256,17 @@ namespace Tetris3D
                     if (numberOfLinesCleared == 4)
                     {
                         audio.PlayTetrisSound();
+                        this.countdown += TimeSpan.FromSeconds(5 * numberOfLinesCleared);
+                        bonusSecondsAmount = (5 * numberOfLinesCleared).ToString();
+                        isBonusSecondsDisplayVisible = 3000;
                         numberOfLinesCleared = 0;
                     }
                     else if (numberOfLinesCleared >= 1)
                     {
                         audio.PlayClearLineSound();
+                        this.countdown += TimeSpan.FromSeconds(3 * numberOfLinesCleared);
+                        bonusSecondsAmount = (3 * numberOfLinesCleared).ToString();
+                        isBonusSecondsDisplayVisible = 3000;
                         numberOfLinesCleared = 0;
                     }
                 }
@@ -267,9 +284,7 @@ namespace Tetris3D
                     {
                         audio.PlaySlamSound();
                         numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
-                        gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
-                        gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
-                        gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
+
                         if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                         {
                             this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
@@ -277,11 +292,17 @@ namespace Tetris3D
                         if (numberOfLinesCleared == 4)
                         {
                             audio.PlayTetrisSound();
+                            this.countdown += TimeSpan.FromSeconds(5 * numberOfLinesCleared);
+                            bonusSecondsAmount = (5 * numberOfLinesCleared).ToString();
+                            isBonusSecondsDisplayVisible = 3000;
                             numberOfLinesCleared = 0;
                         }
                         else if (numberOfLinesCleared >= 1)
                         {
                             audio.PlayClearLineSound();
+                            this.countdown += TimeSpan.FromSeconds(3 * numberOfLinesCleared);
+                            bonusSecondsAmount = (3 * numberOfLinesCleared).ToString();
+                            isBonusSecondsDisplayVisible = 3000;
                             numberOfLinesCleared = 0;
                         }
                     }
@@ -290,9 +311,18 @@ namespace Tetris3D
                         this.tetrisSession.moveCurrentPieceDown();
                     }
                 }
-
+                gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
+                gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
+                gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
+                bonusSecondsDisplay.Text = "+" + bonusSecondsAmount;
+                if (isBonusSecondsDisplayVisible > 0)
+                    bonusSecondsDisplayRotation += 0.004f;
+                else
+                    bonusSecondsDisplayRotation = -1.1f;
+                if (bonusSecondsDisplayRotation > .2f)
+                    bonusSecondsDisplayRotation = -1.1f;
+                bonusSecondsDisplay.Rotation = bonusSecondsDisplayRotation;
                 scrollingBackground.Update((float)gameTime.ElapsedGameTime.TotalSeconds * 100);
-
             }
 
             public override void Draw(GameTime gameTime)
@@ -321,7 +351,6 @@ namespace Tetris3D
                                 BasicShape cube = new BasicShape(Vector3.One, new Vector3(x - 4, y, 0), tetrisSession.GameBoard[x, y].TetrisColor);
                                 cube.RenderShape(this.screenManager.GraphicsDevice);
                             }
-
                         }
                     }
 
@@ -341,6 +370,8 @@ namespace Tetris3D
                 this.gameScoreText.Draw(this.screenManager.batch);
                 this.gameLevelText.Draw(this.screenManager.batch);
                 this.gameLinesText.Draw(this.screenManager.batch);
+                if (isBonusSecondsDisplayVisible > 0)
+                    this.bonusSecondsDisplay.Draw(this.screenManager.batch);
 
                 //Draw Next Piece
                 switch (this.tetrisSession.NextTetrisPiece().Type)

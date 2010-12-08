@@ -25,9 +25,13 @@ namespace Tetris3D
         private Texture2D backGround;
         private Texture2D cursor;
         private Texture2D menuOption1;
+        private Texture2D menuExampleOption1;
         private Texture2D menuOption2;
+        private Texture2D menuExampleOption2;
         private Texture2D menuOption3;
+        private Texture2D menuExampleOption3;
         private Texture2D menuOption4;
+        private Texture2D menuExampleOption4;
         private Texture2D menuOptionBack;
 
         private ChallengesMenuOptions highlightedOption = ChallengesMenuOptions.Challenge1;
@@ -48,6 +52,10 @@ namespace Tetris3D
             this.menuOption3 = this.content.Load<Texture2D>(@"Textures\Menus\Challenge3");
             this.menuOption4 = this.content.Load<Texture2D>(@"Textures\Menus\Challenge4");
             this.menuOptionBack = this.content.Load<Texture2D>(@"Textures\Menus\Back");
+            this.menuExampleOption1 = this.content.Load<Texture2D>(@"Textures\Menus\Smile");
+            this.menuExampleOption2 = this.content.Load<Texture2D>(@"Textures\Menus\Stairway");
+            this.menuExampleOption3 = this.content.Load<Texture2D>(@"Textures\Menus\Toolbox");
+            this.menuExampleOption4 = this.content.Load<Texture2D>(@"Textures\Menus\Tsunami");
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
@@ -97,10 +105,14 @@ namespace Tetris3D
 
             switch (this.highlightedOption)
             {
-                case ChallengesMenuOptions.Challenge1: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White); break;
-                case ChallengesMenuOptions.Challenge2: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White); break;
-                case ChallengesMenuOptions.Challenge3: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 527), Color.White); break;
-                case ChallengesMenuOptions.Challenge4: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 582), Color.White); break;
+                case ChallengesMenuOptions.Challenge1: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White);
+                    this.screenManager.batch.Draw(this.menuExampleOption1, new Vector2(350, 417), Color.White);  break;
+                case ChallengesMenuOptions.Challenge2: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White);
+                    this.screenManager.batch.Draw(this.menuExampleOption2, new Vector2(350, 417), Color.White); break;
+                case ChallengesMenuOptions.Challenge3: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 527), Color.White);
+                    this.screenManager.batch.Draw(this.menuExampleOption3, new Vector2(350, 417), Color.White); break;
+                case ChallengesMenuOptions.Challenge4: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 582), Color.White);
+                    this.screenManager.batch.Draw(this.menuExampleOption4, new Vector2(350, 417), Color.White); break;
                 case ChallengesMenuOptions.Back: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 637), Color.White); break;
                 default: throw new NotImplementedException();
             }

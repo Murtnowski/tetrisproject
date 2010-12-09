@@ -238,7 +238,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::c2cb5577-7e5b-4ae2-a804-bef8b995f3bb;
+            Name = Sound::81b995e0-8b0b-451c-af4e-d3293f86f055;
             Property = 0;
             Sound = 1;
             Line Color = 4283131132;
@@ -305,14 +305,10 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = xWMA Compression;
-    Xbox Bank Last Modified Low = 0;
-    Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 0;
-    PC Bank Last Modified High = 0;
     Header Last Modified Low = 0;
     Header Last Modified High = 0;
-    Bank Last Revised Low = 1798957605;
-    Bank Last Revised High = 30119811;
+    Bank Last Revised Low = 2467448102;
+    Bank Last Revised High = 30119911;
 
     Wave
     {
@@ -385,52 +381,6 @@ Wave Bank
 
     Wave
     {
-        Name = MajorTom-PS;
-        File = Music\MajorTom-PS.wav;
-        Build Settings Last Modified Low = 1798947604;
-        Build Settings Last Modified High = 30119811;
-
-        Cache
-        {
-            Format Tag = 0;
-            Channels = 2;
-            Sampling Rate = 44100;
-            Bits Per Sample = 0;
-            Play Region Offset = 44;
-            Play Region Length = 25896960;
-            Loop Region Offset = 0;
-            Loop Region Length = 0;
-            File Type = 1;
-            Last Modified Low = 1819717159;
-            Last Modified High = 30119787;
-        }
-    }
-
-    Wave
-    {
-        Name = MajorTom-STG;
-        File = Music\MajorTom-STG.wav;
-        Build Settings Last Modified Low = 1798947604;
-        Build Settings Last Modified High = 30119811;
-
-        Cache
-        {
-            Format Tag = 0;
-            Channels = 2;
-            Sampling Rate = 44100;
-            Bits Per Sample = 0;
-            Play Region Offset = 44;
-            Play Region Length = 22095360;
-            Loop Region Offset = 0;
-            Loop Region Length = 0;
-            File Type = 1;
-            Last Modified Low = 1828697673;
-            Last Modified High = 30119787;
-        }
-    }
-
-    Wave
-    {
         Name = Manju;
         File = Music\Manju.wav;
         Build Settings Last Modified Low = 1798957605;
@@ -483,6 +433,8 @@ Sound Bank
     Windows File = Win\TetrisSoundBank.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
+    Header Last Modified High = 0;
+    Header Last Modified Low = 0;
 
     Sound
     {
@@ -538,26 +490,6 @@ Sound Bank
                     Bank Name = TetrisWaveBank;
                     Bank Index = 0;
                     Entry Name = Varuna;
-                    Entry Index = 6;
-                    Weight = 255;
-                    Weight Min = 0;
-                }
-
-                Wave Entry
-                {
-                    Bank Name = TetrisWaveBank;
-                    Bank Index = 0;
-                    Entry Name = Manju;
-                    Entry Index = 5;
-                    Weight = 255;
-                    Weight Min = 0;
-                }
-
-                Wave Entry
-                {
-                    Bank Name = TetrisWaveBank;
-                    Bank Index = 0;
-                    Entry Name = MajorTom-STG;
                     Entry Index = 4;
                     Weight = 255;
                     Weight Min = 0;
@@ -567,7 +499,7 @@ Sound Bank
                 {
                     Bank Name = TetrisWaveBank;
                     Bank Index = 0;
-                    Entry Name = MajorTom-PS;
+                    Entry Name = Manju;
                     Entry Index = 3;
                     Weight = 255;
                     Weight Min = 0;

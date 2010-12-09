@@ -380,16 +380,6 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </None>
-    <None Include="Audio\Music\MajorTom-PS.wav">
-      <Name>MajorTom-PS</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </None>
-    <None Include="Audio\Music\MajorTom-STG.wav">
-      <Name>MajorTom-STG</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </None>
     <None Include="Audio\Music\Manju.wav">
       <Name>Manju</Name>
       <Importer>WavImporter</Importer>

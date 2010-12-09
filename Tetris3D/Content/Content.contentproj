@@ -121,13 +121,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audio\Music\STG-MajorTom.mp3">
-      <Name>STG-MajorTom</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Textures\blank.png">
       <Name>blank</Name>
       <Importer>TextureImporter</Importer>
@@ -372,30 +365,45 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audio\Music\Anumati.mp3">
+    <None Include="Audio\Music\Anumati.wav">
       <Name>Anumati</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-    <Compile Include="Audio\Music\Durga.mp3">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <None Include="Audio\Music\Durga.wav">
       <Name>Durga</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-    <Compile Include="Audio\Music\Kuvera.mp3">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <None Include="Audio\Music\Kuvera.wav">
       <Name>Kuvera</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-    <Compile Include="Audio\Music\Manju.mp3">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <None Include="Audio\Music\MajorTom-PS.wav">
+      <Name>MajorTom-PS</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <None Include="Audio\Music\MajorTom-STG.wav">
+      <Name>MajorTom-STG</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <None Include="Audio\Music\Manju.wav">
       <Name>Manju</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-    <Compile Include="Audio\Music\Varuna.mp3">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <None Include="Audio\Music\Varuna.wav">
       <Name>Varuna</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </None>
+    <Compile Include="Audio\TetrisAudio.xap">
+      <Name>TetrisAudio</Name>
+      <Importer>XactImporter</Importer>
+      <Processor>XactProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -45,7 +45,6 @@ namespace Tetris3D
             secondTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
             playVocalBegin = Content.Load<SoundEffect>(@"Audio\SFX\VocalBegin");
             // All music must be in loop
-            MediaPlayer.IsRepeating = true;
         }
         //sound of player getting a Tetris
         public void PlaySecondGameOverSound()

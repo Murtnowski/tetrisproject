@@ -26,11 +26,14 @@ namespace Tetris3D
         public IInputHandler input;
         public SpriteBatch batch;
 
+        public AudioController audioController;
+
         public ScreenManager(Microsoft.Xna.Framework.Game game, SpriteBatch spriteBatch)
             : base(game)
         {
             this.input = (IInputHandler)this.Game.Services.GetService(typeof(IInputHandler));
             this.batch = spriteBatch;
+            this.audioController = new AudioController(this.Game);
         }
 
         public override void Initialize()
@@ -40,6 +43,8 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
+            this.audioController.Update(gameTime);
+
             foreach (GameScreen gameScreen in this.gameScreens)
             {
                 if (!gameScreen.isDisabled)

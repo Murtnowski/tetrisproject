@@ -1,0 +1,3 @@
+Content\Audio\TetrisAudio.xgs
+Content\Audio\TetrisWaveBank.xwb
+Content\Audio\TetrisSoundBank.xsb

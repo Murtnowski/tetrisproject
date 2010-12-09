@@ -26,105 +26,154 @@ namespace Tetris3D
         //create a sound instance which plays the various sounds with alterations, if needed
         private SoundEffectInstance soundInstance;
 
+        protected bool isInitalized;
+
         //load each effect from Audio\SFX
         public void LoadContent(ContentManager Content)
         {
-            rotatePieceSound = Content.Load<SoundEffect>(@"Audio\SFX\scratchloud");
-            slamPieceSound = Content.Load<SoundEffect>(@"Audio\SFX\slam");
-            pauseScreenSound = Content.Load<SoundEffect>(@"Audio\SFX\PauseSound");
-            pauseScreenVocalSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalPaused");
-            menuClickSound = Content.Load<SoundEffect>(@"Audio\SFX\click");
-            gameIntroSound = Content.Load<SoundEffect>(@"Audio\SFX\ShipEngine");
-            forwardMenuSound = Content.Load<SoundEffect>(@"Audio\SFX\Forward");
-            backMenuSound = Content.Load<SoundEffect>(@"Audio\SFX\Backward");
-            pauseToResumeSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalResumed");
-            playTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\Explosion");
-            playBeginSound = Content.Load<SoundEffect>(@"Audio\SFX\Begin");
-            gameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalSystemOverload");
-            secondGameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalGameOver");
-            secondTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
-            playVocalBegin = Content.Load<SoundEffect>(@"Audio\SFX\VocalBegin");
-            // All music must be in loop
+            try
+            {
+                rotatePieceSound = Content.Load<SoundEffect>(@"Audio\SFX\scratchloud");
+                slamPieceSound = Content.Load<SoundEffect>(@"Audio\SFX\slam");
+                pauseScreenSound = Content.Load<SoundEffect>(@"Audio\SFX\PauseSound");
+                pauseScreenVocalSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalPaused");
+                menuClickSound = Content.Load<SoundEffect>(@"Audio\SFX\click");
+                gameIntroSound = Content.Load<SoundEffect>(@"Audio\SFX\ShipEngine");
+                forwardMenuSound = Content.Load<SoundEffect>(@"Audio\SFX\Forward");
+                backMenuSound = Content.Load<SoundEffect>(@"Audio\SFX\Backward");
+                pauseToResumeSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalResumed");
+                playTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\Explosion");
+                playBeginSound = Content.Load<SoundEffect>(@"Audio\SFX\Begin");
+                gameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalSystemOverload");
+                secondGameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalGameOver");
+                secondTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
+                playVocalBegin = Content.Load<SoundEffect>(@"Audio\SFX\VocalBegin");
+                this.isInitalized = true;
+            }
+            catch (NoAudioHardwareException)
+            {
+            }
         }
         //sound of player getting a Tetris
         public void PlaySecondGameOverSound()
         {
-            secondGameOverSound.Play();
+            if (this.isInitalized)
+            {
+                secondGameOverSound.Play();
+            }
         }
         public void PlayGameOverSound(float pitch)
         {
-            soundInstance = gameOverSound.CreateInstance();
-            soundInstance.Pitch = pitch;
-            soundInstance.Volume = 1f;
-            soundInstance.Play();
-            if (pitch == 0f)
-                gameIntroSound.Play();
-
+            if (this.isInitalized)
+            {
+                soundInstance = gameOverSound.CreateInstance();
+                soundInstance.Pitch = pitch;
+                soundInstance.Volume = 1f;
+                soundInstance.Play();
+                if (pitch == 0f)
+                {
+                    gameIntroSound.Play();
+                }
+            }
         }
         public void PlayTetrisSound()
         {
-            soundInstance = playTetrisSound.CreateInstance();
-            soundInstance.Volume = .6f;
-            soundInstance.Play();
-            secondTetrisSound.Play();
+            if (this.isInitalized)
+            {
+                soundInstance = playTetrisSound.CreateInstance();
+                soundInstance.Volume = .6f;
+                soundInstance.Play();
+                secondTetrisSound.Play();
+            }
         }
         public void PlayBeginSound(bool sayBegin)
         {
-            if (sayBegin == true)
+            if (this.isInitalized)
             {
-                soundInstance = playVocalBegin.CreateInstance();
-                soundInstance.Volume = .5f;
-                soundInstance.Play();
+                if (sayBegin == true)
+                {
+                    soundInstance = playVocalBegin.CreateInstance();
+                    soundInstance.Volume = .5f;
+                    soundInstance.Play();
+                }
+
+                playBeginSound.Play();
             }
-            playBeginSound.Play();
         }
 
         public void PlayResumedSound()
         {
-            pauseToResumeSound.Play();
+            if (this.isInitalized)
+            {
+                pauseToResumeSound.Play();
+            }
         }
         public void PlayMenuForwardSound()
         {
-            forwardMenuSound.Play();
+            if (this.isInitalized)
+            {
+                forwardMenuSound.Play();
+            }
         }
         public void PlayMenuBackwardSound()
         {
-            backMenuSound.Play();
+            if (this.isInitalized)
+            {
+                backMenuSound.Play();
+            }
         }
         public void PlayIntroSound()
         {
-            soundInstance = gameIntroSound.CreateInstance();
-            soundInstance.Volume = 1f;
-            soundInstance.Play();
+            if (this.isInitalized)
+            {
+                soundInstance = gameIntroSound.CreateInstance();
+                soundInstance.Volume = 1f;
+                soundInstance.Play();
+            }
         }
         public void PlayMenuScrollSound()
         {
-            soundInstance = menuClickSound.CreateInstance();
-            soundInstance.Volume = .9f;
-            soundInstance.Play();
+            if (this.isInitalized)
+            {
+                soundInstance = menuClickSound.CreateInstance();
+                soundInstance.Volume = .9f;
+                soundInstance.Play();
+            }
         }
         public void PlayPauseSound()
         {
-            soundInstance = pauseScreenSound.CreateInstance();
-            soundInstance.Volume = .4f;
-            soundInstance.Play();
-            pauseScreenVocalSound.Play();
+            if (this.isInitalized)
+            {
+                soundInstance = pauseScreenSound.CreateInstance();
+                soundInstance.Volume = .4f;
+                soundInstance.Play();
+                pauseScreenVocalSound.Play();
+            }
         }
         public void PlayRotateSound()
         {
-            soundInstance = rotatePieceSound.CreateInstance();
-            soundInstance.Volume = .4f;
-            soundInstance.Play();
+            if (this.isInitalized)
+            {
+                soundInstance = rotatePieceSound.CreateInstance();
+                soundInstance.Volume = .4f;
+                soundInstance.Play();
+            }
         }
 
         public void PlaySlamSound()
         {
-            slamPieceSound.Play();
+            if (this.isInitalized)
+            {
+                slamPieceSound.Play();
+            }
         }
 
         public void PlayClearLineSound()
         {
-            forwardMenuSound.Play(); //also used in forwardMenu.  The sound suits clearing a line
+            if (this.isInitalized)
+            {
+                forwardMenuSound.Play(); //also used in forwardMenu.  The sound suits clearing a line
+            }
         }
     }
 }

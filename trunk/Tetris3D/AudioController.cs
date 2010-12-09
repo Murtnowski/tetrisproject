@@ -13,50 +13,96 @@ namespace Tetris3D
         protected WaveBank waveBank;
         protected SoundBank soundBank;
         protected Cue cue;
+        protected float volume;
+
+        public float Volume
+        {
+            get
+            {
+                return this.volume;
+            }
+            set
+            {
+                this.volume = value;
+            }
+        }
+        protected bool isInitalized;
 
         public AudioController(Microsoft.Xna.Framework.Game game) : base(game)
         {
-            this.audioEngine = new AudioEngine("Content\\Audio\\TetrisAudio.xgs");
-            this.waveBank = new WaveBank(this.audioEngine, "Content\\Audio\\TetrisWaveBank.xwb");
-            this.soundBank = new SoundBank(this.audioEngine, "Content\\Audio\\TetrisSoundBank.xsb");
-            this.cue = this.soundBank.GetCue("BackgroundCue");
+            try
+            {
+                this.audioEngine = new AudioEngine("Content\\Audio\\TetrisAudio.xgs");
+                this.waveBank = new WaveBank(this.audioEngine, "Content\\Audio\\TetrisWaveBank.xwb");
+                this.soundBank = new SoundBank(this.audioEngine, "Content\\Audio\\TetrisSoundBank.xsb");
+                this.cue = this.soundBank.GetCue("BackgroundCue");
+                this.isInitalized = true;
+            }
+            catch (InvalidOperationException)
+            {
+                //If the machine has no audio device this exception occurs
+                this.audioEngine = null;
+                this.waveBank = null;
+                this.soundBank = null;
+                this.cue = null;
+            }
         }
 
         public override void Update(GameTime gameTime)
         {
-            this.audioEngine.Update();
-            base.Update(gameTime);
+            if (this.isInitalized)
+            {
+                this.audioEngine.Update();
+                base.Update(gameTime);
+            }
         }
 
         protected override void Dispose(bool disposing)
         {
-            this.audioEngine.Dispose();
-            this.waveBank.Dispose();
-            this.soundBank.Dispose();
-            this.cue.Dispose();
+            if (this.isInitalized)
+            {
+                this.audioEngine.Dispose();
+                this.waveBank.Dispose();
+                this.soundBank.Dispose();
+                this.cue.Dispose();
+            }
             base.Dispose(disposing);
         }
 
         public void Play()
         {
-            this.cue = this.soundBank.GetCue(this.cue.Name);
+            if (this.isInitalized)
+            {
+                this.cue = this.soundBank.GetCue(this.cue.Name);
 
-            this.cue.Play();
+                this.cue.SetVariable("Volume", this.volume);
+
+                this.cue.Play();
+            }
         }
 
         public void Stop()
         {
-            this.cue.Stop(AudioStopOptions.Immediate);
+            if (this.isInitalized)
+            {
+                this.cue.Stop(AudioStopOptions.Immediate);
+            }
         }
 
         public void Pause()
         {
-            this.cue.Pause();
+            if (this.isInitalized)
+            {
+                this.cue.Pause();
+            }
         }
 
         public void Resume()
         {
-            this.cue.Resume();
+            if (this.isInitalized)
+            {
+                this.cue.Resume();
+            }
         }
     }
 }

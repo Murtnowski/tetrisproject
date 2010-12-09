@@ -97,7 +97,7 @@ namespace Tetris3D
         {
             //audio = new AudioBank();
             //audio.LoadContent(this.Content);
-            //backgroundMusic = this.Content.Load<Song>(@"Audio\STG-MajorTom");
+            //backgroundMusic = this.Content.Load<Song>(@"Audio\Music\STG-MajorTom");
         }
 
         #endregion

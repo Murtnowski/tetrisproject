@@ -90,7 +90,7 @@ namespace Tetris3D
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
-            backgroundMusic = this.content.Load<Song>(@"Audio\STG-MajorTom");
+            backgroundMusic = this.content.Load<Song>(@"Audio\Music\Kuvera");
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 

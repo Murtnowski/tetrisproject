@@ -121,7 +121,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audio\STG-MajorTom.mp3">
+    <Compile Include="Audio\Music\STG-MajorTom.mp3">
       <Name>STG-MajorTom</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
@@ -369,6 +369,33 @@
       <Name>tsunami</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\Music\Anumati.mp3">
+      <Name>Anumati</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Audio\Music\Durga.mp3">
+      <Name>Durga</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Audio\Music\Kuvera.mp3">
+      <Name>Kuvera</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Audio\Music\Manju.mp3">
+      <Name>Manju</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Audio\Music\Varuna.mp3">
+      <Name>Varuna</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

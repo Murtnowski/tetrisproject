@@ -35,7 +35,6 @@ namespace Tetris3D
         {
             this.screenToPause = screenToPause;
             this.screenToPause.isDisabled = true;
-            this.screenToPause.pauseAudio();
         }
 
         public override void LoadContent()
@@ -47,6 +46,7 @@ namespace Tetris3D
             audio.LoadContent(this.content);
 
             audio.PlayPauseSound();
+            this.screenManager.audioController.Pause();
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
@@ -67,8 +67,8 @@ namespace Tetris3D
             {
                 switch (this.highlightedOption)
                 {
-                    case TetrisPauseOptions.Resume: this.screenManager.removeScreen(this); this.screenToPause.isDisabled = false; this.screenToPause.resumeAudio(); break;
-                    case TetrisPauseOptions.Quit: this.screenManager.removeScreen(this); this.screenManager.removeScreen(this.screenToPause); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
+                    case TetrisPauseOptions.Resume: this.screenManager.removeScreen(this); this.screenToPause.isDisabled = false; this.screenManager.audioController.Resume(); break;
+                    case TetrisPauseOptions.Quit: this.screenManager.removeScreen(this); this.screenManager.removeScreen(this.screenToPause); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); this.screenManager.audioController.Stop(); break;
                     default: throw new NotImplementedException();
                 }
             }

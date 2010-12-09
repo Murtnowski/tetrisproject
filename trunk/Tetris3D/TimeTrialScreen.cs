@@ -88,7 +88,6 @@ namespace Tetris3D
 
                 audio = new AudioBank();
                 audio.LoadContent(this.content);
-                backgroundMusic = this.content.Load<Song>(@"Audio\Music\Varuna");
 
                 this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
@@ -96,14 +95,11 @@ namespace Tetris3D
                 Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
                 scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
-                MediaPlayer.IsRepeating = true;
                 this.audio.PlayBeginSound(true);
-                MediaPlayer.Play(backgroundMusic);
             }
 
             public override void UnloadContent()
             {
-                MediaPlayer.Stop();
                 base.UnloadContent();
             }
 

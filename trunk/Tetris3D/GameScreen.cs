@@ -28,8 +28,6 @@ namespace Tetris3D
         public bool isHidden;
         public bool isDisabled;
         public AudioBank audio;
-        public Song backgroundMusic;
-
 
         public GameScreen(Microsoft.Xna.Framework.Game game)
         {
@@ -46,16 +44,5 @@ namespace Tetris3D
         public abstract void Draw(GameTime gameTime);
 
         public abstract void Update(GameTime gameTime);
-
-        public virtual void resumeAudio()
-        {
-            this.audio.PlayResumedSound();
-            MediaPlayer.Resume();
-        }
-
-        public virtual void pauseAudio()
-        {
-            MediaPlayer.Pause();
-        }
     }
 }

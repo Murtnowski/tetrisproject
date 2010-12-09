@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioBank.cs" />
+    <Compile Include="AudioController.cs" />
     <Compile Include="BasicShape.cs" />
     <Compile Include="Challenge1TetrisScreen.cs" />
     <Compile Include="Challenge2TetrisScreen.cs" />

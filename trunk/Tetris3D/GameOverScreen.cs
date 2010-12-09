@@ -39,7 +39,6 @@ namespace Tetris3D
         {
             this.finishedGameplayScreen = finishedGameplayScreen;
             this.finishedGameplayScreen.isDisabled = true;
-            this.finishedGameplayScreen.pauseAudio();
         }
 
         public override void LoadContent()
@@ -88,7 +87,7 @@ namespace Tetris3D
                 this.screenManager.removeScreen(this); 
                 switch (this.highlightedOption)
                 { //TODO: Have the next line accommidate the CURRENT game that was lost.  ex:Play again plays TIME TRIAL again if TIME TRIAL was playing)
-                    case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getLastGameType()); break;
+                    case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getLastGameType()); this.screenManager.audioController.Play(); break;
                     case GameOverOptions.Quit: this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }

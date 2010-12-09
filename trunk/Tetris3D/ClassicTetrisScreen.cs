@@ -24,7 +24,6 @@ namespace Tetris3D
     {
         protected String gameType = "Classic";
 
-
         private BasicEffect cubeEffect;
         private Camera camera;
 
@@ -85,23 +84,16 @@ namespace Tetris3D
 
             audio = new AudioBank();
             audio.LoadContent(this.content);
-            backgroundMusic = this.content.Load<Song>(@"Audio\Music\Anumati");
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
-
-            MediaPlayer.IsRepeating = true;
-            this.audio.PlayBeginSound(true);
-            MediaPlayer.Play(backgroundMusic);
-
         }
 
         public override void UnloadContent()
         {
-            MediaPlayer.Stop();
             base.UnloadContent();
         }
 
@@ -244,6 +236,8 @@ namespace Tetris3D
                     gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
+                        //GAME OVER
+                        this.screenManager.audioController.Stop();
                         this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                     }
                     if (numberOfLinesCleared == 4)
@@ -273,6 +267,8 @@ namespace Tetris3D
                 gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                 if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                 {
+                    //GAMEOVER
+                    this.screenManager.audioController.Stop();
                     this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                 }
                 if (numberOfLinesCleared == 4)
@@ -305,6 +301,8 @@ namespace Tetris3D
                     gameLevelText.Text = this.tetrisSession.CurrentLevel.ToString();
                     if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                     {
+                        //GAMEOVER
+                        this.screenManager.audioController.Stop();
                         this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
                     }
                     if (numberOfLinesCleared == 4)

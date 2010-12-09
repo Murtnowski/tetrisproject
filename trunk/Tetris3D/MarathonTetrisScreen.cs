@@ -81,10 +81,9 @@ namespace Tetris3D
             this.ZPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\Z");
 
             uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
-
+            
             audio = new AudioBank();
             audio.LoadContent(this.content);
-            backgroundMusic = this.content.Load<Song>(@"Audio\Music\STG-MajorTom");
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
@@ -92,15 +91,11 @@ namespace Tetris3D
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
-            MediaPlayer.IsRepeating = true;
             this.audio.PlayBeginSound(true);
-            MediaPlayer.Play(backgroundMusic);
-
         }
 
         public override void UnloadContent()
         {
-            MediaPlayer.Stop();
             base.UnloadContent();
         }
 

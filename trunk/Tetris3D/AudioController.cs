@@ -13,18 +13,16 @@ namespace Tetris3D
         protected WaveBank waveBank;
         protected SoundBank soundBank;
         protected Cue cue;
-        protected float volume;
 
         public float Volume
         {
             get
             {
-                return this.volume;
+                return this.cue.GetVariable("Volume");
             }
             set
             {
-                this.volume = value;
-                this.cue.SetVariable("Volume", this.volume);
+                this.cue.SetVariable("Volume", value);
             }
         }
         protected bool isInitalized;
@@ -74,7 +72,9 @@ namespace Tetris3D
         {
             if (this.isInitalized)
             {
+                float volume = this.Volume;
                 this.cue = this.soundBank.GetCue(this.cue.Name);
+                this.Volume = volume;
 
                 this.cue.Play();
             }

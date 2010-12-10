@@ -238,7 +238,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::81b995e0-8b0b-451c-af4e-d3293f86f055;
+            Name = Sound::ba9df176-4adf-437f-b30f-46e2cdb59743;
             Property = 0;
             Sound = 1;
             Line Color = 4283131132;
@@ -305,6 +305,10 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = xWMA Compression;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
     Header Last Modified Low = 0;
     Header Last Modified High = 0;
     Bank Last Revised Low = 2467448102;
@@ -439,7 +443,7 @@ Sound Bank
     Sound
     {
         Name = BackgroundSound;
-        Volume = -1200;
+        Volume = 0;
         Pitch = 0;
         Priority = 0;
 

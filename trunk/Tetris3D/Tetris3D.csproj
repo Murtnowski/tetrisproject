@@ -98,7 +98,7 @@
     <Compile Include="Challenge4TetrisScreen.cs" />
     <Compile Include="ChallengesMenuScreen.cs" />
     <Compile Include="ClassicTetrisScreen.cs" />
-    <Compile Include="MainOptionsMenuScreen.cs" />
+    <Compile Include="OptionsMenuScreen.cs" />
     <Compile Include="GameOverScreen.cs" />
     <Compile Include="ModeMenuScreen.cs" />
     <Compile Include="MarathonTetrisScreen.cs" />

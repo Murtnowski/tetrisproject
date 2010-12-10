@@ -33,7 +33,7 @@ namespace Tetris3D
 
         private GameOverOptions highlightedOption = GameOverOptions.PlayAgain;
 
-        private int numberOfTetrisMainMenuOptions = 2;
+        private int numberOfTetrisGameOverOptions = 2;
 
         public GameOverScreen(Microsoft.Xna.Framework.Game game, GameScreen finishedGameplayScreen) : base(game)
         {
@@ -78,7 +78,7 @@ namespace Tetris3D
             {
                 audio.PlayMenuScrollSound();
                 this.highlightedOption++;
-                this.highlightedOption = (GameOverOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
+                this.highlightedOption = (GameOverOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisGameOverOptions - 1);
             }
             //controls locked until options are visible
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter) && fadeInOptions >= .35f)
@@ -86,7 +86,7 @@ namespace Tetris3D
                 this.screenManager.removeScreen(this.finishedGameplayScreen);
                 this.screenManager.removeScreen(this); 
                 switch (this.highlightedOption)
-                { //TODO: Have the next line accommidate the CURRENT game that was lost.  ex:Play again plays TIME TRIAL again if TIME TRIAL was playing)
+                {
                     case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getLastGameType()); this.screenManager.audioController.Play(); break;
                     case GameOverOptions.Quit: this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();

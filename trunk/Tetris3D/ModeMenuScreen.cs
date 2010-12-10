@@ -62,7 +62,7 @@ namespace Tetris3D
             this.marathonDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
             this.marathonDescriptionText.ForeColor = Color.Thistle;
             this.timeTrialDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay",
-                "Objective: Get the highest score possible with the 3 minutes provided", true);
+                "Objective: Get the highest score possible with the 3 minutes provided.  Time will be added upon clearing a line", true);
             this.timeTrialDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
             this.timeTrialDescriptionText.ForeColor = Color.Turquoise;
             this.challengesDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay",
@@ -97,7 +97,7 @@ namespace Tetris3D
                     case ModeMenuOptions.Classic: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
                     case ModeMenuOptions.Marathon: this.screenManager.removeScreen(this); this.screenManager.addScreen(new MarathonTetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
                     case ModeMenuOptions.TimeTrial: this.screenManager.removeScreen(this); this.screenManager.addScreen(new TimeTrialScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
-                    case ModeMenuOptions.Challenges: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ChallengesMenuScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
+                    case ModeMenuOptions.Challenges: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ChallengesMenuScreen(this.screenManager.Game)); break;
                     case ModeMenuOptions.Back: this.screenManager.removeScreen(this); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }

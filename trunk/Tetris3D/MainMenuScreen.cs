@@ -73,7 +73,7 @@ namespace Tetris3D
                         break;
                     case MainMenuOptions.Options:
                         this.screenManager.removeScreen(this);
-                        this.screenManager.addScreen(new MainOptionsMenuScreen(this.screenManager.Game)); break;
+                        this.screenManager.addScreen(new OptionsMenuScreen(this.screenManager.Game)); break;
                     case MainMenuOptions.Quit: this.screenManager.Game.Exit(); break;
                     default: throw new NotImplementedException();
                 }

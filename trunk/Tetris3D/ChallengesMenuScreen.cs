@@ -82,10 +82,10 @@ namespace Tetris3D
             {
                 switch (this.highlightedOption)
                 {
-                    case ChallengesMenuOptions.Challenge1: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge1TetrisScreen(this.screenManager.Game)); break;
-                    case ChallengesMenuOptions.Challenge2: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge2TetrisScreen(this.screenManager.Game)); break;
-                    case ChallengesMenuOptions.Challenge3: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge3TetrisScreen(this.screenManager.Game)); break;
-                    case ChallengesMenuOptions.Challenge4: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge4TetrisScreen(this.screenManager.Game)); break;
+                    case ChallengesMenuOptions.Challenge1: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge1TetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
+                    case ChallengesMenuOptions.Challenge2: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge2TetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
+                    case ChallengesMenuOptions.Challenge3: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge3TetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
+                    case ChallengesMenuOptions.Challenge4: this.screenManager.removeScreen(this); this.screenManager.addScreen(new Challenge4TetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
                     case ChallengesMenuOptions.Back: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ModeMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }

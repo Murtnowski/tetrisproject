@@ -90,6 +90,8 @@ namespace Tetris3D
             scrollingBackground = new ScrollingBackground();
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
+
+            audio.PlayBeginSound(true);
         }
 
         public override void UnloadContent()

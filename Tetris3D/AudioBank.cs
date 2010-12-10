@@ -7,6 +7,7 @@
  * Instructor: Alvaro Monge
  * School: California State University Long Beach - Computer Science
  */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace Tetris3D
             gameIntroSound, forwardMenuSound, backMenuSound, pauseToResumeSound, playBeginSound, playTetrisSound, playVocalBegin,
             gameOverSound, secondGameOverSound, secondTetrisSound;
         //create a sound instance which plays the various sounds with alterations, if needed
-        private SoundEffectInstance soundInstance;
+        private SoundEffectInstance soundInstance, secondSoundInstance;
+        private float soundEffectsVolume = .8f;
 
         protected bool isInitalized;
 
@@ -55,6 +57,29 @@ namespace Tetris3D
             }
         }
         //sound of player getting a Tetris
+        public int getAllSoundEffectsVolume()
+        {
+            return (int)soundEffectsVolume * 10;
+        }
+        public void SetAllSoundEffectsVolume(int number)
+        {
+            switch (number)
+            {
+                case 0: soundEffectsVolume = 0f; break;
+                case 1: soundEffectsVolume = .1f; break;
+                case 2: soundEffectsVolume = .2f; break;
+                case 3: soundEffectsVolume = .3f; break;
+                case 4: soundEffectsVolume = .4f; break;
+                case 5: soundEffectsVolume = .5f; break;
+                case 6: soundEffectsVolume = .6f; break;
+                case 7: soundEffectsVolume = .7f; break;
+                default: soundEffectsVolume = .8f; break;
+                case 9: soundEffectsVolume = .9f; break;
+                case 10: soundEffectsVolume = 1f; break;
+            }
+
+        }
+
         public void PlaySecondGameOverSound()
         {
             if (this.isInitalized)
@@ -64,15 +89,17 @@ namespace Tetris3D
         }
         public void PlayGameOverSound(float pitch)
         {
-            if (this.isInitalized)
+            if (this.isInitalized) //plays game over sound with adjusted pitch
             {
                 soundInstance = gameOverSound.CreateInstance();
                 soundInstance.Pitch = pitch;
-                soundInstance.Volume = 1f;
+                soundInstance.Volume = soundEffectsVolume;
                 soundInstance.Play();
-                if (pitch == 0f)
+                if (pitch == 0f)//plays game over sound with normal pitch
                 {
-                    gameIntroSound.Play();
+                    secondSoundInstance = gameOverSound.CreateInstance();
+                    secondSoundInstance.Volume = soundEffectsVolume;
+                    secondSoundInstance.Play();
                 }
             }
         }
@@ -81,9 +108,12 @@ namespace Tetris3D
             if (this.isInitalized)
             {
                 soundInstance = playTetrisSound.CreateInstance();
-                soundInstance.Volume = .6f;
+                soundInstance.Volume = soundEffectsVolume;
                 soundInstance.Play();
-                secondTetrisSound.Play();
+
+                secondSoundInstance = secondTetrisSound.CreateInstance();
+                secondSoundInstance.Volume = soundEffectsVolume;
+                secondSoundInstance.Play();
             }
         }
         public void PlayBeginSound(bool sayBegin)
@@ -93,11 +123,12 @@ namespace Tetris3D
                 if (sayBegin == true)
                 {
                     soundInstance = playVocalBegin.CreateInstance();
-                    soundInstance.Volume = .5f;
+                    soundInstance.Volume = soundEffectsVolume;
                     soundInstance.Play();
                 }
-
-                playBeginSound.Play();
+                secondSoundInstance = playBeginSound.CreateInstance();
+                secondSoundInstance.Volume = soundEffectsVolume;
+                secondSoundInstance.Play();
             }
         }
 
@@ -105,21 +136,27 @@ namespace Tetris3D
         {
             if (this.isInitalized)
             {
-                pauseToResumeSound.Play();
+                soundInstance = pauseToResumeSound.CreateInstance();
+                soundInstance.Volume = soundEffectsVolume;
+                soundInstance.Play();
             }
         }
         public void PlayMenuForwardSound()
         {
             if (this.isInitalized)
             {
-                forwardMenuSound.Play();
+                soundInstance = forwardMenuSound.CreateInstance();
+                soundInstance.Volume = soundEffectsVolume;
+                soundInstance.Play();
             }
         }
         public void PlayMenuBackwardSound()
         {
             if (this.isInitalized)
             {
-                backMenuSound.Play();
+                soundInstance = backMenuSound.CreateInstance();
+                soundInstance.Volume = soundEffectsVolume;
+                soundInstance.Play();
             }
         }
         public void PlayIntroSound()
@@ -127,7 +164,7 @@ namespace Tetris3D
             if (this.isInitalized)
             {
                 soundInstance = gameIntroSound.CreateInstance();
-                soundInstance.Volume = 1f;
+                soundInstance.Volume = soundEffectsVolume;
                 soundInstance.Play();
             }
         }
@@ -136,7 +173,7 @@ namespace Tetris3D
             if (this.isInitalized)
             {
                 soundInstance = menuClickSound.CreateInstance();
-                soundInstance.Volume = .9f;
+                soundInstance.Volume = soundEffectsVolume;
                 soundInstance.Play();
             }
         }
@@ -145,9 +182,12 @@ namespace Tetris3D
             if (this.isInitalized)
             {
                 soundInstance = pauseScreenSound.CreateInstance();
-                soundInstance.Volume = .4f;
+                soundInstance.Volume = soundEffectsVolume;
                 soundInstance.Play();
-                pauseScreenVocalSound.Play();
+
+                secondSoundInstance = pauseScreenVocalSound.CreateInstance();
+                secondSoundInstance.Volume = soundEffectsVolume;
+                secondSoundInstance.Play();
             }
         }
         public void PlayRotateSound()
@@ -155,7 +195,7 @@ namespace Tetris3D
             if (this.isInitalized)
             {
                 soundInstance = rotatePieceSound.CreateInstance();
-                soundInstance.Volume = .4f;
+                soundInstance.Volume = soundEffectsVolume;
                 soundInstance.Play();
             }
         }
@@ -164,7 +204,9 @@ namespace Tetris3D
         {
             if (this.isInitalized)
             {
-                slamPieceSound.Play();
+                soundInstance = slamPieceSound.CreateInstance();
+                soundInstance.Volume = soundEffectsVolume;
+                soundInstance.Play();
             }
         }
 
@@ -172,7 +214,9 @@ namespace Tetris3D
         {
             if (this.isInitalized)
             {
-                forwardMenuSound.Play(); //also used in forwardMenu.  The sound suits clearing a line
+                soundInstance = forwardMenuSound.CreateInstance();
+                soundInstance.Volume = soundEffectsVolume;
+                soundInstance.Play(); //also used in forwardMenu.  The sound suits clearing a line
             }
         }
     }

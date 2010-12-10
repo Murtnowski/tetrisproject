@@ -50,6 +50,9 @@ Content\Audio\SFX\VocalGameOver.xnb
 Content\Audio\SFX\Explosion.xnb
 Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\VocalBegin.xnb
+Content\Textures\Menus\OptionsDisplay.xnb
+Content\Textures\ha.xnb
+Content\Textures\Menus\OptionsCursor.xnb
 Content\Audio\TetrisAudio.xgs
 Content\Audio\TetrisWaveBank.xwb
 Content\Audio\TetrisSoundBank.xsb

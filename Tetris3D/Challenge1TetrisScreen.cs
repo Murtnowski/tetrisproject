@@ -135,7 +135,7 @@ namespace Tetris3D
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
-            this.audio.PlayBeginSound(true);
+            audio.PlayBeginSound(true);
         }
 
         public override void UnloadContent()
@@ -215,7 +215,6 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
-            //TODO: After PLAY AGAIN from GameOverScreen has been called, music should continue but doesn't
             this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
             //update UI text
             gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");

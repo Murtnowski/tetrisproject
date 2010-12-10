@@ -27,6 +27,7 @@ namespace Tetris3D
         public SpriteBatch batch;
 
         public AudioController audioController;
+        public AudioBank audio;
 
         public ScreenManager(Microsoft.Xna.Framework.Game game, SpriteBatch spriteBatch)
             : base(game)
@@ -34,6 +35,7 @@ namespace Tetris3D
             this.input = (IInputHandler)this.Game.Services.GetService(typeof(IInputHandler));
             this.batch = spriteBatch;
             this.audioController = new AudioController(this.Game);
+            this.audio = new AudioBank();
         }
 
         public override void Initialize()

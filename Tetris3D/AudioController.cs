@@ -24,6 +24,7 @@ namespace Tetris3D
             set
             {
                 this.volume = value;
+                this.cue.SetVariable("Volume", this.volume);
             }
         }
         protected bool isInitalized;
@@ -74,8 +75,6 @@ namespace Tetris3D
             if (this.isInitalized)
             {
                 this.cue = this.soundBank.GetCue(this.cue.Name);
-
-                this.cue.SetVariable("Volume", this.volume);
 
                 this.cue.Play();
             }

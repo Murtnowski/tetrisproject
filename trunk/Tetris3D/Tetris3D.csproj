@@ -92,6 +92,7 @@
     <Compile Include="AudioBank.cs" />
     <Compile Include="AudioController.cs" />
     <Compile Include="BasicShape.cs" />
+    <Compile Include="HighScoreManager.cs" />
     <Compile Include="TetrisScreens\Challenge1TetrisScreen.cs" />
     <Compile Include="TetrisScreens\Challenge2TetrisScreen.cs" />
     <Compile Include="TetrisScreens\Challenge3TetrisScreen.cs" />

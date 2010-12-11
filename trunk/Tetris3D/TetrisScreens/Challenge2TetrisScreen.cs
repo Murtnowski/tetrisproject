@@ -13,11 +13,19 @@ namespace Tetris3D
 {
     class Challenge2TetrisScreen : TetrisScreen
     {
-        public override string GameType
+        public override string GameName
         {
             get
             {
                 return "Stairway";
+            }
+        }
+
+        public override TetrisModes GameType
+        {
+            get
+            {
+                return TetrisModes.Challenge2;
             }
         }
 
@@ -127,7 +135,7 @@ namespace Tetris3D
             }
 
             //Set UI text
-            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", this.GameType);
+            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", this.GameName);
             this.gameTypeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
             this.gameTypeText.ForeColor = Color.Yellow;
 

@@ -63,6 +63,7 @@ namespace Tetris3D
         {
             return (int)(soundEffectsVolume*10);
         }
+
         public void SetAllSoundEffectsVolume(int number)
         {
             switch (number)

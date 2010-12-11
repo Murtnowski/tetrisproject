@@ -11,40 +11,16 @@ using XELibrary;
 
 namespace Tetris3D
 {
-    class Challenge1TetrisScreen : GameScreen
+    class Challenge1TetrisScreen : TetrisScreen
     {
-        private String gameType = "Smile";
-
-        private BasicEffect cubeEffect;
-        private Camera camera;
-
+        public override string GameType
+        {
+            get
+            {
+                return "Smile";
+            }
+        }
         private List<BasicShape> foundation = new List<BasicShape>();
-        private TetrisSession tetrisSession;
-
-        private ScrollingBackground scrollingBackground;
-
-        private TextBox gameTypeText;
-        private TextBox gameTimeText;
-        private TextBox gameScoreText;
-        private TextBox gameLevelText;
-        private TextBox gameLinesText;
-
-        private SpriteFont uiFont;
-
-        private Texture2D IPieceTexture;
-        private Texture2D JPieceTexture;
-        private Texture2D LPieceTexture;
-        private Texture2D OPieceTexture;
-        private Texture2D SPieceTexture;
-        private Texture2D TPieceTexture;
-        private Texture2D ZPieceTexture;
-
-        private int numberOfLinesCleared;
-
-        TimeSpan elapsedTime = new TimeSpan();
-        double timeSinceLastTick = 0;
-
-        private Texture2D tetrisUI;
 
         public Challenge1TetrisScreen(Microsoft.Xna.Framework.Game game)
             : base(game)
@@ -189,7 +165,7 @@ namespace Tetris3D
             }
 
             //Set UI text
-            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", gameType);
+            this.gameTypeText = new TextBox(this, new Vector2(873, 241f), new Vector2(147, 25), @"Textures\UIFont", this.GameType);
             this.gameTypeText.TextAlign = TextBox.TextAlignOption.MiddleCenter;
             this.gameTypeText.ForeColor = Color.Yellow;
 
@@ -212,9 +188,9 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
-            this.elapsedTime = this.elapsedTime.Add(gameTime.ElapsedGameTime);
+            this.timer = this.timer.Add(gameTime.ElapsedGameTime);
             //update UI text
-            gameTimeText.Text = this.elapsedTime.Minutes + ":" + this.elapsedTime.Seconds.ToString("00");
+            gameTimeText.Text = this.timer.Minutes + ":" + this.timer.Seconds.ToString("00");
 
             this.timeSinceLastTick += gameTime.ElapsedGameTime.Milliseconds;
 

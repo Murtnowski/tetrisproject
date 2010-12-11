@@ -22,7 +22,7 @@ namespace Tetris3D
 
     class GameOverScreen : GameScreen
     {
-        private GameScreen finishedGameplayScreen;
+        private GameScreen finishedTetrisScreen;
 
         private Texture2D background;
         private Texture2D cursor;
@@ -35,10 +35,10 @@ namespace Tetris3D
 
         private int numberOfTetrisGameOverOptions = 2;
 
-        public GameOverScreen(Microsoft.Xna.Framework.Game game, GameScreen finishedGameplayScreen) : base(game)
+        public GameOverScreen(Microsoft.Xna.Framework.Game game, TetrisScreen finishedTetrisScreen) : base(game)
         {
-            this.finishedGameplayScreen = finishedGameplayScreen;
-            this.finishedGameplayScreen.isDisabled = true;
+            this.finishedTetrisScreen = finishedTetrisScreen;
+            this.finishedTetrisScreen.isDisabled = true;
         }
 
         public override void LoadContent()
@@ -82,11 +82,11 @@ namespace Tetris3D
             //controls locked until options are visible
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter) && fadeInOptions >= .35f)
             {
-                this.screenManager.removeScreen(this.finishedGameplayScreen);
+                this.screenManager.removeScreen(this.finishedTetrisScreen);
                 this.screenManager.removeScreen(this); 
                 switch (this.highlightedOption)
                 {
-                    case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getLastGameType()); this.screenManager.audioController.Play(); break;
+                    case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getNewGame()); this.screenManager.audioController.Play(); break;
                     case GameOverOptions.Quit: this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }
@@ -108,21 +108,22 @@ namespace Tetris3D
             }
             this.screenManager.batch.End();
         }
-        private GameScreen getLastGameType()
+
+        private GameScreen getNewGame()
         {
-            if (this.finishedGameplayScreen is ClassicTetrisScreen)
+            if (this.finishedTetrisScreen is ClassicTetrisScreen)
                 return new ClassicTetrisScreen(this.screenManager.Game);
-            else if (this.finishedGameplayScreen is Challenge1TetrisScreen)
+            else if (this.finishedTetrisScreen is Challenge1TetrisScreen)
                 return new Challenge1TetrisScreen(this.screenManager.Game);
-            else if (this.finishedGameplayScreen is Challenge2TetrisScreen)
+            else if (this.finishedTetrisScreen is Challenge2TetrisScreen)
                 return new Challenge2TetrisScreen(this.screenManager.Game);
-            else if (this.finishedGameplayScreen is Challenge3TetrisScreen)
+            else if (this.finishedTetrisScreen is Challenge3TetrisScreen)
                 return new Challenge3TetrisScreen(this.screenManager.Game);
-            else if (this.finishedGameplayScreen is Challenge4TetrisScreen)
+            else if (this.finishedTetrisScreen is Challenge4TetrisScreen)
                 return new Challenge4TetrisScreen(this.screenManager.Game);
-            else if (this.finishedGameplayScreen is MarathonTetrisScreen)
+            else if (this.finishedTetrisScreen is MarathonTetrisScreen)
                 return new MarathonTetrisScreen(this.screenManager.Game);
-            else if (this.finishedGameplayScreen is TimeTrialScreen)
+            else if (this.finishedTetrisScreen is TimeTrialScreen)
                 return new TimeTrialScreen(this.screenManager.Game);
             else
                 throw new NotImplementedException();

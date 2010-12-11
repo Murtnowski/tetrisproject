@@ -65,7 +65,8 @@ namespace Tetris3D
             {
                 switch (this.highlightedOption)
                 {
-                    case TetrisPauseOptions.Resume: this.screenManager.removeScreen(this); this.screenToPause.isDisabled = false; this.screenManager.audioController.Resume(); break;
+                    case TetrisPauseOptions.Resume: this.screenManager.removeScreen(this); this.screenToPause.isDisabled = false;
+                        this.screenManager.audio.PlayResumedSound(); this.screenManager.audioController.Resume();  break;
                     case TetrisPauseOptions.Quit: this.screenManager.removeScreen(this); this.screenManager.removeScreen(this.screenToPause); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); this.screenManager.audioController.Stop(); break;
                     default: throw new NotImplementedException();
                 }

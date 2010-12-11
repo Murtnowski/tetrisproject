@@ -92,17 +92,17 @@
     <Compile Include="AudioBank.cs" />
     <Compile Include="AudioController.cs" />
     <Compile Include="BasicShape.cs" />
-    <Compile Include="Challenge1TetrisScreen.cs" />
-    <Compile Include="Challenge2TetrisScreen.cs" />
-    <Compile Include="Challenge3TetrisScreen.cs" />
-    <Compile Include="Challenge4TetrisScreen.cs" />
+    <Compile Include="TetrisScreens\Challenge1TetrisScreen.cs" />
+    <Compile Include="TetrisScreens\Challenge2TetrisScreen.cs" />
+    <Compile Include="TetrisScreens\Challenge3TetrisScreen.cs" />
+    <Compile Include="TetrisScreens\Challenge4TetrisScreen.cs" />
     <Compile Include="ChallengesMenuScreen.cs" />
-    <Compile Include="ClassicTetrisScreen.cs" />
-    <Compile Include="TetrisScreen.cs" />
+    <Compile Include="TetrisScreens\ClassicTetrisScreen.cs" />
+    <Compile Include="TetrisScreens\TetrisScreen.cs" />
     <Compile Include="OptionsMenuScreen.cs" />
     <Compile Include="GameOverScreen.cs" />
     <Compile Include="ModeMenuScreen.cs" />
-    <Compile Include="MarathonTetrisScreen.cs" />
+    <Compile Include="TetrisScreens\MarathonTetrisScreen.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="MainMenuScreen.cs" />
     <Compile Include="ScreenManager.cs" />
@@ -123,7 +123,7 @@
     <Compile Include="TetrisPieces\TPiece.cs" />
     <Compile Include="TetrisPieces\Zpiece.cs" />
     <Compile Include="TextBox.cs" />
-    <Compile Include="TimeTrialScreen.cs" />
+    <Compile Include="TetrisScreens\TimeTrialScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">

@@ -86,16 +86,13 @@ namespace Tetris3D
 
                 uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
 
-                audio = new AudioBank();
-                audio.LoadContent(this.content);
-
                 this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
                 scrollingBackground = new ScrollingBackground();
                 Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
                 scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
-                this.audio.PlayBeginSound(true);
+                this.screenManager.audio.PlayBeginSound(true);
             }
 
             public override void UnloadContent()
@@ -214,7 +211,7 @@ namespace Tetris3D
                 {
                     if (!this.tetrisSession.moveCurrentPieceDown())
                     {
-                        audio.PlaySlamSound();
+                        this.screenManager.audio.PlaySlamSound();
                         numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                         if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
                         {
@@ -222,7 +219,7 @@ namespace Tetris3D
                         }
                         if (numberOfLinesCleared == 4)
                         {
-                            audio.PlayTetrisSound();
+                            this.screenManager.audio.PlayTetrisSound();
                             this.countdown += TimeSpan.FromSeconds(5 * numberOfLinesCleared);
                             bonusSecondsAmount = (5 * numberOfLinesCleared).ToString();
                             isBonusSecondsDisplayVisible = 3000;
@@ -230,7 +227,7 @@ namespace Tetris3D
                         }
                         else if (numberOfLinesCleared >= 1)
                         {
-                            audio.PlayClearLineSound();
+                            this.screenManager.audio.PlayClearLineSound();
                             this.countdown += TimeSpan.FromSeconds(3 * numberOfLinesCleared);
                             bonusSecondsAmount = (3 * numberOfLinesCleared).ToString();
                             isBonusSecondsDisplayVisible = 3000;
@@ -241,7 +238,7 @@ namespace Tetris3D
 
                 if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
                 {
-                    audio.PlaySlamSound();
+                    this.screenManager.audio.PlaySlamSound();
                     this.tetrisSession.slamCurrentPiece();
                     numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
 
@@ -251,7 +248,7 @@ namespace Tetris3D
                     }
                     if (numberOfLinesCleared == 4)
                     {
-                        audio.PlayTetrisSound();
+                        this.screenManager.audio.PlayTetrisSound();
                         this.countdown += TimeSpan.FromSeconds(5 * numberOfLinesCleared);
                         bonusSecondsAmount = (5 * numberOfLinesCleared).ToString();
                         isBonusSecondsDisplayVisible = 3000;
@@ -259,7 +256,7 @@ namespace Tetris3D
                     }
                     else if (numberOfLinesCleared >= 1)
                     {
-                        audio.PlayClearLineSound();
+                        this.screenManager.audio.PlayClearLineSound();
                         this.countdown += TimeSpan.FromSeconds(3 * numberOfLinesCleared);
                         bonusSecondsAmount = (3 * numberOfLinesCleared).ToString();
                         isBonusSecondsDisplayVisible = 3000;
@@ -268,7 +265,7 @@ namespace Tetris3D
                 }
                 if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
                 {
-                    audio.PlayRotateSound();
+                    this.screenManager.audio.PlayRotateSound();
                     this.tetrisSession.rotateCurrentPieceClockwise();
                 }
 
@@ -278,7 +275,7 @@ namespace Tetris3D
 
                     if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                     {
-                        audio.PlaySlamSound();
+                        this.screenManager.audio.PlaySlamSound();
                         numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
 
                         if (!this.tetrisSession.GenerateNewCurrentTetrisPiece())
@@ -287,7 +284,7 @@ namespace Tetris3D
                         }
                         if (numberOfLinesCleared == 4)
                         {
-                            audio.PlayTetrisSound();
+                            this.screenManager.audio.PlayTetrisSound();
                             this.countdown += TimeSpan.FromSeconds(5 * numberOfLinesCleared);
                             bonusSecondsAmount = (5 * numberOfLinesCleared).ToString();
                             isBonusSecondsDisplayVisible = 3000;
@@ -295,7 +292,7 @@ namespace Tetris3D
                         }
                         else if (numberOfLinesCleared >= 1)
                         {
-                            audio.PlayClearLineSound();
+                            this.screenManager.audio.PlayClearLineSound();
                             this.countdown += TimeSpan.FromSeconds(3 * numberOfLinesCleared);
                             bonusSecondsAmount = (3 * numberOfLinesCleared).ToString();
                             isBonusSecondsDisplayVisible = 3000;

@@ -57,10 +57,7 @@ namespace Tetris3D
             this.menuExampleOption3 = this.content.Load<Texture2D>(@"Textures\Menus\Toolbox");
             this.menuExampleOption4 = this.content.Load<Texture2D>(@"Textures\Menus\Tsunami");
 
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
-
-            audio.PlayMenuForwardSound();
+            this.screenManager.audio.PlayMenuForwardSound();
         }
 
         public override void Update(GameTime gameTime)
@@ -68,13 +65,13 @@ namespace Tetris3D
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (ChallengesMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (ChallengesMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }

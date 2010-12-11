@@ -50,10 +50,7 @@ namespace Tetris3D
             this.options = this.content.Load<Texture2D>(@"Texture\Menu\OptionsDisplay");
             this.tetrisCursor = this.content.Load<Texture2D>(@"Texture\Menu\OptionsCursor");
 
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
-
-            audio.PlayMenuForwardSound();
+            this.screenManager.audio.PlayMenuForwardSound();
         }
 
         public override void Update(GameTime gameTime)
@@ -71,13 +68,13 @@ namespace Tetris3D
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (MainOptionsOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (MainOptionsOptions)Math.Min((int)this.highlightedOption, this.numberOfMainOptionsMenuOptions - 1);
             }
@@ -98,13 +95,13 @@ namespace Tetris3D
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Left))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.backgroundMusicOption--;
                 this.backgroundMusicOption = (VolumeOptions)Math.Max((int)this.backgroundMusicOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Right))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.backgroundMusicOption++;
                 this.backgroundMusicOption = (VolumeOptions)Math.Min((int)this.backgroundMusicOption, 9);
             }
@@ -118,13 +115,13 @@ namespace Tetris3D
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Left))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.fxMusicOption--;
                 this.fxMusicOption = (VolumeOptions)Math.Max((int)this.fxMusicOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Right))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.fxMusicOption++;
                 this.fxMusicOption = (VolumeOptions)Math.Min((int)this.fxMusicOption, 9);
             }

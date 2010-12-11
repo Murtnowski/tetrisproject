@@ -55,6 +55,14 @@ namespace Tetris3D
         protected TextBox gameLevelText;
         protected TextBox gameLinesText;
 
+        public TetrisSession Session
+        {
+            get
+            {
+                return this.tetrisSession;
+            }
+        }
+
         public abstract string GameType
         {
             get;

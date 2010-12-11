@@ -48,6 +48,7 @@ namespace Tetris3D
             this.gameOverMenu = this.content.Load<Texture2D>(@"Textures\Menus\GameOverMenu");
 
             this.screenManager.audio.PlayGameOverSound(0f);
+            this.screenManager.audioController.Pause();
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)

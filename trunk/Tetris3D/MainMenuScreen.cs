@@ -43,23 +43,20 @@ namespace Tetris3D
             this.menuOptionOptions = this.content.Load<Texture2D>(@"Textures\Menus\Options");
             this.menuOptionExit = this.content.Load<Texture2D>(@"Textures\Menus\Exit");
 
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
-
-            audio.PlayBeginSound(false);
+            this.screenManager.audio.PlayBeginSound(false);
         }
 
         public override void Update(GameTime gameTime)
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (MainMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (MainMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }

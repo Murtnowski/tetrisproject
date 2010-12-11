@@ -46,10 +46,8 @@ namespace Tetris3D
             this.background = this.content.Load<Texture2D>(@"Textures\Menus\GameOverScreen");
             this.cursor = this.content.Load<Texture2D>(@"Textures\cursor");
             this.gameOverMenu = this.content.Load<Texture2D>(@"Textures\Menus\GameOverMenu");
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
 
-            audio.PlayGameOverSound(0f);
+            this.screenManager.audio.PlayGameOverSound(0f);
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
@@ -57,26 +55,26 @@ namespace Tetris3D
             if (fadeInBackground <= 1.50f) //background fades in first
                 fadeInBackground += 0.003f;
             if (fadeInBackground >= 1.00f && fadeInOptions == 0f) // only plays once as the options are appearing
-                audio.PlaySecondGameOverSound();
+                this.screenManager.audio.PlaySecondGameOverSound();
             if (fadeInOptions <= 1.50f && fadeInBackground >= 1.00f) //options fade in next. must happen after fadeInBackground
                 fadeInOptions += 0.004f;
             if (fadeInOptions >= 0.5f && fadeInBackground <= 2.0f)
             {
-                audio.PlayGameOverSound(-1f);
+                this.screenManager.audio.PlayGameOverSound(-1f);
                 fadeInBackground = 2.1f; //ensures this sound wont happen again
             }
 
             //controls locked until options are visible
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up) && fadeInOptions >= .35f)
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (GameOverOptions)Math.Max((int)this.highlightedOption, 0);
             }
             //controls locked until options are visible
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down)&& fadeInOptions >= .35f)
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (GameOverOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisGameOverOptions - 1);
             }

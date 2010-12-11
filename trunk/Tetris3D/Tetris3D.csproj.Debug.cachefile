@@ -34,6 +34,8 @@ Content\Textures\Menus\smile.xnb
 Content\Textures\Menus\stairway.xnb
 Content\Textures\Menus\toolbox.xnb
 Content\Textures\Menus\tsunami.xnb
+Content\Textures\Menus\OptionsCursor.xnb
+Content\Textures\Menus\OptionsDisplay.xnb
 Content\Audio\SFX\scratchloud.xnb
 Content\Audio\SFX\hit.xnb
 Content\Audio\SFX\slam.xnb
@@ -50,9 +52,6 @@ Content\Audio\SFX\VocalGameOver.xnb
 Content\Audio\SFX\Explosion.xnb
 Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\VocalBegin.xnb
-Content\Textures\Menus\OptionsDisplay.xnb
-Content\Textures\ha.xnb
-Content\Textures\Menus\OptionsCursor.xnb
 Content\Audio\TetrisAudio.xgs
 Content\Audio\TetrisWaveBank.xwb
 Content\Audio\TetrisSoundBank.xsb

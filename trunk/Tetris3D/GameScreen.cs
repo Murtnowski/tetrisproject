@@ -27,7 +27,6 @@ namespace Tetris3D
         public ScreenManager screenManager;
         public bool isHidden;
         public bool isDisabled;
-        public AudioBank audio;
 
         public GameScreen(Microsoft.Xna.Framework.Game game)
         {

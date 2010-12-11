@@ -81,9 +81,6 @@ namespace Tetris3D
             this.ZPieceTexture = this.content.Load<Texture2D>(@"Textures\Pieces\Z");
 
             uiFont = this.content.Load<SpriteFont>(@"Textures\UIFont");
-            
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
 
             this.tetrisUI = this.content.Load<Texture2D>(@"Textures\TetrisUI");
 
@@ -91,7 +88,7 @@ namespace Tetris3D
             Texture2D backgroundTexture = this.content.Load<Texture2D>(@"Textures\stars");
             scrollingBackground.Load(this.screenManager.GraphicsDevice, backgroundTexture);
 
-            this.audio.PlayBeginSound(true);
+            this.screenManager.audio.PlayBeginSound(true);
         }
 
         public override void UnloadContent()
@@ -231,7 +228,7 @@ namespace Tetris3D
             {
                 if (!this.tetrisSession.moveCurrentPieceDown())
                 {
-                    audio.PlaySlamSound();
+                    this.screenManager.audio.PlaySlamSound();
                     numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                     gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                     gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
@@ -242,12 +239,12 @@ namespace Tetris3D
                     }
                     if (numberOfLinesCleared == 4)
                     {
-                        audio.PlayTetrisSound();
+                        this.screenManager.audio.PlayTetrisSound();
                         numberOfLinesCleared = 0;
                     }
                     else if (numberOfLinesCleared >= 1)
                     {
-                        audio.PlayClearLineSound();
+                        this.screenManager.audio.PlayClearLineSound();
                         numberOfLinesCleared = 0;
                     }
                 }
@@ -259,7 +256,7 @@ namespace Tetris3D
 
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Space))
             {
-                audio.PlaySlamSound();
+                this.screenManager.audio.PlaySlamSound();
                 this.tetrisSession.slamCurrentPiece();
                 numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                 gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
@@ -271,18 +268,18 @@ namespace Tetris3D
                 }
                 if (numberOfLinesCleared == 4)
                 {
-                    audio.PlayTetrisSound();
+                    this.screenManager.audio.PlayTetrisSound();
                     numberOfLinesCleared = 0;
                 }
                 else if (numberOfLinesCleared >= 1)
                 {
-                    audio.PlayClearLineSound();
+                    this.screenManager.audio.PlayClearLineSound();
                     numberOfLinesCleared = 0;
                 }
             }
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                audio.PlayRotateSound();
+                this.screenManager.audio.PlayRotateSound();
                 this.tetrisSession.rotateCurrentPieceClockwise();
             }
 
@@ -292,7 +289,7 @@ namespace Tetris3D
 
                 if (!this.tetrisSession.isBlocksBelowCurrentPieceClear())
                 {
-                    audio.PlaySlamSound();
+                    this.screenManager.audio.PlaySlamSound();
                     numberOfLinesCleared = this.tetrisSession.clearCompletedLines();
                     gameLinesText.Text = this.tetrisSession.CurrentNumberOfClearedLines.ToString();
                     gameScoreText.Text = this.tetrisSession.CurrentScore.ToString();
@@ -303,12 +300,12 @@ namespace Tetris3D
                     }
                     if (numberOfLinesCleared == 4)
                     {
-                        audio.PlayTetrisSound();
+                        this.screenManager.audio.PlayTetrisSound();
                         numberOfLinesCleared = 0;
                     }
                     else if (numberOfLinesCleared >= 1)
                     {
-                        audio.PlayClearLineSound();
+                        this.screenManager.audio.PlayClearLineSound();
                         numberOfLinesCleared = 0;
                     }
                 }

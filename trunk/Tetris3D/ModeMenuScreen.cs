@@ -70,23 +70,20 @@ namespace Tetris3D
             this.challengesDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
             this.challengesDescriptionText.ForeColor = Color.Thistle;
 
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
-
-            audio.PlayMenuForwardSound();
+            this.screenManager.audio.PlayMenuForwardSound();
         }
 
         public override void Update(GameTime gameTime)
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (ModeMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (ModeMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }

@@ -36,6 +36,7 @@ namespace Tetris3D
             this.batch = spriteBatch;
             this.audioController = new AudioController(this.Game);
             this.audio = new AudioBank();
+            this.audio.LoadContent(this.Game.Content);
         }
 
         public override void Initialize()

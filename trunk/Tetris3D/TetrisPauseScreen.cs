@@ -42,10 +42,8 @@ namespace Tetris3D
             this.Background = this.content.Load<Texture2D>(@"Textures\blank");
             this.Cursor = this.content.Load<Texture2D>(@"Textures\cursor");
             this.PauseMenu = this.content.Load<Texture2D>(@"Textures\Menus\PauseMenu");
-            audio = new AudioBank();
-            audio.LoadContent(this.content);
 
-            audio.PlayPauseSound();
+            this.screenManager.audio.PlayPauseSound();
             this.screenManager.audioController.Pause();
         }
 
@@ -53,13 +51,13 @@ namespace Tetris3D
         {
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (TetrisPauseOptions)Math.Max((int)this.highlightedOption, 0);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
             {
-                audio.PlayMenuScrollSound();
+                this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (TetrisPauseOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }

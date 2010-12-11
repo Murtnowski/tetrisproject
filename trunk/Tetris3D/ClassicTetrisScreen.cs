@@ -344,7 +344,7 @@ namespace Tetris3D
 
                 for (int x = 0; x < this.tetrisSession.GameBoard.GetLength(0); x++)//This block draws all the pieces on the gameboard, will not draw pieces until they enter its range
                 {                                                            //Use code block below to see them before they enter the gamefield range
-                    for (int y = 0; y < this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange; y++)
+                    for (int y = 0; y < this.tetrisSession.GameBoard.GetLength(1); y++)
                     {
                         if (tetrisSession.GameBoard.GetValue(x, y) != null)
                         {

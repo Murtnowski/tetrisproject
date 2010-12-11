@@ -352,7 +352,7 @@ namespace Tetris3D
                     {
                         if (tetrisSession.GameBoard.GetValue(x, y) != null)
                         {
-                            if(!nearGameOver && (y >= (this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange - 4)) && !this.tetrisSession.isCurrentPieceAtLocation(new Point(x,y)))
+                            if(y >= (this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange - 4) && !this.tetrisSession.isCurrentPieceAtLocation(new Point(x,y)))
                             {
                                 nearGameOver = true;
                             }

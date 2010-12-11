@@ -336,8 +336,12 @@ namespace Tetris3D
             this.screenManager.batch.End();
 
             cubeEffect.World = camera.getRotationMatrix;
+
+            cubeEffect.DiffuseColor = Color.White.ToVector3();
+
             cubeEffect.Begin();
 
+            bool nearGameOver = false;
             foreach (EffectPass pass in cubeEffect.CurrentTechnique.Passes)
             {
                 pass.Begin();
@@ -348,12 +352,27 @@ namespace Tetris3D
                     {
                         if (tetrisSession.GameBoard.GetValue(x, y) != null)
                         {
+                            if(!nearGameOver && (y >= (this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange - 4)) && !this.tetrisSession.isCurrentPieceAtLocation(new Point(x,y)))
+                            {
+                                nearGameOver = true;
+                            }
                             BasicShape cube = new BasicShape(Vector3.One, new Vector3(x - 4, y, 0), tetrisSession.GameBoard[x, y].TetrisColor);
                             cube.RenderShape(this.screenManager.GraphicsDevice);
                         }
 
                     }
                 }
+                pass.End();
+            }
+
+            if (nearGameOver)
+            {
+                cubeEffect.DiffuseColor = new Color(1.0f, (gameTime.TotalGameTime.Milliseconds / 1000.0f) * 1.0f, (gameTime.TotalGameTime.Milliseconds / 1000.0f) * 1.0f).ToVector3();
+            }
+
+            foreach (EffectPass pass in cubeEffect.CurrentTechnique.Passes)
+            {
+                pass.Begin();
 
                 foreach (BasicShape cube in foundation)//Draw containment cubes
                 {

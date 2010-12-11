@@ -43,12 +43,12 @@ namespace Tetris3D
         public override void LoadContent()
         {
             this.backgroundMusicOption = (VolumeOptions)(this.screenManager.audioController.Volume / 10);
-            this.fxMusicOption = (VolumeOptions)(this.screenManager.audio.getAllSoundEffectsVolume());
+            this.fxMusicOption = (VolumeOptions)(this.screenManager.audio.GetAllSoundEffectsVolume());
 
             this.backGround = this.content.Load<Texture2D>(@"Textures\Title");
             this.cursor = this.content.Load<Texture2D>(@"Textures\Cursor");
-            this.options = this.content.Load<Texture2D>(@"Texture\Menu\OptionsDisplay");
-            this.tetrisCursor = this.content.Load<Texture2D>(@"Texture\Menu\OptionsCursor");
+            this.options = this.content.Load<Texture2D>(@"Textures\Menus\OptionsDisplay");
+            this.tetrisCursor = this.content.Load<Texture2D>(@"Textures\Menus\OptionsCursor");
 
             this.screenManager.audio.PlayMenuForwardSound();
         }
@@ -84,8 +84,9 @@ namespace Tetris3D
                 {
                     case MainOptionsOptions.BackgroundMusic: this.currentMode = Mode.BackgroundMode; break;
                     case MainOptionsOptions.FXMusic: this.currentMode = Mode.FXMode; break;
-                        //TODO: SET FX MUSIC
-                    case MainOptionsOptions.Accept: this.screenManager.audioController.Volume = (int)this.backgroundMusicOption * 10; this.screenManager.removeScreen(this); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
+                    case MainOptionsOptions.Accept: this.screenManager.audioController.Volume = (int)this.backgroundMusicOption * 10; 
+                        this.screenManager.audio.SetAllSoundEffectsVolume((int)this.fxMusicOption);
+                        this.screenManager.removeScreen(this); this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game)); break;
                     default: throw new NotImplementedException();
                 }
             }
@@ -135,24 +136,25 @@ namespace Tetris3D
         {
             this.screenManager.batch.Begin();
             this.screenManager.batch.Draw(this.backGround, new Rectangle(0, 0, 1200, 900), Color.White);
+            this.screenManager.batch.Draw(this.options, new Vector2(525, 425), Color.White);
 
             switch (this.currentMode)
             {
                 case Mode.Selection: 
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515, 300 + (int)this.highlightedOption * 100), Color.White);
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515 + (int)this.backgroundMusicOption * 25, 350), Color.Gray);
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515 + (int)this.fxMusicOption * 25, 450), Color.Gray);
+                    this.screenManager.batch.Draw(this.cursor, new Vector2(490, 430 + (int)this.highlightedOption * 72), Color.White);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.backgroundMusicOption * 34, 430), Color.Gray);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.fxMusicOption * 34, 502), Color.Gray);
                     break;
 
                 case Mode.BackgroundMode: 
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515, 300 + (int)this.highlightedOption * 100), Color.Gray);
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515 + (int)this.backgroundMusicOption * 25, 350), Color.White);
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515 + (int)this.fxMusicOption * 25, 450), Color.Gray);
+                    this.screenManager.batch.Draw(this.cursor, new Vector2(490, 430 + (int)this.highlightedOption * 72), Color.Gray);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.backgroundMusicOption * 34, 430), Color.White);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.fxMusicOption * 34, 502), Color.Gray);
                     break;
                 case Mode.FXMode: 
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515, 300 + (int)this.highlightedOption * 100), Color.Gray);
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515 + (int)this.backgroundMusicOption * 25, 350), Color.Gray);
-                    this.screenManager.batch.Draw(this.cursor, new Vector2(515 + (int)this.fxMusicOption * 25, 450), Color.White);
+                    this.screenManager.batch.Draw(this.cursor, new Vector2(490, 430 + (int)this.highlightedOption * 72), Color.Gray);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.backgroundMusicOption * 34, 430), Color.Gray);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.fxMusicOption * 34, 502), Color.White);
                     break;
             }
 

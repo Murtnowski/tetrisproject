@@ -26,7 +26,7 @@ namespace Tetris3D
             gameOverSound, secondGameOverSound, secondTetrisSound;
         //create a sound instance which plays the various sounds with alterations, if needed
         private SoundEffectInstance soundInstance, secondSoundInstance;
-        private float soundEffectsVolume = .8f;
+        private float soundEffectsVolume;
 
         protected bool isInitalized;
 
@@ -50,6 +50,8 @@ namespace Tetris3D
                 secondGameOverSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalGameOver");
                 secondTetrisSound = Content.Load<SoundEffect>(@"Audio\SFX\VocalOhYeah");
                 playVocalBegin = Content.Load<SoundEffect>(@"Audio\SFX\VocalBegin");
+
+                soundEffectsVolume = .5f;
                 this.isInitalized = true;
             }
             catch (NoAudioHardwareException)
@@ -57,9 +59,9 @@ namespace Tetris3D
             }
         }
         //sound of player getting a Tetris
-        public int getAllSoundEffectsVolume()
+        public int GetAllSoundEffectsVolume()
         {
-            return (int)soundEffectsVolume * 10;
+            return (int)(soundEffectsVolume*10);
         }
         public void SetAllSoundEffectsVolume(int number)
         {

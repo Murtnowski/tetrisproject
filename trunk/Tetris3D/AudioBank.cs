@@ -99,7 +99,7 @@ namespace Tetris3D
                 soundInstance.Play();
                 if (pitch == 0f)//plays game over sound with normal pitch
                 {
-                    secondSoundInstance = gameOverSound.CreateInstance();
+                    secondSoundInstance = gameIntroSound.CreateInstance();
                     secondSoundInstance.Volume = soundEffectsVolume;
                     secondSoundInstance.Play();
                 }

@@ -22,7 +22,7 @@ namespace Tetris3D
 
     class GameOverScreen : GameScreen
     {
-        private GameScreen finishedTetrisScreen;
+        private TetrisScreen finishedTetrisScreen;
 
         private Texture2D background;
         private Texture2D cursor;

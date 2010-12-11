@@ -21,6 +21,8 @@ using XELibrary;
 
 namespace Tetris3D
 {
+    public enum TetrisModes { Classic, Marathon, TimeTrial, Challenge1, Challenge2, Challenge3, Challenge4 };
+
     public abstract class TetrisScreen : GameScreen
     {
         protected Texture2D IPieceTexture;
@@ -63,7 +65,12 @@ namespace Tetris3D
             }
         }
 
-        public abstract string GameType
+        public abstract string GameName
+        {
+            get;
+        }
+
+        public abstract TetrisModes GameType
         {
             get;
         }

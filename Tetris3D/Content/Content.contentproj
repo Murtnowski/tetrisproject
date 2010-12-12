@@ -411,7 +411,48 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="HighScore\" />
+    <None Include="HighScore\Marathon.txt">
+      <Name>Marathon</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HighScore\TimeTrial.txt">
+      <Name>TimeTrial</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HighScore\Challenge1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Challenge1</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HighScore\Challenge2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Challenge2</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HighScore\Challenge3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Challenge3</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HighScore\Challenge4.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Challenge4</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HighScore\ClassicTetris.txt">
+      <Name>ClassicTetris</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Textures\TimeTrial\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

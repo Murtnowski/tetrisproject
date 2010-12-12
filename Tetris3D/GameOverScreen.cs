@@ -20,29 +20,41 @@ namespace Tetris3D
 {
     public enum GameOverOptions { PlayAgain, Quit };
 
-    //the GameOverScreen pops up after a game has been lost, or ended.  
-    //It is used to display the current high scores and to give the option for the user to play again or return to the menu
     class GameOverScreen : GameScreen
     {
         private TetrisScreen finishedTetrisScreen;
-        //the background image which fades into the screen
+
         private Texture2D background;
-        //the cursor used in most of the menu screens
         private Texture2D cursor;
-        //the visual menu the user receives in this screen
         private Texture2D gameOverMenu;
-        //values used to get the fade-in working in the correct amount of time
+
+        private TextBox HighScoreScoreBox;
+        private TextBox HighScoreInitialBox;
+
         private float fadeInBackground = 0f;
         private float fadeInOptions = 0f;
-        //the option that the user is currently highlighting
+
         private GameOverOptions highlightedOption = GameOverOptions.PlayAgain;
-        //the number of options the user may select from in the gameOverScreen
+
         private int numberOfTetrisGameOverOptions = 2;
 
-        public GameOverScreen(Microsoft.Xna.Framework.Game game, TetrisScreen finishedTetrisScreen) : base(game)
+        private HighScoreManager highScore;
+
+        public GameOverScreen(Microsoft.Xna.Framework.Game game, TetrisScreen finishedTetrisScreen)
+            : base(game)
         {
             this.finishedTetrisScreen = finishedTetrisScreen;
             this.finishedTetrisScreen.isDisabled = true;
+            this.highScore = new HighScoreManager(finishedTetrisScreen.GameType);
+
+            if (this.finishedTetrisScreen.tetrisSession.CurrentScore >= this.highScore.highscoreEntries[this.highScore.highscoreEntries.Length - 1].ScoreInt)
+            {
+                HighScoreForm foo = new HighScoreForm();
+                foo.ShowDialog();
+                String initals = foo.initialsBox.Text;
+                this.highScore.Insert(initals, this.finishedTetrisScreen.tetrisSession.CurrentScore);
+                this.highScore.Publish();
+            }
         }
 
         public override void LoadContent()
@@ -50,6 +62,12 @@ namespace Tetris3D
             this.background = this.content.Load<Texture2D>(@"Textures\Menus\GameOverScreen");
             this.cursor = this.content.Load<Texture2D>(@"Textures\cursor");
             this.gameOverMenu = this.content.Load<Texture2D>(@"Textures\Menus\GameOverMenu");
+
+            this.HighScoreInitialBox = new TextBox(this, new Vector2(100, 100), new Vector2(300, 600), @"Textures\UIFont", "");
+            this.HighScoreInitialBox.TextAlign = TextBox.TextAlignOption.TopLeft;
+
+            this.HighScoreScoreBox = new TextBox(this, new Vector2(100, 100), new Vector2(300, 600), @"Textures\UIFont", "");
+            this.HighScoreScoreBox.TextAlign = TextBox.TextAlignOption.TopRight;
 
             this.screenManager.audio.PlayGameOverSound(0f);
             this.screenManager.audioController.Stop();
@@ -77,7 +95,7 @@ namespace Tetris3D
                 this.highlightedOption = (GameOverOptions)Math.Max((int)this.highlightedOption, 0);
             }
             //controls locked until options are visible
-            else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down)&& fadeInOptions >= .35f)
+            else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down) && fadeInOptions >= .35f)
             {
                 this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
@@ -87,7 +105,7 @@ namespace Tetris3D
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter) && fadeInOptions >= .35f)
             {
                 this.screenManager.removeScreen(this.finishedTetrisScreen);
-                this.screenManager.removeScreen(this); 
+                this.screenManager.removeScreen(this);
                 switch (this.highlightedOption)
                 {
                     case GameOverOptions.PlayAgain: this.screenManager.addScreen(this.getNewGame()); this.screenManager.audioController.Play(); break;
@@ -104,12 +122,21 @@ namespace Tetris3D
             this.screenManager.batch.Draw(this.gameOverMenu, new Vector2(855, 375), new Color(Color.White, fadeInOptions));
             switch (this.highlightedOption)
             {
-                case GameOverOptions.PlayAgain: this.screenManager.batch.Draw(this.cursor, new Vector2(820, 384), 
+                case GameOverOptions.PlayAgain: this.screenManager.batch.Draw(this.cursor, new Vector2(820, 384),
                     new Color(Color.White, fadeInOptions)); break;
-                case GameOverOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(820, 493), 
+                case GameOverOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(820, 493),
                     new Color(Color.White, fadeInOptions)); break;
                 default: throw new NotImplementedException();
             }
+
+            this.HighScoreInitialBox.Text = this.highScore.HighScoreInitialText;
+            this.HighScoreInitialBox.ForeColor = new Color(Color.White, this.fadeInOptions);
+            this.HighScoreScoreBox.Text = this.highScore.HighScoreScoreText;
+            this.HighScoreScoreBox.ForeColor = new Color(Color.White, this.fadeInOptions);
+
+            this.HighScoreInitialBox.Draw(this.screenManager.batch);
+            this.HighScoreScoreBox.Draw(this.screenManager.batch);
+
             this.screenManager.batch.End();
         }
 

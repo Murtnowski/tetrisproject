@@ -50,6 +50,7 @@ namespace Tetris3D
         {
             //creates a new session with a board thats 10x24 (even though the real board is 10x20 we like to display the piece as it falls in)
             this.tetrisSession = new TetrisSession(new Vector2(10, 24)); 
+
             //initialize the camera
             this.camera = new Camera(this.screenManager.Game, this.screenManager.GraphicsDevice);
             this.camera.Initialize();
@@ -276,7 +277,7 @@ namespace Tetris3D
                 }
             }
             //if UP was pressed
-            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
+            if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up) || this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Z))
             {//play a rotate sound and rotate the piece clockwise
                 this.screenManager.audio.PlayRotateSound();
                 this.tetrisSession.rotateCurrentPieceClockwise();

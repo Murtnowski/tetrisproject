@@ -344,34 +344,33 @@ namespace Tetris3D
             cubeEffect.Begin();
 
             bool nearGameOver = false;
-            foreach (EffectPass pass in cubeEffect.CurrentTechnique.Passes)
-            {
-                pass.Begin();
-                //This block draws all the pieces on the gameboard, will not draw pieces until they enter its range
-                for (int x = 0; x < this.tetrisSession.GameBoard.GetLength(0); x++)
+                foreach (EffectPass pass in cubeEffect.CurrentTechnique.Passes)
                 {
-                    //Use code block below to see them before they enter the gamefield range                                   
-                    for (int y = 0; y < this.tetrisSession.GameBoard.GetLength(1); y++)
+                    pass.Begin();
+                    //This block draws all the pieces on the gameboard, will not draw pieces until they enter its range
+                    for (int x = 0; x < this.tetrisSession.GameBoard.GetLength(0); x++)
                     {
-                        //if the point on the board is not empty
-                        if (tetrisSession.GameBoard.GetValue(x, y) != null)
+                        //Use code block below to see them before they enter the gamefield range                                   
+                        for (int y = 0; y < this.tetrisSession.GameBoard.GetLength(1); y++)
                         {
-                            //check if the player is near game over
-                            if(y >= (this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange - 4) && !this.tetrisSession.isCurrentPieceAtLocation(new Point(x,y)))
+                            //if the point on the board is not empty
+                            if (tetrisSession.GameBoard.GetValue(x, y) != null)
                             {
-                                nearGameOver = true;
+                                //check if the player is near game over
+                                if (y >= (this.tetrisSession.GameBoard.GetLength(1) - TetrisSession.GameOverRange - 4) && !this.tetrisSession.isCurrentPieceAtLocation(new Point(x, y)))
+                                {
+                                    nearGameOver = true;
+                                }
+                                //draw the selected cubes
+                                BasicShape cube = new BasicShape(Vector3.One, new Vector3(x - 4, y, 0), tetrisSession.GameBoard[x, y].TetrisColor);
+                                cube.RenderShape(this.screenManager.GraphicsDevice);
                             }
-                            //draw the selected cubes
-                            BasicShape cube = new BasicShape(Vector3.One, new Vector3(x - 4, y, 0), tetrisSession.GameBoard[x, y].TetrisColor);
-                            cube.RenderShape(this.screenManager.GraphicsDevice);
+
                         }
-
                     }
+                    pass.End();
                 }
-                pass.End();
-            }
-
-            if (nearGameOver)
+            if (nearGameOver && !isDisabled)
             {
                 //diffuse red into the diffused light which gives the appearance of a red alarm going off onto the board
                 cubeEffect.DiffuseColor = new Color(1.0f, (gameTime.TotalGameTime.Milliseconds / 1000.0f) * 1.0f, (gameTime.TotalGameTime.Milliseconds / 1000.0f) * 1.0f).ToVector3();

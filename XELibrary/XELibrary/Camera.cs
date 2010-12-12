@@ -28,14 +28,14 @@ namespace XELibrary
         private Matrix view;
         private Matrix rotationMatrix;
 
-        protected Vector3 cameraPosition = new Vector3(25, 25, 25); //to zoom out of FOV +1 each vector component
+        protected Vector3 cameraPosition = new Vector3(23, 23, 23); //to zoom out of FOV +1 each vector component
         private Vector3 cameraTarget = new Vector3(0,10,0);
         private Vector3 cameraUpVector = Vector3.Up;
 
         private Vector3 cameraReference = new Vector3(0.0f, 0.0f, -1.0f);
 
-        private float cameraYaw = 20.0f;   //should be set to 0 once testing is done
-        private float cameraPitch = 0.0f;
+        private float cameraYaw = 47.0f;   //should be set to 0 once testing is done
+        private float cameraPitch = 3.0f;
 
         protected Vector3 movement = Vector3.Zero;
         

@@ -1,3 +1,14 @@
+#region File Description
+//-----------------------------------------------------------------------------
+// InputHandler.cs
+//
+// Microsoft XNA Community Game Platform
+// Copyright (C) Microsoft Corporation. All rights reserved.
+// Borrowed from Microsoft XNA GameStudios 3.1 Unleashed (Textbook)
+// Edited to fit the purposes of Tetris3D by Damon Chastain
+//-----------------------------------------------------------------------------
+#endregion
+
 #region Using Statements
 using System;
 using System.Collections.Generic;

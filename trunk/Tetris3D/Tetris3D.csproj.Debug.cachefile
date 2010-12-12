@@ -55,3 +55,10 @@ Content\Audio\SFX\VocalBegin.xnb
 Content\Audio\TetrisAudio.xgs
 Content\Audio\TetrisWaveBank.xwb
 Content\Audio\TetrisSoundBank.xsb
+Content\HighScore\Marathon.txt
+Content\HighScore\TimeTrial.txt
+Content\HighScore\Challenge1.txt
+Content\HighScore\Challenge2.txt
+Content\HighScore\Challenge3.txt
+Content\HighScore\Challenge4.txt
+Content\HighScore\ClassicTetris.txt

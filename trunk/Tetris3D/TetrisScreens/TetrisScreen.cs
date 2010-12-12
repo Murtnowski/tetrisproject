@@ -47,7 +47,7 @@ namespace Tetris3D
         protected BasicEffect cubeEffect;
         protected Camera camera;
 
-        protected TetrisSession tetrisSession;
+        public TetrisSession tetrisSession;
 
         protected ScrollingBackground scrollingBackground;
 

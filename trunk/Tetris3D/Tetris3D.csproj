@@ -18,7 +18,11 @@
     </Thumbnail>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <StartupObject>Tetris3D.Program</StartupObject>
-    <PublishUrl>publish\</PublishUrl>
+    <ManifestCertificateThumbprint>D2466069698E45E020F971AB67285C902BCBB06E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Tetris3D_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>C:\Users\Murtnowski\Desktop\Publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -28,9 +32,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -92,6 +97,12 @@
     <Compile Include="AudioBank.cs" />
     <Compile Include="AudioController.cs" />
     <Compile Include="BasicShape.cs" />
+    <Compile Include="HighScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighScoreForm.Designer.cs">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HighScoreManager.cs" />
     <Compile Include="TetrisScreens\Challenge1TetrisScreen.cs" />
     <Compile Include="TetrisScreens\Challenge2TetrisScreen.cs" />
@@ -174,6 +185,14 @@
       <Project>{D47B951C-B288-4382-8EF8-02F26B000D9B}</Project>
       <Name>XELibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HighScoreForm.resx">
+      <DependentUpon>HighScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tetris3D_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

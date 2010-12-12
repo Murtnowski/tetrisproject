@@ -27,6 +27,7 @@ namespace Tetris3D
         private Texture2D background;
         private Texture2D cursor;
         private Texture2D gameOverMenu;
+        private Texture2D highScoreBorder;
 
         private TextBox HighScoreScoreBox;
         private TextBox HighScoreInitialBox;
@@ -62,12 +63,20 @@ namespace Tetris3D
             this.background = this.content.Load<Texture2D>(@"Textures\Menus\GameOverScreen");
             this.cursor = this.content.Load<Texture2D>(@"Textures\cursor");
             this.gameOverMenu = this.content.Load<Texture2D>(@"Textures\Menus\GameOverMenu");
+            this.highScoreBorder = this.content.Load<Texture2D>(@"Textures\Menus\HighScoresBorder");
 
-            this.HighScoreInitialBox = new TextBox(this, new Vector2(100, 100), new Vector2(300, 600), @"Textures\UIFont", "");
+            this.HighScoreInitialBox = new TextBox(this, new Vector2(873, 240), new Vector2(80, 410), @"Textures\UIFont", "");
             this.HighScoreInitialBox.TextAlign = TextBox.TextAlignOption.TopLeft;
 
-            this.HighScoreScoreBox = new TextBox(this, new Vector2(100, 100), new Vector2(300, 600), @"Textures\UIFont", "");
+            this.HighScoreScoreBox = new TextBox(this, new Vector2(1004, 240), new Vector2(100, 410), @"Textures\UIFont", "");
             this.HighScoreScoreBox.TextAlign = TextBox.TextAlignOption.TopRight;
+
+
+            this.HighScoreInitialBox.Text = this.highScore.HighScoreInitialText;
+            this.HighScoreInitialBox.spriteFont.LineSpacing = 41;
+            this.HighScoreInitialBox.TextAlign = TextBox.TextAlignOption.TopCenter;
+            this.HighScoreScoreBox.Text = this.highScore.HighScoreScoreText;
+            this.HighScoreScoreBox.TextAlign = TextBox.TextAlignOption.TopCenter;
 
             this.screenManager.audio.PlayGameOverSound(0f);
             this.screenManager.audioController.Stop();
@@ -117,22 +126,21 @@ namespace Tetris3D
 
         public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
+            this.HighScoreInitialBox.ForeColor = new Color(Color.SkyBlue, this.fadeInOptions);
+            this.HighScoreScoreBox.ForeColor = new Color(Color.SkyBlue, this.fadeInOptions);
+
             this.screenManager.batch.Begin();
             this.screenManager.batch.Draw(this.background, new Rectangle(0, 0, 1200, 900), new Color(Color.MistyRose, fadeInBackground));
-            this.screenManager.batch.Draw(this.gameOverMenu, new Vector2(855, 375), new Color(Color.White, fadeInOptions));
+            this.screenManager.batch.Draw(this.gameOverMenu, new Vector2(155, 375), new Color(Color.White, fadeInOptions));
+            this.screenManager.batch.Draw(this.highScoreBorder, new Vector2(825, 135), new Color(Color.White, fadeInOptions));
             switch (this.highlightedOption)
             {
-                case GameOverOptions.PlayAgain: this.screenManager.batch.Draw(this.cursor, new Vector2(820, 384),
+                case GameOverOptions.PlayAgain: this.screenManager.batch.Draw(this.cursor, new Vector2(120, 384),
                     new Color(Color.White, fadeInOptions)); break;
-                case GameOverOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(820, 493),
+                case GameOverOptions.Quit: this.screenManager.batch.Draw(this.cursor, new Vector2(120, 493),
                     new Color(Color.White, fadeInOptions)); break;
                 default: throw new NotImplementedException();
             }
-
-            this.HighScoreInitialBox.Text = this.highScore.HighScoreInitialText;
-            this.HighScoreInitialBox.ForeColor = new Color(Color.White, this.fadeInOptions);
-            this.HighScoreScoreBox.Text = this.highScore.HighScoreScoreText;
-            this.HighScoreScoreBox.ForeColor = new Color(Color.White, this.fadeInOptions);
 
             this.HighScoreInitialBox.Draw(this.screenManager.batch);
             this.HighScoreScoreBox.Draw(this.screenManager.batch);

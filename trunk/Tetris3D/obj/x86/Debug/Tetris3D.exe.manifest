@@ -52,14 +52,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="95232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="95744">
       <assemblyIdentity name="Tetris3D" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ymRPtRaBT3pLc79d2MCSokV/LUY=</dsig:DigestValue>
+        <dsig:DigestValue>rfn65JpJYzf93pYYTAZeAasXg+s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -71,7 +71,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>NGHCUO0zomxg4sRzDYWQg8CAzsI=</dsig:DigestValue>
+        <dsig:DigestValue>Cu3/mRSN4HiR4a/eWGRG/r5u81g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -225,7 +225,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>rzXnMwoUUoTY4+Y08DyESKR1mvk=</dsig:DigestValue>
+      <dsig:DigestValue>RsU0t1CLmVvVEd4UrLFUq+M26gY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Audio\TetrisSoundBank.xsb" size="332">
@@ -234,7 +234,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>TlB0TWFghughf8SpKHT0215mTrA=</dsig:DigestValue>
+      <dsig:DigestValue>cuMLVh3B/nUkeEgGJ2R7SAC7EZE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Audio\TetrisWaveBank.xwb" size="14255140">
@@ -243,7 +243,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>VzlzhmlaqnVGqkJvDPNlLDVq9Es=</dsig:DigestValue>
+      <dsig:DigestValue>gm+tDcNoAxLu8ViKPn8toRz7U20=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\HighScore\Challenge1.txt" size="89">
@@ -288,7 +288,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>O8FNZDO8QYQ+4UiLnMcP+XubdBE=</dsig:DigestValue>
+      <dsig:DigestValue>s11Wim+LfNxc5HlEGqeR9EyJcfY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\HighScore\Marathon.txt" size="89">
@@ -451,6 +451,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>s8RGETT4p4uVY+qPwEtAsZaxu8s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Textures\Menus\HighScoresBorder.xnb" size="731985">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>veQPknE8KFrkmk7jwohNATWUBt8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\Menus\Marathon.xnb" size="30333">

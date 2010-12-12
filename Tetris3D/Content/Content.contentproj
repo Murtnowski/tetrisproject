@@ -411,12 +411,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="HighScore\ClassicTetris.txt">
-      <Name>ClassicTetris</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
+    <Folder Include="HighScore\" />
     <Folder Include="Textures\TimeTrial\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

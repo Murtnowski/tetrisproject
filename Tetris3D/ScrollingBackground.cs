@@ -5,6 +5,7 @@
 // Microsoft XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
 // http://msdn.microsoft.com/en-us/library/bb203868(v=XNAGameStudio.31).aspx
+// Slightly edited to fit the purposes of Tetris3D by Damon Chastain
 //-----------------------------------------------------------------------------
 #endregion
 

@@ -20,19 +20,23 @@ namespace Tetris3D
 {
     public enum GameOverOptions { PlayAgain, Quit };
 
+    //the GameOverScreen pops up after a game has been lost, or ended.  
+    //It is used to display the current high scores and to give the option for the user to play again or return to the menu
     class GameOverScreen : GameScreen
     {
         private TetrisScreen finishedTetrisScreen;
-
+        //the background image which fades into the screen
         private Texture2D background;
+        //the cursor used in most of the menu screens
         private Texture2D cursor;
+        //the visual menu the user receives in this screen
         private Texture2D gameOverMenu;
-
+        //values used to get the fade-in working in the correct amount of time
         private float fadeInBackground = 0f;
         private float fadeInOptions = 0f;
-
+        //the option that the user is currently highlighting
         private GameOverOptions highlightedOption = GameOverOptions.PlayAgain;
-
+        //the number of options the user may select from in the gameOverScreen
         private int numberOfTetrisGameOverOptions = 2;
 
         public GameOverScreen(Microsoft.Xna.Framework.Game game, TetrisScreen finishedTetrisScreen) : base(game)

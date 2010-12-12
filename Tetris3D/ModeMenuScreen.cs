@@ -21,21 +21,25 @@ namespace Tetris3D
 
     public class ModeMenuScreen : GameScreen
     {
+        //the background used in most of the menu screens
         private Texture2D backGround;
+        //the cursor used in most of the menu screens
         private Texture2D cursor;
-        private Texture2D menuOptionClassic;
-        private Texture2D menuOptionChallenges;
-        private Texture2D menuOptionTimeTrial;
-        private Texture2D menuOptionMarathon;
-        private Texture2D menuOptionBack;
+        //the next Texture2Ds are visuals of the 5 user options presented in this menu
+        private Texture2D menuOptionClassic;   //1
+        private Texture2D menuOptionChallenges;//2
+        private Texture2D menuOptionTimeTrial; //3
+        private Texture2D menuOptionMarathon;  //4
+        private Texture2D menuOptionBack;      //5
 
-        private TextBox classicDescriptionText;
-        private TextBox marathonDescriptionText;
-        private TextBox timeTrialDescriptionText;
-        private TextBox challengesDescriptionText;
-
+        //the next 4 textboxes are textual descriptions of 4 of the 5 options (back excluded)
+        private TextBox classicDescriptionText;   //1
+        private TextBox marathonDescriptionText;  //2
+        private TextBox timeTrialDescriptionText; //3
+        private TextBox challengesDescriptionText;//4
+        //the option that the user is currently highlighting
         private ModeMenuOptions highlightedOption = ModeMenuOptions.Classic;
-
+        //the number of options the user has to choose from
         private int numberOfTetrisMainMenuOptions = 5;
 
         public ModeMenuScreen(Microsoft.Xna.Framework.Game game)
@@ -53,6 +57,7 @@ namespace Tetris3D
             this.menuOptionChallenges = this.content.Load<Texture2D>(@"Textures\Menus\Challenges");
             this.menuOptionBack = this.content.Load<Texture2D>(@"Textures\Menus\Back");
 
+            //initializing the values of the 4 textboxes
             this.classicDescriptionText = new TextBox(this, new Vector2(75, 410f), new Vector2(450, 400), @"Textures\Kootenay", 
                 "Objective: Get the highest score possible without stacking over the top of the playing field", true);
             this.classicDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
@@ -69,28 +74,36 @@ namespace Tetris3D
                 "Objective: Clear all of the pre-placed blocks on the board to achieve victory", true);
             this.challengesDescriptionText.TextAlign = TextBox.TextAlignOption.TopLeft;
             this.challengesDescriptionText.ForeColor = Color.Thistle;
-
+            //playing an initial sound upon this screen initializing
             this.screenManager.audio.PlayMenuForwardSound();
         }
 
         public override void Update(GameTime gameTime)
         {
+            //if UP was pressed
             if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Up))
             {
+                //decrement the highlighted option and play a sound
                 this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption--;
                 this.highlightedOption = (ModeMenuOptions)Math.Max((int)this.highlightedOption, 0);
             }
+            //if DOWN was pressed
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Down))
-            {
+            {   
+                //increment the highlighted option and play a sound
                 this.screenManager.audio.PlayMenuScrollSound();
                 this.highlightedOption++;
                 this.highlightedOption = (ModeMenuOptions)Math.Min((int)this.highlightedOption, this.numberOfTetrisMainMenuOptions - 1);
             }
+            //if ENTER was pressed
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
+                //depending on which option is highlighted...
                 switch (this.highlightedOption)
                 {
+                    //remove this menu screen and add a screen based upon the selection.  Begin playing music if specified.
+                    //or go back
                     case ModeMenuOptions.Classic: this.screenManager.removeScreen(this); this.screenManager.addScreen(new ClassicTetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
                     case ModeMenuOptions.Marathon: this.screenManager.removeScreen(this); this.screenManager.addScreen(new MarathonTetrisScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
                     case ModeMenuOptions.TimeTrial: this.screenManager.removeScreen(this); this.screenManager.addScreen(new TimeTrialScreen(this.screenManager.Game)); this.screenManager.audioController.Play(); break;
@@ -103,18 +116,20 @@ namespace Tetris3D
 
         public override void Draw(GameTime gameTime)
         {
+            //begin drawing
             this.screenManager.batch.Begin();
+            //draw the background and the 5 visible options
             this.screenManager.batch.Draw(this.backGround, new Rectangle(0, 0, 1200, 900), Color.White);
             this.screenManager.batch.Draw(this.menuOptionClassic, new Vector2(550, 415), Color.White);
             this.screenManager.batch.Draw(this.menuOptionMarathon, new Vector2(550, 470), Color.White);
             this.screenManager.batch.Draw(this.menuOptionTimeTrial, new Vector2(550, 525), Color.White);
             this.screenManager.batch.Draw(this.menuOptionChallenges, new Vector2(550, 580), Color.White);
             this.screenManager.batch.Draw(this.menuOptionBack, new Vector2(550, 635), Color.White);
-
+            //depending on which option is highlighted...
             switch (this.highlightedOption)
             {
+                //draw a cursor indicating the highlighted option and draw a textual description of the highlighted option
                 case ModeMenuOptions.Classic: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 417), Color.White);
-                    //TODO: Draw text boxes by each game mode to give a short description
                     this.classicDescriptionText.Draw(this.screenManager.batch); break;
                 case ModeMenuOptions.Marathon: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 472), Color.White);
                     this.marathonDescriptionText.Draw(this.screenManager.batch); break;
@@ -125,6 +140,7 @@ namespace Tetris3D
                 case ModeMenuOptions.Back: this.screenManager.batch.Draw(this.cursor, new Vector2(515, 637), Color.White); break;
                 default: throw new NotImplementedException();
             }
+            //end drawing
             this.screenManager.batch.End();
         }
     }

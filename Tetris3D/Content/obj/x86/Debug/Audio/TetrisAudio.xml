@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sections>
+  <WaveBank Name="TetrisWaveBank">Wave Bank
+{
+    Name = TetrisWaveBank;
+    Xbox File = Xbox\TetrisWaveBank.xwb;
+    Windows File = Win\TetrisWaveBank.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Seek Tables = 1;
+    Compression Preset Name = xWMA Compression;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
+    Bank Last Revised Low = 2467448102;
+    Bank Last Revised High = 30119911;
+
+    Wave
+    {
+        Name = Anumati;
+        File = Music\Anumati.wav;
+        Build Settings Last Modified Low = 1798947604;
+        Build Settings Last Modified High = 30119811;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 0;
+            Play Region Offset = 44;
+            Play Region Length = 17586432;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1818687100;
+            Last Modified High = 30119787;
+        }
+    }
+
+    Wave
+    {
+        Name = Durga;
+        File = Music\Durga.wav;
+        Build Settings Last Modified Low = 1798947604;
+        Build Settings Last Modified High = 30119811;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 0;
+            Play Region Offset = 44;
+            Play Region Length = 19521792;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1818997118;
+            Last Modified High = 30119787;
+        }
+    }
+
+    Wave
+    {
+        Name = Kuvera;
+        File = Music\Kuvera.wav;
+        Build Settings Last Modified Low = 1798947604;
+        Build Settings Last Modified High = 30119811;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 0;
+            Play Region Offset = 44;
+            Play Region Length = 21636864;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1819317136;
+            Last Modified High = 30119787;
+        }
+    }
+
+    Wave
+    {
+        Name = Manju;
+        File = Music\Manju.wav;
+        Build Settings Last Modified Low = 1798957605;
+        Build Settings Last Modified High = 30119811;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 0;
+            Play Region Offset = 44;
+            Play Region Length = 22768126;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1829437715;
+            Last Modified High = 30119787;
+        }
+    }
+
+    Wave
+    {
+        Name = Varuna;
+        File = Music\Varuna.wav;
+        Build Settings Last Modified Low = 1798957605;
+        Build Settings Last Modified High = 30119811;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 0;
+            Play Region Offset = 44;
+            Play Region Length = 22715136;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1829777734;
+            Last Modified High = 30119787;
+        }
+    }
+}
+
+</WaveBank>
+</Sections>

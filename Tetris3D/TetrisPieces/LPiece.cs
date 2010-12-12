@@ -114,10 +114,10 @@ namespace Tetris3D
         protected override Point[] pointsForSouthOrientation()
         {
             Point[] newLocation = new Point[4];
-            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);         //  3 2
-            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);     //    1
-            newLocation[2] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2);     //    0 
-            newLocation[3] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 2); 
+            newLocation[0] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);         //  3 2
+            newLocation[1] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);     //    1
+            newLocation[2] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 2);     //    0 
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 2); 
 
             return newLocation;
         }

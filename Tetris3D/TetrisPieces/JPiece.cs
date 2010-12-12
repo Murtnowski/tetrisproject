@@ -100,9 +100,9 @@ namespace Tetris3D
         {
             Point[] newLocation = new Point[4];
             newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
-            newLocation[1] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
-            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
-            newLocation[3] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+            newLocation[1] = new Point(this.referanceLocation.X - 2, this.referanceLocation.Y);
+            newLocation[2] = new Point(this.referanceLocation.X - 2, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y);
 
             return newLocation;
         }
@@ -129,10 +129,10 @@ namespace Tetris3D
         protected override Point[] pointsForWestOrientation()
         {
             Point[] newLocation = new Point[4];
-            newLocation[0] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
-            newLocation[1] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y + 1);
-            newLocation[2] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
-            newLocation[3] = new Point(this.referanceLocation.X + 1, this.referanceLocation.Y);
+            newLocation[0] = new Point(this.referanceLocation.X - 1, this.referanceLocation.Y + 1);
+            newLocation[1] = new Point(this.referanceLocation.X, this.referanceLocation.Y + 1);
+            newLocation[2] = new Point(this.referanceLocation.X - 2, this.referanceLocation.Y + 1);
+            newLocation[3] = new Point(this.referanceLocation.X, this.referanceLocation.Y);
 
             return newLocation;
         }

@@ -52,14 +52,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="94720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="95232">
       <assemblyIdentity name="Tetris3D" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>7FwkTsnX/1YNCF2p7rw8124uUtM=</dsig:DigestValue>
+        <dsig:DigestValue>ymRPtRaBT3pLc79d2MCSokV/LUY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -280,6 +280,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>UrzXJObHdMy6LUWVPs9SXEE+9Bc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\HighScore\ClassicTetris.txt" size="91">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>O8FNZDO8QYQ+4UiLnMcP+XubdBE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\HighScore\Marathon.txt" size="89">

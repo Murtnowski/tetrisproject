@@ -26,6 +26,11 @@ namespace Tetris3D
     public class TetrisSession
     {
         /// <summary>
+        /// Wall kicks move the piece away from the wall before rotate if able
+        /// </summary>
+        private bool enableWallKick = true;
+
+        /// <summary>
         /// The number of rows from the top of the board that if a piece ends up in the game is over
         /// </summary>
         public const int GameOverRange = 4;
@@ -452,6 +457,93 @@ namespace Tetris3D
         /// <returns>If the Tetris piece was successfully rotated return true</returns>
         public bool rotateCurrentPieceClockwise()
         {
+            //s move left
+            //z move right
+            //i left twice right once
+            //L move left
+            //J move right
+
+            //zero right
+            //one left
+
+            int wallkickMovement = 0;
+            //-1 left
+            //1 right
+            //-2 left
+
+            if (this.enableWallKick)
+            {
+                switch (this.currentTetrisPiece.Type)
+                {
+                    case TetrisPieces.IBlock:
+                        if(this.currentTetrisPiece.Orientation == Orientations.North || this.currentTetrisPiece.Orientation == Orientations.South)
+                        {
+                            if(this.currentTetrisPiece.ReferanceLocation.X == 0)
+                            {
+                                this.moveCurrentPieceRight();
+                                wallkickMovement = 1;
+                            }
+                            else if (this.currentTetrisPiece.ReferanceLocation.X == this.gameBoard.GetLength(0) - 1)
+                            {
+                                this.moveCurrentPieceLeft();
+                                this.moveCurrentPieceLeft();
+                                wallkickMovement = -2;
+                            }
+                            else if (this.currentTetrisPiece.ReferanceLocation.X == this.gameBoard.GetLength(0) - 2)
+                            {
+                                this.moveCurrentPieceLeft();
+                                wallkickMovement = -1;
+                            }
+                        }
+                        break;
+                    case TetrisPieces.LBlock:
+                        if (this.currentTetrisPiece.ReferanceLocation.X == this.gameBoard.GetLength(0) - 2 && (this.currentTetrisPiece.Orientation == Orientations.North || this.currentTetrisPiece.Orientation == Orientations.South))
+                        {
+                            this.moveCurrentPieceLeft();
+                            wallkickMovement = -1;
+                        }
+                        break;
+                    case TetrisPieces.JBlock:
+                        if (this.currentTetrisPiece.ReferanceLocation.X == 1 && (this.currentTetrisPiece.Orientation == Orientations.North || this.currentTetrisPiece.Orientation == Orientations.South))
+                        {
+                            this.moveCurrentPieceRight();
+                            wallkickMovement = 1;
+                        } 
+                        break;
+                    case TetrisPieces.OBlock:
+                        wallkickMovement = 0;
+                        break;
+                    case TetrisPieces.SBlock:
+                        if (this.currentTetrisPiece.ReferanceLocation.X == this.gameBoard.GetLength(0) - 1 && (this.currentTetrisPiece.Orientation == Orientations.East || this.currentTetrisPiece.Orientation == Orientations.West))
+                        {
+                            this.moveCurrentPieceLeft();
+                            wallkickMovement = -1;
+                        } 
+                        break;
+                    case TetrisPieces.TBlock:
+                        if (this.currentTetrisPiece.ReferanceLocation.X == 0 && (this.currentTetrisPiece.Orientation == Orientations.East || this.currentTetrisPiece.Orientation == Orientations.West))
+                        {
+                            this.moveCurrentPieceRight();
+                            wallkickMovement = 1;
+
+                        }
+                        else if (this.currentTetrisPiece.ReferanceLocation.X == this.gameBoard.GetLength(0) - 1 && (this.currentTetrisPiece.Orientation == Orientations.East || this.currentTetrisPiece.Orientation == Orientations.West))
+                        {
+                            this.moveCurrentPieceLeft();
+                            wallkickMovement = -1;
+                        }
+                        break;
+                    case TetrisPieces.ZBlock:
+                        if (this.currentTetrisPiece.ReferanceLocation.X == 0 && (this.currentTetrisPiece.Orientation == Orientations.East || this.currentTetrisPiece.Orientation == Orientations.West))
+                        {
+                            this.moveCurrentPieceRight();
+                            wallkickMovement = 1;
+                        }
+                       break;
+                    default: throw new NotImplementedException();
+                }
+            }
+
             if (this.isCurrentPieceAbleToRotateClockwise())
             {
                 this.removeBlocksFromGameboard(this.currentTetrisPiece.PieceLocations);
@@ -459,12 +551,30 @@ namespace Tetris3D
                 this.currentTetrisPiece.rotateClockwise();
 
                 this.addBlocksToGameBoard(this.currentTetrisPiece.PieceLocations, this.currentTetrisPiece.Color);
+
+                return true;
             }
             else
             {
+                if (this.enableWallKick)
+                {
+                    if (wallkickMovement == -2)
+                    {
+                        this.moveCurrentPieceRight();
+                        this.moveCurrentPieceRight();
+                    }
+                    else if (wallkickMovement == -1)
+                    {
+                        this.moveCurrentPieceRight();
+                    }
+                    else if (wallkickMovement == 1)
+                    {
+                        this.moveCurrentPieceLeft();
+                    }
+                }
+
                 return false;
             }
-            return false;
         }
 
         /// <summary>

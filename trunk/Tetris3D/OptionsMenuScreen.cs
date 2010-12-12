@@ -142,14 +142,14 @@ namespace Tetris3D
                 //decrement the highlighted option and play a sound
                 this.screenManager.audio.PlayMenuScrollSound();
                 this.fxMusicOption--;
-                this.fxMusicOption = (VolumeOptions)Math.Max((int)this.fxMusicOption, 0);
+                this.fxMusicOption = (VolumeOptions)Math.Max((int)this.fxMusicOption, 1);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Right))
             {
                 //increment the highlighted option and play a sound
                 this.screenManager.audio.PlayMenuScrollSound();
                 this.fxMusicOption++;
-                this.fxMusicOption = (VolumeOptions)Math.Min((int)this.fxMusicOption, 9);
+                this.fxMusicOption = (VolumeOptions)Math.Min((int)this.fxMusicOption, 10);
             }
             else if (this.screenManager.input.KeyboardState.WasKeyPressed(Keys.Enter))
             {
@@ -172,19 +172,19 @@ namespace Tetris3D
                 case Mode.Selection: 
                     this.screenManager.batch.Draw(this.cursor, new Vector2(490, 430 + (int)this.highlightedOption * 72), Color.White);
                     this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.backgroundMusicOption * 34, 430), Color.Gray);
-                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.fxMusicOption * 34, 502), Color.Gray);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(660 + (int)this.fxMusicOption * 34, 502), Color.Gray);
                     break;
                 //draw  the cursors in the given positions that are based upon the highlighted options and the background(or fx) options selections
                 case Mode.BackgroundMode: 
                     this.screenManager.batch.Draw(this.cursor, new Vector2(490, 430 + (int)this.highlightedOption * 72), Color.Gray);
                     this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.backgroundMusicOption * 34, 430), Color.White);
-                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.fxMusicOption * 34, 502), Color.Gray);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(660 + (int)this.fxMusicOption * 34, 502), Color.Gray);
                     break;
                 //draw  the cursors in the given positions that are based upon the highlighted options and the background(or fx) options selections
                 case Mode.FXMode: 
                     this.screenManager.batch.Draw(this.cursor, new Vector2(490, 430 + (int)this.highlightedOption * 72), Color.Gray);
                     this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.backgroundMusicOption * 34, 430), Color.Gray);
-                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(694 + (int)this.fxMusicOption * 34, 502), Color.White);
+                    this.screenManager.batch.Draw(this.tetrisCursor, new Vector2(660 + (int)this.fxMusicOption * 34, 502), Color.White);
                     break;
             }
             //finished drawing

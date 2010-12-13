@@ -4,7 +4,7 @@ Content\Textures\UIFont.xnb
 Content\Textures\ColorMap.xnb
 Content\Textures\stars.xnb
 Content\Textures\leather.xnb
-Content\Textures\Title.xnb
+Content\Textures\OldTitle.xnb
 Content\Textures\cursor.xnb
 Content\Textures\TetrisUI.xnb
 Content\Textures\blank.xnb
@@ -37,6 +37,9 @@ Content\Textures\Menus\tsunami.xnb
 Content\Textures\Menus\OptionsCursor.xnb
 Content\Textures\Menus\OptionsDisplay.xnb
 Content\Textures\Menus\HighScoresBorder.xnb
+Content\Textures\Menus\StartScreen.xnb
+Content\Textures\Menus\StartScreenText.xnb
+Content\Textures\Title.xnb
 Content\Audio\SFX\scratchloud.xnb
 Content\Audio\SFX\hit.xnb
 Content\Audio\SFX\slam.xnb
@@ -53,9 +56,12 @@ Content\Audio\SFX\VocalGameOver.xnb
 Content\Audio\SFX\Explosion.xnb
 Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\VocalBegin.xnb
+<<<<<<< .mine
+=======
 Content\Textures\Menus\StartScreen.xnb
 Content\Textures\Menus\StartScreenText.xnb
 Content\Textures\Space.xnb
+>>>>>>> .r129
 Content\Audio\TetrisAudio.xgs
 Content\Audio\TetrisWaveBank.xwb
 Content\Audio\TetrisSoundBank.xsb

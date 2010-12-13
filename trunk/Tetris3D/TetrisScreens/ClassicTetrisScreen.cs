@@ -153,6 +153,12 @@ namespace Tetris3D
 
         public override void Update(GameTime gameTime)
         {
+            if (this.tetrisSession.CurrentLevel > 10)
+            {
+                //GAME OVER VICTORY
+                this.screenManager.audioController.Stop();
+                this.screenManager.addScreen(new GameOverScreen(this.screenManager.Game, this));
+            }
             //update the timer for the game
             this.timer = this.timer.Add(gameTime.ElapsedGameTime);
             //update UI text

@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Project: Tetris Project
+ * Primary Author: Murtnowski
+ * Authors: Matthew Urtnowski & Damon Chastain
+ * Date: Fall 2010
+ * Class: CECS 491
+ * Instructor: Alvaro Monge
+ * School: California State University Long Beach - Computer Science
+ */
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,30 +18,48 @@ namespace Tetris3D
     //TODO: WORK
     public class HighScoreManager
     {
+        //This class is used to encapsulate all the information of a High Score entry
         public class HighScoreEntry
         {
             private string scoreText;
             private int scoreInt;
             private string nameText;
 
+            /// <summary>
+            /// Construct a new Highscore entry from a single line format
+            /// </summary>
+            /// <param name="line">A line from the stored textfile</param>
             public HighScoreEntry(String line)
             {
                 this.Name = line.Substring(0, 3);
                 this.ScoreText = line.Substring(3);
             }
 
+            /// <summary>
+            /// Construct a new Highscore entry
+            /// </summary>
+            /// <param name="name">The initials</param>
+            /// <param name="value">The score</param>
             public HighScoreEntry(String name, String value)
             {
                 this.Name = name;
                 this.ScoreText = value;
             }
 
+            /// <summary>
+            /// Construct a new Highscore entry
+            /// </summary>
+            /// <param name="name">The intials</param>
+            /// <param name="value">The score</param>
             public HighScoreEntry(String name, int value)
             {
                 this.Name = name;
                 this.ScoreInt = value;
             }
 
+            /// <summary>
+            /// String access to the score
+            /// </summary>
             public string ScoreText
             {
                 get
@@ -47,6 +74,9 @@ namespace Tetris3D
                 }
             }
 
+            /// <summary>
+            /// Integer access to the score
+            /// </summary>
             public int ScoreInt
             {
                 get
@@ -61,6 +91,9 @@ namespace Tetris3D
                 }
             }
 
+            /// <summary>
+            /// Access to the initals
+            /// </summary>
             public string Name
             {
                 get
@@ -75,10 +108,15 @@ namespace Tetris3D
             }
         }
 
+        //The current top ten scores
         public HighScoreEntry[] highscoreEntries = new HighScoreEntry[10];
 
+        //The location of the scored file
         private String fileLocation;
 
+        /// <summary>
+        /// Return a long string of all the initials
+        /// </summary>
         public String HighScoreInitialText
         {
             get
@@ -94,6 +132,9 @@ namespace Tetris3D
             }
         }
 
+        /// <summary>
+        /// Return a long string of all of the scores
+        /// </summary>
         public String HighScoreScoreText
         {
             get
@@ -110,6 +151,10 @@ namespace Tetris3D
         }
 
 
+        /// <summary>
+        /// Construct a new highscore manager
+        /// </summary>
+        /// <param name="mode">The highscore type to be loaded</param>
         public HighScoreManager(TetrisModes mode)
         {
             switch (mode)
@@ -124,6 +169,7 @@ namespace Tetris3D
                 default: throw new NotImplementedException();
             }
 
+            //Load the current file
             try
             {
                 // Create an instance of StreamReader to read from a file.
@@ -142,6 +188,7 @@ namespace Tetris3D
             }
             catch (Exception e)
             {
+                //DEBUG
                 // Let the user know what went wrong.
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
@@ -149,6 +196,9 @@ namespace Tetris3D
 
         }
 
+        /// <summary>
+        /// Write the current highscore to the the file
+        /// </summary>
         public void Publish()
         {
             try
@@ -167,18 +217,20 @@ namespace Tetris3D
             }
             catch (Exception e)
             {
+                //DEBUG
                 // Let the user know what went wrong.
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
         }
 
+        /// <summary>
+        /// Insert a highscore into the highscore list
+        /// </summary>
+        /// <param name="initals">The inital to insert</param>
+        /// <param name="score">The score to insert</param>
         public void Insert(string initals, int score)
         {
-            //           #    for(int i = n;i>0 && x[i-1]> t;i--)//using obsolete binding at 'i'     
-            //#      x[i]=x[i-1];
-            //#      x[i]= t;//name lookup of i changed for new ISO 'for' scoping
-
             for (int i = this.highscoreEntries.Length - 1; i >= 0; i--)
             {
                 if (i == 0 || this.highscoreEntries[i - 1].ScoreInt > score)

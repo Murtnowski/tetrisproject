@@ -1,5 +1,6 @@
 ﻿/*
  * Project: Tetris Project
+ * Primary Author: Damon Chastain
  * Authors: Matthew Urtnowski & Damon Chastain
  * Date: Fall 2010
  * Class: CECS 491

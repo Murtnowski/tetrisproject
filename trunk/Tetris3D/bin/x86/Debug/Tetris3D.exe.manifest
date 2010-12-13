@@ -52,14 +52,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="100864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="101376">
       <assemblyIdentity name="Tetris3D" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>2/REgQwNHMcyTfCzlNiy/xkPkFw=</dsig:DigestValue>
+        <dsig:DigestValue>z2XupaAo0qyuFE48ktjmKhnoe+8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -504,7 +504,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>5qqKIydlqFz7mqv96hX5plQBCVY=</dsig:DigestValue>
+      <dsig:DigestValue>zw5EEfAmXt1tGPhEQ5lMhRyQwBk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\Menus\PauseMenu.xnb" size="216609">
@@ -579,15 +579,6 @@
       <dsig:DigestValue>VyvS2HrUapne+4WTd5NgCh1wK2U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Textures\OldTitle.xnb" size="11332021">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BzkYSi+kb++KB6ocShms2ohxHEw=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\Textures\Pieces\I.xnb" size="63085">
     <hash>
       <dsig:Transforms>
@@ -649,6 +640,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>LgSQjR0o0JLD+xBp3FgKdbztnBY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Textures\Space.xnb" size="4320085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hywp0pEit2u2q+6FGcshqHLHXEM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\stars.xnb" size="16711829">

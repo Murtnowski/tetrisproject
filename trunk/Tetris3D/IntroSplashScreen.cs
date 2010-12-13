@@ -38,7 +38,7 @@ namespace Tetris3D
 
         public override void LoadContent()
         {
-            this.backGround = this.content.Load<Texture2D>(@"Textures\Menus\StartScreen");
+            this.backGround = this.content.Load<Texture2D>(@"Textures\Space");
             this.createdBy = this.content.Load<Texture2D>(@"Textures\Menus\StartScreenText");
             //initializing the values of the textboxes
 
@@ -46,17 +46,17 @@ namespace Tetris3D
             this.credits = new TextBox(this, new Vector2(535, 500), new Vector2(300, 75), @"Textures\Kootenay",
                 "CSULB", true);
             this.credits.TextAlign = TextBox.TextAlignOption.TopLeft;
-            this.credits.ForeColor = Color.Violet;
+            this.credits.ForeColor = Color.Aqua;
 
             this.credits2 = new TextBox(this, new Vector2(475, 575), new Vector2(300, 75), @"Textures\Kootenay",
                 "Professor Monge", true);
             this.credits2.TextAlign = TextBox.TextAlignOption.TopLeft;
-            this.credits2.ForeColor = Color.Violet;
+            this.credits2.ForeColor = Color.AliceBlue;
 
             this.credits3 = new TextBox(this, new Vector2(515, 650), new Vector2(300, 75), @"Textures\Kootenay",
                 "CECS 491", true);
             this.credits3.TextAlign = TextBox.TextAlignOption.TopLeft;
-            this.credits3.ForeColor = Color.Violet;
+            this.credits3.ForeColor = Color.Aquamarine;
 
             fader = 0f;
             fader1 = 0f;
@@ -73,11 +73,11 @@ namespace Tetris3D
                 fader2 += 0.009f; //fader 2 has no limits
 
             //update the draw for the credits
-            this.credits.ForeColor = new Color(Color.Violet, fader2);
-            this.credits2.ForeColor = new Color(Color.Violet, fader2);
-            this.credits3.ForeColor = new Color(Color.Violet, fader2);
+            this.credits.ForeColor = new Color(Color.DeepSkyBlue, fader2);
+            this.credits2.ForeColor = new Color(Color.DeepSkyBlue, fader2);
+            this.credits3.ForeColor = new Color(Color.DeepSkyBlue, fader2);
 
-            if (fader2 >= 1.5f)
+            if (fader2 >= 1.7f)
             {
                 this.screenManager.removeScreen(this);
                 this.screenManager.addScreen(new MainMenuScreen(this.screenManager.Game));

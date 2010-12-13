@@ -79,4 +79,4 @@ C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\obj\
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\HighScoresBorder.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\StartScreen.xnb
 C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Menus\StartScreenText.xnb
-C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\OldTitle.xnb
+C:\Users\Damon\Documents\Visual Studio 2008\Projects\tetrisproject\Tetris3D\bin\x86\Debug\Content\Textures\Space.xnb

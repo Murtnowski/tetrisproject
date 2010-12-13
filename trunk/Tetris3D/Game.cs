@@ -47,10 +47,6 @@ namespace Tetris3D
         internal const int SCREEN_HEIGHT = 900;
         private SpriteBatch spriteBatch;
 
-        //audio
-      //  public AudioBank audio;
-     //   public Song backgroundMusic;
-
         //Components
         private InputHandler input;
 
@@ -83,7 +79,7 @@ namespace Tetris3D
             spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
 
             this.screenManager = new ScreenManager(this, spriteBatch);
-            this.screenManager.addScreen(new MainMenuScreen(this));
+            this.screenManager.addScreen(new IntroSplashScreen(this));
 
             this.Components.Add(this.screenManager);
 
@@ -118,7 +114,7 @@ namespace Tetris3D
         /// <param name="gameTime">The time since last drawtime</param>
         protected override void Draw(GameTime gameTime)
         {
-            this.graphics.GraphicsDevice.Clear(Color.Pink);
+            this.graphics.GraphicsDevice.Clear(Color.Black);
             base.Draw(gameTime);
         }
     }

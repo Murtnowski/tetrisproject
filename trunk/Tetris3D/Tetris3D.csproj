@@ -104,6 +104,7 @@
       <DependentUpon>HighScoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HighScoreManager.cs" />
+    <Compile Include="IntroSplashScreen.cs" />
     <Compile Include="TetrisScreens\Challenge1TetrisScreen.cs" />
     <Compile Include="TetrisScreens\Challenge2TetrisScreen.cs" />
     <Compile Include="TetrisScreens\Challenge3TetrisScreen.cs" />

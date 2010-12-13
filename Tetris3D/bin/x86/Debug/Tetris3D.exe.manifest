@@ -52,14 +52,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="99840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tetris3D.exe" size="100864">
       <assemblyIdentity name="Tetris3D" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Sb1efERO54VPmwNwPp9A5m9stVU=</dsig:DigestValue>
+        <dsig:DigestValue>2/REgQwNHMcyTfCzlNiy/xkPkFw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -534,6 +534,24 @@
       <dsig:DigestValue>LSkTo/GJK9rIb56o0giNRqyLFYo=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Textures\Menus\StartScreen.xnb" size="4320085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7ysi9srwAJWmaNa0g+FLjk9/bGo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Textures\Menus\StartScreenText.xnb" size="4320085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qB5wU/S56Q1B0jW2/jHWK7+Aphk=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Textures\Menus\TimeTrial.xnb" size="34249">
     <hash>
       <dsig:Transforms>
@@ -559,6 +577,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>VyvS2HrUapne+4WTd5NgCh1wK2U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Textures\OldTitle.xnb" size="11332021">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BzkYSi+kb++KB6ocShms2ohxHEw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\Pieces\I.xnb" size="63085">
@@ -642,13 +669,13 @@
       <dsig:DigestValue>PiPXHbRzzjHNZKSk+Tp69LFf8HM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Textures\Title.xnb" size="11332021">
+  <file name="Content\Textures\Title.xnb" size="4320085">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BzkYSi+kb++KB6ocShms2ohxHEw=</dsig:DigestValue>
+      <dsig:DigestValue>P8WQnRLUaYrmtH6coxnqnyIdN+A=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\UIFont.xnb" size="37858">

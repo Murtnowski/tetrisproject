@@ -59,7 +59,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< .mine
+        <dsig:DigestValue>C1YWAmdJDz5P05k0NVqGDgFAZQ0=</dsig:DigestValue>
+=======
         <dsig:DigestValue>z2XupaAo0qyuFE48ktjmKhnoe+8=</dsig:DigestValue>
+>>>>>>> .r129
       </hash>
     </dependentAssembly>
   </dependency>
@@ -71,7 +75,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>rDBDLEm3eSlRHT4JOsXW4yvlDFg=</dsig:DigestValue>
+        <dsig:DigestValue>6+zNC6YuJn/sgf+nX1wH3A0pf5Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -225,7 +229,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>sWMtsHot7Dkb5St9mBJ1Xkv8lKE=</dsig:DigestValue>
+      <dsig:DigestValue>wWoHlouQji4Csu/D50fJu9iX6v4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Audio\TetrisSoundBank.xsb" size="332">
@@ -234,7 +238,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>3KevfJk1ngjLc4qUlN2rxP4CW00=</dsig:DigestValue>
+      <dsig:DigestValue>IxUQlV9Nu4o4uPbb83481S9lb1Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Audio\TetrisWaveBank.xwb" size="14255140">
@@ -243,7 +247,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>pj0o3mURD+LKig2SJCMp55VvPcc=</dsig:DigestValue>
+      <dsig:DigestValue>hd1qQTRDb3YTmNLw13khx34YrXk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\HighScore\Challenge1.txt" size="89">
@@ -273,22 +277,22 @@
       <dsig:DigestValue>UrzXJObHdMy6LUWVPs9SXEE+9Bc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\HighScore\Challenge4.txt" size="91">
+  <file name="Content\HighScore\Challenge4.txt" size="89">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>E+EGwhEa4yldKa3XCTjqN3j7Ba0=</dsig:DigestValue>
+      <dsig:DigestValue>UrzXJObHdMy6LUWVPs9SXEE+9Bc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\HighScore\ClassicTetris.txt" size="91">
+  <file name="Content\HighScore\ClassicTetris.txt" size="92">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>hBRtbDoUevxkyDEQs3wOjO45HMc=</dsig:DigestValue>
+      <dsig:DigestValue>5NSRc1K7MmeiBn2TruY01abOLJQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\HighScore\Marathon.txt" size="89">

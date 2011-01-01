@@ -21,8 +21,14 @@ using XELibrary;
 
 namespace Tetris3D
 {
+    /// <summary>
+    /// The supported Gamemodes
+    /// </summary>
     public enum TetrisModes { Classic, Marathon, TimeTrial, Challenge1, Challenge2, Challenge3, Challenge4 };
 
+    /// <summary>
+    /// Abstract tetris screen used to build the other Tetris modes
+    /// </summary>
     public abstract class TetrisScreen : GameScreen
     {
         protected Texture2D IPieceTexture;
@@ -33,8 +39,14 @@ namespace Tetris3D
         protected Texture2D TPieceTexture;
         protected Texture2D ZPieceTexture;
 
+        /// <summary>
+        /// The UI
+        /// </summary>
         protected SpriteFont uiFont;
 
+        /// <summary>
+        /// Number of lines cleared
+        /// </summary>
         protected int numberOfLinesCleared;
 
         protected TimeSpan timer = new TimeSpan();
@@ -75,7 +87,8 @@ namespace Tetris3D
             get;
         }
 
-        public TetrisScreen(Microsoft.Xna.Framework.Game game) : base(game)
+        public TetrisScreen(Microsoft.Xna.Framework.Game game)
+            : base(game)
         {
         }
     }

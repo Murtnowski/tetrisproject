@@ -56,12 +56,6 @@ Content\Audio\SFX\VocalGameOver.xnb
 Content\Audio\SFX\Explosion.xnb
 Content\Audio\SFX\VocalOhYeah.xnb
 Content\Audio\SFX\VocalBegin.xnb
-<<<<<<< .mine
-=======
-Content\Textures\Menus\StartScreen.xnb
-Content\Textures\Menus\StartScreenText.xnb
-Content\Textures\Space.xnb
->>>>>>> .r129
 Content\Audio\TetrisAudio.xgs
 Content\Audio\TetrisWaveBank.xwb
 Content\Audio\TetrisSoundBank.xsb
